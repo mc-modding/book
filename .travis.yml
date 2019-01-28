@@ -1,0 +1,14 @@
+language: python
+install:
+  - pip install mkdocs
+  - pip install mkdocs-material
+script:
+  - mkdocs build --verbose --clean --strict
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  fqdn: mcmodding.ru
+  local_dir: site
+  on:
+    branch: master

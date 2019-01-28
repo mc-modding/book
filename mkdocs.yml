@@ -1,0 +1,22 @@
+site_name: Minecraft Modding
+site_url: https://mcmodding.ru
+site_description: 'Подробный и понятный учебник по созданию своего мода для Minecraft. Научитесь создавать все: от блока до целого измерения!'
+
+repo_name: mc-modding/book
+repo_url: https://github.com/mc-modding/book
+edit_url: tree/master/docs
+
+theme:
+    name: 'material'
+    palette:
+        primary: 'white'
+        accent: 'blue'
+        
+    logo: '../images/logo.svg'
+    favicon: '../images/favicon.png'
+    
+    language: 'ru'
+    
+extra:
+    search:
+        language: 'en, ru'
