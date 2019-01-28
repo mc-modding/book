@@ -16,7 +16,37 @@ theme:
     favicon: '../images/favicon.png'
     
     language: 'ru'
-    
+
+markdown_extensions:
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+          smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+          emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    - pymdownx.tilde
+    - toc:
+          permalink: '#'
+          slugify: !!python/name:pymdownx.slugs.uslugify
+    - codehilite
+    - admonition
+
 extra:
     search:
         language: 'en, ru'
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML&locale=ru'
+
+nav:
+    - '1.12':
+          - 'Генерация':
+                - 'Генерация биомов': 'book/1.12/generation/biom-generation/biom-generation.md'
