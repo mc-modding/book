@@ -4,7 +4,7 @@ site_description: 'Подробный и понятный учебник по с
 
 repo_name: mc-modding/book
 repo_url: https://github.com/mc-modding/book
-edit_url: tree/master/docs
+edit_uri: tree/master/docs
 
 theme:
     name: 'material'
