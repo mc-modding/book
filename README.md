@@ -1,1 +1,1 @@
-# Minecraft Modding
+# MC Modding Book [![Build Status](https://travis-ci.org/mc-modding/book.svg?branch=master)](https://travis-ci.org/mc-modding/book)

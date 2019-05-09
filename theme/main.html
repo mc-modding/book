@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block site_meta %}
+    {{ super() }}
+
+    <meta property="og:image" content="{{ config.site_url + '/ogLogo.png' }}" />
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
+          crossorigin="anonymous">
+
+    <!-- Contributors --> 
+    <link rel="stylesheet" href="{{ 'css/contributors/contributors.css' | url }}" />
+
+    <!-- Nav -->
+    <link rel="stylesheet" href="{{ 'css/nav/nav.css' | url }}" />
+
+    <!-- Content -->
+    <link rel="stylesheet" href="{{ 'css/content/content.css' | url }}" />
+
+    <!-- Override -->
+    <link rel="stylesheet" href="{{ 'css/override/override.css' | url }}" />
+
+    <!-- Logo -->
+    <link rel="stylesheet" href="{{ 'css/logo/logo.css' | url }}" />
+
+    <!-- Footer -->
+    <link rel="stylesheet" href="{{ 'css/footer/footer.css' | url }}" />
+{% endblock %}
+
+{% block libs %}
+    {{ super() }}
+
+    <!-- MathJax -->
+    <link rel="stylesheet" href="{{ 'css/mathjax/mathjax.css' | url }}" />
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            jax: ["input/TeX", "output/HTML-CSS"],
+            text2jax: {
+                inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+                displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+                processEscapes: true
+            },
+            messageStyle: "none"
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML&locale=ru" async></script>
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ 'libs/magnific-popup/magnific-popup.css' | url }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ 'libs/magnific-popup/jquery.magnific-popup.min.js' | url }}"></script>
+
+    <script>
+        $(function ()
+        {
+            $('.md-content a > img').each(function (i, elem)
+            {
+                $(this).parent().addClass('img-link');
+            });
+
+            $('.img-link').magnificPopup({type: 'image'});
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- [MC Modding Book] Перед статьей -->
+    <ins class="adsbygoogle top"
+        style="display:block"
+        data-ad-client="ca-pub-8094912170389944"
+        data-ad-slot="2360317416"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    {{ super() }}
+
+    <!-- Contributors -->
+    <div class="contributors" style="display: none;">
+        <h2 id="contributors">Вклад внесли <span class="contributors--count">0</span></h2>
+        <ul class="contributors--list"></ul>
+    </div>
+
+    <script>
+        $(function ()
+        {
+            var editUrl = '{{ page.edit_url }}';
+            var fpath = editUrl.split('{{ config.repo_url }}edit/master/').pop();
+
+            var already = [];
+
+            fetch('https://api.github.com/repos/{{ config.repo_name }}/commits?path=' + fpath).then(function (response)
+            {
+                return response.json();
+            }).then(function (commits)
+            {
+                for (var i = 0; i < commits.length; i++)
+                {
+                    var author = commits[i].author;
+
+                    if (already.includes(author.login))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        already.push(author.login);
+                    }
+
+                    var url = '{{ config.repo_url }}commits/master/' + fpath + '?author=' + author.login;
+
+                    $('.contributors--list').append('<li><a title="' + author.login + '" href="' + url + '" target="_blank"><img src="' + author.avatar_url + '&s=40" /></a></li>');
+                }
+
+                $('.contributors--count').html(already.length);
+
+                if (already.length > 0)
+                {
+                    $('.contributors').show();
+                }
+            });
+        });
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- [MC Modding Book] После статьи -->
+    <ins class="adsbygoogle bottom"
+        style="display:block"
+        data-ad-client="ca-pub-8094912170389944"
+        data-ad-slot="8790828549"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+{% endblock %}

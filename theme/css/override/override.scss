@@ -1,0 +1,68 @@
+/* ====================== SCROLLBARS ====================== */
+
+.md-typeset pre>code::-webkit-scrollbar {
+    width: .4rem;
+    height: .4rem
+}
+
+/* ====================== Admonition ====================== */
+
+.md-typeset .admonition, .md-typeset details
+{
+    border-left-width: 2px;
+}
+
+.md-typeset
+{
+    .admonition, details
+    {
+        @each $names, $appearance in (
+                заметка: #00B7FF "\e150",
+                важно: #D04F47 "\e002",
+        ) {
+            $tint: nth($appearance, 1);
+            $icon: nth($appearance, 2);
+
+            // Define base class
+            &%#{nth($names, 1)},
+            &.#{nth($names, 1)} {
+                border-left-color: $tint;
+
+                // Adjust for RTL languages
+                [dir="rtl"] & {
+                    border-right-color: $tint;
+                }
+
+                // Title
+                > .admonition-title, > summary  {
+                    color: mix($tint, black, 50%);
+                    border-top: 1px solid transparentize($tint, 0.9);
+                    border-bottom-color: px2rem(1px) solid transparentize($tint, 0.9);
+                    background-color: transparentize($tint, 0.9);
+
+                    a
+                    {
+                        opacity: 0;
+                        color: mix($tint, black, 50%);
+
+                        transition: opacity .2s;
+                    }
+
+                    &:hover
+                    {
+                        a
+                        {
+                            opacity: 1;
+                        }
+                    }
+
+                    // Icon
+                    &::before {
+                        color: $tint;
+                        content: $icon;
+                    }
+                }
+            }
+        }
+    }
+}

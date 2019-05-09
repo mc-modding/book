@@ -1,0 +1,31 @@
+.contributors--count {
+  margin-left: 5px;
+  font-size: 80%;
+  color: #828282;
+}
+
+.contributors .contributors--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: -10px;
+}
+
+.contributors .contributors--list li {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.contributors .contributors--list li:not(:last-of-type) {
+  padding-right: 10px;
+}
+
+.contributors .contributors--list li img {
+  display: block;
+  border-radius: 3px;
+}
+/*# sourceMappingURL=contributors.css.map */
