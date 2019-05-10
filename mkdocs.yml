@@ -18,6 +18,43 @@ nav:
             - Стадии загрузки мода: '1.12/basics/loading-stages/index.md'
             - Прокси: '1.12/basics/proxy/index.md'
             - Сборка мода: '1.12/basics/building-mod/index.md'
+        - Предмет:
+            - Создание предмета: '1.12/item/basics/index.md'
+            - Еда: '1.12/item/food/index.md'
+            - Инструменты и меч: '1.12/item/tools/index.md'
+            - Починка инструментов: '1.12/item/repair/index.md'
+            - Броня: '1.12/item/armor/index.md'
+            - Метадата: '1.12/item/metadata/index.md'
+            - Лут: '1.12/item/loot/index.md'
+            - Редкость: '1.12/item/rarity/index.md'
+            - Горение: '1.12/item/burn/index.md'
+        - Блок:
+            - Создание блока: '1.12/block/basics/index.md'
+            - Состояния блока: '1.12/block/blockstates/index.md'
+        - Tile Entity: '1.12/tileentity/index.md'
+        - Вкладка в креативе: '1.12/creativetab/index.md'
+        - Локализация: '1.12/lang/index.md'
+        - События:
+            - Использование событий: '1.12/events/usage/index.md'
+            - Таблица событий: '1.12/events/table/index.md'
+        - Крафт: '1.12/craft/index.md'
+        - Достижения:
+            - Основы: '1.12/achievements/basics/index.md'
+            - Создание достижения: '1.12/achievements/create/index.md'
+            - Получение рецептов: '1.12/achievements/recipes/index.md'
+        - Растение:
+            - Создание растения: '1.12/plant/basics/index.md'
+            - '[Мод] Пещерные растения': '1.12/plant/mod-cave-plants/index.md'
+        - Для опытных:
+            - Слои: '1.12/advanced/layers/index.md'
+            - Привязка клавиш: '1.12/advanced/keybinds/index.md'
+            - Временные эффекты: '1.12/advanced/buffs/index.md'
+            - Звуки: '1.12/advanced/sounds/index.md'
+        - Дополнительно:
+            - Работа с иходниками: '1.12/other/src/index.md'
+            - Интеграция с JEI: '1.12/other/jei-integration/index.md'
+            - Access Transformers: '1.12/other/access-transformers/index.md'
+            - Каскадная генерация: '1.12/other/gen-lags/index.md'
 
 theme:
     name: material
