@@ -125,6 +125,24 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getI
 
 Название файла должно быть таким же как и в `blockstates` -> `best_stone`, в переменной `model`!
 
+
+Теперь Вам надо создать `best_stone.json`. По пути:
+```md
+└── src    
+    └── main
+        └── resources
+            └── assets
+                └── tut
+                    └── models
+                        └── item
+```
+Пример:
+```json
+{
+    "parent": "tut:block/best_stone"
+}
+```
+
 [Модель](https://yadi.sk/d/n9ehtKYk3LT9qv)
 
 В этом файле будет хранится информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
@@ -143,7 +161,6 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getI
                 └── tut
                     └── models
                         └── block
-                        └── item
 ```
 
 Добавим в ClientProxy, в метод init такой код  `BlocksRegister.registerRender();`.
