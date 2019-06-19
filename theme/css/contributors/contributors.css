@@ -27,5 +27,6 @@
 .contributors .contributors--list li img {
   display: block;
   border-radius: 3px;
+  width: 40px;
 }
 /*# sourceMappingURL=contributors.css.map */
