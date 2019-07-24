@@ -2,27 +2,7 @@ description: Создание собственного крафта.
 
 # Крафт
 
-Создадим класс `CraftingRegister`.
-
-```java
-public class CraftingRegister
-{
-    public static void register()
-    {
-        registerRecipes("key");
-    }
-
-    private static void registerRecipes(String name)
-    {
-        CraftingHelper.register(new ResourceLocation("tut", name), (IRecipeFactory) (context, json) -> CraftingHelper.getRecipe(json, context));
-    }
-}
-```
-
-* `registerRecipes(name)` - с помощью данного метода вы сможете гораздо быстрее прописывать регистрацию рецептов.
-* `tut` - modid нашего мода.
-
-Перейдём в папку:
+С 1.12 процесс создания крафта был упрощён и более не требует написания кода и его регистрации в прокси. Для создания крафта достаточно перейти в папку:
 ```md
 └── src    
     └── main
@@ -32,7 +12,7 @@ public class CraftingRegister
                     └── recipes
 ```
 
-И создадим в папке `recipes` файл `key.json`. (`json` - это формат файла!)
+И создать в папке `recipes` файл `key.json`. (`json` - это формат файла!)
 
 * `type` - это тип крафта. Всего существует два вида:
   - `crafting_shaped` - в этом типе крафта мы можем задать позицию крафта, т.е. предмет будет скрафчен только если предметы содержатся на этих позициях.
