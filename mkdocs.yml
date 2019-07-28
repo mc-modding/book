@@ -5,13 +5,13 @@ repo_name: mc-modding/book
 repo_url: 'https://github.com/mc-modding/book'
 
 nav:
+    - Подготовка:
+        - Установка программ: 'any-version/preparation/install/index.md'
+        - Использование Idea: 'any-version/preparation/setup-idea/index.md'
+        - Использование Eclipse: 'any-version/preparation/setup-eclipse/index.md'
+        - Собственный скин: 'any-version/preparation/custom-skin/index.md'
+        - Решение проблем: 'any-version/preparation/problems/index.md'
     - '1.12':
-        - Подготовка:
-            - Установка программ: '1.12/preparation/install/index.md'
-            - Использование Idea: '1.12/preparation/setup-idea/index.md'
-            - Использование Eclipse: '1.12/preparation/setup-eclipse/index.md'
-            - Собственный скин: '1.12/preparation/custom-skin/index.md'
-            - Решение проблем: '1.12/preparation/problems/index.md'
         - Основы Forge:
             - Структура мода: '1.12/basics/mod-structure/index.md'
             - Аннотация @Mod: '1.12/basics/mod-annotation/index.md'
