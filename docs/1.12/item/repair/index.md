@@ -6,19 +6,41 @@ description: Починка инструментов.
 
 Материал из прошлой статьи.
 ```java
-public static Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12);
+public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12);
 ```
 
 Казалось бы, инструменты и меч есть, но всё равно чего-то не хватает? Как раз починки, нам и не хватает!
-Возьмём нашу переменную и добавим к ней метод "setRepairItem()".
+Возьмём нашу переменную и добавим к ней метод `setRepairItem`.
 
 ```java
-public static Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12).setRepairItem(new ItemStack(Item.getItemFromBlock(Blocks.GOLD_BLOCK)));
+public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12).setRepairItem(new ItemStack(Blocks.GOLD_BLOCK));
 ```
 
-Данный код создаёт новый стак предметов в котором имеется блок золота.
+Примеры того, как можно прописать предмет/блок для починки:
 ```java
-new ItemStack(Item.getItemFromBlock(Blocks.GOLD_BLOCK));
+/*
+ * Помимо блока, мы можем указать предмет через класс Items.*(вместо звёздочки название предмета), метаданные и количество.
+ */
+new ItemStack(Blocks.GOLD_BLOCK);
+
+/*
+ * Стак с предметом
+ */
+new ItemStack(Items.APPLE);
+
+/*
+ * Стак с указанием количества предметов необходимых для починки.
+ * В данном примере создаётся стак с 25 палками. Если количество равно одному, 
+ * то можно не прописывать количество необходимых предметов(см. пример выше)
+ */
+new ItemStack(Items.STICK, 25);
+
+/*
+ * Стак с указанием метаданных.
+ * В данном примере создаётся стак с 1 палкой и метой 2. Если мета вашего предмета 0, 
+ * то её также можно не прописывать(см. пример выше)
+ */
+new ItemStack(Items.STICK, 1, 2);
 ```
 
 Таким образом мы добавили к нашему материалу предмет, который будет необходим для починки инструментов и меча. Так же вы можете проделать данное действие с ArmorMaterial, задать предмет для починки.
