@@ -29,7 +29,7 @@ public class ItemKey extends Item {
  * Подробнее см. https://mcforge.readthedocs.io/en/latest/concepts/registries/#injecting-registry-values-into-fields
  */
 @ObjectHolder("tut")
-@Mod.EventBusSubscriber// Автоматическая регистрация статических обработчиков событий
+@Mod.EventBusSubscriber// Автоматическая регистрация статичных обработчиков событий
 public class ItemsRegistry {
     /*
      * Получение предмета по ключу. Вы также можете использовать данную аннотацию для получения ванильных предметов
@@ -68,7 +68,7 @@ public class ItemsRegistry {
 чем предметы!
 
 Теперь можете запустить Minecraft и посмотреть свой предмет в живую. Чтобы получить предмет пропишите `/give @p tut:key`.
-Вместо `tut` у вас должен быть `modid` вашего мода! Вместо `key` у вас должно быть регистрируемое имя вашего предмета.
+Вместо `tut` у вас должен быть `modId` вашего мода! Вместо `key` у вас должно быть регистрируемое имя вашего предмета.
 
 [![Предмет от первого лица](images/face_first.png)](images/face_first.png)
 
@@ -76,16 +76,25 @@ public class ItemsRegistry {
 
 ## Модель
 
-!!! Внимание! 
-    Данная часть главы находится на переработке!
+После последних обновлений Forge для 1.12.2, произошли некоторые изменения в регистрации моделей для блоков и предметов.
+Для удобства напишем метод `registryModel` в нашем классе `ItemsRegistry`.
 
-Для начала добавим такой код в ItemsRegistry, в метод setRender
 ```java
-Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+@SideOnly(Side.CLIENT)
+private static void registryModel(Item item) {
+    final ResourceLocation regName = item.getRegistryName();// Не забываем, что getRegistryName может вернуть Null!
+    final ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
+    ModelBakery.registerItemVariants(item, mrl);// Регистрация вариантов предмета. Это нужно если мы хотим использовать подтипы предметов/блоков(см. статью подтипы)
+    ModelLoader.setCustomModelResourceLocation(item, 0, mrl);// Устанавливаем вариант модели для нашего предмета. Без регистрации варианта модели, сама модель не будет установлена для предмета/блока(см. статью подтипы)
+}
 ```
 
-Теперь Вы должны создать модель предмета, Вы можете создать как плоскую модель, примером может послужить яблоко или объёмную модель. Вот пример плоской модели:
+Теперь пропишем в наш ранее созданный метод-обработчик `registryModel(KEY)`. Всё! Наша модель для предмета `KEY` зарегистрирована! 
+Далее перейдём к самой модели! Мы должны создать модель предмета, вы можете создать как плоскую модель(примером может послужить яблоко), так и объёмную модель. 
 
+Создадим файл `key.json` и перенесём его в папку по данному пути `src/main/resources/assets/tut/models/item`.
+
+Пропишем такой код для плоской модели:
 ```json
 {
   "parent": "item/generated",
@@ -95,37 +104,15 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, 
 }
 ```
 
-[Объёмная модель](https://yadi.sk/d/JNFq9Y4h3KcrBv)
-
-Если ваша текстура к модели берётся из самого Minecraft, то `tut:`(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру золотого блока из Minecraft. Текстуру необходимо добавить по пути:
-```md
-└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── textures
-                        └── items
-```
-
-`tut` - modid нашего мода.
+`tut` - modId нашего мода.
 `key` - регистрируемое имя нашего предмета.
 
-Когда ваша модель готова, добавьте её по пути:
+Если ваша текстура к модели берётся из самого Minecraft, то `tut:`(modId) прописывать не надо! Текстуру необходимо добавить по пути:
 ```md
-└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── models
-                        └── item
+src/main/resources/assets/tut/textures/items
 ```
 
-Добавим в ClientProxy, в метод init такой код  `ItemsRegistry.registerRender();`.
-
-И вот, что в конечном итоге у нас может получится.
-
+Запускаем игру и видим, что у нас получилось(на скриншотах объёмная модель):
 [![Предмет с моделью от первого лица](images/model_face_first.png)](images/model_face_first.png)
 
 [![Предмет с моделью от третьего лица](images/model_face_three.png)](images/model_face_three.png)
