@@ -1,61 +1,51 @@
 description: Создание из одного предмета, множество подтипов.
 
-# Метадата
+# Подтипы
 
 ## Основа
 
-Каждый предмет может иметь в себе метадату ограничивающуюся лишь размером `Integer`(2147483647). Для того, чтобы добавить метадату предмету нужно добавить в конструктор `setHasSubtypes` и выставить значение на `true`. Пример: `setHasSubtypes(true)`. Данная функция будет говорить Minecraft о том, что наш предмет имеет подтипы.
+Каждый предмет может иметь в себе метадату ограничивающуюся лишь размером `Short`(32768). Для того, чтобы добавить подтип предмету нужно добавить в конструктор `setHasSubtypes` и выставить значение на `true`. Пример: `setHasSubtypes(true)`. Данная функция будет говорить Minecraft о том, что наш предмет имеет подтипы.
 
 Добавим в класс с нашим предметом метод `getSubItems`:
 ```java
 @Override
-public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
-{
+public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
 
 }
 ```
 
-Для создания предметов с метадатой рекомендуется использовать перечисляемые типы(Enum). Пример такого класса:
+Для создания предметов с подтипами рекомендуется использовать перечисляемые типы(Enum). Пример такого класса:
 ```java
-public enum AppleTypes
-{
-    //типы, начинаются от 0.
+public enum AppleTypes {
     ANTONOVKA, PAPIROVKA, WHITEFILLING;
 
-    //получение типа по метадате
-    public static AppleTypes getByMeta(int meta)
-    {
-        for (AppleTypes type : values())
-        {
-            if (type.ordinal() == meta)
-                return type;
-        }
-        return null;
+    // Получение вида яблока по индексу
+    public static AppleTypes getByMeta(int index) {
+        return values()[index % values().length];
     }
 }
 ```
 
 Теперь вернёмся к нашему методу `getSubItems`. Добавим в него такой код:
 ```java
-if (tab == Tutorial.CTAB)
-{
-    for (AppleTypes type : AppleTypes.values())
-    {
+if (tab == Tutorial.CTAB) {
+    for (AppleTypes type : AppleTypes.values()) {
         items.add(new ItemStack(this, 1, type.ordinal()));
     }
 }
 ```
-Разберём код! Для начала начнём с проверки на вкладку креатива, если данная проверка будет отсутствовать, ваши мета-предметы будут добавлены во все вкладки, которые существуют в Minecraft. Лучше добавить проверку на свою вкладку, как сделано в данном примере. `Tutorial.CTAB` - это ранее созданная нами вкладка. Далее мы с помощью цикла проходимся по всем типам нашего предмета, затем добавляем в лист ItemStack.
-- `this` - это наш предмет
+Разберём код! Для начала начнём с проверки на творческую вкладку, если данная проверка будет отсутствовать, ваши подтипы предмета будут добавлены во все вкладки, которые существуют в Minecraft. Лучше добавить проверку на свою вкладку, как сделано в данном примере. `Tutorial.CTAB` - это ранее созданная нами вкладка. Далее мы с помощью цикла проходимся по всем типам нашего предмета, затем добавляем в список новый ItemStack с указанием метадаты.
+- `this` - это наш текущий предмет
 - `1` - это число предметов которое содержится в стаке. Если вы хотите, чтобы один из ваших типов выдавался в количестве 5-10-15 шт., то вместо `1` укажите любое другое количество.
-- `type.ordinal` - это id нашего типа. В данном случаи у нас 3 типа (ANTONOVKA, PAPIROVKA, WHITEFILLING).
+- `type.ordinal` - это метадата нашего подтипа, т.е. если мы хотим в творческой вкладке видеть стаки с метой: 20-40-50, то соответственно, вместо `type.ordinal` нам нужно указать `20`, `40`, `50` и т.п..
+
+!!!Внимание! Устаревший часть статьи!
 
 Регистрация такого предмета проходит как обычно, а вот добавление иконки/модели уже через событие `ModelRegistryEvent`. [Создадим обработчик события](http://mcmodding.ru/1.12/events/usage/) `ModelRegistryEvent` в любом удобном месте (не забудьте зарегистрировать его!). Теперь добавим такой код в данный метод:
 ```java
 final Item APPLE = ItemsRegister.APPLE;
 
-for (AppleTypes type : AppleTypes.values())
-{
+for (AppleTypes type : AppleTypes.values()) {
     ModelLoader.setCustomModelResourceLocation(APPLE, type.ordinal(), new ModelResourceLocation(APPLE.registryName() + "_" + type.name.toLowerCase(), "inventory"));
 }
 ```
