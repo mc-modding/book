@@ -24,7 +24,7 @@ nav:
             - Инструменты и меч: '1.12/item/tools/index.md'
             - Починка инструментов: '1.12/item/repair/index.md'
             - Броня: '1.12/item/armor/index.md'
-            - Метадата: '1.12/item/metadata/index.md'
+            - Подтипы: '1.12/item/subtypes/index.md'
             - Лут: '1.12/item/loot/index.md'
             - Редкость: '1.12/item/rarity/index.md'
             - Горение: '1.12/item/burn/index.md'
