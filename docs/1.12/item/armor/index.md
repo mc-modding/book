@@ -298,11 +298,11 @@ public static final Map<Item, ModelBiped> armorModels = new HashMap<>();
 
 Добавим в метод register() такой код:
 ```java
-BestArmor
-           HeadModel = new BestArmor(0),
-           ArmorModel = new BestArmor(1),
-           LeggsModel = new BestArmor(2),
-           BootsModel = new BestArmor(3);
+ArmorModel
+           HeadModel = new ArmorModel(0),
+           ArmorModel = new ArmorModel(1),
+           LeggsModel = new ArmorModel(2),
+           BootsModel = new ArmorModel(3);
 
 armorModels.put(HEAD, HeadModel);
 armorModels.put(CHESTPLATE, ArmorModel);
