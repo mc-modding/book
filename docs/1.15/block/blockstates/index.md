@@ -7,7 +7,7 @@ description: Добавление собственных состояний бл
 В игре существует только 3 типа состояний блоков:
 * `BooleanProperty` - логический тип. Хранит в себе логические значения.
 * `PropertyEnum` - перечисляемый тип. Хранит в себе перечисляемые значения.
-* `PropertyInteger` - целочисленный тип. Хранит в себе числа от `0` до `2147483647`. (знак минус применять не рекомендуется, так что весь счёт начинается от 0!)
+* `IntegerProperty` - целочисленный тип. Хранит в себе числа от `0` до `2147483647`. (знак минус применять не рекомендуется, так что весь счёт начинается от 0!)
 
 ## BooleanProperty
 
@@ -51,4 +51,34 @@ TODO
 
 ## PropertyInteger
 
-TODO
+В классе блока создадим переменную `IntegerProperty` типа.
+```java
+public static final IntegerProperty NUMBER = IntegerProperty.create("number", 0, 3);
+```
+Где 0 минимально значение и 3 максимальное. 
+
+Добавим в конструктор стандартное значение для данной переменной.
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(NUMBER, Integer.valueOf(0)));
+Модифицируем метод `fillStateContainer`.
+```java
+@Override
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(UPPER).add(NUMBER);  }
+```
+Перейдём в папку `blockstates` и откроем файл с названием нашего блока
+```json
+{
+  "variants": {
+    "number=0": { "model": "block/stone" },
+    "number=1": { "model": "block/obsidian" },
+    "number=2": { "model": "tut:block/ideal1" },
+    "number=3": { "model": "tut:block/ideal2" }
+  }
+}
+```
+[![С числом](images/state_true.png)](images/state_int.png)
+
+
+
+
+
+
