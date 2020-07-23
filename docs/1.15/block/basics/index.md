@@ -77,11 +77,6 @@ public class TutBlocks
 
 ## Модель
 
-Для начала добавим такой код в BlocksRegister, в метод setRender
-```java
-Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-```
-
 Создадим файл `ideal.json`. По пути:
 ```md
 └── src    
@@ -91,16 +86,16 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getI
                 └── tut
                     └── blockstates
 ```
-
+С содержанием:
 ```json
 {
     "variants": {
-        "normal": { "model": "tut:best_stone" }
+        "": { "model": "tut:block/ideal" }
     }
 }
 ```
-
-Теперь Вы должны создать тип рендера блока, Вы можете создать как стандартный тип рендера блока, примером может послужить камень, так и тип рендера в виде  модели. Вот пример стандартного типа рендера:
+В этом файле будет хранится информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
+Теперь Вы должны создать модель блока, Вы можете создать как наследника стандартного блока, примером может послужить камень, так и свою собственную. Вот пример стандартной модели:
 
 ```json
 {
@@ -110,11 +105,11 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getI
     }
 }
 ```
+Если ваша текстура к модели берётся из самого Minecraft, то `tut:`(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру камня из Minecraft.
+Название файла должно быть таким же как и в `blockstates` -> `ideal`, в переменной `model`!
 
-Название файла должно быть таким же как и в `blockstates` -> `best_stone`, в переменной `model`!
 
-
-Теперь Вам надо создать `best_stone.json`. По пути:
+Теперь Вам надо создать `ideal.json`. По пути:
 ```md
 └── src    
     └── main
@@ -124,36 +119,11 @@ Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getI
                     └── models
                         └── item
 ```
-Пример:
 ```json
 {
-    "parent": "tut:block/best_stone"
+    "parent": "tut:block/ideal"
 }
 ```
-
-[Модель](https://yadi.sk/d/n9ehtKYk3LT9qv)
-
-В этом файле будет хранится информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
-
-Если ваша текстура к модели берётся из самого Minecraft, то `tut:`(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру камня из Minecraft.
-
-`tut` - modid нашего мода.
-`best_stone` - регистрируемое имя нашего блока.
-
-Когда ваша модель готово, добавьте её по пути:
-```md
-└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── models
-                        └── block
-```
-
-Добавим в ClientProxy, в метод init такой код  `BlocksRegister.registerRender();`.
-
-И вот, что в конечном итоге у нас может получится.
 
 [![Блок с моделью от первого лица](images/model_face_first.png)](images/model_face_first.png)
 
