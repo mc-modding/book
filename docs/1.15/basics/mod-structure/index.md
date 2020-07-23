@@ -73,7 +73,7 @@ displayName="Tut Example Mod"
 | authors                     | Массив имен авторов                                 																		  | Опционально                                                                                                                                                                         |
 | credits                     | Строка с выражением благодарности кому-то        																		      | Опционально                                                                                                                                                                        |
 | logoFile                    | Путь к логотипу мода                            																	          | Опционально                                                                                                                                                                      |                                                                                                                                                         |
-| [[dependencies.examplemod]] | Одна зависимость далее идут подпараметры:																				      | Опционально
+| [[dependencies.modid]] | Одна зависимость далее идут подпараметры:																				      | Опционально
 |      	modId				  | modid зависимости
 |       mandatory             | Если true то при отсутсвии зависимости игра не загрузится
 |		versionRange          | Диапоон поддерживаемых версий
@@ -94,14 +94,14 @@ authors="WildTan"
 description='''
 Test description for test mod
 '''
-[[dependencies.examplemod]]
+[[dependencies.tut]]
     modId="forge" 
     mandatory=true 
     versionRange="[31,)" 
     ordering="NONE"
 
     side="BOTH"
-[[dependencies.examplemod]]
+[[dependencies.tut]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"
