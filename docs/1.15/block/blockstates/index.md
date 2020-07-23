@@ -45,10 +45,6 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 Вы могли заметить, что вместо пустых ковычек(стандартное состояние) стоит наша переменная с двумя значениями `true` и `false`. А так же указаны модели для состояния `upper=false` и `upper=true`. Зайдём в игру и поставим на наши камни любой блок, откроем меню отладки на кнопку F3 и наведём на наш блок камней и увидим, что значение `upper` стоит на `true`.
 [![С тру](images/state_true.png)](images/state_true.png)
 [![С фолс](images/state_false.png)](images/state_false.png)
-## PropertyEnum
-
-TODO
-
 ## PropertyInteger
 
 В классе блока создадим переменную `IntegerProperty` типа.
@@ -77,8 +73,41 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 ```
 [![С числом](images/state_int.png)](images/state_int.png)
 
+## PropertyEnum
 
+Создадим энум наследующийся от IStringSerializable.
+```java
+public enum  EnumTime implements IStringSerializable
+{
+    WINTER("winter"),  SUMMER("summer"), AUTUMT("autumn"), SPRING("spring");
 
+    public String name = "";
+
+    EnumTime(String nameIn )
+    {
+        name = nameIn;
+    }
+
+    @Override
+    public String getName()
+    {
+        return name;
+    }
+}
+```
+Сам EnumProperty.
+```java
+public static final EnumProperty<EnumTime> TIME = EnumProperty.create("time", EnumTime.class);
+```
+Установим стандартное значение в конструкторе.
+```java
+this.setDefaultState(this.stateContainer.getBaseState().with(TIME, EnumTime.SPRING));
+```
+Метод `fillStateContainer`.
+```java
+@Override
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(TIME);  }
+```
 
 
 
