@@ -101,7 +101,7 @@ public class TutBlocks
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "tut:blocks/best_stone"
+        "all": "tut:blocks/ideal"
     }
 }
 ```
