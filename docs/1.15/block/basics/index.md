@@ -30,28 +30,46 @@ public class IdealBlock extends Block
 
 ## Регистрация
 
-Создадим класс TutBlocks.
+Создадим класс TutBlocks, пустой интерфейс INonItem.
 
 ```java
+@Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TutBlocks
 {
     private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TestMod.MOD_ID);
 
-    public static final RegistryObject<Block> IDEAL = BLOCKS.register("updater",  IdealBlock::new);
+    public static final RegistryObject<Block> IDEAL = BLOCKS.register("ideal",  IdealBlock::new);
 
     public static void register()
     {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+	
+	@SubscribeEvent
+    public static void onRegisterItems(final RegistryEvent.Register<Item> event)
+    {
+        final IForgeRegistry<Item> registry = event.getRegistry();
+        PhoenixBlocks.BLOCKS.getEntries().stream()
+                .map(RegistryObject::get)
+                .filter(block -> !(block instanceof INonItem))
+                .forEach(block -> {
+                    final Item.Properties prop = new Item.Properties().group(Phoenix.PHOENIX);
+                    final BlockItem blockItem = new BlockItem(block, prop);
+                    blockItem.setRegistryName(block.getRegistryName());
+                    registry.register(blockItem);
+                });
+    }
 }
 ```
 
 * `register(block)` - регестрирует блоки.
-* `IDEAL` - обьект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get(): IDEAL.get();
+* `IDEAL` - обьект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get().
+* `onRegisterItems` - регестрирует предметы для блоков которые не наследуют INonItem.
+* `INonItem` - пустой интерфейс для отмены регистрации предмета.
 
-Нам нужно добавить 
-Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Чтобы получить блок пропишите `/give @p tut:best_stone`.
-Вместо `tut` у Вас должен быть `modid` вашего мода! Вместо `best_stone` у Вас должно быть регистрируемое имя вашего блока.
+Нам нужно добавить в конструктор основоного класса TutBlocks.register() для регистрации блоков.
+Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Чтобы получить блок пропишите `/give @p tut:ideal`.
+Вместо `tut` у Вас должен быть `modid` вашего мода! Вместо `ideal` у Вас должно быть регистрируемое имя вашего блока.
 
 [![Блок от первого лица](images/face_first.png)](images/face_first.png)
 
@@ -64,7 +82,7 @@ public class TutBlocks
 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
 ```
 
-Создадим файл `best_stone.json`. По пути:
+Создадим файл `ideal.json`. По пути:
 ```md
 └── src    
     └── main
