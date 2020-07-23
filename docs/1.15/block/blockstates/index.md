@@ -26,49 +26,25 @@ this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valu
 this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(OTHER_STATE, Base_Value));
 ```
 
-Давайте сделаем простой пример использования переменной `BooleanProperty`. Добавим в класс нашего блока метод `getActualState`, `getStateFromMeta`, `getMetaFromState`.
+Давайте сделаем простой пример использования переменной `BooleanProperty`. Добавим в класс нашего блока метод `fillStateContainer`.
 ```java
 @Override
-public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-{
-    Block block = worldIn.getBlockState(pos.up()).getBlock();
-    return state.withProperty(UPPER, Boolean.valueOf(block != Blocks.AIR));
-}
-
-@Override
-public IBlockState getStateFromMeta(int meta)
-{
-    return this.getDefaultState();
-}
-
-@Override
-public int getMetaFromState(IBlockState state)
-{
-    return 0;
-}
-```
-
-Зарегистрируем состояние блоков.
-```java
-@Override
-protected BlockStateContainer createBlockState()
-{
-    return new BlockStateContainer(this, new IProperty[] {UPPER});
-}
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(UPPER);  }
 ```
 
 Перейдём в папку `blockstates` и откроем файл с названием нашего блока
 ```json
 {
-    "variants": {
-        "upper=false": { "model": "tut:best_stone" },
-        "upper=true": { "model": "tut:best_stone_up" }
-    }
+  "variants": {
+    "upper=false": { "model": "tut:block/ideal1" },
+    "upper=true": { "model": "tut:block/ideal2" }
+  }
 }
 ```
 
-Вы могли заметить, что вместо `normal` стоит наша переменная с двумя значениями `true` и `false`. А так же указаны модели для состояния `upper=false` и `upper=true`. Зайдём в игру и поставим на наши камни любой блок, откроем меню отладки на кнопку F3 и наведём на наш блок камней и увидим, что значение `upper` стоит на `true`.
-
+Вы могли заметить, что вместо пустых ковычек(стандартное состояние) стоит наша переменная с двумя значениями `true` и `false`. А так же указаны модели для состояния `upper=false` и `upper=true`. Зайдём в игру и поставим на наши камни любой блок, откроем меню отладки на кнопку F3 и наведём на наш блок камней и увидим, что значение `upper` стоит на `true`.
+[![С тру](images/state_true.png)](images/state_true.png)
+[![С фолс](images/state_false.png)](images/state_false.png)
 ## PropertyEnum
 
 TODO
