@@ -58,7 +58,7 @@ displayName="Tut Example Mod"
 Параметр `displayName` отвечает за красивое название вашего мода. Тут можно использовать все, что угодно. Работать будут и [коды
 форматирования текста](http://minecraft.gamepedia.com/Formatting_codes).
 
-| Параметр                    | Описание     | Обязательность                                                                                                                                                                                                              |
+| Параметр                    | Описание                                                                                                                                                                                                                  |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | modLoader					  | Загрузчик модов. Всегда "javafml" 																							  | Обезательно
 | loaderVersion				  | Версия загрузчика. Лучше не трогать 																						  | Обезательно
@@ -82,17 +82,31 @@ displayName="Tut Example Mod"
 
 Вот пример умеренно заполненного файла:
 
-```json
-[{
-  "modid": "tut",
-  "name": "Tutorial Mod",
-  "description": "This is my SUPER Test Mod. Like it!",
-  "version": "1.0.0.0",
-  "mcversion": "1.12+",
-  "url": "mcmodding.ru/",
-  "authorList": ["GoogleTan", "Someone else"],
-  "credits": "I'd like to thank my mother and father."
-}]
+```toml
+modLoader="javafml"
+loaderVersion="[31,)" 
+[[mods]]
+modId="tut" 
+version="${file.jarVersion}" 
+displayName="Tut Mod" 
+credits="Ivasik" 
+authors="WildTan" 
+description='''
+Test description for test mod
+'''
+[[dependencies.examplemod]]
+    modId="forge" 
+    mandatory=true 
+    versionRange="[31,)" 
+    ordering="NONE"
+
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
 ```
 
 Более подробно о настройке этого файла вы можете прочитать в отдельной статье. Рекомендую обязательно выделить время для этого,
