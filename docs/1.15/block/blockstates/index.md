@@ -5,28 +5,28 @@ description: Добавление собственных состояний бл
 Что такое `Blockstates` или же по простому `состояние блоков`? Данный термин появился в 1.8, состояние блоков позволяет задать определённый параметр блоку, при достижении которого, блок будет менять свою модель. Примером могут послужить: пшеница, датчик дневного света, калитка, забор и т.д. У каждого из этих блоков есть свои состояния, которые применяются в тех или иных ситуациях, и о которых пойдёт речь в данной статье.
 
 В игре существует только 3 типа состояний блоков:
-* `PropertyBool` - логический тип. Хранит в себе логические значения.
+* `BooleanProperty` - логический тип. Хранит в себе логические значения.
 * `PropertyEnum` - перечисляемый тип. Хранит в себе перечисляемые значения.
 * `PropertyInteger` - целочисленный тип. Хранит в себе числа от `0` до `2147483647`. (знак минус применять не рекомендуется, так что весь счёт начинается от 0!)
 
-## PropertyBool
+## BooleanProperty
 
-Перейдём в ранее созданный класс `BlockBestStone` и создадим переменную `PropertyBool` типа.
+Перейдём в ранее созданный класс `IdealBlock` и создадим переменную `BooleanProperty` типа.
 ```java
-public static final PropertyBool UPPER = PropertyBool.create("upper");
+public static final BooleanProperty UPPER = BooleanProperty.create("upper");
 ```
 
 Добавим в конструктор стандартное значение для данной переменной.
 ```java
-this.setDefaultState(this.blockState.getBaseState().withProperty(UPPER, false));
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)));
 ```
 
 Если хотим больше одного типа прописать, то делаем это так:
 ```java
-this.setDefaultState(this.blockState.getBaseState().withProperty(UPPER, false).withProperty(NEXT_TYPE, EnumType));
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(OTHER_STATE, Base_Value));
 ```
 
-Давайте сделаем простой пример использования переменной `PropertyBool`. Добавим в класс нашего блока метод `getActualState`, `getStateFromMeta`, `getMetaFromState`.
+Давайте сделаем простой пример использования переменной `BooleanProperty`. Добавим в класс нашего блока метод `getActualState`, `getStateFromMeta`, `getMetaFromState`.
 ```java
 @Override
 public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)

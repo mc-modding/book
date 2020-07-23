@@ -17,14 +17,14 @@ public class IdealBlock extends Block
     @Override
     public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
     {
-        return ImmutableList.of(new ItemStack(Items.CAKE, 7), new ItemStack(Items.TORCH, 1));
+        return ImmutableList.of(new ItemStack(Items.CAKE, 8), new ItemStack(Items.TORCH, 1));
     }
 }
 ```
 
 * `Material.ROCK` - задаёт материал блоку, т.е. материал будет влиять на ломание блока, звук хождения по нему, а так же на предметы которые могут ломать данный материал.
 * `ToolType.PICKAXE` - задает тип эффективного инструмента.
-* `getDrops` - возвращает все предметы которые должны выпасть с блока.
+* `getDrops` - возвращает список предметов, которые должны выпасть с блока. 8 тортиков и 1 факел.
 
 Также можно вынести Properties в конструктор.
 
