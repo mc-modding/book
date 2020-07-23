@@ -75,7 +75,7 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
   }
 }
 ```
-[![С числом](images/state_true.png)](images/state_int.png)
+[![С числом](images/state_int.png)](images/state_int.png)
 
 
 
