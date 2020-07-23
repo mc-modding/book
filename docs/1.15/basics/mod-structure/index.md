@@ -155,5 +155,5 @@ public class TestMod {
         │       └── ФайлМода.java
         └── resources
             └── META-INF
-				└──mods.toml
+			└──mods.toml
 ```
