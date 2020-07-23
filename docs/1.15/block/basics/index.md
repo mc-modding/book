@@ -125,8 +125,7 @@ public class TutBlocks
 }
 ```
 
-[![Блок с моделью от первого лица](images/model_face_first.png)](images/model_face_first.png)
+[![Блок с моделью на земле](images/model_on_ground.png)](images/model_on_ground.png)
 
 [![Блок с моделью от третьего лица](images/model_face_three.png)](images/model_face_three.png)
 
-[![Блок с моделью на земле](images/model_on_ground.png)](images/model_on_ground.png)
