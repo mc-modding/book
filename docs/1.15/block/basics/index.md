@@ -4,82 +4,51 @@ description: Создание собственного блока.
 
 ## Основа
 
-Создадим класс для нашего предмета.
+Создадим класс для нашего блока.
 
 ```java
-public class BlockBestStone extends Block
+public class IdealBlock extends Block
 {
-    public BlockBestStone(String name)
+    public IdealBlock()
     {
-        super(Material.ROCK);
-        this.setRegistryName(name);
-        this.setUnlocalizedName(name);
+        super(Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE));
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state)
+    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
     {
-        return false;
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
+        return ImmutableList.of(new ItemStack(Items.CAKE, 7), new ItemStack(Items.TORCH, 1));
     }
 }
 ```
 
 * `Material.ROCK` - задаёт материал блоку, т.е. материал будет влиять на ломание блока, звук хождения по нему, а так же на предметы которые могут ломать данный материал.
-* `setRegistryName(name)` - задаёт регистрируемое имя для нашего предмета, т.е. данное имя будет зарегистрировано в игре и его нельзя будет уже использовать более. В игре будет отображаться как `modid:*block_name*`. Чтобы это увидеть нажмите сочетание клавиш `F3+H`
-* `setUnlocalizedName(name)` - задаёт локализационное имя для нашего предмета, т.е. чтобы нам сделать перевод имени для предмета мы задаём имя которое будет в конечном итоге выглядеть вот так `tile.*block_name*.name`.
-* `isOpaqueCube` - этот метод задаёт логическое значение о том, будет ли блок непрозрачным, зададим false чтобы наша модель не создавала эффект X-Ray. Если вы не делаете модель для блока, то можете не переопределять этот метод.
-* `isFullCube` - этот метод задаёт логическое значение о том, будет ли блок полным. Если указано true, то блок будет создавать тень, но это нужно лишь когда ваш блок не имеет модели!
-
-
-Вы так же можете вынести `Material` в параметр конструктора, чтобы можно было задавать разные материалы для других блоков.
+* `ToolType.PICKAXE` - задает тип эффективного инструмента.
+* `getDrops` - возвращает все предметы которые должны выпасть с блока.
+Также можно вынести Properties в конструктор.
 
 ## Регистрация
 
-Создадим класс BlocksRegister.
+Создадим класс TutBlocks.
 
 ```java
-public class BlocksRegister
+public class TutBlocks
 {
-    public static Block BEST_STONE = new BlockBestStone("best_stone");
+    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TestMod.MOD_ID);
+
+    public static final RegistryObject<Block> IDEAL = BLOCKS.register("updater",  IdealBlock::new);
 
     public static void register()
     {
-        setRegister(BEST_STONE);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void registerRender()
-    {
-        setRender(BEST_STONE);
-    }
-
-    private static void setRegister(Block block)
-    {
-        ForgeRegistries.BLOCKS.register(block);
-        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-    }
-
-    @SideOnly(Side.CLIENT)
-    private static void setRender(Block block)
-    {
-
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }
 ```
 
-* `setRegister(block)` - данный метод будет регистрировать наш блок
-* `setRender(block)` - данный метод будет регистрировать модель для нашего блока
+* `register(block)` - регестрирует блоки.
+* `IDEAL` - обьект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get(): IDEAL.get();
 
-Возможно вы заметили, что в методе `setRegister` появился ещё один регистратор в виде предмета. Начиная с 1.9 версии Minecraft, блоки регистрируются в два этапа. Первый этап это сам блок, который ставится и блок в виде предмета.
-
-Нам нужно добавить в CommonProxy, в метод preInit такую строку кода `BlocksRegister.register();`.
-
+Нам нужно добавить 
 Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Чтобы получить блок пропишите `/give @p tut:best_stone`.
 Вместо `tut` у Вас должен быть `modid` вашего мода! Вместо `best_stone` у Вас должно быть регистрируемое имя вашего блока.
 
