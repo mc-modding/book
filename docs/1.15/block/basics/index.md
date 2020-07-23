@@ -44,16 +44,16 @@ public class TutBlocks
     {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
-	
-	@SubscribeEvent
+
+    @SubscribeEvent
     public static void onRegisterItems(final RegistryEvent.Register<Item> event)
     {
         final IForgeRegistry<Item> registry = event.getRegistry();
-        PhoenixBlocks.BLOCKS.getEntries().stream()
+        TutBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
                 .filter(block -> !(block instanceof INonItem))
                 .forEach(block -> {
-                    final Item.Properties prop = new Item.Properties().group(Phoenix.PHOENIX);
+                    final Item.Properties prop = new Item.Properties();
                     final BlockItem blockItem = new BlockItem(block, prop);
                     blockItem.setRegistryName(block.getRegistryName());
                     registry.register(blockItem);
