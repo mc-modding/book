@@ -108,6 +108,15 @@ this.setDefaultState(this.stateContainer.getBaseState().with(TIME, EnumTime.SPRI
 @Override
 protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(TIME);  }
 ```
-
-
-
+И еще раз модифицируем `blcokstate`
+```json
+{
+  "variants": {
+    "time=spring": { "model": "block/oak_leaves" },
+    "time=winter": { "model": "block/ice" },
+    "time=summer": { "model": "block/sand" },
+    "time=autumn": { "model": "block/dirt" }
+  }
+}
+```
+[![С энумом](images/state_enum.png)](images/state_enum.png)
