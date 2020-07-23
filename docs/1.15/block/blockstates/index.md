@@ -108,7 +108,7 @@ this.setDefaultState(this.stateContainer.getBaseState().with(TIME, EnumTime.SPRI
 @Override
 protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(TIME);  }
 ```
-И еще раз модифицируем `blcokstate`
+И еще раз модифицируем `blockstate`
 ```json
 {
   "variants": {
