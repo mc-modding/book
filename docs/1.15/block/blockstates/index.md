@@ -4,11 +4,13 @@ description: Добавление собственных состояний бл
 
 Что такое `Blockstates` или же по простому `состояние блоков`? Данный термин появился в 1.8, состояние блоков позволяет задать определённый параметр блоку, при достижении которого, блок будет менять свою модель. Примером могут послужить: пшеница, датчик дневного света, калитка, забор и т.д. У каждого из этих блоков есть свои состояния, которые применяются в тех или иных ситуациях, и о которых пойдёт речь в данной статье.
 
-В игре существует только 3 типа состояний блоков:
+В игре существует только 4 типа состояний блоков:
 * `BooleanProperty` - логический тип. Хранит в себе логические значения.
 * `PropertyEnum` - перечисляемый тип. Хранит в себе перечисляемые значения.
 * `IntegerProperty` - целочисленный тип. Хранит в себе числа от `0` до `2147483647`. (знак минус применять не рекомендуется, так что весь счёт начинается от 0!)
+* `DirectionProperty` - поворот плока. Хранит в себе Direction.Plane.
 
+Все состояния майнкрафт хранит в `BlockStateProperties`. Там есть половина того что вам может быть нужно.
 ## BooleanProperty
 
 Перейдём в ранее созданный класс `IdealBlock` и создадим переменную `BooleanProperty` типа.
@@ -120,3 +122,63 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 }
 ```
 [![С энумом](images/state_enum.png)](images/state_enum.png)
+## DirectionProperty
+
+На самом деле `DirectionProperty` это сокращение `EnumProperty<Direction>`. Поэтому использование не сильно отличается. Испольуется для создания блоков с поворотом. Создадим `DirectionProperty`.
+```java
+public static final DirectionProperty DIRECTION = DirectionProperty.create("direction", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.UP, Direction.DOWN);
+```
+Установим стандартное значение для установки. И передадим в `fillStateContainer`.
+```java
+this.setDefaultState(this.stateContainer.getBaseState().with(DIRECTION, Direction.UP));
+```
+```java
+@Override
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(DIRECTION);  }
+```
+Чтоб при установке блока он ставился с поворотом предопределим метод getStateForPlacement.
+```java
+@Override
+public BlockState getStateForPlacement(BlockItemUseContext context) {
+    return this.getDefaultState().with(DIRECTION, context.getPlacementHorizontalFacing().rotateY());
+}
+```
+И соответственно изменим `blockstate`.
+```json
+{
+  "variants": {
+    "direction=south": { "model": "tut:block/ideal2" },
+    "direction=west":  { "model": "tut:block/ideal2", "y": 90 },
+    "direction=north": { "model": "tut:block/ideal2", "y": 180 },
+    "direction=east":  { "model": "tut:block/ideal2", "y": 270 },
+    "direction=up":    { "model": "tut:block/ideal2", "x": 180 },
+    "direction=down":  { "model": "tut:block/ideal2", "x": 270 }
+  }
+}
+```
+Модифицируем модельку, чтоб были различные стороны.
+```json
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "tut:blocks/dir_1",
+    "down": "tut:blocks/dir_1",
+    "up": "tut:blocks/dir_2",
+    "north": "tut:blocks/dir_3",
+    "east": "tut:blocks/dir_4",
+    "south": "tut:blocks/dir_5",
+    "west": "tut:blocks/dir_6"
+  }
+}
+```
+[![С поворотом](images/state_dir.png)](images/state_dir.png)
+
+
+
+
+
+
+
+
+
+
