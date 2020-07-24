@@ -172,13 +172,3 @@ public BlockState getStateForPlacement(BlockItemUseContext context) {
 }
 ```
 [![С поворотом](images/state_dir.png)](images/state_dir.png)
-
-
-
-
-
-
-
-
-
-
