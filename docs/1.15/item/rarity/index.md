@@ -28,7 +28,7 @@ description: Создание группы редкости предметов, 
 
 ## Регистрация редкости
 
-Добавим в файл предметов строку:
+Добавим в класс предметов строку:
 
 ```java
 // TutItems.java
@@ -43,7 +43,6 @@ public static Rarity RARITY_TUTORIAL = Rarity.create(name, color);
 
 ```java
 // TutItems.java
-
 public static Rarity RARITY_EPIC = Rarity.create("epic", TextFormatting.DARK_PURPLE);
 ```
 

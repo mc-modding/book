@@ -1,48 +1,54 @@
-description: Починка инструментов.
+description: Прочность инструментов.
 
 # Починка инструментов
 
-В прошлой статье мы создали материал, но так до конца с ним и не разобрались.
-
-Материал из прошлой статьи.
-```java
-public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12);
-```
-
-Казалось бы, инструменты и меч есть, но всё равно чего-то не хватает? Как раз починки, нам и не хватает!
-Возьмём нашу переменную и добавим к ней метод `setRepairItem`.
+В прошлой статье мы создали использовали алмазный тир, но при этом наши инструменты имели характеристики как у алмазных. 
+Давайте это исправим! Создадим перечисление имплиментирующее IItemTier:
 
 ```java
-public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12).setRepairItem(new ItemStack(Blocks.GOLD_BLOCK));
-```
+public enum TutTiers implements IItemTier
+{
+    MAGIC_TIER(4, 2500, 7.2F, 5.0F, 5, Ingredient.fromStacks(new ItemStack(Items.ENCHANTED_BOOK, 5)));
 
-Примеры того, как можно прописать предмет/блок для починки:
+    private final int harvestLevel;
+    private final int maxUses;
+    private final float efficiency;
+    private final float attackDamage;
+    private final int enchantability;
+    private final Ingredient repairMaterial;
+
+    TutTiers(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Ingredient repairMaterialIn) {
+        this.harvestLevel = harvestLevelIn;
+        this.maxUses = maxUsesIn;
+        this.efficiency = efficiencyIn;
+        this.attackDamage = attackDamageIn;
+        this.enchantability = enchantabilityIn;
+        this.repairMaterial = repairMaterialIn;
+    }
+
+    @Override public int getMaxUses()               {  return this.maxUses;        }
+    @Override public float getEfficiency()          {  return this.efficiency;     }
+    @Override public float getAttackDamage()        {  return this.attackDamage;   }
+    @Override public int getHarvestLevel()          {  return this.harvestLevel;   }
+    @Override public int getEnchantability()        {  return this.enchantability; }
+    @Override public Ingredient getRepairMaterial() { return this.repairMaterial;  }
+}
+```
+И так разберем что тут к чему: 
+* `harvestLevel` - Уровень добычи блока.
+* `maxUses` - Количество использований - прочность
+* `efficiency` - Эффективность
+* `attackDamage` - Урон
+* `enchantability` - Лёгкость зачарования.
+* `repairMaterial` - Предмет дял почтинки
+У нас вышел тир, который имеет 4 уровень добычи, 2500 прочности, 7.2 эффективности, 5 урона и чинится 5 зачарованными книгами. Давайте применим его:
 ```java
-/*
- * Помимо блока, мы можем указать предмет через класс Items.*(вместо звёздочки название предмета), метаданные и количество.
- */
-new ItemStack(Blocks.GOLD_BLOCK);
-
-/*
- * Стак с предметом
- */
-new ItemStack(Items.APPLE);
-
-/*
- * Стак с указанием количества предметов необходимых для починки.
- * В данном примере создаётся стак с 25 палками. Если количество равно одному, 
- * то можно не прописывать количество необходимых предметов(см. пример выше)
- */
-new ItemStack(Items.STICK, 25);
-
-/*
- * Стак с указанием метаданных.
- * В данном примере создаётся стак с 1 палкой и метой 2. Если мета вашего предмета 0, 
- * то её также можно не прописывать(см. пример выше)
- */
-new ItemStack(Items.STICK, 1, 2);
+public class ItemToolAxe extends AxeItem
+{
+    public ItemToolAxe()
+    {
+        super(TutTiers.MAGIC_TIER, 8, 1, new Properties().maxStackSize(1));
+    }
+}
 ```
-
-Таким образом мы добавили к нашему материалу предмет, который будет необходим для починки инструментов и меча. Так же вы можете проделать данное действие с ArmorMaterial, задать предмет для починки.
-
-Теперь нам остаётся зайти в игру, изрядно потрепать наши инструменты и меч, и попробовать починить их через наковальню используя блок золота.
+[![Починка](images/repair.png)](images/repair.png)
