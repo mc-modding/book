@@ -40,7 +40,7 @@ public enum TutTiers implements IItemTier
 * `efficiency` - Эффективность
 * `attackDamage` - Урон
 * `enchantability` - Лёгкость зачарования.
-* `repairMaterial` - Предмет дял почтинки
+* `repairMaterial` - Предмет для починки
 У нас вышел тир, который имеет 4 уровень добычи, 2500 прочности, 7.2 эффективности, 5 урона и чинится 5 зачарованными книгами. Давайте применим его:
 ```java
 public class ItemToolAxe extends AxeItem
