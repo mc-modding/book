@@ -33,6 +33,7 @@ Food.Builder() Имеет набор параметров:
 | fastToEat			 	 	  | Отвечает за то быстро ли естся еда.																							 		 |
 | effect                      | Добавляет эффект зелья при сьедании. 																		           				 |
 | build                       | Собирает билдер. Возвращает Food.																							         |  
+
 Продивинутый пример:
 ```java
 public class CoconutItem extends Item
