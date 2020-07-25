@@ -10,12 +10,12 @@ description: Создание группы редкости предметов, 
 
 ## Зачем использовать редкость?
 
-Цвет названия предмета можно установить через .lang файл используя [коды форматирования](http://minecraft.gamepedia.com/Formatting_codes).
+Цвет названия предмета можно установить через .json файл используя [коды форматирования](http://minecraft.gamepedia.com/Formatting_codes).
 
-Вот так можно получить оранжевое название предмета для "Легендарной кирки":
+Вот так можно получить оранжевое название предмета для "Легендарного ключа":
 
 ```markdown
-item.itemTest.name=§6Legendary Pickaxe
+"item.tut.key": "§6Legendary key"
 ```
 
 Но что если вы создаете большой RPG мод, в котором есть легендарные, божественные, невероятные и т.д. предметы?
@@ -31,36 +31,34 @@ item.itemTest.name=§6Legendary Pickaxe
 Добавим в файл предметов строку:
 
 ```java
-// Items.java
-
-public static EnumRarity RARITY_TUTORIAL = EnumHelper.addRarity(name, color, displayName);
+// TutItems.java
+public static Rarity RARITY_TUTORIAL = Rarity.create(name, color);
 ```
 
 Разберем аргументы:
 * `name` (строка) — название класса предмета
 * `color` (`TextFormatting`) — цвет названия предмета
-* `displayName` (строка) — название редкости предмета
 
-Добавим "Легендарную" редкость предметов. Названия должны окрашиваться в золотой цвет:
+Добавим "Эпическую" редкость предметов. Названия должны окрашиваться в пурпурный цвет:
 
 ```java
-// Items.java
+// TutItems.java
 
-public static EnumRarity RARITY_LEGENDARY = EnumHelper.addRarity("RARITY_LEGENDARY", TextFormatting.GOLD, "Legendary");
+public static Rarity RARITY_EPIC = Rarity.create("epic", TextFormatting.DARK_PURPLE);
 ```
 
 ## Применение к предмету
 
-В файле предмета нужно реализовать метод `getRarity`:
+В проперти предмета вызовем метод `rarity`:
 
 ```java
-// ItemTest.java
-
-public EnumRarity getRarity(ItemStack stack) {
-    return Items.RARITY_LEGENDARY; // Созданная нами группа редкости
+// KeyItem.java
+public KeyItem()
+{
+    super(new Properties().rarity(TutItems.RARITY_EPIC));
 }
 ```
 
-Теперь название предмета оранжевого цвета:
+Теперь название предмета пурпурного цвета:
 
-[![Демонстрация оранжевого названия](images/legendary_test.png)](images/legendary_test.png)
+[![Демонстрация пурпурного названия](images/epic_test.png)](images/epic_test.png)
