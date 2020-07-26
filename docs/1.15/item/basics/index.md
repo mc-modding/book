@@ -74,7 +74,7 @@ public class TutItems
 src/main/resources/assets/tut/textures/items
 ```
 
-Запускаем игру и видим, что у нас получилось):
+Запускаем игру и видим, что у нас получилось:
 [![Предмет с моделью от первого лица](images/simple_model.png)](images/simple_model.png)
 
 [![Предмет с моделью от третьего лица](images/simple_model_2.png)](images/simple_model_2.png)
