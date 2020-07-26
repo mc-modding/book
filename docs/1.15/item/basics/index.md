@@ -34,7 +34,7 @@ public class TutItems
 {
     private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, TestMod.MOD_ID);
 
-    public static final RegistryObject<Item> IDEAL = ITEMS.register("key",  KeyItem::new);
+    public static final RegistryObject<Item> KEY = ITEMS.register("key",  KeyItem::new);
 
     public static void register()
     {
