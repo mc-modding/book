@@ -1,31 +1,45 @@
-description: Создание вкладки в креативе.
+description: Создание группы предметов в креативе.
 
-# Создание вкладки в креативе.
+# Создание группы предметов в креативе.
+Создадим класс свойе группы
+```java
+public class TutGroup extends ItemGroup
+{
+    public TutGroup(@Nonnull final String name)
+    {
+        super(name);
+    }
 
+    @Override
+    @Nonnull
+    public ItemStack createIcon() {
+        return new ItemStack(Items.END_PORTAL_FRAME);
+    }
+
+    @Override
+    public boolean hasSearchBar()
+    {
+        return false;// true если нужен поисковик в нашей вкладке.
+    }
+}
+```
 Перейдём в главный класс и добавим переменную:
 ```java
-public static final CreativeTabs CTAB = new CreativeTabs("tut")
-{
-    @Override
-    public ItemStack getTabIconItem()
-    {
-        return new ItemStack(ItemsRegister.KEY);
-    }
-};
+    public static final ItemGroup TUT_TAB = TutGroup(TutMod.MOD_ID);
 ```
 
-* `tut` - это ключ локализации. (см. статью "Локализация")
-* `getTabIconItem` - этот метод возвращает как иконку предмет ключа из нашего мода.
+* `TutMod.MOD_ID` - это ключ локализации. (см. статью "Локализация")
+* `createIcon` - этот метод возвращает как иконку предмет ключа из нашего мода.
 
 [![Вкладка 1](images/tab_1.png)](images/tab_1.png)
 
-Теперь нам нужно добавить туда предметы/блоки. Чтобы это сделать перейдём в класс с предметом, к примеру в `ItemKey` и пропишем в конструктор такой метод:
+Теперь нам нужно добавить туда предметы/блоки. Чтобы это сделать перейдём в класс с предметом, к примеру в `KeyItem` и вызовем в такой метод:
 ```java
-this.setCreativeTab(Tutorial.CTAB);
+super(Item.Properties().group(TutMod.TUT_TAB));
 ```
 
-* `Tutorial` - это наш главный класс.
-* `CTAB` - это наша переменная.
+* `TutMod` - это наш главный класс.
+* `TUT_TAB` - это наша переменная.
 
 Заходим в игру и видим, что наш предмет добавился во вкладку. (С блоками так же)
 
