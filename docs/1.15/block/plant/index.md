@@ -131,7 +131,17 @@ public class CoconutItem extends BlockNamedItem
   "parent": "block/cross",
   "textures": {  "cross": "tut:blocks/palm_4" }
 }
-
 ```
 Теперь нужно добавить текстуры. В соответствии с блокстейтом их должно быть 5,  разместим их по пути "src/main/resources/assets/tut/textures/blocks/palm/". 
-Красота! Результат:
+Результат:
+[![Ченое пятно](images/wrong.png)](images/wrong.png)
+Для того чтоб исправить это, нужно вызвать `RenderTypeLookup::setRenderLayer` в FMLClientSetupEvent
+```java
+    @SubscribeEvent
+    public static void init(FMLClientSetupEvent event)
+    {
+         RenderTypeLookup.setRenderLayer(TutBlocks.PALM.get(), RenderType.getCutout());
+    }
+```
+
+[![резулт](images/demonstration.png)](images/demonstration.png)
