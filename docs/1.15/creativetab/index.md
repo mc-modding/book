@@ -12,8 +12,9 @@ public class TutGroup extends ItemGroup
 
     @Override
     @Nonnull
-    public ItemStack createIcon() {
-        return new ItemStack(Items.END_PORTAL_FRAME);
+    public ItemStack createIcon() 
+    {
+        return new ItemStack(TutItems.KEY);
     }
 
     @Override
