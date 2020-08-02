@@ -11,26 +11,34 @@ description: Создание локализации вещей.
                 └── tut
 ```
 
-Создадим папку `lang`, а в ней файл `ru_ru` формата `.lang`.
+Создадим папку `lang`, а в ней файл `ru_ru` формата `.json`.
 
 !!! важно
     Обратите внимание, что с 1.12+ все файлы ресурсов должны быть в нижнем регистре в противном случаи придётся использовать pack.mcmeta!
 
 Содержание файла:
 ```text
-itemGroup.tut=Tutorial
+{
+  "language": "Russian",
+  "language.region": "Russia",
+  "language.code": "ru_ru",
+  "author": "WildTan",
+  
+    "itemGroup.tut": "Tutorial",
 
-item.key.name=Ключ
+    "item.tut.key": "Ключ",
 
-tile.best_stone.name=Лучший Камень
+    block.tut.best_stone": "Лучший Камень",
+}
 ```
 
 * `itemGroup.*TabName*` - такой вид используется для локализации вкладки в творческом режиме.
-* `item.*ItemName*.name` - такой вид используется для локализации предметов.
-* `tile.*BlockName*.name` - такой вид используется для локализации блока.
+* `item.*modid*.*ItemName*` - такой вид используется для локализации предметов.
+* `block.*modid*.*BlockName*` - такой вид используется для локализации блока.
 
 * `*TabName*` - название вашей вкладки.
 * `*ItemName*` - UnlocalizedName вашего предмета.
 * `*BlockName*` - UnlocalizedName вашего блока.
+* `*modid*` - modid вашего мода
 
 Перейдём в игру и сменим язык на русский. Теперь предметы которые мы указали в файле переведены. Для других языков делается также.
