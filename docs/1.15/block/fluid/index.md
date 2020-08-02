@@ -4,246 +4,140 @@ description: Создание собственной жидкости.
 
 ## Основа
 
-Создадим класс для нашего блока.
+Создадим блок для нашей жидкости.
 
 ```java
-public class IdealBlock extends Block
+public class OilBlock extends FlowingFluidBlock implements INonTab
 {
-    public IdealBlock()
+    public OilBlock() 
     {
-        super(Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE));
+        super(() -> TutFluids.OIL_SOURCE, Block.Properties.create(Material.WATER)
+                .doesNotBlockMovement()
+                .lightValue(15)
+                .hardnessAndResistance(100.0F)
+                .noDrops());
+    }
+}
+```
+Теперь нам нужен класс для нашей жидкости:
+```java
+public abstract class OilFluid extends ForgeFlowingFluid
+{
+    protected OilFluid(Properties properties)
+    {
+        super(properties);
+    }
+
+    public static FluidAttributes.Builder makeAttributes()
+    {
+        ResourceLocation still   = new ResourceLocation(TutMod.MOD_ID, "fluid/oil_still");
+        ResourceLocation flowing = new ResourceLocation(TutMod.MOD_ID, "fluid/oil_flow");
+        return FluidAttributes.builder(still, flowing).rarity(Rarity.EPIC)
+                .density(3000)
+                .viscosity(1200)
+                .color(0x72727272)
+                .luminosity(2);
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
+    protected int getLevelDecreasePerBlock(IWorldReader worldIn)
     {
-        return ImmutableList.of(new ItemStack(Items.CAKE, 8), new ItemStack(Items.TORCH, 1));
+        return 2;
+    }
+
+    public static class Flowing extends OilFluid
+    {
+        public Flowing()
+        {
+            super(new Properties(TutFluids.OIL_SOURCE::get, TutFluids.OIL_FLOWING::get, makeAttributes())
+                    .block(TutBlocks.OIL)
+                    .bucket(TutItems.BUCKET_OIL));
+            setDefaultState(getStateContainer().getBaseState().with(LEVEL_1_8, 7));
+        }
+
+        @Override
+        protected void fillStateContainer(StateContainer.Builder<Fluid, IFluidState> builder)
+        {
+            super.fillStateContainer(builder);
+            builder.add(LEVEL_1_8);
+        }
+
+        @Override  public int getLevel(IFluidState state)     {  return state.get(LEVEL_1_8); }
+        @Override  public boolean isSource(IFluidState state) {  return false;   }
+    }
+
+    public static class Source extends OilFluid
+    {
+        public Source()
+        {
+            super(new Properties(TutFluids.OIL_SOURCE::get, TutFluids.OIL_FLOWING::get, makeAttributes())
+                    .block(TutBlocks.OIL)
+                    .bucket(TutItems.BUCKET_OIL));
+        }
+
+        public int getLevel(IFluidState state)
+        {
+            return 8;
+        }
+        public boolean isSource(IFluidState state)
+        {
+            return true;
+        }
     }
 }
 ```
+И так разберем:
+* `OilFluid` - Абстрактный класс нашей жидкости. Для удобства создание атрибутов я перенесла в отдельный метод.
+    * `still и flowing` - это текстуры жидкости в стоячем и текущем положении соответсвенно.
+    * `density` - это плотность. Отвечает за скорость плавания.
+    * `viscosity` - это вязкость отвечает за скорость растечения жидкости
+    * `color` - это цвет. Нужен для определения цвета дымки. По умолчанию белый.
+    * `luminosity` - это яркость свечения. По умолчанию 0.
+* `getLevelDecreasePerBlock` - это понижение уровня жидкости каждый блок. По умлочанию 1;
+* `Flowing` - Класс текущей жидкости.
+* `Source`  - Класс жидкости источника.
 
-* `create` - Создает Properties с материалом Material.ROCK.
-* `harvestTool` - задает тип эффективного инструмента.
-* `getDrops` - возвращает список предметов, которые должны выпасть с блока. 8 тортиков и 1 факел.
+Увы в новой верии нету форджевского ведра которое любезно будет хранить вашу жидкость. Его надо создать:
+```java
+public class OilBucketItem extends BucketItem
+{
+    public OilBucketItem()
+    {
+        super(TutFluids.OIL_SOURCE::get, new Item.Properties()
+                .containerItem(Items.BUCKET)
+                .maxStackSize(1)
+                .group(ItemGroup.MATERIALS));
+    }
 
-
-Также можно вынести Properties в конструктор.
-Все параметры Properties:
-* `create` - Создает Properties с заданым материалом.
-* `harvestTool` - Задает тип эффективного инструмента.
-* `notSolid` - Для блоков с моделями чтоб не создавать эффект X-rey.
-* `lightValue` - Задает силу свечения.
-* `lootFrom` - Копирует дроп с другово блока.
-* `speedFactor` - Задает множитель скорости(как у льда).
-* `sound` - Звук для хождения.
-* `doesNotBlockMovement` - Делаем недвигаемым для поршня.
-* `hardnessAndResistance` - Задает прочность и взрывоустойчивость
-* `jumpFactor` - Задает множитель прыжка(как блок меда)
-* `noDrops` - Отменяет какой - либо дроп.
-* `slipperiness` - Скользкость(как у льда)
-* `tickRandomly` - Делает блок "случайным" дял обновления(любые растения)
-* `variableOpacity` - отбрасывает ли тень(для блоков с моделькой)
-
+    @Override
+    public ICapabilityProvider initCapabilities(@Nonnull ItemStack stack, @Nullable CompoundNBT nbt)
+    {
+        return new FluidBucketWrapper(stack);
+    }
+}
+```
 ## Регистрация
 
-Создадим класс TutBlocks, пустой интерфейс INonItem.
+Регистрация блока и ведра никак не отличается от стандартной поэтому разбеорем только саму жидкость.
+Создадим класс TutFluids.
 
 ```java
-@Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TutBlocks
+public class TutFluids
 {
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TestMod.MOD_ID);
+    private static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS, TutMod.MOD_ID);
 
-    public static final RegistryObject<Block> IDEAL = BLOCKS.register("ideal",  IdealBlock::new);
+    public static final RegistryObject<FlowingFluid> OIL_SOURCE    = FLUIDS.register("ideal", OilFluid.Source::new);
+    public static final RegistryObject<FlowingFluid> OIL_FLOWING   = FLUIDS.register("oil",   OilFluid.Flowing::new);
 
     public static void register()
     {
-        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-    }
-
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event)
-    {
-        final IForgeRegistry<Item> registry = event.getRegistry();
-        TutBlocks.BLOCKS.getEntries().stream()
-                .map(RegistryObject::get)
-                .filter(block -> !(block instanceof INonItem))
-                .forEach(block -> {
-                    final Item.Properties prop = new Item.Properties();
-                    final BlockItem blockItem = new BlockItem(block, prop);
-                    blockItem.setRegistryName(block.getRegistryName());
-                    registry.register(blockItem);
-                });
+        FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }
 ```
 
-* `register(block)` - регестрирует блоки.
-* `IDEAL` - обьект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get().
-* `onRegisterItems` - регестрирует предметы для блоков которые не наследуют INonItem.
-* `INonItem` - пустой интерфейс для отмены регистрации предмета.
-
-Нам нужно добавить в конструктор основоного класса TutBlocks.register() для регистрации блоков.
-Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Чтобы получить блок пропишите `/give @p tut:ideal`.
-Вместо `tut` у Вас должен быть `modid` вашего мода! Вместо `ideal` у Вас должно быть регистрируемое имя вашего блока.
+Нам нужно добавить в конструктор основоного класса TutFluids.register(). 
 
 [![Блок от первого лица](images/face_first.png)](images/face_first.png)
 
 [![Блок от третьего лица](images/face_three.png)](images/face_three.png)
-
-## Модель
-
-Создадим файл `ideal.json`. По пути:
-```md
-└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── blockstates
-```
-С содержанием:
-```json
-{
-    "variants": {
-        "": { "model": "tut:block/ideal" }
-    }
-}
-```
-В этом файле будет хранится информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
-Теперь вы должны создать модель блока, вы можете создать как наследника стандартного блока, примером может послужить камень, так и свою собственную. Вот пример стандартной модели:
-
-```json
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "tut:blocks/ideal"
-    }
-}
-```
-Если ваша текстура к модели берётся из самого Minecraft, то `tut:`(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру камня из Minecraft.
-Название файла должно быть таким же как и в `blockstates` -> `ideal`, в переменной `model`!
-
-Пример сложной модели(Позаимствован из Туманного мира с разрешением Liahim):
-```json
-{
-    "textures": {
-        "particle": "tut:blocks/campfire_pot",
-        "pot": "tut:blocks/campfire_pot"
-    },
-    "elements": [
-        {
-            "name": "pot D",
-            "from": [  4.5, 6.0,  4.5 ],
-            "to":   [ 11.5, 8.0, 11.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [ 5.0, 14.0, 12.0, 16.0 ] },
-                "east":  { "texture": "#pot", "uv": [ 5.0, 14.0, 12.0, 16.0 ] },
-                "south": { "texture": "#pot", "uv": [ 5.0, 14.0, 12.0, 16.0 ] },
-                "west":  { "texture": "#pot", "uv": [ 5.0, 14.0, 12.0, 16.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 5.0,  7.0, 12.0, 14.0 ] },
-                "down":  { "texture": "#pot", "uv": [ 5.0,  7.0, 12.0, 14.0 ] }
-            }
-        },
-        {
-            "name": "pot N",
-            "from": [  4.5,  7.0, 3.5 ],
-            "to":   [ 11.5, 13.0, 4.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [ 5.0,  0.0, 12.0,  6.0 ] },
-                "east":  { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  6.0 ] },
-                "south": { "texture": "#pot", "uv": [ 5.0,  9.0, 12.0, 15.0 ] },
-                "west":  { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  6.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 5.0,  6.0, 12.0,  7.0 ] },
-                "down":  { "texture": "#pot", "uv": [ 5.0, 15.0, 12.0, 16.0 ] }
-            }
-        },
-        {
-            "name": "pot E",
-            "from": [ 11.5,  7.0,  4.5 ],
-            "to":   [ 12.5, 13.0, 11.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  6.0 ] },
-                "east":  { "texture": "#pot", "uv": [  5.0,  0.0, 12.0,  6.0 ] },
-                "south": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  6.0 ] },
-                "west":  { "texture": "#pot", "uv": [  5.0,  9.0, 12.0, 15.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 12.0,  7.0, 13.0, 14.0 ] },
-                "down":  { "texture": "#pot", "uv": [  5.0, 15.0, 12.0, 16.0 ] }
-            }
-        },
-        {
-            "name": "pot S",
-            "from": [  4.5,  7.0, 11.5 ],
-            "to":   [ 11.5, 13.0, 12.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [ 5.0,  9.0, 12.0, 15.0 ] },
-                "east":  { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  6.0 ] },
-                "south": { "texture": "#pot", "uv": [ 5.0,  0.0, 12.0,  6.0 ] },
-                "west":  { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  6.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 5.0, 14.0, 12.0, 15.0 ] },
-                "down":  { "texture": "#pot", "uv": [ 5.0, 15.0, 12.0, 16.0 ] }
-            }
-        },
-        {
-            "name": "pot W",
-            "from": [ 3.5,  7.0,  4.5 ],
-            "to":   [ 4.5, 13.0, 11.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  6.0 ] },
-                "east":  { "texture": "#pot", "uv": [  5.0,  0.0, 12.0,  6.0 ] },
-                "south": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  6.0 ] },
-                "west":  { "texture": "#pot", "uv": [  5.0,  0.0, 12.0,  6.0 ] },
-                "up":    { "texture": "#pot", "uv": [  4.0,  7.0,  5.0, 14.0 ] },
-                "down":  { "texture": "#pot", "uv": [  5.0, 15.0, 12.0, 16.0 ] }
-            }
-        },
-        {
-            "name": "Handle E",
-            "from": [ 12.5, 12.0, 6.5 ],
-            "to":   [ 13.5, 13.0, 9.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  1.0 ] },
-                "east":  { "texture": "#pot", "uv": [  7.0,  0.0, 10.0,  1.0 ] },
-                "south": { "texture": "#pot", "uv": [  4.0,  0.0,  5.0,  1.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 13.0,  9.0, 14.0, 12.0 ] },
-                "down":  { "texture": "#pot", "uv": [  7.0, 15.0, 10.0, 16.0 ] }
-            }
-        },
-        {
-            "name": "Handle W",
-            "from": [ 2.5, 12.0, 6.5 ],
-            "to":   [ 3.5, 13.0, 9.5 ],
-            "faces": {
-                "north": { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  1.0 ] },
-                "west":  { "texture": "#pot", "uv": [ 7.0,  0.0, 10.0,  1.0 ] },
-                "south": { "texture": "#pot", "uv": [ 4.0,  0.0,  5.0,  1.0 ] },
-                "up":    { "texture": "#pot", "uv": [ 3.0,  9.0,  4.0, 12.0 ] },
-                "down":  { "texture": "#pot", "uv": [ 7.0, 15.0, 10.0, 16.0 ] }
-            }
-        }
-    ]
-}
-```
-
-Теперь Вам надо создать `ideal.json`. По пути:
-```md
-└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── models
-                        └── item
-```
-```json
-{
-    "parent": "tut:block/ideal"
-}
-```
-С простой моделью:
-[![Блок с простой моделью](images/model_on_ground.png)](images/model_on_ground.png)
-Со сложной моделью:
-[![Блок с сложной моделью](images/model_face_three.png)](images/model_face_three.png)
-
-## Дроп через json
-Так же можно устанавливать дроп блока не через `getDrops`, а через json файл. И так создадим папку data в `assets\tut`.
