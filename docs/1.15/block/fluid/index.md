@@ -138,6 +138,25 @@ public class TutFluids
 
 Нам нужно добавить в конструктор основоного класса TutFluids.register(). 
 
-[![Блок от первого лица](images/face_first.png)](images/face_first.png)
+[![Жидкость на земле](images/fluid.png)](images/fluid.png)
 
-[![Блок от третьего лица](images/face_three.png)](images/face_three.png)
+## Эффект при соприкосновении
+
+Давайте у нас будет жидкость волшебная и будет заставлять светиться каждого, кто к ней прикоснется. Для этого в блоке нашей жидкости предопределим метод onEntityCollision.
+
+```java
+    @Override
+    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn)
+    {
+        if(!worldIn.isRemote)//все только на сервере
+        {
+            if(entityIn instanceof LivingEntity)//если существо с сердечками.
+            {
+                LivingEntity livingEntity = (LivingEntity) entityIn;
+                livingEntity.addPotionEffect(new EffectInstance(Effects.GLOWING, 1, 1));
+            }
+        }
+    }
+```
+
+[![Светимость](images/glowing.png)](images/glowing.png)
