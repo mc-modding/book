@@ -21,7 +21,7 @@ description: Разбор и решение проблем, возникающи
 
 [![Решение JAVA_HOME ошибки - 3](images/setup_gradle_3.png)](images/setup_gradle_3.png)
 
-##Идея не грузит ресурсы(текстуры, модели и т.д)
+## Идея не грузит ресурсы(текстуры, модели и т.д)
 
 Иногда Intellij не подгружает ресурсы мода. Есть панацея в виде такой строчки в build.gradle:
 idea.module.inheritOutputDirs = true
