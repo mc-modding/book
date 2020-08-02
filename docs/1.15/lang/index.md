@@ -28,7 +28,7 @@ description: Создание локализации вещей.
 
     "item.tut.key": "Ключ",
 
-    block.tut.best_stone": "Лучший Камень",
+    block.tut.ideal": "Идеальный блок",
 }
 ```
 
@@ -37,8 +37,8 @@ description: Создание локализации вещей.
 * `block.*modid*.*BlockName*` - такой вид используется для локализации блока.
 
 * `*TabName*` - название вашей вкладки.
-* `*ItemName*` - UnlocalizedName вашего предмета.
-* `*BlockName*` - UnlocalizedName вашего блока.
+* `*ItemName*` - RegistryName вашего предмета.
+* `*BlockName*` - RegistryName вашего блока.
 * `*modid*` - modid вашего мода
 
 Перейдём в игру и сменим язык на русский. Теперь предметы которые мы указали в файле переведены. Для других языков делается также.
