@@ -5,7 +5,7 @@ description: Создание группы предметов в креатив�
 ```java
 public class TutGroup extends ItemGroup
 {
-    public TutGroup(@Nonnull final String name)
+    public TutGroup(String name)
     {
         super(name);
     }
@@ -14,7 +14,7 @@ public class TutGroup extends ItemGroup
     @Nonnull
     public ItemStack createIcon() 
     {
-        return new ItemStack(TutItems.KEY);
+        return new ItemStack(TutItems.KEY.get());
     }
 
     @Override
@@ -32,8 +32,6 @@ public class TutGroup extends ItemGroup
 * `TutMod.MOD_ID` - это ключ локализации. (см. статью "Локализация")
 * `createIcon` - этот метод возвращает как иконку предмет ключа из нашего мода.
 
-[![Вкладка 1](images/tab_1.png)](images/tab_1.png)
-
 Теперь нам нужно добавить туда предметы/блоки. Чтобы это сделать перейдём в класс с предметом, к примеру в `KeyItem` и вызовем в такой метод:
 ```java
 super(Item.Properties().group(TutMod.TUT_TAB));
@@ -44,4 +42,4 @@ super(Item.Properties().group(TutMod.TUT_TAB));
 
 Заходим в игру и видим, что наш предмет добавился во вкладку. (С блоками так же)
 
-[![Вкладка 2](images/tab_2.png)](images/tab_2.png)
+[![Вкладка 2](images/tab_3.png)](images/tab_3.png)

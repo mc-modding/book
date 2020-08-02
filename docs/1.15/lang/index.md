@@ -11,7 +11,7 @@ description: Создание локализации вещей.
                 └── tut
 ```
 
-Создадим папку `lang`, а в ней файл `ru_ru` формата `.json`.
+Создадим папку `lang`, а в ней файл `en_us` формата `.json`.
 
 !!! важно
     Обратите внимание, что с 1.12+ все файлы ресурсов должны быть в нижнем регистре в противном случаи придётся использовать pack.mcmeta!
@@ -19,16 +19,14 @@ description: Создание локализации вещей.
 Содержание файла:
 ```text
 {
-  "language": "Russian",
-  "language.region": "Russia",
-  "language.code": "ru_ru",
+  "language": "English",
+  "language.region": "United States",
+  "language.code": "en_us",
   "author": "WildTan",
   
-    "itemGroup.tut": "Tutorial",
-
-    "item.tut.key": "Ключ",
-
-    block.tut.ideal": "Идеальный блок",
+    "itemGroup.tut": "Tut mod",
+    "item.tut.key": "Key",
+    "block.tut.ideal": "Ideal block"
 }
 ```
 
@@ -42,3 +40,6 @@ description: Создание локализации вещей.
 * `*modid*` - modid вашего мода
 
 Перейдём в игру и сменим язык на русский. Теперь предметы которые мы указали в файле переведены. Для других языков делается также.
+
+
+[![Вкладка 2](img/lang.png)](img/lang.png)
