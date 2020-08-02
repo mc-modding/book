@@ -7,9 +7,9 @@ description: Статья о создании собственных агрок�
 
 Давайте создадим класс под названием `PalmeBlock`, который будет унаследован от `CropsBlock`, где предопределим getSeedsItem, getShape, getDrops и getMaxAge.
 ```java
-public class PalmeBlock extends CropsBlock implements INonItem
+public class PalmBlock extends CropsBlock implements INonItem
 {
-    public PalmeBlock()
+    public PalmBlock()
     {
         super(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0, 0).sound(SoundType.CROP));
     }
@@ -67,7 +67,7 @@ public class CoconutItem extends BlockNamedItem
 {
     public CoconutItem()
     {
-        super(TutBlocks.PALME.get(), new Properties()
+        super(TutBlocks.PALM.get(), new Properties()
                 .group(TutMod.TUT_GROUP)
                 .food(
                         new Food.Builder()
@@ -82,35 +82,56 @@ public class CoconutItem extends BlockNamedItem
 ```
 Все теперь сажается и даже ростет! Но ростим мы квадратики. Давайте ростить пальму! 
 
-## Моделька для нашей агрокультуры, используя форджевский формат модели
-
-Теперь нужно создать файл блокстейта для нашей пальмы. Создадим json файл `palme` в папке с блок стейтами. Наследоваться будем от `cross` чтоб плучить красивую модельку крестиком.
+## Моделька для нашей агрокультуры
+Увы в 1.15 убрали forge формат блокстейтов, поэтому используем обычный.
+Теперь нужно создать файл блокстейта для нашей пальмы. Создадим json файл `palm` в папке с блок стейтами. Наследоваться будем от `cross` чтоб плучить красивую модельку крестиком.
 
 ```json
 {
-  "forge_marker": 1,
-  "defaults": 
+  "variants": 
   {
-    "model": "cross"
-  },
-  "variants": {
-    "age": { 
-      "0": { "textures": { "cross": "tut:blocks/palme/stage_0" }},
-      "1": { "textures": { "cross": "tut:blocks/palme/stage_1" }},
-      "2": { "textures": { "cross": "tut:blocks/palme/stage_2" }},
-      "3": { "textures": { "cross": "tut:blocks/palme/stage_3" }},
-      "4": { "textures": { "cross": "tut:blocks/palme/stage_4" }}
-    }
+    "age=0": { "model": "tut:block/palm/stage_0" },
+    "age=1": { "model": "tut:block/palm/stage_1" },
+    "age=2": { "model": "tut:block/palm/stage_2" },
+    "age=3": { "model": "tut:block/palm/stage_3" },
+    "age=4": { "model": "tut:block/palm/stage_4" }
   }
 }
 ```
+Блок `variants` используется для определения текстур, которые должен использовать блок в разный ситуациях. В нашем случае это изменение "age". Подробнее в статье про состояния блоков.
+```json
+{
+  "parent": "block/cross",
+  "textures": {  "cross": "tut:blocks/palm_0" }
+}
 
-Рассмотрим его содержимое подробнее.
+```
+```json
+{
+  "parent": "block/cross",
+  "textures": {  "cross": "tut:blocks/palm_1" }
+}
 
-`forge_marker` определяет версию блокстейта, всегда равен 1.
+```
+```json
+{
+  "parent": "block/cross",
+  "textures": {  "cross": "tut:blocks/palm_2" }
+}
+```
+```json
+{
+  "parent": "block/cross",
+  "textures": { "cross": "tut:blocks/palm_3" }
+}
 
-Блок `defaults` содержит указание на используемую модель. 
-Блок `variants` используется для определения текстур, которые должен использовать блок в разный ситуациях. В нашем случае это изменение "age".
+```
+```json
+{
+  "parent": "block/cross",
+  "textures": {  "cross": "tut:blocks/palm_4" }
+}
 
-Теперь нужно добавить текстуры. В соответствии с блокстейтом их должно быть 5,  разместим их по пути "src/main/resources/assets/tut/textures/blocks/palme/". 
+```
+Теперь нужно добавить текстуры. В соответствии с блокстейтом их должно быть 5,  разместим их по пути "src/main/resources/assets/tut/textures/blocks/palm/". 
 Красота! Результат:
