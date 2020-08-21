@@ -23,9 +23,9 @@ description: Таблица всех событий доступных в Forge 
 | GuiScreenEvent.PotionShiftEvent           | Срабатывает когда зелье активно и требуется смещение GuiInventory.                                          | Да                 |
 | GuiScreenEvent.ActionPerformedEvent.Pre   | Срабатывает до нажатия на GuiButton.                                                                        | Да                 |
 | GuiScreenEvent.ActionPerformedEvent.Post  | Срабатывает после нажатия на GuiButton.                                                                     | Нет                |
-| GuiScreenEvent.MouseInputEvent.Pre        | Срабатывает когда мышка определяется GuiScreen'ом.                                                          | Да                 |
+| GuiScreenEvent.MouseInputEvent.Pre        | Срабатывает когда мышка определяется GuiScreen.                                                          | Да                 |
 | GuiScreenEvent.MouseInputEvent.Post       | Срабатывает после GuiScreen#handleMouseInput при условии, что активный экран не изменился.                  | Да                 |
-| GuiScreenEvent.KeyboardInputEvent.Pre     | Срабатывает когда клавиатура определяется GuiScreen'ом.                                                     | Да                 |
+| GuiScreenEvent.KeyboardInputEvent.Pre     | Срабатывает когда клавиатура определяется GuiScreen.                                                     | Да                 |
 | GuiScreenEvent.KeyboardInputEvent.Post    | Срабатывает после GuiScreen#handleKeyboardInput при условии, что активный экран не изменился.               | Да                 |
 | ModelBakeEvent                            | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                       | Нет                |
 | ModelRegistryEvent                        | Срабатывает когда ModelLoader готов к регистрации моделей.                                                  | Нет                |
@@ -60,7 +60,7 @@ description: Таблица всех событий доступных в Forge 
 | PlaySoundSourceEvent     | Срабатывает когда вызывается метод playSound().              | Нет                |
 | PlayStreamingSourceEvent | Срабатывает когда вызывается метод playSound().              | Нет                |
 | SoundLoadEvent           | Срабатывает когда SoundManager загружает звуки.              | Нет                |
-| SoundSetupEvent          | Срабатывает когда SoundManager производит установку кодеков. | Нет                |
+| SoundSetupEvent          | Срабатывает когда SoundManager производит установку звуков. | Нет                |
 
 ## Чанк менеджер
 | Событие           | Описание                                                         | Возможность отмены |

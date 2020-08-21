@@ -6,10 +6,8 @@ description: Создание собственной брони.
 
 Создадим класс брони ItemMagicArmor.
 ```java
-public class ItemMagicArmor extends ItemArmor
-{
-    public ItemMagicArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn)
-    {
+public class ItemMagicArmor extends ItemArmor {
+    public ItemMagicArmor(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
@@ -23,24 +21,24 @@ public class ItemMagicArmor extends ItemArmor
 
 Создадим наш ArmorMaterial
 ```java
-public static ItemArmor.ArmorMaterial armorMaterial = EnumHelper.addArmorMaterial("tut:armor", "tut:armor", 9, new int[]{2, 4, 6, 3}, 7, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F).setRepairItem(new ItemStack(Item.getItemFromBlock(Blocks.OBSIDIAN)));
+public static final ItemArmor.ArmorMaterial ARMOR_MATERIAL = EnumHelper.addArmorMaterial("tut:armor", "tut:armor", 9, new int[]{2, 4, 6, 3}, 7, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F).setRepairItem(new ItemStack(Item.getItemFromBlock(Blocks.OBSIDIAN)));
 ```
 
-* `tut:armor` - это название нашего материала, лучше указывать ещё modid, чтобы не возникало конфликтов с Minecraft.
+* `tut:armor` - это название нашего материала, лучше указывать ещё modId, чтобы не возникало конфликтов с Minecraft.
 * `tut:armor` - это название текстуры которое будет преобразовано в armor_layer_1 и armor_layer_2. Цифра обозначает индекс рендера.
 * `9` - это прочность брони.
 * `int[]` - это то на сколько будет быстро убавляться прочность одного из элементов брони. С начала идёт шлем = 2, нагрудник = 4, штаны = 6, ботинки = 3. Получается, что при ударе по нашей броне из прочности будет вычитаться для шлема = 2, нагрудника = 4, штанов = 6, ботинок = 3.
-* `7` - это уровень который требуется для получения более лучших чар для брони.
-* `SoundEvents` - это звуки которые будут проигрываться при надевании брони.
+* `7` - это уровень, который требуется для получения более высокого уровня чар
+* `SoundEvents` - это звуки, которые будут проигрываться при надевании брони.
 * `2.0F` - это ударопрочность брони. (Сколько сможет броня поглотить в себя урона)
 
-Зарегистрируем нашу броню. Примерно должно выглядить так
+Зарегистрируем нашу броню. Примерно должно выглядеть так
 ```java
-public static Item
-            BOOTS = new ItemMagicArmor("boots", armorMaterial, 1, EntityEquipmentSlot.FEET),
-            LEGGS = new ItemMagicArmor("leggs", armorMaterial, 2, EntityEquipmentSlot.LEGS),
-            CHESTPLATE = new ItemMagicArmor("chestplate", armorMaterial, 1, EntityEquipmentSlot.CHEST),
-            HEAD = new ItemMagicArmor("head", armorMaterial, 1, EntityEquipmentSlot.HEAD);
+public static final Item
+            BOOTS = new ItemMagicArmor("boots", ARMOR_MATERIAL, 1, EntityEquipmentSlot.FEET),
+            LEGGS = new ItemMagicArmor("leggs", ARMOR_MATERIAL, 2, EntityEquipmentSlot.LEGS),
+            CHESTPLATE = new ItemMagicArmor("chestplate", ARMOR_MATERIAL, 1, EntityEquipmentSlot.CHEST),
+            HEAD = new ItemMagicArmor("head", ARMOR_MATERIAL, 1, EntityEquipmentSlot.HEAD);
 ```
 
 * `boots` - это название элемента брони
@@ -78,8 +76,7 @@ public static Item
 
 Пример моей брони:
 ```java
-public class ArmorModel extends ModelBiped
-{
+public class ArmorModel extends ModelBiped {
     private ModelRenderer RightArm1;
 
     private ModelRenderer LeftArm1;
@@ -101,8 +98,7 @@ public class ArmorModel extends ModelBiped
     private ModelRenderer TorsoArmor1;
     private ModelRenderer TorsoArmor2;
 
-    public ArmorModel(int type)
-    {
+    public ArmorModel(int type) {
         super(0, 0, 128, 128);
 
         RightArm1 = new ModelRenderer(this, 0, 0);
@@ -217,9 +213,8 @@ public class ArmorModel extends ModelBiped
         this.bipedLeftLeg.cubeList.clear();
         this.bipedRightLeg.cubeList.clear();
 
-        //Тип брони 0 - голова, 1 - нагрудник, 2 - штаны, 3 - ботинки
-        switch (type)
-        {
+        // Тип брони 0 - голова, 1 - нагрудник, 2 - штаны, 3 - ботинки
+        switch (type) {
             case 0: break;
             case 1:
                 this.bipedLeftArm.addChild(LeftArm1);
@@ -239,22 +234,16 @@ public class ArmorModel extends ModelBiped
         }
     }
 
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-    {
+    @Override
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         super.render(entity, f, f1, f2, f3, f4, f5);
         setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
 
-    private void setRotation(ModelRenderer model, float x, float y, float z)
-    {
+    private void setRotation(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX = x;
         model.rotateAngleY = y;
         model.rotateAngleZ = z;
-    }
-
-    public void setRotationAngles(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-    {
-        super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
     }
 }
 ```
@@ -269,12 +258,10 @@ this.bipedHead.addChild(Перменная нашего шлема.)
 ```java
 @Override
 @SideOnly(Side.CLIENT)
-public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped model)
-{
-    ModelBiped armorModel = ItemsRegister.armorModels.get(this);
+public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped model) {
+    final ModelBiped armorModel = ItemsRegister.armorModels.get(this);
 
-    if (armorModel != null)
-    {
+    if (armorModel != null) {
         armorModel.bipedHead.showModel = armorSlot == EntityEquipmentSlot.HEAD;
         armorModel.bipedHeadwear.showModel = false;
         armorModel.bipedBody.showModel = armorSlot == EntityEquipmentSlot.CHEST || armorSlot == EntityEquipmentSlot.LEGS;
@@ -293,7 +280,7 @@ public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemSta
 
 Перейдём в класс ItemsRegister и создадим переменную armorModels.
 ```java
-public static final Map<Item, ModelBiped> armorModels = new HashMap<>();
+public static final Map<Item, ModelBiped> ARMOR_MODELS = new HashMap<>();
 ```
 
 Добавим в метод register() такой код:
@@ -304,16 +291,15 @@ BestArmor
            LeggsModel = new BestArmor(2),
            BootsModel = new BestArmor(3);
 
-armorModels.put(HEAD, HeadModel);
-armorModels.put(CHESTPLATE, ArmorModel);
-armorModels.put(LEGGS, LeggsModel);
-armorModels.put(BOOTS, BootsModel);
+ARMOR_MODELS.put(HEAD, HeadModel);
+ARMOR_MODELS.put(CHESTPLATE, ArmorModel);
+ARMOR_MODELS.put(LEGGS, LeggsModel);
+ARMOR_MODELS.put(BOOTS, BootsModel);
 ```
 
 Если вы хотите добавить текстуру к своей броне, то вам нужно создать метод в ItemMagicArmor:
 ```java
-public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type)
-{
+public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
     return "tut:textures/MagicArmor.png";
 }
 ```
