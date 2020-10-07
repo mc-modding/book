@@ -8,24 +8,5 @@ description: Подключение скина своего оффициальн
 
 ## Настройка в Idea
 
-Откройте меню "Run" и выберите пункт "Edit Configurations...".
-
-В левой части открывшегося окна выберите пункт "Minecraft Client" и введите в поле "Program arguments" следующую строку:
-
-`--username=test@mail.ru --password=***`
-
-В строке выше укажите почту на которую была куплена копия Minecraft и пароль вместо звездочек.
-
-[![Настройка загрузки скина в Idea 2](images/off_skin_idea.png){: .border }](images/off_skin_idea.png)
-
-## Настройка в Eclipse
-
-Отройте меню "Run" и выберите пункт "Run Configurations...". В левой части появившегося окна откройте вкладку
-"Java Application". Выберите пункт "[название папки с файлами]_Client". В правой части окна откройте вкладку "Arguments" и
-в поле "Program arguments" вставьте строку:
- 
-`--username=test@mail.ru --password=***`
-
-В строке выше укажите почту на которую была куплена копия Minecraft и пароль вместо звездочек.
-
-[![Настройка загрузки скина в Eclipse](images/off_skin_eclipse.png){: .border }](images/off_skin_eclipse.png)
+Отройте файл build.gralde, там найдите `run { ....`. В графе client найдите строку args добавьте `'--username=еуые@mail.ru', '--password=your_password'`, если такой строки нету, то добавьте:
+```args '--username=еуые@mail.ru', '--password=your_password'```
