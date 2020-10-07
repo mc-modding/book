@@ -77,7 +77,7 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 
 ## PropertyEnum
 
-Создадим энум наследующийся от IStringSerializable.
+Создадим перечисление, наследующиеся от IStringSerializable.
 ```java
 public enum  EnumTime implements IStringSerializable
 {
