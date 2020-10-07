@@ -42,7 +42,7 @@ public net.minecraft.block.Block func_200124_e(ILjava/lang/String;Lnet/minecraft
 ```
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 ```
-Нам надо толкьо заменить имя файла на свое. 
+Нам надо только раскомментировать и заменить имя файла на своё. 
 Теперь остается лишь выполнить сборку и пересобрать проект. В результате вы увидите, что указанные поля и методы имеют `public` модификатор.
 
 Заметки.
