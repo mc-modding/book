@@ -56,7 +56,9 @@ public static final IntegerProperty NUMBER = IntegerProperty.create("number", 0,
 Где 0 минимально значение и 3 максимальное. 
 
 Добавим в конструктор стандартное значение для данной переменной.
+```java
 this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(NUMBER, Integer.valueOf(0)));
+```
 Модифицируем метод `fillStateContainer`.
 ```java
 @Override
