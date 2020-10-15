@@ -246,4 +246,4 @@ public class TutBlocks
 [![Блок с сложной моделью](images/model_face_three.png)](images/model_face_three.png)
 
 ## Дроп через json
-Так же можно устанавливать дроп блока не через `getDrops`, а через json файл. И так создадим папку data в `assets\tut`.
+-- В разработке
