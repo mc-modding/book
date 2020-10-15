@@ -4,9 +4,4 @@ description: Подключение скина своего оффициальн
 
 Если у вас есть купленная Minecraft лицензия, то вы можете указать в параметрах
 запуска свою почту/пароль. В этом случае, ваш никнейм + скин автоматически загрузятся
-при запуске.
-
-## Настройка в Idea
-
-Отройте файл build.gralde, там найдите `run { ....`. В графе client найдите строку args добавьте `'--username=еуые@mail.ru', '--password=your_password'`, если такой строки нету, то добавьте:
-```args '--username=еуые@mail.ru', '--password=your_password'```
+при запуске. Отройте файл build.gralde, там найдите `run { ....`. В графе client найдите строку args добавьте `'--username=еуые@mail.ru', '--password=your_password'`, если такой строки нету, то добавьте: ```args '--username=test@mail.ru', '--password=your_password'```
