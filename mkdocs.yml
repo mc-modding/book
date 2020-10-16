@@ -67,7 +67,7 @@ nav:
             - Прокси: '1.16/basics/proxy/index.md'
             - Сборка мода: '1.16/basics/building-mod/index.md'
         - Дополнительно
-            - Семантическое версионирование: 1.16
+            - Семантическое версионирование: '1.16/other/semantic-versioning/index.md'
 
 theme:
     name: material
