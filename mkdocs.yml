@@ -58,7 +58,8 @@ nav:
     - '1.16':
         - Подготовка:
             - Установка программ: '1.16/preparation/install-program/index.md'
-            - Использование Idea: '1.16/preparation/setup/index.md'
+            - Использование Idea: '1.16/preparation/setup-idea/index.md'
+            - Использование Eclipse: '1.16/preparation/setup-eclipse/index.md'
             - Собственный скин: '1.16/preparation/custom-skin/index.md'
             - Решение проблем: '1.16/preparation/problems/index.md'
         - Основы Forge:
