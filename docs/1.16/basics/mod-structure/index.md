@@ -12,17 +12,6 @@ description: Основные файлы любого Minecraft мода. Для
         └── resources
 ```
 
-Создайте папку "src" и остальные в нашей рабочей директории, где ранее был распакован архив MDK. Idea ии Eclipse автоматически
-узнают названия папок и присвоят им нужное значение.
-
-#### Смысл папок
-
-"src" в полном варианте пишется source и переводится как "Источники/Исходники".
-
-Весь наш мод будет находится внутри этой папки.
-
-Далее идет "main", внутри которого находятся две папки: "java" и "resources".
-
 * В "java" хранится исходный код нашего мода
 * В "resources" хранятся все остальные доп. файлы: картинки, звуки, модели и так далее
 
@@ -32,7 +21,7 @@ description: Основные файлы любого Minecraft мода. Для
 
 Этот файл определяет метаданные нашего мода: идентификатор, название, авторов, зависимости и так далее.
 
-В файле обязательные поля обозначены как "mandatory", остальные являются опциональными.
+В файле обязательные поля обозначены как "mandatory" их необходимо заполнить т.к. у них нет значения по умолчанию, что будет вызывать ошибку, остальные поля являются опциональными.
 
 Минимально правильный mods.toml файл должен содержать следующее:
 
@@ -70,17 +59,16 @@ displayName="exdmplemod"
 
 | Параметр                 | Описание                                                                                                                                                                                                                      |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| modId                    | Идентификатор мода                                                                                                                                                                                                            |
+| modId                    | Идентификатор мода.                                                                                                                                                                                                             |
 | displayName              | Название мода                                                                                                                                                                                                                 |
 | description              | Описание мода в 1-2 абзаца                                                                                                                                                                                                    |
-| version                  | Версия мода Пример: 1.16.3-1.0.0 (версия игры-версия мода)                                                                                                                                                                                                                                                                                                                                                     |
+| version                  | Версия мода. Это должны быть просто числа, разделенные точками, в идеале, соответствующие [семантическому управлению версиями](../other/semantic-versionong/index.md)                                                                                                                                                                                                                                                                                                                                                     |
 | displayURL               | Ссылка на сайт мода                                                                                                                                                                                                           |
 | updateJSONURL            | Ссылка на JSON файл с данными обновлений мода                                                                                                                                                                                 |
 | authors                  | Строка с авторами                                                                                                                                                                                                            |
 | credits                  | Строка с выражением благодарности кому-то                                                                                                                                                                                     |
 | logoFile                 | Путь к логотипу мода                                                                                                                                                                                                          |
-| parent                   | modid родительского мода                                                                                                                                                                                                      |
-| dependencies.examplemod | зависимости мода                                                                                                                                                                            |
+| dependencies | зависимости мода                                                                                                                                                                            |
 
 Вот пример умеренно заполненного файла:
 
@@ -123,24 +111,47 @@ Bla-bla-bla...
 В предыдущем разделе мы изменили файл `mods.toml`. Но игра всё ещё не запустится, в чем можно убедиться, запустив
 клиент. Вам выдаст ошибку, что в файле mods.toml неизвестный modId. Для того, чтобы все заработало, нам нужно перейти в главный файл мода.
 
-Его надо создать в папке "java/com/examplemod/examplemod". Имя директорий строится так: "домен/ваш никнейм/название мода". Если у вас уже есть домен для вашего мода, то отличным названием для пакета будет что-то вроде `ru.ivasik.tutorial`. Если домена у вас нет, вполне подойдет использование вашего никнейма, как название пакета верхнего уровня: `ivasik.tutorial`.
+Он распологается в папке "java/com/examplemod/examplemod".
 
-В моем случае пакет будет называться так: `ru.ivasik.tutorial`.
+Имя директорий строится так: "URL/ваш никнейм/название мода". 
 
-Теперь создадим в нем файл `TestMod.java`. Это и будет главным файлом нашего мода.
+Если у вас есть URL-адрес, связанный с вашим проектом, вы можете использовать его в качестве пакета верхнего уровня. 
+
+Например, аккаунт GitHub.com, вы можете использовать com.github в качестве пакета верхнего уровня. При отсутствии домена вполне подойдет использование вашего никнейма, как название пакета верхнего уровня: `IgorDejavu.tutorial`.
+
+В моем случае пакет будет называться так: `com.IgorDejavu.tutorial`.
+
+Теперь создадим в нем файл `Tutorial.java`. Это и будет главным файлом нашего мода.
 
 Для того, чтобы Forge понял, что данный файл действительно является главным, мы должны добавить к определению класса
 аннотацию `@Mod`:
 
 ```java
-// TestMod.java
+package com.IgorDejavu.tutorial;
 
-package ru.mcmodding.testmod;
-
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@Mod(modid = "tut")
-public class Tutorial {}
+@Mod("tut")
+public class Tutorial {
+	private static final Logger LOGGER = LogManager.getLogger();
+
+	public Tutorial () {
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	private void setup(final FMLCommonSetupEvent event) {}
+
+	private void doClientStuff(final FMLClientSetupEvent event) {}
+}
 ```
 
 Естественно, что поле `modid` в аннотации должно быть равно `modid` в `mods.toml`. В противном случае выведется сообщение о том, что `modId в mods.toml` не найден. И не позволит вам запуститься.

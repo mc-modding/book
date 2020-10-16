@@ -66,6 +66,8 @@ nav:
             - Стадии загрузки мода: '1.16/basics/loading-stages/index.md'
             - Прокси: '1.16/basics/proxy/index.md'
             - Сборка мода: '1.16/basics/building-mod/index.md'
+        - Дополнительно
+            - Семантическое версионирование: 1.16
 
 theme:
     name: material
