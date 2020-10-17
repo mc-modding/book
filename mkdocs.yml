@@ -62,9 +62,7 @@ nav:
             - Решение проблем: '1.12/preparation/problems/index.md'
         - Основы Forge:
             - Структура мода: '1.16/basics/mod-structure/index.md'
-            - Стадии загрузки мода: '1.16/basics/loading-stages/index.md'
-            - Прокси: '1.16/basics/proxy/index.md'
-            - Сборка мода: '1.16/basics/building-mod/index.md'
+            - Организация папок: '1.16/basics/organizing-folders/index.md'
         - Дополнительно:
             - Семантическое версионирование: '1.16/other/semantic-versioning/index.md'
 
