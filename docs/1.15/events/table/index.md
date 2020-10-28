@@ -20,7 +20,7 @@ description: Таблица всех событий доступных в Forge 
 | EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                     | Нет                
 | FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                   | Нет 
 | GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов. | Нет  
-| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал плана.                                                     | Нет  
+| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал эллементы заднего плана.                                   | Нет  
 | GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                            | Да                 
 | GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                         | Да                 |
 | GuiScreenEvent.InitGuiEvent.Post          | Срабатывает после инициализации самого initGui().                                                             | Нет                |
