@@ -7,13 +7,28 @@ description: Таблица всех событий доступных в Forge 
 |-------------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------|
 | ClientChatEvent                           | Срабатывает клиент отправляет сообщение в чате или команду на сервер.                                       | Да                 |
 | ClientChatReceivedEvent                   | Срабатывает когда сообщение отображается на клиенте.                                                        | Нет                |
+| ClientPlayerNetworkEvent.LoggedInEvent    | Срабатывает на клиенте когда игрок подключается к серверу.                                                  | Нет
+|
+| ClientPlayerNetworkEvent.LoggedOutEvent   | Срабатывает на клиенте когда игрок отключается от сервера.                                                  | Нет
+|
+| ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                      | Нет
+|
+| ColorHandlerEvent.Block                   | Используется для регистрации цветных блоков(color handlers).                                                | Нет  
+|
+| ColorHandlerEvent.Item                    | Используется для регистрации цветных предметов(color handlers).                                             | Нет  
+|
 | DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                       | Да                 |
 | EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                 | Да                 |
 | EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                 | Нет                |
 | EntityViewRenderEvent.FogColors           | Событие позволяющие настроить цвет тумана, который будет видеть игрок.                                      | Нет                |
 | EntityViewRenderEvent.CameraSetup         | Событие позволяющие изменять углы поворота камеры. Будет полезно для вращения.                              | Нет                |
 | EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                   | Нет                |
-| FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                 | Нет                |
+| FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                 | Нет 
+|
+| GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов| Нет  
+|
+| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал foreground elements, но до стака в мышке и тултипов      | Нет  
+|
 | GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                          | Да                 |
 | GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                       | Да                 |
 | GuiScreenEvent.InitGuiEvent.Post          | Срабатывает после инициализации самого initGui().                                                           | Нет                |
