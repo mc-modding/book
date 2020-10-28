@@ -27,7 +27,7 @@ description: Таблица всех событий доступных в Forge 
 |
 | GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов. | Нет  
 |
-| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал foreground elements, но до стака в мышке и тултипов.       | Нет  
+| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал плана.                                                     | Нет  
 |
 | GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                            | Да                 |
 | GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                         | Да                 |
