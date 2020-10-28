@@ -3,70 +3,70 @@ description: Таблица всех событий доступных в Forge 
 # Таблица всех доступных событий
 
 ## Клиент
-| Событие                                   | Описание                                                                                                    | Возможность отмены |
-|-------------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------|
-| ClientChatEvent                           | Срабатывает клиент отправляет сообщение в чате или команду на сервер.                                       | Да                 |
-| ClientChatReceivedEvent                   | Срабатывает когда сообщение отображается на клиенте.                                                        | Нет                |
-| ClientPlayerNetworkEvent.LoggedInEvent    | Срабатывает на клиенте когда игрок подключается к серверу.                                                  | Нет
+| Событие                                   | Описание                                                                                                      | Возможность отмены |
+|-------------------------------------------|---------------------------------------------------------------------------------------------------------------|------------------|
+| ClientChatEvent                           | Срабатывает клиент отправляет сообщение в чате или команду на сервер.                                         | Да                 |
+| ClientChatReceivedEvent                   | Срабатывает когда сообщение отображается на клиенте.                                                          | Нет                |
+| ClientPlayerNetworkEvent.LoggedInEvent    | Срабатывает на клиенте когда игрок подключается к серверу.                                                    | Нет
 |
-| ClientPlayerNetworkEvent.LoggedOutEvent   | Срабатывает на клиенте когда игрок отключается от сервера.                                                  | Нет
+| ClientPlayerNetworkEvent.LoggedOutEvent   | Срабатывает на клиенте когда игрок отключается от сервера.                                                    | Нет
 |
-| ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                      | Нет
+| ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                        | Нет
+|  
+| ColorHandlerEvent.Block                   | Используется для регистрации цветных блоков(color handlers).                                                  | Нет  
 |
-| ColorHandlerEvent.Block                   | Используется для регистрации цветных блоков(color handlers).                                                | Нет  
+| ColorHandlerEvent.Item                    | Используется для регистрации цветных предметов(color handlers).                                               | Нет  
 |
-| ColorHandlerEvent.Item                    | Используется для регистрации цветных предметов(color handlers).                                             | Нет  
+| DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                         | Да                 |
+| EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                   | Да                 |
+| EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                   | Нет                |
+| EntityViewRenderEvent.FogColors           | Событие позволяющие настроить цвет тумана, который будет видеть игрок.                                        | Нет                |
+| EntityViewRenderEvent.CameraSetup         | Событие позволяющие изменять углы поворота камеры. Будет полезно для вращения.                                | Нет                |
+| EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                     | Нет                |
+| FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                   | Нет 
 |
-| DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                       | Да                 |
-| EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                 | Да                 |
-| EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                 | Нет                |
-| EntityViewRenderEvent.FogColors           | Событие позволяющие настроить цвет тумана, который будет видеть игрок.                                      | Нет                |
-| EntityViewRenderEvent.CameraSetup         | Событие позволяющие изменять углы поворота камеры. Будет полезно для вращения.                              | Нет                |
-| EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                   | Нет                |
-| FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                 | Нет 
+| GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов. | Нет  
 |
-| GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов| Нет  
+| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал foreground elements, но до стака в мышке и тултипов.       | Нет  
 |
-| GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал foreground elements, но до стака в мышке и тултипов      | Нет  
-|
-| GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                          | Да                 |
-| GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                       | Да                 |
-| GuiScreenEvent.InitGuiEvent.Post          | Срабатывает после инициализации самого initGui().                                                           | Нет                |
-| GuiScreenEvent.DrawScreenEvent.Pre        | Срабатывает до инициализации drawScreen().                                                                  | Да                 |
-| GuiScreenEvent.DrawScreenEvent.Post       | Срабатывает после инициализации drawScreen().                                                               | Нет                |
-| GuiScreenEvent.BackgroundDrawnEvent       | Срабатывает в конце drawDefaultBackground(), что позволяет отрисовать текстуру на фоне, но под подсказками. | Нет                |
-| GuiScreenEvent.PotionShiftEvent           | Срабатывает когда зелье активно и требуется смещение GuiInventory.                                          | Да                 |
-| GuiScreenEvent.ActionPerformedEvent.Pre   | Срабатывает до нажатия на GuiButton.                                                                        | Да                 |
-| GuiScreenEvent.ActionPerformedEvent.Post  | Срабатывает после нажатия на GuiButton.                                                                     | Нет                |
-| GuiScreenEvent.MouseInputEvent.Pre        | Срабатывает когда мышка определяется GuiScreen'ом.                                                          | Да                 |
-| GuiScreenEvent.MouseInputEvent.Post       | Срабатывает после GuiScreen#handleMouseInput при условии, что активный экран не изменился.                  | Да                 |
-| GuiScreenEvent.KeyboardInputEvent.Pre     | Срабатывает когда клавиатура определяется GuiScreen'ом.                                                     | Да                 |
-| GuiScreenEvent.KeyboardInputEvent.Post    | Срабатывает после GuiScreen#handleKeyboardInput при условии, что активный экран не изменился.               | Да                 |
-| ModelBakeEvent                            | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                       | Нет                |
-| ModelRegistryEvent                        | Срабатывает когда ModelLoader готов к регистрации моделей.                                                  | Нет                |
-| MouseEvent                                | Срабатывает на любое действие мыши.                                                                         | Да                 |
-| RenderBlockOverlayEvent                   | Срабатывает когда текстура блока будет наложена на игрока в HUD.                                            | Да                 |
-| RenderGameOverlayEvent.Pre                | Срабатывает когда GuiIngame будет отрисовано.                                                               | Да                 |
-| RenderGameOverlayEvent.Post               | Срабатывает после отрисовки GuiIngame.                                                                      | Нет                |
-| RenderGameOverlayEvent.BossInfo           | Срабатывает когда информация о боссе будет отрисована в GuiIngame.                                          | Да                 |
-| RenderGameOverlayEvent.Text               | Срабатывает когда текст будет отрисован в GuiIngame.                                                        | Да                 |
-| RenderGameOverlayEvent.Chat               | Срабатывает когда чат будет отрисован в GuiIngame.                                                          | Да                 |
-| RenderHandEvent                           | Срабатывает когда до рендера рук. При отмене руки не отрисовываются!                                        | Да                 |
-| RenderItemInFrameEvent                    | Срабатывает когда предмет рендериться в рамке для предмета.                                                 | Да                 |
-| RenderLivingEvent.Pre, RLE.Specials.Pre   | Срабатывает когда модель сущности рендериться.                                                              | Да                 |
-| RenderLivingEvent.Post, RLE.Specials.Post | Срабатывает когда модель сущности зарендерилась.                                                            | Нет                |
-| RenderPlayerEvent.Pre, RPE.Specials.Pre   | Срабатывает когда модель игрока рендериться.                                                                | Да                 |
-| RenderPlayerEvent.Post, RPE.Specials.Post | Срабатывает когда модель игрока зарендерилась.                                                              | Нет                |
-| RenderPlayerEvent.SetArmorModel           | Срабатывает когда игрок надевает броню.                                                                     | Нет                |
-| RenderSpecificHandEvent                   | Срабатывает когда рендериться рука от первого лица.                                                         | Да                 |
-| RenderTooltipEvent.Pre                    | Срабатывает до отрисовки подсказки.                                                                         | Да                 |
-| RenderTooltipEvent.Post                   | Срабатывает после отрисовки подсказки.                                                                      | Нет                |
-| RenderTooltipEvent.PostBackground         | Срабатывает после фона подсказки, но до текста.                                                             | Нет                |
-| RenderTooltipEvent.PostText               | Срабатывает после отрисовки текста, но перед GL States сбрасывается.                                        | Нет                |
-| RenderWorldLastEvent                      | Срабатывает до того, как мир будет отрисован.                                                               | Нет                |
-| ScreenshotEvent                           | Срабатывает до и после того, как был получен скриншот.                                                      | Да                 |
-| TextureStitchEvent.Pre                    | Срабатывает когда TextureMap начинает обновление текстур.                                                   | Нет                |
-| TextureStitchEvent.Post                   | Срабатывает когда TextureMap завершает обновление текстур.                                                  | Нет                |
+| GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                            | Да                 |
+| GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                         | Да                 |
+| GuiScreenEvent.InitGuiEvent.Post          | Срабатывает после инициализации самого initGui().                                                             | Нет                |
+| GuiScreenEvent.DrawScreenEvent.Pre        | Срабатывает до инициализации drawScreen().                                                                    | Да                 |
+| GuiScreenEvent.DrawScreenEvent.Post       | Срабатывает после инициализации drawScreen().                                                                 | Нет                |
+| GuiScreenEvent.BackgroundDrawnEvent       | Срабатывает в конце drawDefaultBackground(), что позволяет отрисовать текстуру на фоне, но под подсказками.   | Нет                |
+| GuiScreenEvent.PotionShiftEvent           | Срабатывает когда зелье активно и требуется смещение GuiInventory.                                            | Да                 |
+| GuiScreenEvent.ActionPerformedEvent.Pre   | Срабатывает до нажатия на GuiButton.                                                                          | Да                 |
+| GuiScreenEvent.ActionPerformedEvent.Post  | Срабатывает после нажатия на GuiButton.                                                                       | Нет                |
+| GuiScreenEvent.MouseInputEvent.Pre        | Срабатывает когда мышка определяется GuiScreen'ом.                                                            | Да                 |
+| GuiScreenEvent.MouseInputEvent.Post       | Срабатывает после GuiScreen#handleMouseInput при условии, что активный экран не изменился.                    | Да                 |
+| GuiScreenEvent.KeyboardInputEvent.Pre     | Срабатывает когда клавиатура определяется GuiScreen'ом.                                                       | Да                 |
+| GuiScreenEvent.KeyboardInputEvent.Post    | Срабатывает после GuiScreen#handleKeyboardInput при условии, что активный экран не изменился.                 | Да                 |
+| ModelBakeEvent                            | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                         | Нет                |
+| ModelRegistryEvent                        | Срабатывает когда ModelLoader готов к регистрации моделей.                                                    | Нет                |
+| MouseEvent                                | Срабатывает на любое действие мыши.                                                                           | Да                 |
+| RenderBlockOverlayEvent                   | Срабатывает когда текстура блока будет наложена на игрока в HUD.                                              | Да                 |
+| RenderGameOverlayEvent.Pre                | Срабатывает когда GuiIngame будет отрисовано.                                                                 | Да                 |
+| RenderGameOverlayEvent.Post               | Срабатывает после отрисовки GuiIngame.                                                                        | Нет                |
+| RenderGameOverlayEvent.BossInfo           | Срабатывает когда информация о боссе будет отрисована в GuiIngame.                                            | Да                 |
+| RenderGameOverlayEvent.Text               | Срабатывает когда текст будет отрисован в GuiIngame.                                                          | Да                 |
+| RenderGameOverlayEvent.Chat               | Срабатывает когда чат будет отрисован в GuiIngame.                                                            | Да                 |
+| RenderHandEvent                           | Срабатывает когда до рендера рук. При отмене руки не отрисовываются!                                          | Да                 |
+| RenderItemInFrameEvent                    | Срабатывает когда предмет рендериться в рамке для предмета.                                                   | Да                 |
+| RenderLivingEvent.Pre, RLE.Specials.Pre   | Срабатывает когда модель сущности рендериться.                                                                | Да                 |  
+| RenderLivingEvent.Post, RLE.Specials.Post | Срабатывает когда модель сущности зарендерилась.                                                              | Нет                |
+| RenderPlayerEvent.Pre, RPE.Specials.Pre   | Срабатывает когда модель игрока рендериться.                                                                  | Да                 |
+| RenderPlayerEvent.Post, RPE.Specials.Post | Срабатывает когда модель игрока зарендерилась.                                                                | Нет                |
+| RenderPlayerEvent.SetArmorModel           | Срабатывает когда игрок надевает броню.                                                                       | Нет                |
+| RenderSpecificHandEvent                   | Срабатывает когда рендериться рука от первого лица.                                                           | Да                 |
+| RenderTooltipEvent.Pre                    | Срабатывает до отрисовки подсказки.                                                                           | Да                 |
+| RenderTooltipEvent.Post                   | Срабатывает после отрисовки подсказки.                                                                        | Нет                |
+| RenderTooltipEvent.PostBackground         | Срабатывает после фона подсказки, но до текста.                                                               | Нет                | 
+| RenderTooltipEvent.PostText               | Срабатывает после отрисовки текста, но перед GL States сбрасывается.                                          | Нет                |
+| RenderWorldLastEvent                      | Срабатывает до того, как мир будет отрисован.                                                                 | Нет                |
+| ScreenshotEvent                           | Срабатывает до и после того, как был получен скриншот.                                                        | Да                 |
+| TextureStitchEvent.Pre                    | Срабатывает когда TextureMap начинает обновление текстур.                                                     | Нет                |
+| TextureStitchEvent.Post                   | Срабатывает когда TextureMap завершает обновление текстур.                                                    | Нет                |
 
 ## Звуки
 | Событие                  | Описание                                                     | Возможность отмены |
