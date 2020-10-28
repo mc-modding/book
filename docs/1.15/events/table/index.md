@@ -11,9 +11,7 @@ description: Таблица всех событий доступных в Forge 
 | ClientPlayerNetworkEvent.LoggedOutEvent   | Срабатывает на клиенте когда игрок отключается от сервера.                                                    | Нет
 | ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                        | Нет
 | ColorHandlerEvent.Block                   | Используется для регистрации цветных блоков(color handlers).                                                  | Нет  
-|
 | ColorHandlerEvent.Item                    | Используется для регистрации цветных предметов(color handlers).                                               | Нет  
-|
 | DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                         | Да                 |
 | EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                   | Да                 |
 | EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                   | Нет                |
