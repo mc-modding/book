@@ -8,7 +8,6 @@ description: Таблица всех событий доступных в Forge 
 | ClientChatEvent                           | Срабатывает клиент отправляет сообщение в чате или команду на сервер.                                         | Да                 |
 | ClientChatReceivedEvent                   | Срабатывает когда сообщение отображается на клиенте.                                                          | Нет                |
 | ClientPlayerNetworkEvent.LoggedInEvent    | Срабатывает на клиенте когда игрок подключается к серверу.                                                    | Нет
-|
 | ClientPlayerNetworkEvent.LoggedOutEvent   | Срабатывает на клиенте когда игрок отключается от сервера.                                                    | Нет
 |
 | ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                        | Нет
