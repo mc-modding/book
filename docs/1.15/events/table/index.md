@@ -48,9 +48,11 @@ description: Таблица всех событий доступных в Forge 
 | InputEvent.MouseInputEvent                   | Срабатывает до любой обработки нажатия кнопки мыши.                                                           | Да              |
 | InputEvent.MouseScrollEvent                  | Срабатывает при скролле мыши за пределами гуи.                                                                | Да              |
 | InputEvent.KeyInputEvent                     | Срабатывает при нажатии кнопки на клавиатуре.                                                                 | Да              |
+| InputUpdateEvent                             | Срабатывает перед обновлением  ввода для управления игрока.                                                   | Да              |
 | ModelBakeEvent                               | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                         | Нет                |
 | ModelRegistryEvent                           | Срабатывает когда ModelLoader готов к регистрации моделей.                                                    | Нет                |
-| MouseEvent                                   | Срабатывает на любое действие мыши.                                                                           | Да                 | 
+| ParticleFactoryRegisterEvent                 | Срабатывает когда нужно регестрировать ParticleFactory.                                                       | Нет                |
+| RecipesUpdatedEvent                          | Срабатывает при синхронизации рецептом между сервером и клиентом.                                             | Нет                |
 | RenderBlockOverlayEvent                      | Срабатывает когда текстура блока будет наложена на игрока в HUD.                                              | Да                 |
 | RenderGameOverlayEvent.Pre                   | Срабатывает когда GuiIngame будет отрисовано.                                                                 | Да                 |
 | RenderGameOverlayEvent.Post                  | Срабатывает после отрисовки GuiIngame.                                                                        | Нет                |
