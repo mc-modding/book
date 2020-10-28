@@ -12,19 +12,16 @@ description: Таблица всех событий доступных в Forge 
 | ClientPlayerNetworkEvent.RespawnEvent     | Срабатывает на клиенте когда игрок перерождается или меняет измерение.                                        | Нет
 | ColorHandlerEvent.Block                   | Используется для регистрации цветных блоков(color handlers).                                                  | Нет  
 | ColorHandlerEvent.Item                    | Используется для регистрации цветных предметов(color handlers).                                               | Нет  
-| DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                         | Да                 |
-| EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                   | Да                 |
-| EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                   | Нет                |
-| EntityViewRenderEvent.FogColors           | Событие позволяющие настроить цвет тумана, который будет видеть игрок.                                        | Нет                |
-| EntityViewRenderEvent.CameraSetup         | Событие позволяющие изменять углы поворота камеры. Будет полезно для вращения.                                | Нет                |
-| EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                     | Нет                |
+| DrawBlockHighlightEvent                   | Срабатывает когда блок выделяется при наведении мыши.                                                         | Да                 
+| EntityViewRenderEvent.FogDensity          | Событие позволяющие настроить плотность тумана, которую будет видеть игрок.                                   | Да                 
+| EntityViewRenderEvent.RenderFogEvent      | Событие позволяющие изменить рендер тумана.                                                                   | Нет                
+| EntityViewRenderEvent.FogColors           | Событие позволяющие настроить цвет тумана, который будет видеть игрок.                                        | Нет                
+| EntityViewRenderEvent.CameraSetup         | Событие позволяющие изменять углы поворота камеры. Будет полезно для вращения.                                | Нет                
+| EntityViewRenderEvent.FOVModifier         | Событие позволяющие изменять угол обзора(FOV) игрока. Будет полезно для создания прицела.                     | Нет                
 | FOVUpdateEvent                            | Срабатывает когда вызывается FOV множитель.                                                                   | Нет 
-|
 | GuiContainerEvent.DrawForeground          | Срабатывает после того, как GuiContainer отрисовал эллементы переднего плана, но до стака в мышке и тултипов. | Нет  
-|
 | GuiContainerEvent.DrawBackground          | Срабатывает после того, как GuiContainer отрисовал плана.                                                     | Нет  
-|
-| GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                            | Да                 |
+| GuiOpenEvent                              | Срабатывает когда GUI открывается.                                                                            | Да                 
 | GuiScreenEvent.InitGuiEvent.Pre           | Срабатывает после инициализации GuiScreen#MC, GuiScreen#FontRenderer.                                         | Да                 |
 | GuiScreenEvent.InitGuiEvent.Post          | Срабатывает после инициализации самого initGui().                                                             | Нет                |
 | GuiScreenEvent.DrawScreenEvent.Pre        | Срабатывает до инициализации drawScreen().                                                                    | Да                 |
