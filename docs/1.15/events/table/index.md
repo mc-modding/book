@@ -32,7 +32,6 @@ description: Таблица всех событий доступных в Forge 
 | GuiScreenEvent.ActionPerformedEvent.Post    | Срабатывает после нажатия на GuiButton.                                                                       | Нет                |
 | GuiScreenEvent.MouseClickedEvent.Pre        | Срабатывает после нажатия кнопки мышки, но перед обработкой клика GuiScreen'ом                                | Да                 |
 | GuiScreenEvent.MouseClickedEvent.Post       | Срабатывает после IGuiEventListener#mouseClicked(double, double, int).                                        | Да   
-|
 | GuiScreenEvent.MouseReleasedEvent.Pre       | Срабатывает после отжатия кнопки мыши, но перед обработкой клика GuiScreen'ом                                 | Да                 | 
 | GuiScreenEvent.MouseReleasedEvent.Post      | Срабатывает после IGuiEventListener#mouseReleased(double, double, int).                                       | Да              |
 | GuiScreenEvent.MouseDragEvent.Pre           | Срабатывает перед IGuiEventListener#mouseDragged(double, double, int, double, double)                         | Да                 | 
