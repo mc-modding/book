@@ -38,10 +38,16 @@ description: Таблица всех событий доступных в Forge 
 | GuiScreenEvent.MouseDragEvent.Post           | Срабатывает после IGuiEventListener#mouseDragged(double, double, int, double, double).                        | Да              |
 | GuiScreenEvent.MouseScrollEvent.Pre          | Срабатывает при повороте колесика мыши и перед IGuiEventListener#mouseScrolled(double).                       | Да                 | 
 | GuiScreenEvent.MouseScrollEvent.Post         | Срабатывает при повороте колесика мыши и после IGuiEventListener#mouseScrolled(double).                       | Да              |
-| GuiScreenEvent.KeyboardKeyPressedEvent.Pre   | Срабатывает когда ввод с клавиатуры определяется GuiScreen'ом, но до IGuiEventListener#keyPressed(int, int, int)                                                 | Да                 |
-| GuiScreenEvent.KeyboardKeyPressedEvent.Post  | Срабатывает после GuiScreen#handleKeyboardInput при условии, что активный экран не изменился.                 | Да                 |
-| GuiScreenEvent.KeyboardKeyReleasedEvent.Pre  | Срабатывает когда клавиатура определяется GuiScreen'ом.                                                       | Да                 |
-| GuiScreenEvent.KeyboardKeyReleasedEvent.Post | Срабатывает после GuiScreen#handleKeyboardInput при условии, что активный экран не изменился.                 | Да                 |
+| GuiScreenEvent.KeyboardKeyPressedEvent.Pre   | Срабатывает когда ввод с клавиатуры определяется GuiScreen'ом, но до IGuiEventListener#keyPressed(int, int, int).                                                 | Да                 |
+| GuiScreenEvent.KeyboardKeyPressedEvent.Post  | Срабатывает когда ввод с клавиатуры определяется GuiScreen'ом, и после IGuiEventListener#keyPressed(int, int, int).             | Да                 |
+| GuiScreenEvent.KeyboardKeyReleasedEvent.Pre  | Срабатывает когда ввод с клавиатуры определяется GuiScreen'ом, но до IGuiEventListener#keyReleased(int, int, int).    | Да                 |
+| GuiScreenEvent.KeyboardKeyReleasedEvent.Post | Срабатывает когда ввод с клавиатуры определяется GuiScreen'ом, и после IGuiEventListener#keyReleased(int, int, int).  | Да                 |
+| GuiScreenEvent.KeyboardCharTypedEvent.Pre    | Срабатывает при нажатии символа на клавиатуре, но перед IGuiEventListener#charTyped(char, int).               | Да              |
+| GuiScreenEvent.KeyboardCharTypedEvent.Post   | Срабатывает при нажатии символа на клавиатуре, и после IGuiEventListener#charTyped(char, int).                | Да              |
+| InputEvent.RawMouseEvent/ClickInputEvent     | Срабатывает до любой обработки нажатия клавиши/кнопки.                                                        | Да              |
+| InputEvent.MouseInputEvent                   | Срабатывает до любой обработки нажатия кнопки мыши.                                                           | Да              |
+| InputEvent.MouseScrollEvent                  | Срабатывает при скролле мыши за пределами гуи.                                                                | Да              |
+| InputEvent.KeyInputEvent                     | Срабатывает при нажатии кнопки на клавиатуре.                                                                 | Да              |
 | ModelBakeEvent                               | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                         | Нет                |
 | ModelRegistryEvent                           | Срабатывает когда ModelLoader готов к регистрации моделей.                                                    | Нет                |
 | MouseEvent                                   | Срабатывает на любое действие мыши.                                                                           | Да                 | 
