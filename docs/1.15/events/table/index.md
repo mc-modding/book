@@ -48,11 +48,12 @@ description: Таблица всех событий доступных в Forge 
 | InputEvent.MouseInputEvent                   | Срабатывает до любой обработки нажатия кнопки мыши.                                                           | Да              |
 | InputEvent.MouseScrollEvent                  | Срабатывает при скролле мыши за пределами гуи.                                                                | Да              |
 | InputEvent.KeyInputEvent                     | Срабатывает при нажатии кнопки на клавиатуре.                                                                 | Да              |
-| InputUpdateEvent                             | Срабатывает перед обновлением  ввода для управления игрока.                                                   | Да              |
+| InputUpdateEvent                             | Срабатывает перед обновлением  ввода для управления игрока.                                                   | Нет              |
 | ModelBakeEvent                               | Срабатывает когда ModelManager уведомляет ResourceManager об обновлении/перезагрузке.                         | Нет                |
 | ModelRegistryEvent                           | Срабатывает когда ModelLoader готов к регистрации моделей.                                                    | Нет                |
 | ParticleFactoryRegisterEvent                 | Срабатывает когда нужно регестрировать ParticleFactory.                                                       | Нет                |
 | RecipesUpdatedEvent                          | Срабатывает при синхронизации рецептом между сервером и клиентом.                                             | Нет                |
+| PlayerSPPushOutOfBlocksEvent                 | Срабатывает перед вызовом pushOutOfBlocks в EntityPlayerSP                                                   | Нет                |
 | RenderBlockOverlayEvent                      | Срабатывает когда текстура блока будет наложена на игрока в HUD.                                              | Да                 |
 | RenderGameOverlayEvent.Pre                   | Срабатывает когда GuiIngame будет отрисовано.                                                                 | Да                 |
 | RenderGameOverlayEvent.Post                  | Срабатывает после отрисовки GuiIngame.                                                                        | Нет                |
@@ -65,12 +66,14 @@ description: Таблица всех событий доступных в Forge 
 | RenderLivingEvent.Post, RLE.Specials.Post    | Срабатывает когда модель сущности зарендерилась.                                                              | Нет                |
 | RenderPlayerEvent.Pre, RPE.Specials.Pre      | Срабатывает когда модель игрока рендериться.                                                                  | Да                 |
 | RenderPlayerEvent.Post, RPE.Specials.Post    | Срабатывает когда модель игрока зарендерилась.                                                                | Нет                |
+| RenderNameplateEvent                         | Срабатывает при отрисвоки тега или имени игрока.                                                              | Нет                |
 | RenderPlayerEvent.SetArmorModel              | Срабатывает когда игрок надевает броню.                                                                       | Нет                |
 | RenderSpecificHandEvent                      | Срабатывает когда рендериться рука от первого лица.                                                           | Да                 |
 | RenderTooltipEvent.Pre                       | Срабатывает до отрисовки подсказки.                                                                           | Да                 |
 | RenderTooltipEvent.Post                      | Срабатывает после отрисовки подсказки.                                                                        | Нет                |
 | RenderTooltipEvent.PostBackground            | Срабатывает после фона подсказки, но до текста.                                                               | Нет                | 
 | RenderTooltipEvent.PostText                  | Срабатывает после отрисовки текста, но перед GL States сбрасывается.                                          | Нет                | 
+| RenderTooltipEvent.Color                     | Срабатывает после определения цвета тултипа.                                                                  | Нет                | 
 | RenderWorldLastEvent                         | Срабатывает до того, как мир будет отрисован.                                                                 | Нет                |
 | ScreenshotEvent                              | Срабатывает до и после того, как был получен скриншот.                                                        | Да                 |
 | TextureStitchEvent.Pre                       | Срабатывает когда TextureMap начинает обновление текстур.                                                     | Нет                |
