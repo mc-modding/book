@@ -1,145 +1,51 @@
-description: Обычный блок не может уникальные данные. Если мы хотим что бы наш блок содержал уникальные данные для каждого отдельно взятого экземпляра нам нужно использовать TileEntity.
+description: Создаие и использование TileEntity.
 
 # Tile Entitie
 
-_Гайд перевел и дополнил пользователь форума — [AustereTony](https://forum.mcmodding.ru/members/austeretony.7279/)._
+В Майнкрафте класс `Block` используется для представления не просто единичного блока в мире, а блока как типа. Экземпляр `Block` содержит свойства для каждого экземпляра блока в мире. Если мы хотим что бы наш блок содержал уникальные данные/свойстава/GUI для каждого экземпляра нужно использовать `TileEntity`.
 
-В данной статье я предоставляю свой перевод гайда с сайта shadowfacts по работе с TileEntity. Исходники примера доступны [тут](https://github.com/AustereTony/Guides/tree/master/1.12.2/Tile%20Entities/Counter).
-
-В Майнкрафте класс `Block` используется для представления не просто единичного блока в мире, а блока как типа. Инстанс (экземпляр) `Block` содержит свойства для каждого экземпляра вашего блока, существующего в мире. Если мы хотим что бы наш блок содержал уникальные данные для каждого отдельно взятого экземпляра нам нужно использовать `TileEntity`.
-
-Существует распространённый миф что `TileEntity` это плохо, особенно для производительности. Это не так. Они могут негативно влиять на производительность если они реализованы не умело, как в прочем и любые другие объекты.
-
-Тайлы бывают двух типов: обновляющиеся (_ticking_) и не обновляющиеся (_non-ticking_). Обновляющиеся тайлы обновляются каждый игровой тик (обычно 20 раз в секунду). Они влияют на производительность интенсивнее и требуют аккуратной реализации. Не обновляющиеся тайлы существуют для простого хранения данных и в этом туториале мы создадим простой, не обновляющийся `TileEntity`.
-
-## Вспомогательные средства
-
-Прежде чем мы создадим тайл, мы добавим класс, который упростит их создание в будущем.
-
-В первую очередь создадим класс `BlockTileEntity`:
-
-```java
-// ru.austeretony.counter.block.tile.BlockTileEntity.java
-
-public abstract class BlockTileEntity<T extends TileEntity> extends BaseBlock {
-
-    public BlockTileEntity(String name, Material material, float hardness, float resistanse, SoundType soundType) {
- 
-        super(name, material, hardness, resistanse, soundType);
-    }
-
-    public abstract Class<T> getTileEntityClass();
-
-    public T getTileEntity(IBlockAccess world, BlockPos position) {
- 
-        return (T) world.getTileEntity(position);
-    }
-
-    @Override
-    public boolean hasTileEntity(IBlockState blockState) {
- 
-        return true;
-    }
-
-    @Nullable
-    @Override
-    public abstract T createTileEntity(World world, IBlockState blockState);
-}
-```
-
-Этот класс предоставляет нам следующее:
-* Он расширяет `BaseBlock`, содержащий нашу удобную базовую реализацию `Block`
-```java
-// ru.austeretony.counter.block.base.BaseBlock.java
-
-public class BaseBlock extends Block {
-
-    public BaseBlock(String name, Material material, float hardness, float resistanse, SoundType soundType) {
- 
-        super(material);
- 
-        this.setRegistryName(name);
-        this.setUnlocalizedName(name);
-        this.setHardness(hardness);
-        this.setResistance(resistanse);
-        this.setSoundType(soundType);
-    }
-}
-```
-* Он содержит обобщение, представляющее наш класс `TileEntity`. Он будет использован для создания вспомогательных средств для уменьшения количества необходимых приведений типов для получения экземпляра нашего тайла на определённой позиции и для уверенности в том, что созданный тайл имеет корректный тип.
-* Он переопределяет `hasTileEntity(IBlockState)` из `Block` и возвращает `true`. Это даёт понять Майнкрафту что у нашего блока есть тайл и его нужно создать.
-* Он содежит два абстрактных метода: 1) `getTileEntityClass()` - тут мы будем возвращать класс нашего `TileEntity`, что позволит ему быть зарегистрированным вместе с блоком, 2) `createTileEntity()` - более специфичная версия стандартного метода из `Block`. Майнкрафт вызывает его каждый раз когда нужно создать новый экземпляр тайла, например когда мы устанавливаем наш блок.
+Тайлы бывают двух типов: обновляющиеся и не обновляющиеся. Обновляющиеся тайлы обновляются каждый игровой тик (обычно 20 раз в секунду). Они влияют на производительность сильнее и требуют очень аккуратной реализации. Т.е. не обновляющиеся тайлы существуют для простого хранения данных, а тикающие для блоков, делающих что то в мире.
 
 ## Блок
 
-Теперь когда у нас есть удобная основа самое время создать блок.
-
-Создадим `BlockCounter`, расширяющий `BlockTileEntity`.
+Создадим `CounterBlock`, расширяющий `Block`.
 
 ```java
-// ru.austeretony.counter.block.BlockCounter.java
-
-public class BlockCounter extends BlockTileEntity<TileEntityCounter> {
-
-    public BlockCounter(String name, Material material, float hardness, float resistanse, SoundType soundType) {
- 
-        super(name, material, hardness, resistanse, soundType);
- 
-        this.setHarvestLevel("pickaxe", 3);
+public class CounterBlock extends Block
+{
+    public CounterBlock()
+    {
+        super(Properties.create(Material.ROCK));
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos position, IBlockState blockState, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
- 
-        if (!world.isRemote) {
-     
-            TileEntityCounter tileEntity = getTileEntity(world, position);
-     
-            if (side == EnumFacing.DOWN) {
-         
-                tileEntity.decrementCount();
-         
-            }
-     
-            else if (side == EnumFacing.UP) {
-         
-                tileEntity.incrementCount();
-            }
-     
-            player.sendMessage(new TextComponentString("Count: " + tileEntity.getCount()));
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos position, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result)
+    {
+
+        if (!world.isRemote)
+        {
+            CounterTile tileEntity = (CounterTile) world.getTileEntity(position);
+            tileEntity.incCount();
+            playerEntity.sendMessage(new StringTextComponent("Count: " + tileEntity.getCount()));
         }
- 
-        return true;
+
+        return ActionResultType.SUCCESS;
     }
 
-    @Override
-    public Class<TileEntityCounter> getTileEntityClass() {
- 
-        return TileEntityCounter.class;
-    }
-
-    @Override
-    public TileEntityCounter createTileEntity(World world, IBlockState blockState) {
- 
-        return new TileEntityCounter();
-    }
+    @Override public boolean hasTileEntity(BlockState state){ return true;	}
+    @Override public TileEntity createTileEntity(BlockState state, IBlockReader world) { return new CounterTile(); }
 }
+
 ```
 
-Наш блок расширяет `BlockTileEntity` и содержит обобщение `TileEntityCounter` (который предстоит создать), так как этот тайл принадлежит этому блоку.
+В конструкторе мы просто напросто вызываем супер и передаём туда все пропертисы.
 
-В конструкторе мы просто напросто вызываем суперконструктор и передаём туда все параметры, которые будем указывать при создании блока.
+В методе `hasTileEntity` мы говорим игре, что блок имеет тайл.
+В `createTileEntity` мы возвращаем новый экземпляр тайлаr.
 
-В методе `getTileEntityClass()` вернём `TileEntityCounter.class` (мы ещё создадим его).
-Это позволит зарегистрировать его ассоциировав с именем блока.
-
-В `createTileEntity()` мы возвращаем новый экземпляр класса `TileEntityCounter`.
-
-Ну и в конце концов в `onBlockActivated()`, вызываемый при правом клике по блоку мы делаем следующее:
+Ну и в конце концов в `onBlockActivated`, вызываемый при правом клике по блоку мы делаем следующее:
 * Проверяем, что действия производятся на сервере (это очень важно при работе с `TileEntity`!).
-* Достаём экземпляр `TileEntityCounter`.
-* Если игрок кликнул по нижней стороне - уменьшаем значение счётчика.
-* Если клик по верхней стороне - увеличиваем значение.
+* Достаём экземпляр `CounterTile`.
 * Отправляем сообщение в чат, содержащие значение счётчика.
 * Возвращаем `true`.
 
@@ -155,68 +61,104 @@ public class BlockCounter extends BlockTileEntity<TileEntityCounter> {
 
 Делая проверку в условии `!world.isRemote`, мы обеспечиваем уверенность что действия будут производится на сервере (физическом или логическом).
 
-## Создание тайла для блока
+## Создание тайла
 
 Теперь когда у нас есть блок, мы должны создать тайл для него.
 
-Создадим класс `TileEntityCounter`:
+Создадим класс `CounterTile`:
 
 ```java
-// ru.austeretony.counter.block.tile.TileEntityCounter.java
+public class CounterTile extends TutTile
+{
+    private int count = 0;
+    public CounterTile()
+    {
+        super(PhoenixTiles.COUNTER.get());
+    }
 
-public class TileEntityCounter extends TileEntity {
+    public void incCount()
+    {
+        count++;
+    }
 
-    private int count;
-
-    @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound tagCompound) {
- 
-        tagCompound.setInteger("count", this.count);
- 
-        return super.writeToNBT(tagCompound);
+    public int getCount()
+    {
+        return count;
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound tagCompound) {
- 
-        this.count = tagCompound.getInteger("count");
- 
-        super.readFromNBT(tagCompound);
+    public void read(CompoundNBT nbt)
+    {
+        count = nbt.getInt("count");
+        super.read(nbt);
     }
 
-    public int getCount() {
- 
-        return this.count;
+    @Override
+    public CompoundNBT write(CompoundNBT nbt)
+    {
+        nbt.putInt("count", count);
+        return super.write(nbt);
     }
 
-    public void incrementCount() {
- 
-        this.count++;
- 
-        this.markDirty();
+    @Override
+    public SUpdateTileEntityPacket getUpdatePacket()
+    {
+        return new UpdatePacket(count);
     }
 
-    public void decrementCount() {
- 
-        this.count--;
- 
-        this.markDirty();
+    @Override
+    public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt)
+    {
+        count = ((UpdatePacket) pkt).count;
+    }
+
+    static class UpdatePacket extends SUpdateTileEntityPacket
+    {
+        public int count;
+
+        public UpdatePacket(int countIn)
+        {
+            this.count = countIn;
+        }
+
+        @Override
+        public void readPacketData(PacketBuffer buffer) throws IOException
+        {
+            buffer.writeInt(count);
+            super.readPacketData(buffer);
+        }
+
+        @Override
+        public void writePacketData(PacketBuffer buffer) throws IOException
+        {
+            count = buffer.readInt();
+            super.writePacketData(buffer);
+        }
     }
 }
 ```
 
-Содержимое весьма не хитрое:
-* Класс расширяет стандартный `TileEntity`
-* Содержит приватное поле `count`, содержащее значение счётчика.
-* Переопределяет `writeToNBT()` и `readFromNBT()` что бы наши данные были сохранены и загружены с диска.
-* Предоставляет методы `getCount()`, `incrementCount()`, `decrementCount()` для работы с полем `count`.
-Кроме того, в методах, изменяющих значение счётчика (`count`) происходит вызов `markDirty()` из `TileEntity`. Он даёт игре понять что данные были изменены с момента последнего сохранения и их нужно перезаписать.
-
+Разбор:
+* count - количество кликов.
+* incCount и getCount методы работы с кол-вом кликов
+* write сохранение информации в NBT
+* read чтение информации, сохраненной в NBT
+* getUpdatePacket возвращает объект пакета синхронизации(уже с данными). Фактически это аналог write.
+* onDataPacket чтение из пакета синхронизации.
+* UpdatePacket класс пакета. Далее его разбор:
+    * count хранит кол-во прыжков
+    * readPacketData чтение из пакета
+    * writePacketData запись в пакет
+ 
 ## NBT формат
 
-Данный формат используется для хранения данных в виде пар ключ-значение, которые легко сериализуется в байты и сохраняется на диск. Вы можете ознакомиться с классом NBTTagCompound для представления о типах данных, которые он может хранить. Ванильный код содержит множество хороших примеров по сохранению и чтению сложных структур данных.
+Данный формат используется для хранения данных в виде пар ключ-значение, которые легко сериализуется в байты и сохраняется на диск. Вы можете ознакомиться с классом CompoundNBT для представления о типах данных, которые он может хранить. Ванильный код содержит множество хороших примеров по сохранению и чтению сложных структур данных.
 
-В нашем случае мы сохраняем значение поля count как целочисленный тип `Integer` с ключём в виде строки "`count`" в NBT в методе `writeToNBT()` и читаем его в `readFromNBT()`.
+В нашем случае мы сохраняем значение поля count как целочисленный тип `Integer` с ключём в виде строки "`count`" в NBT в методе `write()` и читаем его в `read()`.
+
+## Формат пакетов
+
+Пакеты используются для синхрогнизации информации между клиентом и сервером. В отличие от NBT значение получается не по ключу, а читается в той же последовательности, что и пишется. Т.е. если пишется int int BlockPos int, то и читается int int BlockPos int(инты читаются в том же порядке что и пишутся иначе данные перепутаются), иначе, скорее всего, вылетит исключение.
 
 ## Регистрация
 
