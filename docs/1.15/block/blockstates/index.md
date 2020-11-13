@@ -198,3 +198,5 @@ public BlockState getStateForPlacement(BlockItemUseContext context) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
     }
 ```
+Вот так выглядит результат:
+[![С поворотом](images/state_dir.png)](images/water_logged.png)
