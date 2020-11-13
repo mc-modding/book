@@ -174,3 +174,29 @@ public BlockState getStateForPlacement(BlockItemUseContext context) {
 }
 ```
 [![С поворотом](images/state_dir.png)](images/state_dir.png)
+
+## IWaterLoggable
+С 1.13 у нас появилась возможность делать блоки, содержищие воду(например забор). Для того чтоб это повторить, блок должен быть не полным, нужно унаследовать блок от IWaterLoggable, добавить проперти BlockStateProperties.WATERLOGGED и предопределить пару методов:
+```java
+    @Override
+    public BlockState getStateForPlacement(BlockItemUseContext context)
+    {
+        IFluidState ifluidstate = context.getWorld().getFluidState(context.getPos());
+        return this.getDefaultState().with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER);
+    }
+    
+    @Override
+    public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving)
+    {
+        IFluidState ifluidstate = worldIn.getFluidState(pos);
+        worldIn.setBlockState(pos, state.with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER));
+        super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);
+    }
+    
+    @Override
+    public IFluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
+    }
+```
+Вот так выглядит результат:
+[![С поворотом](images/state_dir.png)](images/water_logged.png)
