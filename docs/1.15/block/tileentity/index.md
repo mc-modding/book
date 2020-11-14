@@ -63,7 +63,29 @@ public class CounterBlock extends Block
 
 ## Создание тайла
 
-Теперь когда у нас есть блок, мы должны создать тайл для него.
+Теперь когда у нас есть блок, мы должны создать тайл для него. Но, для начала, я советую сдалть класс-обертку над тайлом, в которой будут прорписаны методы синхронизации:
+
+```java
+public abstract class TutTile extends TileEntity
+{
+    public TutTile(TileEntityType<?> tileEntityTypeIn)
+    {
+        super(tileEntityTypeIn);
+    }
+
+    public CompoundNBT getUpdateTag()
+    {
+        return write(new CompoundNBT());
+    }
+
+    public abstract SUpdateTileEntityPacket getUpdatePacket();
+
+    public abstract void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt);
+}
+
+```
+* getUpdatePacket возвращает объект пакета синхронизации(уже с данными). Фактически это аналог write.
+* onDataPacket чтение из пакета синхронизации.
 
 Создадим класс `CounterTile`:
 
@@ -140,9 +162,10 @@ public class CounterTile extends TutTile
 
 Разбор:
 * count - количество кликов.
-* incCount и getCount методы работы с кол-вом кликов
-* write сохранение информации в NBT
-* read чтение информации, сохраненной в NBT
+* В супер передается зарегистрированный тип тайла. Регистрацию мы сделаем далее.
+* incCount и getCount методы работы с кол-вом кликов.
+* write сохранение информации в NBT.
+* read чтение информации, сохраненной в NBT.
 * getUpdatePacket возвращает объект пакета синхронизации(уже с данными). Фактически это аналог write.
 * onDataPacket чтение из пакета синхронизации.
 * UpdatePacket класс пакета. Далее его разбор:
@@ -162,61 +185,24 @@ public class CounterTile extends TutTile
 
 ## Регистрация
 
-Тайл нашего блока нужно зарегистрировать. Делать мы это будем там же, где регистрируем наши блоки.
-
-Регистрацию будем производить через вызов `GameRegistry.registerTileEntity()`
-и передавать в него класс тайла и его регистрационное имя. Это требуется для того, что бы при загрузке Майнкрафт определял какой `TileEntity` к какому блоку принадлежит и пересоздавал его загружая из NBT.
-
+Перед регитсрацией тайла, нам нужно зарегестрировать блок. Регестрация тайла почти ничем не отличается от регестрации блока:
 ```java
-// ru.austeretony.counter.main.BlockRegistry.java
+public class TutTiles
+{
+    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = new DeferredRegister(ForgeRegistries.TILE_ENTITIES, Tut.MOD_ID);
 
-public class BlockRegistry {
+    public static final RegistryObject<TileEntityType<CounterTile>> COUNTER = TILE_ENTITIES.register("counter", () -> TileEntityType.Builder.create(CounterTile::new, TutBlocks.COUNTER.get()).build(null));
 
-    public static final Block
-    BLOCK_COUNTER = new BlockCounter("block_counter", Material.ROCK, 10.0F, 10.0F, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
-    public static void register() {
- 
-        setBlockRegister(BLOCK_COUNTER);
-        setItemBlockRegister(BLOCK_COUNTER);
-        GameRegistry.registerTileEntity(((BlockCounter) BLOCK_COUNTER).getTileEntityClass(), BLOCK_COUNTER.getRegistryName().toString());
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void registerRender() {
-         
-        setItemBlockRender(BLOCK_COUNTER);
-    }
-
-    private static void setBlockRegister(Block block) {
- 
-        ForgeRegistries.BLOCKS.register(block);
-    }
-
-    private static void setItemBlockRegister(Block block) {
- 
-        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-    }
-
-    @SideOnly(Side.CLIENT)
-    private static void setItemBlockRender(Block block) {
- 
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    public static void register()
+    {
+        TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }
 ```
-
-Не забывайте, регистрация `Block`, `ItemBlock` и `TileEntity` происходит во время преинициализации в `CommonProxy`, а регистрация рендера для `ItemBlock` происходит в процессе преинициализации в `ClientProxy` (для рендера через `ModelLoader`).
+Не забдем вызвать `TutTiles.register()` в конструкторе главного класса.
 
 ## Финал
 
-Теперь, когда все сделано, запускаем игру и достаем наш блок-счётчик из вкладки "блоки".
-Установив его, кликните ПКМ по верхней стороне блока - счётчик увеличит значение и в чате появится сообщение.
+Теперь, кликнув на блок, мы увидем какое нам число.
 
-[![Увеличение значения счетчика](images/incremented.png)](images/incremented.png)
-
-Нажав ПКМ по нижней стороне несколько раз вы увидите это:
-
-[![Уменьшение значения счетчика](images/decremented.png)](images/decremented.png)
-
-Клик ПКМ по другим сторонам выведет в чат сообщение с текущим значением счётчика.
+[![Увеличение значения счетчика](images/work.png)](images/work.png)
