@@ -27,9 +27,6 @@ Fabric использует файл `fabric.mod.json` для обнаружен
   "icon": "assets/fabrictut/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "ru.mcmodding.fabrictut.FabricTutorialClient"
-    ],
     "main": [
       "ru.mcmodding.fabrictut.FabricTutorial"
     ]
