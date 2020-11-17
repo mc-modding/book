@@ -65,6 +65,31 @@ nav:
             - Организация папок: '1.16/basics/organizing-folders/index.md'
         - Дополнительно:
             - Семантическое версионирование: '1.16/other/semantic-versioning/index.md'
+    - 'Fabric 1.16':
+        -  Подготовка:
+            - Установка программ: 'fabric/preparation/install/index.md'
+            - Собственный скин: '1.12/preparation/custom-skin/index.md'
+        - Основы Fabric:
+            - Структура мода: 'fabric/basics/mod-structure/index.md'
+            - Клиент-серверная архитектура: 'fabric/basics/sides/index.md'
+            - Реестры: 'fabric/basics/registry/index.md'
+        - Предмет:
+            - Созданиие предмета: 'fabric/item/creating/index.md'
+            - Еда: 'fabric/item/food/index.md'
+            - Броня: 'fabric/item/armor/index.md'
+            - Инструменты и меч: 'fabric/item/tools/index.md'
+        - Блок:
+            - Созданиие блока: 'fabric/block/creating/index.md'
+        - Вкладка в креативе: 'fabric/creative_tab/index.md'
+        - Локализация: 'fabric/locale/index.md'
+        - Рецепты: 'fabric/recipe/index.md'
+        - События: 
+            - Введение: 'fabric/event/introduction/index.md'
+        - Дополнительно:
+            - Access Wideners: 'fabric/other/accesswideners/index.md'
+
+
+
 
 theme:
     name: material
