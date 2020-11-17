@@ -38,9 +38,9 @@ Fabric использует файл `fabric.mod.json` для обнаружен
     "fabrictut.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.10.6+build.214",
+    "fabricloader": ">=0.10.8",
     "fabric": "*",
-    "minecraft": "1.16.4"
+    "minecraft": "1.16.3"
   }
 }
 ```
