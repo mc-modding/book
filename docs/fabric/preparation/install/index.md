@@ -13,19 +13,16 @@ Minecraft написан на языке Java, поэтому для запус�
 
 Распакуем архив в любое место. Вы можете удалить файлы `README.md` и `LICENSE`, поскольку они не являются обязательными. 
 
-Откроем `gradle.properties` и найдем строки `maven_group` и `archives_base_name`. Их Вы можете поменять на свое усмотрение, но желательно сделать так:
-в `maven_group` укажите Ваш домен и никнейм,  например, `ru.mcmodding`, а в `archives_base_name` укажите ID Вашего мода.
-
-Таким образом, файл будет выглядеть так:
+Откроем `gradle.properties` и заменим его вот этими строками:
 ```properties
 # Done to increase the memory available to gradle.
 org.gradle.jvmargs=-Xmx1G
 
 # Fabric Properties
 	# check these on https://fabricmc.net/use
-	minecraft_version=1.16.4
-	yarn_mappings=1.16.4+build.6
-	loader_version=0.10.6+build.214
+	minecraft_version=1.16.3
+	yarn_mappings=1.16.3+build.47
+	loader_version=0.10.8
 
 # Mod Properties
 	mod_version = 1.0.0
@@ -34,11 +31,25 @@ org.gradle.jvmargs=-Xmx1G
 
 # Dependencies
 	# currently not on the main fabric site, check on the maven: https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api
-	fabric_version=0.25.1+build.416-1.16
+	fabric_version=0.26.0+1.16
 
 ```
 
-Импортируйте `build.gradle` в Вашу IDE. Этот шаг может отличаться в зависимости от IDE.
+В `maven_group` укажите Ваш домен и никнейм, а в `archives_base_name` укажите ID Вашего мода.
+
+Теперь откройте `build.gradle` и найдите блок кода, начинающийся с "dependencies". Замените его этим:
+```groovy
+dependencies {
+    minecraft "com.mojang:minecraft:1.16.3"
+    mappings "net.fabricmc:yarn:1.16.3+build.47:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.10.8"
+            
+    //Fabric api
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.26.0+1.16"
+}
+```
+
+Сохраните и импортируйте `build.gradle` в Вашу IDE. Этот шаг может отличаться в зависимости от IDE.
 
 Для генерации исходников используйте `gradlew genSources` или `./gradlew genSources` на MacOS и Linux.
 
