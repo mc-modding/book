@@ -71,4 +71,4 @@
 * `experience` - количество опыта за переплавку
 * `cookingtime` - время переплавки в тиках (20 тиков = 1 секунда)
 
-Также Вы можете использовать `minecraft:campfire_cooking` для создания рецепта на костре и `minecraft:smoking` для создания рецепта на dsdsds вместо `minecrat:smelting`
+Также Вы можете использовать `minecraft:campfire_cooking` для создания рецепта на костре и `minecraft:smoking` для создания рецепта в коптильне вместо `minecrat:smelting`.
