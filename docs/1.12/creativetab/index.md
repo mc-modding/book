@@ -4,18 +4,16 @@ description: Создание вкладки в креативе.
 
 Перейдём в главный класс и добавим переменную:
 ```java
-public static final CreativeTabs CTAB = new CreativeTabs("tut")
-{
+public static final CreativeTabs CTAB = new CreativeTabs("tut") {
     @Override
-    public ItemStack getTabIconItem()
-    {
+    public ItemStack getTabIconItem() {
         return new ItemStack(ItemsRegister.KEY);
     }
 };
 ```
 
 * `tut` - это ключ локализации. (см. статью "Локализация")
-* `getTabIconItem` - этот метод возвращает как иконку предмет ключа из нашего мода.
+* `getTabIconItem` - этот метод возвращает как иконку предмет ключа.
 
 [![Вкладка 1](images/tab_1.png)](images/tab_1.png)
 

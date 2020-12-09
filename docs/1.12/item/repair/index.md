@@ -6,14 +6,14 @@ description: Починка инструментов.
 
 Материал из прошлой статьи.
 ```java
-public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12);
+public static final Item.ToolMaterial TOOL_MATERIAL = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12);
 ```
 
 Казалось бы, инструменты и меч есть, но всё равно чего-то не хватает? Как раз починки, нам и не хватает!
 Возьмём нашу переменную и добавим к ней метод `setRepairItem`.
 
 ```java
-public static final Item.ToolMaterial toolMaterial = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12).setRepairItem(new ItemStack(Blocks.GOLD_BLOCK));
+public static final Item.ToolMaterial TOOL_MATERIAL = EnumHelper.addToolMaterial("tut:tool", 2, 256, 50.0F, 2.0F, 12).setRepairItem(new ItemStack(Blocks.GOLD_BLOCK));
 ```
 
 Примеры того, как можно прописать предмет/блок для починки:

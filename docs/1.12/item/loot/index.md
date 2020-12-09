@@ -7,12 +7,10 @@ description: Система лута в сундуках и т.п. хранил�
 Перейдём в наш класс EventsHandler и добавим такой метод:
 ```java
 @SubscribeEvent
-public void onLoot(LootTableLoadEvent e)
-{
-    if (LootTableList.CHESTS_SPAWN_BONUS_CHEST.equals(e.getName()))
-    {
-        ResourceLocation loc = new ResourceLocation("tut", "chests/tut_spawn_bonus_chest");
-        LootTable customLootTable = e.getLootTableManager().getLootTableFromLocation(loc);
+public void onLoot(LootTableLoadEvent e) {
+    if (LootTableList.CHESTS_SPAWN_BONUS_CHEST.equals(e.getName())) {
+        final ResourceLocation loc = new ResourceLocation("tut", "chests/tut_spawn_bonus_chest");
+        final LootTable customLootTable = e.getLootTableManager().getLootTableFromLocation(loc);
         e.setTable(customLootTable);
     }
 }
@@ -98,9 +96,9 @@ public void onLoot(LootTableLoadEvent e)
 ```
 
 * `name` - это название нашего сундука/категории предметов.
-* `rolls` - это то сколько предметов будет находится в сундуке. Если в `entries` будет указано больше, чем в `rolls`, то minecraft будет случайно доставать 2 вещи из списка.
+* `rolls` - это то сколько предметов будет находиться в сундуке. Если в `entries` будет указано больше, чем в `rolls`, то minecraft будет случайно доставать 2 вещи из списка.
 * `type` - это тип нашего предмета, всего их два (`block` и `item`).
-* `name` - это сам предмет, его обязательно нужно указывать с modid'ом!
+* `name` - это сам предмет, его обязательно нужно указывать с modId!
 * `weight` - это количество наших предметов. К примеру мы указали, что у `diamond`, `weight` равен 24, значит в сундуке у нас будет лежать 24 алмаза.
 * `set_data` - это функция установки метадаты.
 * `data` - это сама метадата. Пример: Золотое яблоко существует в двух версия (обычное = 0, зачарованное = 1). Чтобы получить зачарованное нужно прописать 1. Так же вы можете задать `min` и `max`, если минимум 2 и максимум 4, то метадата будет браться от 2 до 4.
@@ -117,10 +115,9 @@ TODO
 
 Перейдём в наш класс EventsHandler и добавим в метод onLoot, такой код:
 ```java
-if (LootTableList.GAMEPLAY_FISHING_FISH.equals(e.getName()))
-{
-    ResourceLocation loc = new ResourceLocation("tut", "gameplay/fishing/tut_fish");
-    LootTable customLootTable = e.getLootTableManager().getLootTableFromLocation(loc);
+if (LootTableList.GAMEPLAY_FISHING_FISH.equals(e.getName())) {
+    final ResourceLocation loc = new ResourceLocation("tut", "gameplay/fishing/tut_fish");
+    final LootTable customLootTable = e.getLootTableManager().getLootTableFromLocation(loc);
     e.setTable(customLootTable);
 }
 ```

@@ -2,7 +2,7 @@ description: Создание группы редкости предметов, 
 
 # Редкость предметов
 
-В Minecraft цвет большинства предметов белый. Однако, цвет зачарованных инструментов меняется на алмазный.
+В Minecraft цвет большинства предметов белый. Однако цвет зачарованных инструментов меняется на алмазный.
 Цвет зачарованной книги желтый.
 
 За цвет названий предметов отвечает редкость `rarity` этого предмета. Редкость отвечает **только** за цвет названия.
@@ -32,8 +32,7 @@ item.itemTest.name=§6Legendary Pickaxe
 
 ```java
 // Items.java
-
-public static EnumRarity RARITY_TUTORIAL = EnumHelper.addRarity(name, color, displayName);
+public static final EnumRarity RARITY_TUTORIAL = EnumHelper.addRarity(name, color, displayName);
 ```
 
 Разберем аргументы:
@@ -45,8 +44,7 @@ public static EnumRarity RARITY_TUTORIAL = EnumHelper.addRarity(name, color, dis
 
 ```java
 // Items.java
-
-public static EnumRarity RARITY_LEGENDARY = EnumHelper.addRarity("RARITY_LEGENDARY", TextFormatting.GOLD, "Legendary");
+public static final EnumRarity RARITY_LEGENDARY = EnumHelper.addRarity("RARITY_LEGENDARY", TextFormatting.GOLD, "Legendary");
 ```
 
 ## Применение к предмету
@@ -55,7 +53,6 @@ public static EnumRarity RARITY_LEGENDARY = EnumHelper.addRarity("RARITY_LEGENDA
 
 ```java
 // ItemTest.java
-
 public EnumRarity getRarity(ItemStack stack) {
     return Items.RARITY_LEGENDARY; // Созданная нами группа редкости
 }
