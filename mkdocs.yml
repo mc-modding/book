@@ -55,6 +55,52 @@ nav:
             - Интеграция с JEI: '1.12/other/jei-integration/index.md'
             - Access Transformers: '1.12/other/access-transformers/index.md'
             - Каскадная генерация: '1.12/other/gen-lags/index.md'
+    - '1.15':
+        - Подготовка:
+            - Установка программ:    '1.15/preparation/install/index.md'
+            - Использование Idea:    '1.15/preparation/setup-idea/index.md'
+            - Использование Eclipse: '1.15/preparation/setup-eclipse/index.md'
+            - Собственный скин:      '1.15/preparation/custom-skin/index.md'
+            - Решение проблем:       '1.15/preparation/problems/index.md'
+        - Основы Forge:
+            - Структура мода, @Mod, mods.toml:       '1.15/basics/mod-structure/index.md'
+            - Замена прокси, что и как теперь:        1.15/basics/proxy/index.md'
+            - Сборка мода:                           '1.15/basics/building-mod/index.md'
+        - Предмет:
+            - Создание предмета:    '1.15/item/basics/index.md'
+            - Еда:                  '1.15/item/food/index.md'
+            - Инструменты и меч:    '1.15/item/tools/index.md'
+            - Уровни инструментов:  '1.15/item/repair/index.md'
+            - Броня:                '1.15/item/armor/index.md'
+            - Подтипы:              '1.15/item/subtypes/index.md'
+            - Лут:                  '1.15/item/loot/index.md'
+            - Редкость:             '1.15/item/rarity/index.md'
+            - Горение:              '1.15/item/burn/index.md'
+        - Блок:
+            - Создание блока:    '1.15/block/basics/index.md'
+            - Состояния блока:   '1.15/block/blockstates/index.md'
+            - Создание житкости: '1.15/block/fluid/index.md'
+            - Создание руды:     '1.15/block/ore/index.md'
+            - Создание растения: '1.15/block/plant/index.md'
+            - Блок с тайлом:     '1.15/block/tileentity/index.md'
+        - Создание группы предметов в креативе: '1.15/itemgroup/index.md'
+        - Локализация: '1.15/lang/index.md'
+        - События:
+            - Использование событий: '1.15/events/usage/index.md'
+            - Таблица событий:       '1.15/events/table/index.md'
+        - Крафт: '1.15/craft/index.md'
+        - Достижения:
+            - Основы: '1.15/achievements/basics/index.md'
+            - Создание достижения: '1.15/achievements/create/index.md'
+            - Получение рецептов: '1.15/achievements/recipes/index.md'
+        - Для опытных:
+            - Слои: '1.15/advanced/layers/index.md'
+            - Привязка клавиш: '1.15/advanced/keybinds/index.md'
+            - Временные эффекты: '1.15/advanced/buffs/index.md'
+            - Звуки: '1.15/advanced/sounds/index.md'
+        - Дополнительно:
+            - Работа с иходниками: '1.15/other/src/index.md'
+            - Интеграция с JEI: '1.15/other/jei-integration/index.md'
     - '1.16':
         - Подготовка:
             - Установка программ: '1.16/preparation/install-program/index.md'
@@ -87,10 +133,6 @@ nav:
             - Введение: 'fabric/event/introduction/index.md'
         - Дополнительно:
             - Access Wideners: 'fabric/other/accesswideners/index.md'
-
-
-
-
 theme:
     name: material
     custom_dir: theme
