@@ -199,4 +199,4 @@ public BlockState getStateForPlacement(BlockItemUseContext context) {
     }
 ```
 Вот так выглядит результат:
-[![С поворотом](images/state_dir.png)](images/water_logged.png)
+[![С поворотом](images/water_logged.png)](images/water_logged.png)
