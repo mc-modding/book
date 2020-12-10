@@ -15,9 +15,15 @@ description: Добавление своих звуков в игру.
 Отредактируем его!
 ```json
 {
-    "test_sound": {
+    "test_sound": 
+	{
         "category": "player",
-        "sounds": ["*modid*:myTestSound"]
+        "sounds": 
+		[
+			{
+				"*modid*:myTestSound"
+			}
+		]
     }
 }
 ```
@@ -62,42 +68,38 @@ description: Добавление своих звуков в игру.
 }
 ```
 
-Создадим класс `Sounds`.
+Создадим класс `TutSounds`.
 
 ```java
-public class Sounds
+@Mod.EventBusSubscriber(modid= TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class TutSounds
 {
-    //Это наш звук, `test_sound` это название звука указанного в sounds.json
-    public static final SoundEvent test = reg("test_sound")
+	//Это наш звук, `test_sound` это название звука указанного в sounds.json
+    public static SoundEvent TEST  = reg("change_stage");
 
     @SubscribeEvent
-    public void regSound(RegistryEvent.Register<SoundEvent> e)
+    public static void resister(RegistryEvent.Register<SoundEvent> event)
     {
-        //Регистрация звука
-        ForgeRegistries.SOUND_EVENTS.register(lvlUp)
+        event.getRegistry().register(CHANGE_STAGE);
     }
 
-    //Упрощённая регистрация звука
-    private SoundEvent reg(String name)
+    private static SoundEvent reg(String name)
     {
-        ResourceLocation rl = new ResourceLocation(*modid*, name)
-        return new SoundEvent(rl).setRegistryName(rl)
+        ResourceLocation rl = new ResourceLocation(TestMod.MOD_ID, name);
+        return new SoundEvent(rl).setRegistryName(rl);
     }
 }
-```
-`*modid*` - это modid вашего мода
 
+```
 Чтобы проиграть наш звук, где либо добавим такой код:
 ```java
 /**
- *  blockPos - это позиция на которой будет проигрываться звук
+ *  x, y, z - это позиция на которой будет проигрываться звук
  *  Sounds.test - это наш звук из ранее созданного класса Sounds
  *  SoundCategory.PLAYERS - категория звука
  *  1.0 - громкость
  *  1.0 - высота
  *  false - задержка
  */
-world.playSound(blockPos, Sounds.test, SoundCategory.PLAYERS, 1.0F, 1.0F, false)
+world.playSound(x, y, z, TutSounds.TEST, SoundCategory.PLAYERS, 1.0F, 1.0F, false)
 ```
-
-Затем зарегистрируем данный класс в MinecraftForge.EVENT_BUS и зайдём в игру!
