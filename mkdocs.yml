@@ -79,7 +79,7 @@ nav:
         - Блок:
             - Создание блока:    '1.15/block/basics/index.md'
             - Состояния блока:   '1.15/block/blockstates/index.md'
-            - Создание житкости: '1.15/block/fluid/index.md'
+            - Создание жидкости: '1.15/block/fluid/index.md'
             - Создание руды:     '1.15/block/ore/index.md'
             - Создание растения: '1.15/block/plant/index.md'
             - Блок с тайлом:     '1.15/block/tileentity/index.md'
@@ -96,7 +96,6 @@ nav:
         - Для опытных:
             - Слои: '1.15/advanced/layers/index.md'
             - Привязка клавиш: '1.15/advanced/keybinds/index.md'
-            - Временные эффекты: '1.15/advanced/buffs/index.md'
             - Звуки: '1.15/advanced/sounds/index.md'
         - Дополнительно:
             - Работа с иходниками: '1.15/other/src/index.md'
