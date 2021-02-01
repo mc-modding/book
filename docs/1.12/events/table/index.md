@@ -276,7 +276,7 @@ description: Таблица всех событий доступных в Forge 
 ## Пакетная система
 | Событие                                            | Описание                                                           | Возможность отмены |
 |----------------------------------------------------|--------------------------------------------------------------------|--------------------|
-| FMLNetworkEvent.ClientConnectedToServerEvent       | Срабатывает на клиенте, когда клиенте подключается к серверу.      | Нет                |
+| FMLNetworkEvent.ClientConnectedToServerEvent       | Срабатывает на клиенте, когда клиент подключается к серверу.       | Нет                |
 | FMLNetworkEvent.ServerConnectionFromClientEvent    | Срабатывает на сервере, когда клиент подключается к серверу.       | Нет                |
 | FMLNetworkEvent.ServerDisconnectionFromClientEvent | Срабатывает на сервере, когда клиент отключается от сервера.       | Нет                |
 | FMLNetworkEvent.ClientDisconnectionFromServerEvent | Срабатывает на клиенте, когда клиент отключается от сервера.       | Нет                |
