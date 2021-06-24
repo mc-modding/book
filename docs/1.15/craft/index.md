@@ -2,39 +2,19 @@ description: Создание собственного крафта.
 
 # Крафт
 
-Создадим класс `CraftingRegister`.
-
-```java
-public class CraftingRegister
-{
-    public static void register()
-    {
-        registerRecipes("key");
-    }
-
-    private static void registerRecipes(String name)
-    {
-        CraftingHelper.register(new ResourceLocation("tut", name), (IRecipeFactory) (context, json) -> CraftingHelper.getRecipe(json, context));
-    }
-}
-```
-
-* `registerRecipes(name)` - с помощью данного метода вы сможете гораздо быстрее прописывать регистрацию рецептов.
-* `tut` - modid нашего мода.
-
 Перейдём в папку:
 ```md
 └── src    
     └── main
         └── resources
-            └── assets
+            └── data
                 └── tut
                     └── recipes
 ```
 
 И создадим в папке `recipes` файл `key.json`. (`json` - это формат файла!)
 
-* `type` - это тип крафта. Всего существует два вида:
+* `type` - это тип крафта. Всего существует два вида кравтов для верстака:
   - `crafting_shaped` - в этом типе крафта мы можем задать позицию крафта, т.е. предмет будет скрафчен только если предметы содержатся на этих позициях.
   - `crafting_shapeless` - в этом типе крафта блок/предмет может быть размещен на любой позиции в слотах крафта. Пример: мы можем положить в любой слот крафта сахарный тростник и получить сахар.
 * `pattern` - это шаблон крафта, существует только у `crafting_shaped` типа.
@@ -91,5 +71,3 @@ public class CraftingRegister
     }
 }
 ```
-
-Так же некоторые из вас спрашивали на форуме "Как добавить свои рецепты в книгу рецептов?", отвечаем! Рецепты в книгу добавлять не нужно, Minecraft сам всё сделает, вам лишь нужно создать сам рецепт.
