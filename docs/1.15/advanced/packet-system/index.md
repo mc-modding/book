@@ -26,15 +26,17 @@ public class NetworkHandler
      */
     private short id = 0;
 
-    /**
-     * В конструкторе мы будем регистрировать пакеты.
+     /**
+     * Инициализирует пакетную систему.
      */
-    
     public static void init()
     {
         instance = new NetworkHandler();
     }
-    
+
+    /**
+     * В конструкторе мы будем регистрировать пакеты.
+     */
     public NetworkHandler()
     {
         
