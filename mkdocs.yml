@@ -97,6 +97,7 @@ nav:
             - Слои: '1.15/advanced/layers/index.md'
             - Привязка клавиш: '1.15/advanced/keybinds/index.md'
             - Звуки: '1.15/advanced/sounds/index.md'
+            - Пакетная система: '1.15/advanced/packet-system/index.md'
         - Дополнительно:
             - Работа с иходниками: '1.15/other/src/index.md'
             - Интеграция с JEI: '1.15/other/jei-integration/index.md'
