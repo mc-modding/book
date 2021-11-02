@@ -78,4 +78,19 @@ html
     {
         border-bottom: none;
     }
+
+    .md-nav__toggle ~ .md-nav
+    {
+        display: block;
+        overflow: hidden;
+        transition: max-height .35s linear, none;
+        max-height: 0;
+    }
+
+    .md-nav__toggle:checked ~ .md-nav, .md-nav__toggle:indeterminate ~ .md-nav
+    {
+        display: block;
+        transition: max-height .35s linear, none;
+        max-height: 999px;
+    }
 }
