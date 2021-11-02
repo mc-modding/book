@@ -18,8 +18,8 @@
         {% for nav_link in config.extra.nav_links %}
         <li class="md-nav__item">
             <a href="{{ nav_link.url | url }}" target="_blank" title="{{ nav_link.title }}" class="md-nav__link">
-                <i class="{{ nav_link.icon }}"></i>
                 {{ nav_link.title }}
+                <i class="{{ nav_link.icon }}"></i>
             </a>
         </li>
         {% endfor %}
