@@ -60,5 +60,5 @@ public static Block registerBlock(String id, Block block) {
 | Registry.ENCHANTMENT | Реестр зачарований |
 | Registry.FLUID | Реестр жидкостей |
 
-Помимо тех реестров, что есть в таблице, игра содержит еще десятки других, которые Вы можете посмотреть ![тут](https://fabricmc.net/wiki/tutorial:registry_types)
+Помимо тех реестров, что есть в таблице, игра содержит еще десятки других, которые Вы можете посмотреть [тут](https://fabricmc.net/wiki/tutorial:registry_types)
 Вы можете попробовать создать свои методы для работы с этими реестрами, основываясь на нашем готовом классе-утилите.
