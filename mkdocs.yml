@@ -5,177 +5,188 @@ repo_name: mc-modding/book
 repo_url: 'https://github.com/mc-modding/book'
 
 nav:
-    - '1.12':
-        - Подготовка:
-            - Установка программ: '1.12/preparation/install/index.md'
-            - Использование Idea: '1.12/preparation/setup-idea/index.md'
-            - Использование Eclipse: '1.12/preparation/setup-eclipse/index.md'
-            - Собственный скин: '1.12/preparation/custom-skin/index.md'
-            - Решение проблем: '1.12/preparation/problems/index.md'
-        - Основы Forge:
-            - Структура мода: '1.12/basics/mod-structure/index.md'
-            - Аннотация @Mod: '1.12/basics/mod-annotation/index.md'
-            - Стадии загрузки мода: '1.12/basics/loading-stages/index.md'
-            - Прокси: '1.12/basics/proxy/index.md'
-            - Сборка мода: '1.12/basics/building-mod/index.md'
-        - Предмет:
-            - Создание предмета: '1.12/item/basics/index.md'
-            - Еда: '1.12/item/food/index.md'
-            - Инструменты и меч: '1.12/item/tools/index.md'
-            - Починка инструментов: '1.12/item/repair/index.md'
-            - Броня: '1.12/item/armor/index.md'
-            - Подтипы: '1.12/item/subtypes/index.md'
-            - Лут: '1.12/item/loot/index.md'
-            - Редкость: '1.12/item/rarity/index.md'
-            - Горение: '1.12/item/burn/index.md'
-        - Блок:
-            - Создание блока: '1.12/block/basics/index.md'
-            - Состояния блока: '1.12/block/blockstates/index.md'
-        - Tile Entity: '1.12/tileentity/index.md'
-        - Вкладка в креативе: '1.12/creativetab/index.md'
-        - Локализация: '1.12/lang/index.md'
-        - События:
-            - Использование событий: '1.12/events/usage/index.md'
-            - Таблица событий: '1.12/events/table/index.md'
-        - Крафт: '1.12/craft/index.md'
-        - Достижения:
-            - Основы: '1.12/achievements/basics/index.md'
-            - Создание достижения: '1.12/achievements/create/index.md'
-            - Получение рецептов: '1.12/achievements/recipes/index.md'
-        - Растение:
-            - Создание растения: '1.12/plant/basics/index.md'
-            - '[Мод] Пещерные растения': '1.12/plant/mod-cave-plants/index.md'
-        - Для опытных:
-            - Слои: '1.12/advanced/layers/index.md'
-            - Привязка клавиш: '1.12/advanced/keybinds/index.md'
-            - Временные эффекты: '1.12/advanced/buffs/index.md'
-            - Звуки: '1.12/advanced/sounds/index.md'
-        - Дополнительно:
-            - Работа с иходниками: '1.12/other/src/index.md'
-            - Интеграция с JEI: '1.12/other/jei-integration/index.md'
-            - Access Transformers: '1.12/other/access-transformers/index.md'
-            - Каскадная генерация: '1.12/other/gen-lags/index.md'
-    - '1.15':
-        - Подготовка:
-            - Установка программ:    '1.15/preparation/install/index.md'
-            - Использование Idea:    '1.15/preparation/setup-idea/index.md'
-            - Использование Eclipse: '1.15/preparation/setup-eclipse/index.md'
-            - Собственный скин:      '1.15/preparation/custom-skin/index.md'
-            - Решение проблем:       '1.15/preparation/problems/index.md'
-        - Основы Forge:
-            - Структура мода, @Mod, mods.toml:       '1.15/basics/mod-structure/index.md'
-            - Замена прокси, что и как теперь:        1.15/basics/proxy/index.md'
-            - Сборка мода:                           '1.15/basics/building-mod/index.md'
-        - Предмет:
-            - Создание предмета:    '1.15/item/basics/index.md'
-            - Еда:                  '1.15/item/food/index.md'
-            - Инструменты и меч:    '1.15/item/tools/index.md'
-            - Уровни инструментов:  '1.15/item/repair/index.md'
-            - Броня:                '1.15/item/armor/index.md'
-            - Подтипы:              '1.15/item/subtypes/index.md'
-            - Лут:                  '1.15/item/loot/index.md'
-            - Редкость:             '1.15/item/rarity/index.md'
-            - Горение:              '1.15/item/burn/index.md'
-        - Блок:
-            - Создание блока:    '1.15/block/basics/index.md'
-            - Состояния блока:   '1.15/block/blockstates/index.md'
-            - Создание жидкости: '1.15/block/fluid/index.md'
-            - Создание руды:     '1.15/block/ore/index.md'
-            - Создание растения: '1.15/block/plant/index.md'
-            - Блок с тайлом:     '1.15/block/tileentity/index.md'
-        - Создание группы предметов в креативе: '1.15/itemgroup/index.md'
-        - Локализация: '1.15/lang/index.md'
-        - События:
-            - Использование событий: '1.15/events/usage/index.md'
-            - Таблица событий:       '1.15/events/table/index.md'
-        - Крафт: '1.15/craft/index.md'
-        - Достижения:
-            - Основы: '1.15/achievements/basics/index.md'
-            - Создание достижения: '1.15/achievements/create/index.md'
-            - Получение рецептов: '1.15/achievements/recipes/index.md'
-        - Для опытных:
-            - Слои: '1.15/advanced/layers/index.md'
-            - Привязка клавиш: '1.15/advanced/keybinds/index.md'
-            - Звуки: '1.15/advanced/sounds/index.md'
-            - Пакетная система: '1.15/advanced/packet-system/index.md'
-        - Дополнительно:
-            - Работа с иходниками: '1.15/other/src/index.md'
-            - Интеграция с JEI: '1.15/other/jei-integration/index.md'
-    - '1.16':
-        - Подготовка:
-            - Установка программ: '1.16/preparation/install-program/index.md'
-            - Собственный скин: '1.12/preparation/custom-skin/index.md'
-            - Решение проблем: '1.12/preparation/problems/index.md'
-        - Основы Forge:
-            - Структура мода: '1.16/basics/mod-structure/index.md'
-            - Организация папок: '1.16/basics/organizing-folders/index.md'
-        - Дополнительно:
-            - Семантическое версионирование: '1.16/other/semantic-versioning/index.md'
-    - 'Fabric 1.16':
-        -  Подготовка:
-            - Установка программ: 'fabric/preparation/install/index.md'
-            - Собственный скин: '1.12/preparation/custom-skin/index.md'
-        - Основы Fabric:
-            - Структура мода: 'fabric/basics/mod-structure/index.md'
-            - Клиент-серверная архитектура: 'fabric/basics/sides/index.md'
-            - Реестры: 'fabric/basics/registry/index.md'
-        - Предмет:
-            - Созданиие предмета: 'fabric/item/creating/index.md'
-            - Еда: 'fabric/item/food/index.md'
-            - Броня: 'fabric/item/armor/index.md'
-            - Инструменты и меч: 'fabric/item/tools/index.md'
-        - Блок:
-            - Созданиие блока: 'fabric/block/creating/index.md'
-        - Вкладка в креативе: 'fabric/creative_tab/index.md'
-        - Локализация: 'fabric/locale/index.md'
-        - Рецепты: 'fabric/recipe/index.md'
-        - События: 
-            - Введение: 'fabric/event/introduction/index.md'
-        - Дополнительно:
-            - Access Wideners: 'fabric/other/accesswideners/index.md'
+  - '1.7.10':
+      - Подготовка:
+          - Установка программ: '1.7.10/preparation/install/index.md'
+          - Использование Idea: '1.7.10/preparation/setup-idea/index.md'
+          - Использование Eclipse: '1.7.10/preparation/setup-eclipse/index.md'
+          - Собственный скин: '1.7.10/preparation/custom-skin/index.md'
+          - Решение проблем: '1.7.10/preparation/problems/index.md'
+  - '1.12':
+      - Подготовка:
+          - Установка программ: '1.12/preparation/install/index.md'
+          - Использование Idea: '1.12/preparation/setup-idea/index.md'
+          - Использование Eclipse: '1.12/preparation/setup-eclipse/index.md'
+          - Собственный скин: '1.12/preparation/custom-skin/index.md'
+          - Решение проблем: '1.12/preparation/problems/index.md'
+      - Основы Forge:
+          - Структура мода: '1.12/basics/mod-structure/index.md'
+          - Аннотация @Mod: '1.12/basics/mod-annotation/index.md'
+          - Стадии загрузки мода: '1.12/basics/loading-stages/index.md'
+          - Прокси: '1.12/basics/proxy/index.md'
+          - Сборка мода: '1.12/basics/building-mod/index.md'
+      - Предмет:
+          - Создание предмета: '1.12/item/basics/index.md'
+          - Еда: '1.12/item/food/index.md'
+          - Инструменты и меч: '1.12/item/tools/index.md'
+          - Починка инструментов: '1.12/item/repair/index.md'
+          - Броня: '1.12/item/armor/index.md'
+          - Подтипы: '1.12/item/subtypes/index.md'
+          - Лут: '1.12/item/loot/index.md'
+          - Редкость: '1.12/item/rarity/index.md'
+          - Горение: '1.12/item/burn/index.md'
+      - Блок:
+          - Создание блока: '1.12/block/basics/index.md'
+          - Состояния блока: '1.12/block/blockstates/index.md'
+      - Tile Entity: '1.12/tileentity/index.md'
+      - Вкладка в креативе: '1.12/creativetab/index.md'
+      - Локализация: '1.12/lang/index.md'
+      - События:
+          - Использование событий: '1.12/events/usage/index.md'
+          - Таблица событий: '1.12/events/table/index.md'
+      - Крафт: '1.12/craft/index.md'
+      - Достижения:
+          - Основы: '1.12/achievements/basics/index.md'
+          - Создание достижения: '1.12/achievements/create/index.md'
+          - Получение рецептов: '1.12/achievements/recipes/index.md'
+      - Растение:
+          - Создание растения: '1.12/plant/basics/index.md'
+          - '[Мод] Пещерные растения': '1.12/plant/mod-cave-plants/index.md'
+      - Для опытных:
+          - Слои: '1.12/advanced/layers/index.md'
+          - Привязка клавиш: '1.12/advanced/keybinds/index.md'
+          - Временные эффекты: '1.12/advanced/buffs/index.md'
+          - Звуки: '1.12/advanced/sounds/index.md'
+      - Дополнительно:
+          - Работа с иходниками: '1.12/other/src/index.md'
+          - Интеграция с JEI: '1.12/other/jei-integration/index.md'
+          - Access Transformers: '1.12/other/access-transformers/index.md'
+          - Каскадная генерация: '1.12/other/gen-lags/index.md'
+  - '1.15':
+      - Подготовка:
+          - Установка программ: '1.15/preparation/install/index.md'
+          - Использование Idea: '1.15/preparation/setup-idea/index.md'
+          - Использование Eclipse: '1.15/preparation/setup-eclipse/index.md'
+          - Собственный скин: '1.15/preparation/custom-skin/index.md'
+          - Решение проблем: '1.15/preparation/problems/index.md'
+      - Основы Forge:
+          - Структура мода, @Mod, mods.toml: '1.15/basics/mod-structure/index.md'
+          - Замена прокси, что и как теперь: 1.15/basics/proxy/index.md'
+          - Сборка мода: '1.15/basics/building-mod/index.md'
+      - Предмет:
+          - Создание предмета: '1.15/item/basics/index.md'
+          - Еда: '1.15/item/food/index.md'
+          - Инструменты и меч: '1.15/item/tools/index.md'
+          - Уровни инструментов: '1.15/item/repair/index.md'
+          - Броня: '1.15/item/armor/index.md'
+          - Подтипы: '1.15/item/subtypes/index.md'
+          - Лут: '1.15/item/loot/index.md'
+          - Редкость: '1.15/item/rarity/index.md'
+          - Горение: '1.15/item/burn/index.md'
+      - Блок:
+          - Создание блока: '1.15/block/basics/index.md'
+          - Состояния блока: '1.15/block/blockstates/index.md'
+          - Создание жидкости: '1.15/block/fluid/index.md'
+          - Создание руды: '1.15/block/ore/index.md'
+          - Создание растения: '1.15/block/plant/index.md'
+          - Блок с тайлом: '1.15/block/tileentity/index.md'
+      - Создание группы предметов в креативе: '1.15/itemgroup/index.md'
+      - Локализация: '1.15/lang/index.md'
+      - События:
+          - Использование событий: '1.15/events/usage/index.md'
+          - Таблица событий: '1.15/events/table/index.md'
+      - Крафт: '1.15/craft/index.md'
+      - Достижения:
+          - Основы: '1.15/achievements/basics/index.md'
+          - Создание достижения: '1.15/achievements/create/index.md'
+          - Получение рецептов: '1.15/achievements/recipes/index.md'
+      - Для опытных:
+          - Слои: '1.15/advanced/layers/index.md'
+          - Привязка клавиш: '1.15/advanced/keybinds/index.md'
+          - Звуки: '1.15/advanced/sounds/index.md'
+          - Пакетная система: '1.15/advanced/packet-system/index.md'
+      - Дополнительно:
+          - Работа с иходниками: '1.15/other/src/index.md'
+          - Интеграция с JEI: '1.15/other/jei-integration/index.md'
+  - '1.16':
+      - Подготовка:
+          - Установка программ: '1.16/preparation/install-program/index.md'
+          - Собственный скин: '1.12/preparation/custom-skin/index.md'
+          - Решение проблем: '1.12/preparation/problems/index.md'
+      - Основы Forge:
+          - Структура мода: '1.16/basics/mod-structure/index.md'
+          - Организация папок: '1.16/basics/organizing-folders/index.md'
+      - Дополнительно:
+          - Семантическое версионирование: '1.16/other/semantic-versioning/index.md'
+  - 'Fabric 1.16':
+      - Подготовка:
+          - Установка программ: 'fabric/preparation/install/index.md'
+          - Собственный скин: '1.12/preparation/custom-skin/index.md'
+      - Основы Fabric:
+          - Структура мода: 'fabric/basics/mod-structure/index.md'
+          - Клиент-серверная архитектура: 'fabric/basics/sides/index.md'
+          - Реестры: 'fabric/basics/registry/index.md'
+      - Предмет:
+          - Созданиие предмета: 'fabric/item/creating/index.md'
+          - Еда: 'fabric/item/food/index.md'
+          - Броня: 'fabric/item/armor/index.md'
+          - Инструменты и меч: 'fabric/item/tools/index.md'
+      - Блок:
+          - Созданиие блока: 'fabric/block/creating/index.md'
+      - Вкладка в креативе: 'fabric/creative_tab/index.md'
+      - Локализация: 'fabric/locale/index.md'
+      - Рецепты: 'fabric/recipe/index.md'
+      - События:
+          - Введение: 'fabric/event/introduction/index.md'
+      - Дополнительно:
+          - Access Wideners: 'fabric/other/accesswideners/index.md'
 theme:
-    name: material
-    custom_dir: theme
+  name: material
+  custom_dir: theme
 
-    language: 'ru'
+  language: 'ru'
 
-    palette:
-        primary: white
-        accent: blue
-    
-    logo: 'logo.svg'
-    favicon: 'favicon.png'
+  palette:
+    primary: white
+    accent: blue
+
+  logo: 'logo.svg'
+  favicon: 'favicon.png'
 
 markdown_extensions:
-    - admonition
-    - codehilite
-    - footnotes
-    - meta
-    - attr_list
-    - toc:
-        permalink: '#'
-        slugify: !!python/name:pymdownx.slugs.uslugify
-    - pymdownx.superfences
-    - pymdownx.details
-    - pymdownx.tilde
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - attr_list
+  - toc:
+      permalink: '#'
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tilde
 
 google_analytics:
-    - 'UA-139869648-1'
-    - 'auto'
+  - 'UA-139869648-1'
+  - 'auto'
 
 extra:
-    search:
-        language: 'ru, en'
+  search:
+    language: 'ru, en'
 
-    nav_links:
-        - title: 'Задать вопрос'
-          icon: 'far fa-question-circle'
-          url: 'https://forum.mcmodding.ru/forums/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.23/'
-        
-        - title: 'Форум'
-          icon: 'far fa-comments'
-          url: 'https://forum.mcmodding.ru'
+  nav_links:
+    - title: 'Задать вопрос'
+      icon: 'far fa-question-circle'
+      url: 'https://forum.mcmodding.ru/forums/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.23/'
 
-        - title: 'Как внести вклад?'
-          icon: 'far fa-edit'
-          url: 'editing-book/'
+    - title: 'Форум'
+      icon: 'far fa-comments'
+      url: 'https://forum.mcmodding.ru'
+
+    - title: 'Как внести вклад?'
+      icon: 'far fa-edit'
+      url: 'editing-book/'
+
+    - title: 'Мы в Discord'
+      icon: 'fab fa-discord'
+      url: ''
