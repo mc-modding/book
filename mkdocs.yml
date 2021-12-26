@@ -7,11 +7,53 @@ repo_url: 'https://github.com/mc-modding/book'
 nav:
   - '1.7.10':
       - Подготовка:
-          - Установка программ: '1.7.10/preparation/install/index.md'
-          - Использование Idea: '1.7.10/preparation/setup-idea/index.md'
-          - Использование Eclipse: '1.7.10/preparation/setup-eclipse/index.md'
-          - Собственный скин: '1.7.10/preparation/custom-skin/index.md'
-          - Решение проблем: '1.7.10/preparation/problems/index.md'
+          - Установка программ: '1.7.10/prepare.md'
+          - Использование Idea: '1.7.10/prepare.md'
+          - Использование Eclipse: '1.7.10/prepare.md'
+          - Собственный скин: '1.7.10/prepare.md'
+          - Решение проблем: '1.7.10/prepare.md'
+      - Основы Forge:
+          - Структура мода: '1.7.10/prepare.md'
+          - Аннотация @Mod: '1.7.10/prepare.md'
+          - Стадии загрузки мода: '1.7.10/prepare.md'
+          - Прокси: '1.7.10/prepare.md'
+          - Сборка мода: '1.7.10/prepare.md'
+      - Предмет:
+          - Создание предмета: '1.7.10/prepare.md'
+          - Еда: '1.7.10/prepare.md'
+          - Инструменты: '1.7.10/prepare.md'
+          - Починка инструментов: '1.7.10/prepare.md'
+          - Броня: '1.7.10/prepare.md'
+          - Подтипы: '1.7.10/prepare.md'
+          - Лут: '1.7.10/prepare.md'
+          - Редкость: '1.7.10/prepare.md'
+          - Горение: '1.7.10/prepare.md'
+      - Блок:
+          - Создание блока: '1.7.10/prepare.md'
+          - Метадата: '1.7.10/prepare.md'
+          - Хранение данных(TileEntity): '1.7.10/prepare.md'
+      - Вкладка в креативе: '1.7.10/prepare.md'
+      - Локализация: '1.7.10/prepare.md'
+      - События:
+          - Использование событий: '1.7.10/prepare.md'
+          - Собственные события: '1.7.10/prepare.md'
+          - Таблица событий: '1.7.10/prepare.md'
+      - Рецепты:
+          - Добавление рецепта: '1.7.10/prepare.md'
+          - Собственный рецепт: '1.7.10/prepare.md'
+      - Сущность(Entity):
+          - Собственная сущность: '1.7.10/prepare.md'
+          - Спавн в мире: '1.7.10/prepare.md'
+      - Пользовательский интерфейс(Gui):
+          - Создание окна: '1.7.10/prepare.md'
+          - Контейнер: '1.7.10/prepare.md'
+      - Пакетная система: '1.7.10/prepare.md'
+      - Остальное:
+          - Словарь руд: '1.7.10/prepare.md'
+          - Собственный эффект зелья: '1.7.10/prepare.md'
+          - Добавление звуков: '1.7.10/prepare.md'
+          - Привязка клавиш: '1.7.10/prepare.md'
+          - Access Transformers: '1.7.10/prepare.md'
   - '1.12':
       - Подготовка:
           - Установка программ: '1.12/preparation/install/index.md'
@@ -189,4 +231,4 @@ extra:
 
     - title: 'Мы в Discord'
       icon: 'fab fa-discord'
-      url: ''
+      url: 'https://discord.gg/FVVG8p2QrW'
