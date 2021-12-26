@@ -71,10 +71,10 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum FTutToolMaterials implements ToolMaterial {
+    // уровень копания, прочность, скорость добычи, урон, зачароваываемость
     SLIME(2, 256, 0.5F, 3.5F, 15, () -> {
         return Ingredient.ofStacks(new ItemStack(Items.SLIME_BALL));
     });
-    // уровень копания, прочность, скорость добычи, урон, зачароваываемость
 
     private final int miningLevel;
     private final int itemDurability;

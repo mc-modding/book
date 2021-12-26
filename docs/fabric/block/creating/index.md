@@ -30,7 +30,6 @@ import net.minecraft.block.Material;
 import static ru.mcmodding.fabrictut.util.FabricTutRegistry.registerBlock;
 
 public class FTutBlocks {
-
     public static final Block WHITE_STONE = registerBlock("white_stone", new WhiteStoneBlock(FabricBlockSettings.of(Material.STONE)));
 
     public static void init() {}
@@ -39,7 +38,7 @@ public class FTutBlocks {
 `Material.STONE` означает материал блока.
 Теперь нам необходимо зарегистрировать предмет для блока. Вернемся в класс наших предметов и добавим эту строку:
 ```java
-    public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem(FTutBlocks.WHITE_STONE, new FabricItemSettings()));
+public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem(FTutBlocks.WHITE_STONE, new FabricItemSettings()));
 ```
 Где `FTutBlocks.WHITE_STONE` - наш блок.
 

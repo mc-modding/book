@@ -5,7 +5,7 @@
 
 В `assets/<mod_id>/lang` создаем json файл с языковым кодом нужного языка, например,`ru_ru.json`.
 
-Каждый объект который имеет локализацию обязательно имеет свой локализационный ключ:
+Каждый объект который имеет локализацию обязательно, имеет свой локализационный ключ:
 * `itemGroup.<mod_id>.<group_id>` для вкладок в креативе
 * `item.<mod_id>.<item_id>` для предметов
 * `block.<mod_id>.<block_id>` для блоков
@@ -17,7 +17,7 @@
 ```java
 @Override
 public String getTranslationKey() {
-return "white_stone_block";
+    return "white_stone_block";
 }
 ```
 В таком случае ключ будет не `block.fabrictut.white_stone`, а `white_stone_block`. А что если у какого-то блока из другого мода будет такой же ключ?

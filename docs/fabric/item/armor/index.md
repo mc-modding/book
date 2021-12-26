@@ -18,7 +18,7 @@ public class MageArmorMaterial implements ArmorMaterial {
     private static final int[] PROTECTION_VALUES = new int[] {1, 3, 2, 1};
 
     /*
-     * Прочность предмета
+     * Прочность предмета.
      * В нашем случае зависит от слота
      */
     @Override
@@ -27,7 +27,7 @@ public class MageArmorMaterial implements ArmorMaterial {
     }
 
     /*
-     * Количество защиты
+     * Количество защиты.
      * Зависит напрямую от слота
      */
     @Override
@@ -44,7 +44,7 @@ public class MageArmorMaterial implements ArmorMaterial {
     }
 
     /*
-     * Звук надевания брони
+     * Звук надевания брони.
      * Рекомендуется использовать свои звуки
      */
     @Override
@@ -53,7 +53,7 @@ public class MageArmorMaterial implements ArmorMaterial {
     }
 
     /*
-     * Предмет, необходимый для починки брони
+     * Предмет, необходимый для починки брони.
      * Здесь указано 16 блоков красной шерсти
      */
     @Override
@@ -70,7 +70,7 @@ public class MageArmorMaterial implements ArmorMaterial {
     }
 
     /*
-     * Стойкость?
+     * Стойкость
      */
     @Override
     public float getToughness() {
@@ -90,7 +90,7 @@ public class MageArmorMaterial implements ArmorMaterial {
 ## Регистрация брони
 Создаем ArmorMaterial и регистрируем предметы:
 ```java
- private static final ArmorMaterial RED_MAGE_ARMOR = new MageArmorMaterial();
+    private static final ArmorMaterial RED_MAGE_ARMOR = new MageArmorMaterial();
 
     public static final Item RED_MAGE_HELMET = registerItem("red_mage_helmet", new ArmorItem(RED_MAGE_ARMOR, EquipmentSlot.HEAD, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
     public static final Item RED_MAGE_CHEST = registerItem("red_mage_chest", new ArmorItem(RED_MAGE_ARMOR, EquipmentSlot.CHEST, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
@@ -102,7 +102,7 @@ public class MageArmorMaterial implements ArmorMaterial {
 
 ## Текстура
 Нам нужны текстуры предметов брони и текстуры самой брони.
-Текстуры и модели предметов создаем как обычно, текстуры брони должны  быть две, и они будут находится по пути `assets/minecraft/textures/models/armor`. Название текстуры должно соответствовать *имя_armor_material*_layer_2.png (штаны) и *имя_armor_material*_layer_1.png (всё остальное).
+Текстуры и модели предметов создаем, как обычно, текстуры брони должны быть две, и они будут находиться по пути `assets/minecraft/textures/models/armor`. Название текстуры должно соответствовать *имя_armor_material*_layer_2.png (штаны) и *имя_armor_material*_layer_1.png (всё остальное).
 
 Заходим в игру и смотрим на нашу броню:
 ![броня](images/armor.png)
