@@ -7,10 +7,8 @@ description: Создание собственной жидкости.
 Создадим блок для нашей жидкости.
 
 ```java
-public class OilBlock extends FlowingFluidBlock implements INonTab
-{
-    public OilBlock() 
-    {
+public class OilBlock extends FlowingFluidBlock implements INonTab {
+    public OilBlock() {
         super(() -> TutFluids.OIL_SOURCE, Block.Properties.create(Material.WATER)
                 .doesNotBlockMovement()
                 .lightValue(15)
@@ -21,15 +19,12 @@ public class OilBlock extends FlowingFluidBlock implements INonTab
 ```
 Теперь нам нужен класс для нашей жидкости:
 ```java
-public abstract class OilFluid extends ForgeFlowingFluid
-{
-    protected OilFluid(Properties properties)
-    {
+public abstract class OilFluid extends ForgeFlowingFluid {
+    protected OilFluid(Properties properties) {
         super(properties);
     }
 
-    public static FluidAttributes.Builder makeAttributes()
-    {
+    public static FluidAttributes.Builder makeAttributes() {
         ResourceLocation still   = new ResourceLocation(TutMod.MOD_ID, "fluid/oil_still");
         ResourceLocation flowing = new ResourceLocation(TutMod.MOD_ID, "fluid/oil_flow");
         return FluidAttributes.builder(still, flowing).rarity(Rarity.EPIC)
@@ -40,15 +35,12 @@ public abstract class OilFluid extends ForgeFlowingFluid
     }
 
     @Override
-    protected int getLevelDecreasePerBlock(IWorldReader worldIn)
-    {
+    protected int getLevelDecreasePerBlock(IWorldReader worldIn) {
         return 2;
     }
 
-    public static class Flowing extends OilFluid
-    {
-        public Flowing()
-        {
+    public static class Flowing extends OilFluid {
+        public Flowing() {
             super(new Properties(TutFluids.OIL_SOURCE::get, TutFluids.OIL_FLOWING::get, makeAttributes())
                     .block(TutBlocks.OIL)
                     .bucket(TutItems.BUCKET_OIL));
@@ -56,31 +48,34 @@ public abstract class OilFluid extends ForgeFlowingFluid
         }
 
         @Override
-        protected void fillStateContainer(StateContainer.Builder<Fluid, IFluidState> builder)
-        {
+        protected void fillStateContainer(StateContainer.Builder<Fluid, IFluidState> builder) {
             super.fillStateContainer(builder);
             builder.add(LEVEL_1_8);
         }
 
-        @Override  public int getLevel(IFluidState state)     {  return state.get(LEVEL_1_8); }
-        @Override  public boolean isSource(IFluidState state) {  return false;   }
+        @Override
+        public int getLevel(IFluidState state) {
+            return state.get(LEVEL_1_8);
+        }
+        
+        @Override
+        public boolean isSource(IFluidState state) {
+            return false;
+        }
     }
 
-    public static class Source extends OilFluid
-    {
-        public Source()
-        {
+    public static class Source extends OilFluid {
+        public Source() {
             super(new Properties(TutFluids.OIL_SOURCE::get, TutFluids.OIL_FLOWING::get, makeAttributes())
                     .block(TutBlocks.OIL)
                     .bucket(TutItems.BUCKET_OIL));
         }
 
-        public int getLevel(IFluidState state)
-        {
+        public int getLevel(IFluidState state) {
             return 8;
         }
-        public boolean isSource(IFluidState state)
-        {
+        
+        public boolean isSource(IFluidState state) {
             return true;
         }
     }
@@ -88,21 +83,19 @@ public abstract class OilFluid extends ForgeFlowingFluid
 ```
 И так разберем:
 * `OilFluid` - Абстрактный класс нашей жидкости. Для удобства создание атрибутов я перенесла в отдельный метод.
-    * `still и flowing` - это текстуры жидкости в стоячем и текущем положении соответсвенно.
+    * `still и flowing` - это текстуры жидкости в стоячем и текущем положении соответственно.
     * `density` - это плотность. Отвечает за скорость плавания.
-    * `viscosity` - это вязкость отвечает за скорость растечения жидкости
+    * `viscosity` - это вязкость отвечает за скорость растекания жидкости
     * `color` - это цвет. Нужен для определения цвета дымки. По умолчанию белый.
     * `luminosity` - это яркость свечения. По умолчанию 0.
-* `getLevelDecreasePerBlock` - это понижение уровня жидкости каждый блок. По умлочанию 1;
+* `getLevelDecreasePerBlock` - это понижение уровня жидкости каждый блок. По умолчанию 1;
 * `Flowing` - Класс текущей жидкости.
 * `Source`  - Класс жидкости источника.
 
-Увы в новой верии нету форджевского ведра которое любезно будет хранить вашу жидкость. Его надо создать:
+Увы в новой версии нет форджевского ведра которое любезно будет хранить вашу жидкость. Его надо создать:
 ```java
-public class OilBucketItem extends BucketItem
-{
-    public OilBucketItem()
-    {
+public class OilBucketItem extends BucketItem {
+    public OilBucketItem() {
         super(TutFluids.OIL_SOURCE::get, new Item.Properties()
                 .containerItem(Items.BUCKET)
                 .maxStackSize(1)
@@ -110,8 +103,7 @@ public class OilBucketItem extends BucketItem
     }
 
     @Override
-    public ICapabilityProvider initCapabilities(@Nonnull ItemStack stack, @Nullable CompoundNBT nbt)
-    {
+    public ICapabilityProvider initCapabilities(@Nonnull ItemStack stack, @Nullable CompoundNBT nbt) {
         return new FluidBucketWrapper(stack);
     }
 }
@@ -122,21 +114,19 @@ public class OilBucketItem extends BucketItem
 Создадим класс TutFluids.
 
 ```java
-public class TutFluids
-{
+public class TutFluids {
     private static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS, TutMod.MOD_ID);
 
-    public static final RegistryObject<FlowingFluid> OIL_SOURCE    = FLUIDS.register("ideal", OilFluid.Source::new);
-    public static final RegistryObject<FlowingFluid> OIL_FLOWING   = FLUIDS.register("oil",   OilFluid.Flowing::new);
+    public static final RegistryObject<FlowingFluid> OIL_SOURCE = FLUIDS.register("ideal", OilFluid.Source::new);
+    public static final RegistryObject<FlowingFluid> OIL_FLOWING = FLUIDS.register("oil", OilFluid.Flowing::new);
 
-    public static void register()
-    {
+    public static void register() {
         FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }
 ```
 
-Нам нужно добавить в конструктор основоного класса TutFluids.register(). 
+Нам нужно добавить в конструктор основного класса TutFluids.register(). 
 
 [![Жидкость на земле](images/fluid.png)](images/fluid.png)
 
@@ -146,15 +136,10 @@ public class TutFluids
 
 ```java
     @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn)
-    {
-        if(!worldIn.isRemote)//все только на сервере
-        {
-            if(entityIn instanceof LivingEntity)//если существо с сердечками.
-            {
-                LivingEntity livingEntity = (LivingEntity) entityIn;
-                livingEntity.addPotionEffect(new EffectInstance(Effects.GLOWING, 1, 1));
-            }
+    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn){
+        if (!worldIn.isRemote && entityIn instanceof LivingEntity) {
+            LivingEntity entity = (LivingEntity) entityIn;
+            entity.addPotionEffect(new EffectInstance(Effects.GLOWING, 1, 1));
         }
     }
 ```

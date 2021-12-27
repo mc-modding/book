@@ -1,38 +1,32 @@
 description: Статья о создании собственных агрокультур.
 
 # Агрокультуры
-У нас уже есть кокос, но нету пальмы. Давайте это исправим(у нас будет маленько карликавая пальма).
+У нас уже есть кокос, но нет пальмы. Давайте это исправим(у нас будет маленько карликовая пальма).
 
 ## Блок агрокультуры
 
 Давайте создадим класс под названием `PalmeBlock`, который будет унаследован от `CropsBlock`, где предопределим getSeedsItem, getShape, getDrops и getMaxAge.
 ```java
-public class PalmBlock extends CropsBlock implements INonItem
-{
-    public PalmBlock()
-    {
+public class PalmBlock extends CropsBlock implements INonItem {
+    public PalmBlock() {
         super(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0, 0).sound(SoundType.CROP));
     }
 
     @Nonnull
     @Override
-    protected IItemProvider getSeedsItem()
-    {
+    protected IItemProvider getSeedsItem() {
         return TutItems.COCOUNT.get();
     }
 
     @Override
-    public int getMaxAge()
-    {
+    public int getMaxAge() {
         return 4;
     }
 
     @Nonnull
     @Override
-    public VoxelShape getShape(BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos, @Nonnull ISelectionContext context)
-    {
-        switch(state.get(this.getAgeProperty()))
-        {
+    public VoxelShape getShape(BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos, @Nonnull ISelectionContext context) {
+        switch(state.get(this.getAgeProperty())) {
             case 0:
                 return Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
             case 1:
@@ -46,8 +40,7 @@ public class PalmBlock extends CropsBlock implements INonItem
 
     @Nonnull
     @Override
-    public List<ItemStack> getDrops(@Nonnull BlockState state, LootContext.Builder builder)
-    {
+    public List<ItemStack> getDrops(@Nonnull BlockState state, LootContext.Builder builder) {
         return isMaxAge(state) ? ImmutableList.of(new ItemStack(TutItems.COCOUNT.get(), 1 + builder.getWorld().rand.nextInt(4))) :
                 ImmutableList.of(new ItemStack(TutItems.COCOUNT.get(), 1), new ItemStack(Items.STICK, state.get(this.getAgeProperty())));
     }
@@ -58,33 +51,26 @@ public class PalmBlock extends CropsBlock implements INonItem
  *  Предмета не регистрируется.
  * `getSeedsItem` Возвращает семя, из которого вырастает наша пальма.
  * `getMaxAge` Возвращает максимальный возраст растения.
- * `getShape` Возврщает коллизию растения в зависимости от стадии роста.
+ * `getShape` Возвращает коллизию растения в зависимости от стадии роста.
  * `getDrops` Возвращает дроп. Если выросло, то выпадает от 1 до 5 кокосов, если нет, то 1 кокос и столько палок, сколько стадий роста прошло.
 
 Теперь стандартная регистрация блока. Но есть проблема. Мы все еще не можем посадить кокос. Для того чтоб это исправить нам надо сменить родителя кокоса на BlockNamedItem и передать по параметру наш блок пальмы:
 ```java
-public class CoconutItem extends BlockNamedItem
-{
-    public CoconutItem()
-    {
+public class CoconutItem extends BlockNamedItem {
+    public CoconutItem() {
         super(TutBlocks.PALM.get(), new Properties()
                 .group(TutMod.TUT_GROUP)
-                .food(
-                        new Food.Builder()
-                                .hunger(5)
-                                .saturation(5).
-                                setAlwaysEdible()
-                                .fastToEat()
-                 .effect(() -> new EffectInstance(Effects.GLOWING, 10, 100), 10)
-                 .build()));
+                .food(new Food.Builder().hunger(5).saturation(5).setAlwaysEdible().fastToEat()
+                .effect(() -> new EffectInstance(Effects.GLOWING, 10, 100), 10)
+                .build()));
     }
 }
 ```
-Все теперь сажается и даже ростет! Но ростим мы квадратики. Давайте ростить пальму! 
+Все теперь сажается и даже растет! Но растим мы квадратики. Давайте растить пальму! 
 
 ## Моделька для нашей агрокультуры
 Увы в 1.15 убрали forge формат блокстейтов, поэтому используем обычный.
-Теперь нужно создать файл блокстейта для нашей пальмы. Создадим json файл `palm` в папке с блок стейтами. Наследоваться будем от `cross` чтоб плучить красивую модельку крестиком.
+Теперь нужно создать файл блокстейта для нашей пальмы. Создадим json файл `palm` в папке с блок стейтами. Наследоваться будем от `cross` чтоб получить красивую модельку крестиком.
 
 ```json
 {
@@ -98,7 +84,7 @@ public class CoconutItem extends BlockNamedItem
   }
 }
 ```
-Блок `variants` используется для определения текстур, которые должен использовать блок в разный ситуациях. В нашем случае это изменение "age". Подробнее в статье про состояния блоков.
+Блок `variants` используется для определения текстур, которые должен использовать блок в разных ситуациях. В нашем случае это изменение "age". Подробнее в статье про состояния блоков.
 ```json
 {
   "parent": "block/cross",
@@ -132,16 +118,15 @@ public class CoconutItem extends BlockNamedItem
   "textures": {  "cross": "tut:blocks/palm_4" }
 }
 ```
-Теперь нужно добавить текстуры. В соответствии с блокстейтом их должно быть 5,  разместим их по пути "src/main/resources/assets/tut/textures/blocks/palm/". 
+Теперь нужно добавить текстуры. В соответствии с блокстейтом их должно быть 5, разместим их по пути "src/main/resources/assets/tut/textures/blocks/palm/". 
 Результат:
-[![Ченое пятно](images/wrong.png)](images/wrong.png)
+[![Чёрное пятно](images/wrong.png)](images/wrong.png)
 Для того чтоб исправить это, нужно вызвать `RenderTypeLookup::setRenderLayer` в FMLClientSetupEvent
 ```java
     @SubscribeEvent
-    public static void init(FMLClientSetupEvent event)
-    {
+    public static void init(FMLClientSetupEvent event) {
          RenderTypeLookup.setRenderLayer(TutBlocks.PALM.get(), RenderType.getCutout());
     }
 ```
 
-[![резулт](images/demonstration.png)](images/demonstration.png)
+[![результат](images/demonstration.png)](images/demonstration.png)

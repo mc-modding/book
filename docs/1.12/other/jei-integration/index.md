@@ -124,7 +124,7 @@ public class JEIPluginTM implements IModPlugin {
     }
 }
 ```
-Если Вам нужно больше рецептов - делаем цикл и не много изменяем класс DropsRecipeWrapper.
+Если Вам нужно больше рецептов - делаем цикл и немного изменяем класс DropsRecipeWrapper.
 
 Далее рассмотрим класс, который добавляет рецепт.
 ```java

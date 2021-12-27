@@ -8,7 +8,7 @@ description: Добавление собственных состояний бл
 * `BooleanProperty` - логический тип. Хранит в себе логические значения.
 * `PropertyEnum` - перечисляемый тип. Хранит в себе перечисляемые значения.
 * `IntegerProperty` - целочисленный тип. Хранит в себе числа от `0` до `2147483647`. (знак минус применять не рекомендуется, так что весь счёт начинается от 0!)
-* `DirectionProperty` - поворот плока. Хранит в себе Direction.Plane.
+* `DirectionProperty` - поворот блока. Хранит в себе Direction.Plane.
 
 Все состояния майнкрафт хранит в `BlockStateProperties`. Там есть половина того что вам может быть нужно.
 ## BooleanProperty
@@ -20,12 +20,12 @@ public static final BooleanProperty UPPER = BooleanProperty.create("upper");
 
 Добавим в конструктор стандартное значение для данной переменной.
 ```java
-this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)));
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, false));
 ```
 
 Если хотим больше одного типа прописать, то делаем это так:
 ```java
-this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(OTHER_STATE, Base_Value));
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, false).with(OTHER_STATE, Base_Value));
 ```
 
 Давайте сделаем простой пример использования переменной `BooleanProperty`. Добавим в класс нашего блока метод `fillStateContainer`.
@@ -57,12 +57,14 @@ public static final IntegerProperty NUMBER = IntegerProperty.create("number", 0,
 
 Добавим в конструктор стандартное значение для данной переменной.
 ```java
-this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, Boolean.valueOf(false)).with(NUMBER, Integer.valueOf(0)));
+this.setDefaultState(this.stateContainer.getBaseState().with(UPPER, false).with(NUMBER, Integer.valueOf(0)));
 ```
 Модифицируем метод `fillStateContainer`.
 ```java
 @Override
-protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(UPPER).add(NUMBER);  }
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    builder.add(UPPER).add(NUMBER);
+}
 ```
 Перейдём в папку `blockstates` и откроем файл с названием нашего блока
 ```json
@@ -81,21 +83,12 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 
 Создадим перечисление, наследующиеся от IStringSerializable.
 ```java
-public enum  EnumTime implements IStringSerializable
-{
-    WINTER("winter"),  SUMMER("summer"), AUTUMT("autumn"), SPRING("spring");
-
-    public String name = "";
-
-    EnumTime(String nameIn )
-    {
-        name = nameIn;
-    }
-
+public enum  EnumTime implements IStringSerializable {
+    WINTER,  SUMMER, AUTUMN, SPRING;
+    
     @Override
-    public String getName()
-    {
-        return name;
+    public String getName() {
+        return super.getName().toLowerCase();
     }
 }
 ```
@@ -110,7 +103,9 @@ this.setDefaultState(this.stateContainer.getBaseState().with(TIME, EnumTime.SPRI
 Метод `fillStateContainer`.
 ```java
 @Override
-protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(TIME);  }
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    builder.add(TIME);
+}
 ```
 И еще раз модифицируем `blockstate`
 ```json
@@ -126,7 +121,7 @@ protected void fillStateContainer(StateContainer.Builder<Block, BlockState> buil
 [![С энумом](images/state_enum.png)](images/state_enum.png)
 ## DirectionProperty
 
-На самом деле `DirectionProperty` это сокращение `EnumProperty<Direction>`. Поэтому использование не сильно отличается. Испольуется для создания блоков с поворотом. Создадим `DirectionProperty`.
+На самом деле `DirectionProperty` это сокращение `EnumProperty<Direction>`. Поэтому использование не сильно отличается. Используется для создания блоков с поворотом. Создадим `DirectionProperty`.
 ```java
 public static final DirectionProperty DIRECTION = DirectionProperty.create("direction", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.UP, Direction.DOWN);
 ```
@@ -136,7 +131,9 @@ this.setDefaultState(this.stateContainer.getBaseState().with(DIRECTION, Directio
 ```
 ```java
 @Override
-protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) { builder.add(DIRECTION);  }
+protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    builder.add(DIRECTION);
+}
 ```
 Чтоб при установке блока он ставился с поворотом предопределим метод getStateForPlacement.
 ```java
@@ -176,18 +173,16 @@ public BlockState getStateForPlacement(BlockItemUseContext context) {
 [![С поворотом](images/state_dir.png)](images/state_dir.png)
 
 ## IWaterLoggable
-С 1.13 у нас появилась возможность делать блоки, содержищие воду(например забор). Для того чтоб это повторить, блок должен быть не полным, нужно унаследовать блок от IWaterLoggable, добавить проперти BlockStateProperties.WATERLOGGED и предопределить пару методов:
+С 1.13 у нас появилась возможность делать блоки, содержащие воду(например забор). Для того чтоб это повторить, блок должен быть не полным, нужно унаследовать блок от IWaterLoggable, добавить свойство BlockStateProperties.WATERLOGGED и предопределить пару методов:
 ```java
     @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context)
-    {
+    public BlockState getStateForPlacement(BlockItemUseContext context){
         IFluidState ifluidstate = context.getWorld().getFluidState(context.getPos());
         return this.getDefaultState().with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER);
     }
     
     @Override
-    public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving)
-    {
+    public void neighborChanged(BlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving){
         IFluidState ifluidstate = worldIn.getFluidState(pos);
         worldIn.setBlockState(pos, state.with(WATERLOGGED, ifluidstate.getFluid() == Fluids.WATER));
         super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);

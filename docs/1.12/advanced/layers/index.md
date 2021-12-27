@@ -5,11 +5,9 @@ description: Создание собственного слоя.
 Создадим класс `LayerQuiver`.
 
 ```java
-public class LayerQuiver implements LayerRenderer<EntityPlayer>
-{
+public class LayerQuiver implements LayerRenderer<EntityPlayer> {
    @Override
-   public void doRenderLayer(EntityPlayer player, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
-   {
+   public void doRenderLayer(EntityPlayer player, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
        GlStateManager.pushMatrix();
        //Позиция предмета
        GlStateManager.translate(0, 0.25F, 0.15F);
@@ -19,8 +17,7 @@ public class LayerQuiver implements LayerRenderer<EntityPlayer>
        GlStateManager.scale(0.85F, 0.85F, 0.85F);
 
        //Условие: Если игрок присел, то мы меняем положение нашего колчана.
-       if(player.isSneaking())
-       {
+       if (player.isSneaking()) {
            GlStateManager.rotate(-30F, 1, 0, 0);
            GlStateManager.translate(0, -0.155F, 0.04F);
        }
@@ -31,8 +28,7 @@ public class LayerQuiver implements LayerRenderer<EntityPlayer>
    }
 
    @Override
-   public boolean shouldCombineTextures()
-   {
+   public boolean shouldCombineTextures() {
        return false;
    }
 }
@@ -41,15 +37,12 @@ public class LayerQuiver implements LayerRenderer<EntityPlayer>
 Создадим класс `LayersRegister`.
 
 ```java
-public class LayersRegister
-{
-    public static void register()
-    {
+public class LayersRegister {
+    public static void register() {
         setLayer(new LayerQuiver());
     }
 
-    private static void setLayer(final LayerRenderer layer)
-    {
+    private static void setLayer(final LayerRenderer layer) {
         Minecraft.getMinecraft().getRenderManager().getSkinMap().get("default").addLayer(layer);
         Minecraft.getMinecraft().getRenderManager().getSkinMap().get("slim").addLayer(layer);
     }

@@ -37,7 +37,7 @@ description: Добавление своих звуков в игру.
     - `volume` - громкость. Чем выше значение, тем дальше будет слышимость
     - `pitch` - высота звука. Если 1.0, то звук будет нормально проигрываться, если же ниже, то звук будет иметь эффект замедления
     - `weight` - шанс воспроизведения звука
-    - `stream` - имеет два положения `true/false`, при `true` проигрывается звук из файла. Это нужно чтобы избежать проблем со звучанием звука в игре, т.е. если ваш звук более одной минуты, то рекомендуется выставить данный параметр на `true`.
+    - `stream` - имеет два положения `true/false`, при `true` проигрывается звук из файла. Это нужно, чтобы избежать проблем со звучанием звука в игре, т.е. если ваш звук более одной минуты, то рекомендуется выставить данный параметр на `true`.
 
 Продвинутый пример:
 ```json
@@ -65,29 +65,26 @@ description: Добавление своих звуков в игру.
 Создадим класс `Sounds`.
 
 ```java
-public class Sounds
-{
+public class Sounds {
     //Это наш звук, `test_sound` это название звука указанного в sounds.json
-    public static final SoundEvent test = reg("test_sound")
+    public static final SoundEvent test = registry("test_sound");
 
     @SubscribeEvent
-    public void regSound(RegistryEvent.Register<SoundEvent> e)
-    {
+    public void registerSounds(RegistryEvent.Register<SoundEvent> e) {
         //Регистрация звука
-        ForgeRegistries.SOUND_EVENTS.register(lvlUp)
+        ForgeRegistries.SOUND_EVENTS.register(test);
     }
 
     //Упрощённая регистрация звука
-    private SoundEvent reg(String name)
-    {
-        ResourceLocation rl = new ResourceLocation(*modid*, name)
-        return new SoundEvent(rl).setRegistryName(rl)
+    private SoundEvent registry(String name) {
+        ResourceLocation uniqueName = new ResourceLocation(*modid*, name);
+        return new SoundEvent(uniqueName).setRegistryName(uniqueName);
     }
 }
 ```
-`*modid*` - это modid вашего мода
+`*modid*` - это modId мода
 
-Чтобы проиграть наш звук, где либо добавим такой код:
+Чтобы воспроизвести наш звук, добавим такой код:
 ```java
 /**
  *  blockPos - это позиция на которой будет проигрываться звук
@@ -100,4 +97,4 @@ public class Sounds
 world.playSound(blockPos, Sounds.test, SoundCategory.PLAYERS, 1.0F, 1.0F, false)
 ```
 
-Затем зарегистрируем данный класс в MinecraftForge.EVENT_BUS и зайдём в игру!
+Затем зарегистрируем Sounds класс в MinecraftForge.EVENT_BUS и зайдём в игру!

@@ -1,4 +1,4 @@
-description: Создаие и использование TileEntity.
+description: Создание и использование TileEntity.
 
 # Tile Entity
 

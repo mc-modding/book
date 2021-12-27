@@ -1,14 +1,12 @@
 description: Создание собственной руды с генерацией в мире.
 
 # Создание руды с генерацией в мире
-Иногда надо сделать свою руду с герерацией в мире. Это мы и разберем в этой статье.
+Иногда надо сделать свою руду с генерацией в мире. Это мы и разберем в этой статье.
 ## Основа
 Создадим класс нашей руды наследующийся от OreBlock:
 ```java
-public class AluminumOreBlock extends OreBlock
-{
-    public AluminumOreBlock()
-    {
+public class AluminumOreBlock extends OreBlock {
+    public AluminumOreBlock() {
         super(Properties.create(Material.ROCK).hardnessAndResistance(10, 10).harvestTool(ToolType.PICKAXE));
     }
 
@@ -23,12 +21,11 @@ public class AluminumOreBlock extends OreBlock
 Для генерации нам надо добавить руду в список генерируемых Feature:
 ```java
     @SubscribeEvent
-    public static void initServer(FMLCommonSetupEvent event)
-    {
+    public static void initServer(FMLCommonSetupEvent event){
         addAluminumOre(Biomes.DARK_FOREST);
     }
-    public static void addAluminumOre(Biome biome)
-    {
+    
+    public static void addAluminumOre(Biome biome) {
         biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
                 Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, TutBlocks.AL.get().getDefaultState(), 17))
                         .withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 128))));

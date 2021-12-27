@@ -14,7 +14,7 @@ Forge загружает моды в 3 стадии: Преинициализа�
 
 ### Преинициализация
 
-Стадия преинициализации используется для того, чтобы дать игре знать о том, что есть в вашем моде: блоках, предметах и так далее.
+Стадия преинициализации используется для того, чтобы дать игре знать о том, что есть в моде: блоках, предметах и так далее.
 
 Чаще всего в этой стадии выполняются следующие действия:
 
@@ -26,12 +26,8 @@ Forge загружает моды в 3 стадии: Преинициализа�
 Событие этой стадии: `FMLPreInitializationEvent`. В главном файле его использование выглядит следующим образом:
 
 ```java
-// TestMod.java
-
 @EventHandler
 public void preInit(FMLPreInitializationEvent event) {
-    // Преинициализация
-    System.out.println("\u001B[32m" + "[Starting Test Mod PRE-INITIALIZATION]" + "\u001B[0m");
 }
 ```
 
@@ -48,12 +44,8 @@ public void preInit(FMLPreInitializationEvent event) {
 Событие этой стадии: `FMLInitializationEvent`. В главном файле его использование выглядит следующим образом:
 
 ```java
-// TestMod.java
-
 @EventHandler
 public void init(FMLInitializationEvent event) {
-    // Инициализация
-    System.out.println("\u001B[32m" + "[Starting Test Mod INITIALIZATION]" + "\u001B[0m");
 }
 ```
 
@@ -64,12 +56,8 @@ public void init(FMLInitializationEvent event) {
 Событие этой стадии: `FMLPostInitializationEvent`. В главном файле его использование выглядит следующим образом:
 
 ```java
-// TestMod.java
-
 @EventHandler
 public void postInit(FMLPostInitializationEvent event) {
-    // Инициализация
-    System.out.println("\u001B[32m" + "[Starting Test Mod POST-INITIALIZATION]" + "\u001B[0m");
 }
 ```
 
@@ -78,7 +66,7 @@ public void postInit(FMLPostInitializationEvent event) {
 Учитывая 3 основные стадии загрузки Forge мода, наш главный файл мода должен выглядит приблизительно так:
 
 ```java
-package ru.ivasik.tutorial;
+package ru.mcmodding.tutorial;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -87,33 +75,20 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = "tut")
-public class Tutorial
-{
+public class Tutorial {
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-        // Преинициализация
-        System.out.println("\u001B[32m" + "[Starting Test Mod PRE-INITIALIZATION]" + "\u001B[0m");
+    public void preInit(FMLPreInitializationEvent event) {
+        // Какой-то код
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-        // Инициализация
-        System.out.println("\u001B[32m" + "[Starting Test Mod INITIALIZATION]" + "\u001B[0m");
+    public void init(FMLInitializationEvent event) {
+        // Какой-то код
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-        // Инициализация
-        System.out.println("\u001B[32m" + "[Starting Test Mod POST-INITIALIZATION]" + "\u001B[0m");
+    public void postInit(FMLPostInitializationEvent event) {
+        // Какой-то код
     }
 }
 ```
-
-Если вы запустите клиент с этим кодом загрузки стадий, то в консоли увидите следующее:
-
-![Демонстрация стадий загрузки](images/loading_stages.png){: .border }
-
-Можно отчетливо видеть, что эти стадии выполняются в разное время.

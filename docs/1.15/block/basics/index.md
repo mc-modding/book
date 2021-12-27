@@ -7,16 +7,13 @@ description: Создание собственного блока.
 Создадим класс для нашего блока.
 
 ```java
-public class IdealBlock extends Block
-{
-    public IdealBlock()
-    {
+public class IdealBlock extends Block {
+    public IdealBlock() {
         super(Properties.create(Material.ROCK).harvestTool(ToolType.PICKAXE));
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder)
-    {
+    public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
         return ImmutableList.of(new ItemStack(Items.CAKE, 8), new ItemStack(Items.TORCH, 1));
     }
 }
@@ -29,15 +26,15 @@ public class IdealBlock extends Block
 
 Также можно вынести Properties в конструктор.
 Все параметры Properties:
-* `create` - Создает Properties с заданым материалом.
+* `create` - Создает Properties с заданным материалом.
 * `harvestTool` - Задает тип эффективного инструмента.
 * `notSolid` - Для блоков с моделями чтоб не создавать эффект X-rey.
 * `lightValue` - Задает силу свечения.
-* `lootFrom` - Копирует дроп с другово блока.
+* `lootFrom` - Копирует дроп с другого блока.
 * `speedFactor` - Задает множитель скорости(как у льда).
 * `sound` - Звук для хождения.
-* `doesNotBlockMovement` - Делаем недвигаемым для поршня.
-* `hardnessAndResistance` - Задает прочность и взрывоустойчивость
+* `doesNotBlockMovement` - Делаем не двигаемым для поршня.
+* `hardnessAndResistance` - Задает прочность и устойчивость к взрывам
 * `jumpFactor` - Задает множитель прыжка(как блок меда)
 * `noDrops` - Отменяет какой - либо дроп.
 * `slipperiness` - Скользкость(как у льда)
@@ -50,20 +47,17 @@ public class IdealBlock extends Block
 
 ```java
 @Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class TutBlocks
-{
+public class TutBlocks {
     private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TestMod.MOD_ID);
 
     public static final RegistryObject<Block> IDEAL = BLOCKS.register("ideal",  IdealBlock::new);
 
-    public static void register()
-    {
+    public static void register() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event)
-    {
+    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
         final IForgeRegistry<Item> registry = event.getRegistry();
         TutBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
@@ -78,14 +72,14 @@ public class TutBlocks
 }
 ```
 
-* `register(block)` - регестрирует блоки.
-* `IDEAL` - обьект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get().
-* `onRegisterItems` - регестрирует предметы для блоков которые не наследуют INonItem.
+* `register(block)` - регистрирует блоки.
+* `IDEAL` - объект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get().
+* `onRegisterItems` - регистрирует предметы для блоков которые не наследуют INonItem.
 * `INonItem` - пустой интерфейс для отмены регистрации предмета.
 
-Нам нужно добавить в конструктор основоного класса TutBlocks.register() для регистрации блоков.
-Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Чтобы получить блок пропишите `/give @p tut:ideal`.
-Вместо `tut` у Вас должен быть `modid` вашего мода! Вместо `ideal` у Вас должно быть регистрируемое имя вашего блока.
+Нам нужно добавить в конструктор основного класса TutBlocks.register() для регистрации блоков.
+Теперь можете запустить Minecraft нажав на кнопку `run` и посмотреть свой блок в живую. Для получения блока напишите `/give @p tut:ideal`.
+Вместо `tut` у Вас должен быть `modid` мода! Вместо `ideal` у Вас должно быть регистрируемое имя вашего блока.
 
 [![Блок от первого лица](images/face_first.png)](images/face_first.png)
 
@@ -110,7 +104,7 @@ public class TutBlocks
     }
 }
 ```
-В этом файле будет хранится информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
+В этом файле будет храниться информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
 Теперь вы должны создать модель блока, вы можете создать как наследника стандартного блока, примером может послужить камень, так и свою собственную. Вот пример стандартной модели:
 
 ```json

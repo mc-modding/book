@@ -7,24 +7,20 @@ description: Создание собственного блока.
 Создадим класс для нашего предмета.
 
 ```java
-public class BlockBestStone extends Block
-{
-    public BlockBestStone(String name)
-    {
+public class BlockBestStone extends Block {
+    public BlockBestStone(String name) {
         super(Material.ROCK);
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
     @Override
-    public boolean isFullCube(IBlockState state)
-    {
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 }
@@ -32,9 +28,9 @@ public class BlockBestStone extends Block
 
 * `Material.ROCK` - задаёт материал блоку, т.е. материал будет влиять на ломание блока, звук хождения по нему, а так же на предметы которые могут ломать данный материал.
 * `setRegistryName(name)` - задаёт регистрируемое имя для нашего предмета, т.е. данное имя будет зарегистрировано в игре и его нельзя будет уже использовать более. В игре будет отображаться как `modid:*block_name*`. Чтобы это увидеть нажмите сочетание клавиш `F3+H`
-* `setUnlocalizedName(name)` - задаёт локализационное имя для нашего предмета, т.е. чтобы нам сделать перевод имени для предмета мы задаём имя которое будет в конечном итоге выглядеть вот так `tile.*block_name*.name`.
+* `setUnlocalizedName(name)` - задаёт локализационное имя для нашего предмета, т.е. чтобы нам сделать перевод имени для предмета мы задаём имя, которое будет в конечном итоге выглядеть вот так `tile.*block_name*.name`.
 * `isOpaqueCube` - этот метод задаёт логическое значение о том, будет ли блок непрозрачным, зададим false чтобы наша модель не создавала эффект X-Ray. Если вы не делаете модель для блока, то можете не переопределять этот метод.
-* `isFullCube` - этот метод задаёт логическое значение о том, будет ли блок полным. Если указано true, то блок будет создавать тень, но это нужно лишь когда ваш блок не имеет модели!
+* `isFullCube` - этот метод задаёт логическое значение о том, будет ли блок полным.
 
 
 Вы так же можете вынести `Material` в параметр конструктора, чтобы можно было задавать разные материалы для других блоков.
@@ -44,30 +40,25 @@ public class BlockBestStone extends Block
 Создадим класс BlocksRegister.
 
 ```java
-public class BlocksRegister
-{
+public class BlocksRegister {
     public static Block BEST_STONE = new BlockBestStone("best_stone");
 
-    public static void register()
-    {
+    public static void register() {
         setRegister(BEST_STONE);
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerRender()
-    {
+    public static void registerRender() {
         setRender(BEST_STONE);
     }
 
-    private static void setRegister(Block block)
-    {
+    private static void setRegister(Block block) {
         ForgeRegistries.BLOCKS.register(block);
         ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
     }
 
     @SideOnly(Side.CLIENT)
-    private static void setRender(Block block)
-    {
+    private static void setRender(Block block) {
 
     }
 }
