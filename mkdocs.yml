@@ -7,7 +7,7 @@ repo_url: 'https://github.com/mc-modding/book'
 nav:
   - '1.7.10':
       - Подготовка:
-          - Установка программ: '1.7.10/prepare.md'
+          - Установка программ: '1.7.10/preparation/install.md'
           - Использование Idea: '1.7.10/prepare.md'
           - Использование Eclipse: '1.7.10/prepare.md'
           - Собственный скин: '1.7.10/prepare.md'
