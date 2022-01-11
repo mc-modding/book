@@ -8,10 +8,8 @@ nav:
   - '1.7.10':
       - Подготовка:
           - Установка программ: '1.7.10/preparation/install.md'
-          - Использование Idea: '1.7.10/prepare.md'
-          - Использование Eclipse: '1.7.10/prepare.md'
+          - Использование Idea: '1.7.10/preparation/setup-idea.md'
           - Собственный скин: '1.7.10/prepare.md'
-          - Решение проблем: '1.7.10/prepare.md'
       - Основы Forge:
           - Структура мода: '1.7.10/prepare.md'
           - Аннотация @Mod: '1.7.10/prepare.md'
@@ -32,7 +30,7 @@ nav:
           - Метадата: '1.7.10/prepare.md'
           - Хранение данных(TileEntity): '1.7.10/prepare.md'
           - Жидкость: '1.7.10/prepare.md'
-          - Хранилище жидкости: '1.7.10/prepare.md'
+          - Хранение жидкости: '1.7.10/prepare.md'
       - Вкладка в креативе: '1.7.10/prepare.md'
       - Локализация: '1.7.10/prepare.md'
       - События:
