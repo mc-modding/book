@@ -11,11 +11,11 @@ nav:
           - Использование Idea: '1.7.10/preparation/setup-idea.md'
           - Авторизация(Скин и никнейм): '1.7.10/preparation/auth.md'
       - Основы Forge:
-          - Структура мода: '1.7.10/prepare.md'
-          - Аннотация @Mod: '1.7.10/prepare.md'
-          - Стадии загрузки мода: '1.7.10/prepare.md'
-          - Прокси: '1.7.10/prepare.md'
-          - Сборка мода: '1.7.10/prepare.md'
+          - Структура мода: '1.7.10/mod-structure.md'
+          - Аннотация @Mod: '1.7.10/mod-annotation.md'
+          - Стадии загрузки мода: '1.7.10/loading-stages.md'
+          - Прокси: '1.7.10/proxy.md'
+          - Сборка мода: '1.7.10/building-mod.md'
       - Предмет:
           - Создание предмета: '1.7.10/prepare.md'
           - Еда: '1.7.10/prepare.md'
