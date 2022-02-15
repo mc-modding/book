@@ -1,0 +1,26 @@
+.MathJax
+{
+    outline: none;
+}
+
+.MathJax_Display
+{
+    overflow: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar
+    {
+        width: .4rem;
+        height: .4rem;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: rgba(0,0,0,.26);
+
+        &:hover
+        {
+            background-color: #536dfe;
+        }
+    }
+}

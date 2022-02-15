@@ -1,0 +1,4471 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Обычный блок не может уникальные данные. Если мы хотим что бы наш блок содержал уникальные данные для каждого отдельно взятого экземпляра нам нужно использовать TileEntity.">
+      
+      
+      
+        <link rel="canonical" href="https://mcmodding.ru/1.12/tileentity/">
+      
+      <link rel="icon" href="../../favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+
+    <meta property="og:image" content="https://mcmodding.ru//ogLogo.png" />
+
+    
+      
+        <title>Tile Entity - MC Modding Учебник</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
+          crossorigin="anonymous">
+
+    <!-- Contributors --> 
+    <link rel="stylesheet" href="../../css/contributors/contributors.css" />
+
+    <!-- Nav -->
+    <link rel="stylesheet" href="../../css/nav/nav.css" />
+
+    <!-- Content -->
+    <link rel="stylesheet" href="../../css/content/content.css" />
+
+    <!-- Override -->
+    <link rel="stylesheet" href="../../css/override/override.css" />
+
+    <!-- Logo -->
+    <link rel="stylesheet" href="../../css/logo/logo.css" />
+
+    <!-- Footer -->
+    <link rel="stylesheet" href="../../css/footer/footer.css" />
+
+    
+    
+
+    <!-- MathJax -->
+    <link rel="stylesheet" href="../../css/mathjax/mathjax.css" />
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            jax: ["input/TeX", "output/HTML-CSS"],
+            text2jax: {
+                inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+                displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+                processEscapes: true
+            },
+            messageStyle: "none"
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML&locale=ru" async></script>
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="../../libs/magnific-popup/magnific-popup.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(function ()
+        {
+            $('.md-content a > img').each(function (i, elem)
+            {
+                $(this).parent().addClass('img-link');
+            });
+
+            $('.img-link').magnificPopup({type: 'image'});
+        });
+    </script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tile-entitie" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="MC Modding Учебник" class="md-header__button md-logo" aria-label="MC Modding Учебник" data-md-component="logo">
+      
+  <img src="../../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MC Modding Учебник
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tile Entity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mc-modding/book/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mc-modding/book
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+
+    <!-- Site title -->
+    <label class="md-nav__title md-nav__title--site" for="__drawer">
+        <a href="https://mcmodding.ru/" title="MC Modding Учебник"
+            class="md-nav__button md-logo">
+            
+            <img src="../../logo.svg" width="48" height="48" />
+            
+        </a>
+        <span class="site-name">MC Modding Учебник</span>
+    </label>
+
+    <ul class="md-nav__list nav-links">
+        
+        <li class="md-nav__item">
+            <a href="https://forum.mcmodding.ru/forums/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.23/" target="_blank" title="Задать вопрос" class="md-nav__link">
+                Задать вопрос
+                <i class="far fa-question-circle"></i>
+            </a>
+        </li>
+        
+        <li class="md-nav__item">
+            <a href="https://forum.mcmodding.ru" target="_blank" title="Форум" class="md-nav__link">
+                Форум
+                <i class="far fa-comments"></i>
+            </a>
+        </li>
+        
+        <li class="md-nav__item">
+            <a href="../../editing-book/" target="_blank" title="Как внести вклад?" class="md-nav__link">
+                Как внести вклад?
+                <i class="far fa-edit"></i>
+            </a>
+        </li>
+        
+        <li class="md-nav__item">
+            <a href="https://discord.gg/FVVG8p2QrW" target="_blank" title="Мы в Discord" class="md-nav__link">
+                Мы в Discord
+                <i class="fab fa-discord"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+    <!-- Render item list -->
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+        
+        
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1">
+          1.7.10
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1.7.10" data-md-level="1">
+        <label class="md-nav__title" for="nav-1">
+          <span class="md-nav__icon md-icon"></span>
+          1.7.10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_1" type="checkbox" id="nav-1_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_1">
+          Подготовка
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Подготовка" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Подготовка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/preparation/install/" class="md-nav__link">
+        Установка программ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/preparation/setup-idea/" class="md-nav__link">
+        Использование Idea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/preparation/auth/" class="md-nav__link">
+        Авторизация(Скин и никнейм)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_2" type="checkbox" id="nav-1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_2">
+          Основы Forge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Основы Forge" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Основы Forge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/basics/mod-structure/" class="md-nav__link">
+        Структура мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/basics/mod-annotation/" class="md-nav__link">
+        Аннотация @Mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/basics/loading-stages/" class="md-nav__link">
+        Стадии загрузки мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/basics/proxy/" class="md-nav__link">
+        Прокси
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/basics/building-mod/" class="md-nav__link">
+        Сборка мода
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_3" type="checkbox" id="nav-1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_3">
+          Предмет
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Предмет" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Предмет
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Создание предмета
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Еда
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Инструменты
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Починка инструментов
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Броня
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Подтипы
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Редкость
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Горение
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_4" type="checkbox" id="nav-1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_4">
+          Блок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Блок" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Блок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Создание блока
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Метадата
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Хранение данных(TileEntity)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Жидкость
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Хранение жидкости
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Вкладка в креативе
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Локализация
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_7" type="checkbox" id="nav-1_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_7">
+          События
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="События" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_7">
+          <span class="md-nav__icon md-icon"></span>
+          События
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Использование событий
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственные события
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Таблица событий
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_8" type="checkbox" id="nav-1_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_8">
+          Рецепты
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Рецепты" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_8">
+          <span class="md-nav__icon md-icon"></span>
+          Рецепты
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Добавление рецепта
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственный рецепт
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Зельеварка
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_9" type="checkbox" id="nav-1_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_9">
+          Сущность(Entity)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Сущность(Entity)" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Сущность(Entity)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственная сущность
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Спавн в мире
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Исскуственый интелект
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_10" type="checkbox" id="nav-1_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_10">
+          Пользовательский интерфейс(Gui)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Пользовательский интерфейс(Gui)" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_10">
+          <span class="md-nav__icon md-icon"></span>
+          Пользовательский интерфейс(Gui)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Создание окна
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Контейнер
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Пакетная система
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_12" type="checkbox" id="nav-1_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_12">
+          Измерение(Dimension)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Измерение(Dimension)" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_12">
+          <span class="md-nav__icon md-icon"></span>
+          Измерение(Dimension)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственное измерение
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Биом
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Генерация руды
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Данж
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Портал
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_12_6" type="checkbox" id="nav-1_12_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_12_6">
+          Генерация лута
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Генерация лута" data-md-level="3">
+        <label class="md-nav__title" for="nav-1_12_6">
+          <span class="md-nav__icon md-icon"></span>
+          Генерация лута
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Рыбалка
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        В сундуках
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        В вагонетках с сундуком
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственный житель
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_13" type="checkbox" id="nav-1_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_13">
+          Хранение данных
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Хранение данных" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_13">
+          <span class="md-nav__icon md-icon"></span>
+          Хранение данных
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        В сущностях
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        В мире
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Конфиг
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_14" type="checkbox" id="nav-1_14" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_14">
+          Эффекты
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Эффекты" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_14">
+          <span class="md-nav__icon md-icon"></span>
+          Эффекты
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Звуки
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Частицы
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1_15" type="checkbox" id="nav-1_15" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-1_15">
+          Остальное
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Остальное" data-md-level="2">
+        <label class="md-nav__title" for="nav-1_15">
+          <span class="md-nav__icon md-icon"></span>
+          Остальное
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/preapre.md" class="md-nav__link">
+        Достижения
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Команды
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственные чары
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Словарь руд
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Собственный эффект зелья
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Привязка клавиш
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.7.10/prepare/" class="md-nav__link">
+        Access Transformers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+        
+        
+        
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2">
+          1.12
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1.12" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          1.12
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_1" type="checkbox" id="nav-2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_1">
+          Подготовка
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Подготовка" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Подготовка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/install/" class="md-nav__link">
+        Установка программ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/setup-idea/" class="md-nav__link">
+        Использование Idea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/setup-eclipse/" class="md-nav__link">
+        Использование Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/custom-skin/" class="md-nav__link">
+        Собственный скин
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/problems/" class="md-nav__link">
+        Решение проблем
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_2" type="checkbox" id="nav-2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_2">
+          Основы Forge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Основы Forge" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Основы Forge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/mod-structure/" class="md-nav__link">
+        Структура мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/mod-annotation/" class="md-nav__link">
+        Аннотация @Mod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/loading-stages/" class="md-nav__link">
+        Стадии загрузки мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/proxy/" class="md-nav__link">
+        Прокси
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/building-mod/" class="md-nav__link">
+        Сборка мода
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_3" type="checkbox" id="nav-2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_3">
+          Предмет
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Предмет" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Предмет
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/basics/" class="md-nav__link">
+        Создание предмета
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/food/" class="md-nav__link">
+        Еда
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/tools/" class="md-nav__link">
+        Инструменты и меч
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/repair/" class="md-nav__link">
+        Починка инструментов
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/armor/" class="md-nav__link">
+        Броня
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/subtypes/" class="md-nav__link">
+        Подтипы
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/loot/" class="md-nav__link">
+        Лут
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/rarity/" class="md-nav__link">
+        Редкость
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/burn/" class="md-nav__link">
+        Горение
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_4" type="checkbox" id="nav-2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_4">
+          Блок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Блок" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Блок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/basics/" class="md-nav__link">
+        Создание блока
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block/blockstates/" class="md-nav__link">
+        Состояния блока
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tile Entity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tile Entity
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#вспомогательные-средства" class="md-nav__link">
+    Вспомогательные средства
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#блок" class="md-nav__link">
+    Блок
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#разделение-клиент-и-сервер" class="md-nav__link">
+    Разделение: клиент и сервер
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#создание-тайла-для-блока" class="md-nav__link">
+    Создание тайла для блока
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nbt-формат" class="md-nav__link">
+    NBT формат
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#регистрация" class="md-nav__link">
+    Регистрация
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#финал" class="md-nav__link">
+    Финал
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creativetab/" class="md-nav__link">
+        Вкладка в креативе
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lang/" class="md-nav__link">
+        Локализация
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_8" type="checkbox" id="nav-2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_8">
+          События
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="События" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_8">
+          <span class="md-nav__icon md-icon"></span>
+          События
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/usage/" class="md-nav__link">
+        Использование событий
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/table/" class="md-nav__link">
+        Таблица событий
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../craft/" class="md-nav__link">
+        Крафт
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_10" type="checkbox" id="nav-2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_10">
+          Достижения
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Достижения" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Достижения
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/basics/" class="md-nav__link">
+        Основы
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/create/" class="md-nav__link">
+        Создание достижения
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/recipes/" class="md-nav__link">
+        Получение рецептов
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_11" type="checkbox" id="nav-2_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_11">
+          Растение
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Растение" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Растение
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plant/basics/" class="md-nav__link">
+        Создание растения
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plant/mod-cave-plants/" class="md-nav__link">
+        [Мод] Пещерные растения
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_12" type="checkbox" id="nav-2_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_12">
+          Для опытных
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Для опытных" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_12">
+          <span class="md-nav__icon md-icon"></span>
+          Для опытных
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/layers/" class="md-nav__link">
+        Слои
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/keybinds/" class="md-nav__link">
+        Привязка клавиш
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/buffs/" class="md-nav__link">
+        Временные эффекты
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/sounds/" class="md-nav__link">
+        Звуки
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2_13" type="checkbox" id="nav-2_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-2_13">
+          Дополнительно
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Дополнительно" data-md-level="2">
+        <label class="md-nav__title" for="nav-2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Дополнительно
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/src/" class="md-nav__link">
+        Работа с иходниками
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/jei-integration/" class="md-nav__link">
+        Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/access-transformers/" class="md-nav__link">
+        Access Transformers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other/gen-lags/" class="md-nav__link">
+        Каскадная генерация
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+        
+        
+        
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3">
+          1.15
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1.15" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          1.15
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_1" type="checkbox" id="nav-3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_1">
+          Подготовка
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Подготовка" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Подготовка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/preparation/install/" class="md-nav__link">
+        Установка программ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/preparation/setup-idea/" class="md-nav__link">
+        Использование Idea
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/preparation/setup-eclipse/" class="md-nav__link">
+        Использование Eclipse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/preparation/custom-skin/" class="md-nav__link">
+        Собственный скин
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/preparation/problems/" class="md-nav__link">
+        Решение проблем
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_2" type="checkbox" id="nav-3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_2">
+          Основы Forge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Основы Forge" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Основы Forge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/basics/mod-structure/" class="md-nav__link">
+        Структура мода, @Mod, mods.toml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/basics/proxy/index.md'" class="md-nav__link">
+        Замена прокси, что и как теперь
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/basics/building-mod/" class="md-nav__link">
+        Сборка мода
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_3" type="checkbox" id="nav-3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_3">
+          Предмет
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Предмет" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Предмет
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/basics/" class="md-nav__link">
+        Создание предмета
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/food/" class="md-nav__link">
+        Еда
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/tools/" class="md-nav__link">
+        Инструменты и меч
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/repair/" class="md-nav__link">
+        Уровни инструментов
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/armor/" class="md-nav__link">
+        Броня
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/subtypes/" class="md-nav__link">
+        Подтипы
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/loot/" class="md-nav__link">
+        Лут
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/rarity/" class="md-nav__link">
+        Редкость
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/item/burn/" class="md-nav__link">
+        Горение
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_4" type="checkbox" id="nav-3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_4">
+          Блок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Блок" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Блок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/basics/" class="md-nav__link">
+        Создание блока
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/blockstates/" class="md-nav__link">
+        Состояния блока
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/fluid/" class="md-nav__link">
+        Создание жидкости
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/ore/" class="md-nav__link">
+        Создание руды
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/plant/" class="md-nav__link">
+        Создание растения
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/block/tileentity/" class="md-nav__link">
+        Блок с тайлом
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/itemgroup/" class="md-nav__link">
+        Создание группы предметов в креативе
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/lang/" class="md-nav__link">
+        Локализация
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_7" type="checkbox" id="nav-3_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_7">
+          События
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="События" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_7">
+          <span class="md-nav__icon md-icon"></span>
+          События
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/events/usage/" class="md-nav__link">
+        Использование событий
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/events/table/" class="md-nav__link">
+        Таблица событий
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/craft/" class="md-nav__link">
+        Крафт
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_9" type="checkbox" id="nav-3_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_9">
+          Достижения
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Достижения" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Достижения
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/achievements/basics/" class="md-nav__link">
+        Основы
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/achievements/create/" class="md-nav__link">
+        Создание достижения
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/achievements/recipes/" class="md-nav__link">
+        Получение рецептов
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_10" type="checkbox" id="nav-3_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_10">
+          Для опытных
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Для опытных" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Для опытных
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/advanced/layers/" class="md-nav__link">
+        Слои
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/advanced/keybinds/" class="md-nav__link">
+        Привязка клавиш
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/advanced/sounds/" class="md-nav__link">
+        Звуки
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/advanced/packet-system/" class="md-nav__link">
+        Пакетная система
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3_11" type="checkbox" id="nav-3_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-3_11">
+          Дополнительно
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Дополнительно" data-md-level="2">
+        <label class="md-nav__title" for="nav-3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Дополнительно
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/other/src/" class="md-nav__link">
+        Работа с иходниками
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/other/jei-integration/" class="md-nav__link">
+        Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+        
+        
+        
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-4">
+          1.16
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1.16" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          1.16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4_1" type="checkbox" id="nav-4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-4_1">
+          Подготовка
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Подготовка" data-md-level="2">
+        <label class="md-nav__title" for="nav-4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Подготовка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.16/preparation/install-program/" class="md-nav__link">
+        Установка программ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/custom-skin/" class="md-nav__link">
+        Собственный скин
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/problems/" class="md-nav__link">
+        Решение проблем
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4_2" type="checkbox" id="nav-4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-4_2">
+          Основы Forge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Основы Forge" data-md-level="2">
+        <label class="md-nav__title" for="nav-4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Основы Forge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.16/basics/mod-structure/" class="md-nav__link">
+        Структура мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.16/basics/organizing-folders/" class="md-nav__link">
+        Организация папок
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4_3" type="checkbox" id="nav-4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-4_3">
+          Дополнительно
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Дополнительно" data-md-level="2">
+        <label class="md-nav__title" for="nav-4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Дополнительно
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.16/other/semantic-versioning/" class="md-nav__link">
+        Семантическое версионирование
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+        
+        
+        
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5">
+          Fabric 1.16
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fabric 1.16" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          Fabric 1.16
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_1" type="checkbox" id="nav-5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_1">
+          Подготовка
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Подготовка" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Подготовка
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/preparation/install/" class="md-nav__link">
+        Установка программ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preparation/custom-skin/" class="md-nav__link">
+        Собственный скин
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_2" type="checkbox" id="nav-5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_2">
+          Основы Fabric
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Основы Fabric" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Основы Fabric
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/basics/mod-structure/" class="md-nav__link">
+        Структура мода
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/basics/sides/" class="md-nav__link">
+        Клиент-серверная архитектура
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/basics/registry/" class="md-nav__link">
+        Реестры
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_3" type="checkbox" id="nav-5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_3">
+          Предмет
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Предмет" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Предмет
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/item/creating/" class="md-nav__link">
+        Созданиие предмета
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/item/food/" class="md-nav__link">
+        Еда
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/item/armor/" class="md-nav__link">
+        Броня
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/item/tools/" class="md-nav__link">
+        Инструменты и меч
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_4" type="checkbox" id="nav-5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_4">
+          Блок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Блок" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Блок
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/block/creating/" class="md-nav__link">
+        Созданиие блока
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/creative_tab/" class="md-nav__link">
+        Вкладка в креативе
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/locale/" class="md-nav__link">
+        Локализация
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/recipe/" class="md-nav__link">
+        Рецепты
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_8" type="checkbox" id="nav-5_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_8">
+          События
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="События" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_8">
+          <span class="md-nav__icon md-icon"></span>
+          События
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/event/introduction/" class="md-nav__link">
+        Введение
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5_9" type="checkbox" id="nav-5_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="nav-5_9">
+          Дополнительно
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Дополнительно" data-md-level="2">
+        <label class="md-nav__title" for="nav-5_9">
+          <span class="md-nav__icon md-icon"></span>
+          Дополнительно
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/other/accesswideners/index.md" class="md-nav__link">
+        Access Wideners
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#вспомогательные-средства" class="md-nav__link">
+    Вспомогательные средства
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#блок" class="md-nav__link">
+    Блок
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#разделение-клиент-и-сервер" class="md-nav__link">
+    Разделение: клиент и сервер
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#создание-тайла-для-блока" class="md-nav__link">
+    Создание тайла для блока
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nbt-формат" class="md-nav__link">
+    NBT формат
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#регистрация" class="md-nav__link">
+    Регистрация
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#финал" class="md-nav__link">
+    Финал
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- [MC Modding Book] Перед статьей -->
+    <ins class="adsbygoogle top"
+        style="display:block"
+        data-ad-client="ca-pub-8094912170389944"
+        data-ad-slot="2360317416"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    
+                
+<a href="https://github.com/mc-modding/book/edit/master/docs/1.12/tileentity/index.md" title="Редактировать страницу" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="tile-entitie">Tile Entitie<a class="headerlink" href="#tile-entitie" title="Permanent link">#</a></h1>
+<p><em>Гайд перевел и дополнил пользователь форума — <a href="https://forum.mcmodding.ru/members/austeretony.7279/">AustereTony</a>.</em></p>
+<p>В данной статье я предоставляю свой перевод гайда с сайта shadowfacts по работе с TileEntity. Исходники примера доступны <a href="https://github.com/AustereTony/Guides/tree/master/1.12.2/Tile%20Entities/Counter">тут</a>.</p>
+<p>В Майнкрафте класс <code>Block</code> используется для представления не просто единичного блока в мире, а блока как типа. Инстанс (экземпляр) <code>Block</code> содержит свойства для каждого экземпляра вашего блока, существующего в мире. Если мы хотим что бы наш блок содержал уникальные данные для каждого отдельно взятого экземпляра нам нужно использовать <code>TileEntity</code>.</p>
+<p>Существует распространённый миф что <code>TileEntity</code> это плохо, особенно для производительности. Это не так. Они могут негативно влиять на производительность если они реализованы не умело, как в прочем и любые другие объекты.</p>
+<p>Тайлы бывают двух типов: обновляющиеся (<em>ticking</em>) и не обновляющиеся (<em>non-ticking</em>). Обновляющиеся тайлы обновляются каждый игровой тик (обычно 20 раз в секунду). Они влияют на производительность интенсивнее и требуют аккуратной реализации. Не обновляющиеся тайлы существуют для простого хранения данных и в этом туториале мы создадим простой, не обновляющийся <code>TileEntity</code>.</p>
+<h2 id="вспомогательные-средства">Вспомогательные средства<a class="headerlink" href="#вспомогательные-средства" title="Permanent link">#</a></h2>
+<p>Прежде чем мы создадим тайл, мы добавим класс, который упростит их создание в будущем.</p>
+<p>В первую очередь создадим класс <code>BlockTileEntity</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ru.austeretony.counter.block.tile.BlockTileEntity.java</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">BlockTileEntity</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">TileEntity</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">BaseBlock</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">BlockTileEntity</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Material</span> <span class="n">material</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hardness</span><span class="p">,</span> <span class="kt">float</span> <span class="n">resistanse</span><span class="p">,</span> <span class="n">SoundType</span> <span class="n">soundType</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">material</span><span class="p">,</span> <span class="n">hardness</span><span class="p">,</span> <span class="n">resistanse</span><span class="p">,</span> <span class="n">soundType</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getTileEntityClass</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">getTileEntity</span><span class="p">(</span><span class="n">IBlockAccess</span> <span class="n">world</span><span class="p">,</span> <span class="n">BlockPos</span> <span class="n">position</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">world</span><span class="p">.</span><span class="na">getTileEntity</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasTileEntity</span><span class="p">(</span><span class="n">IBlockState</span> <span class="n">blockState</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="n">T</span> <span class="nf">createTileEntity</span><span class="p">(</span><span class="n">World</span> <span class="n">world</span><span class="p">,</span> <span class="n">IBlockState</span> <span class="n">blockState</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Этот класс предоставляет нам следующее:
+* Он расширяет <code>BaseBlock</code>, содержащий нашу удобную базовую реализацию <code>Block</code>
+<div class="highlight"><pre><span></span><code><span class="c1">// ru.austeretony.counter.block.base.BaseBlock.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BaseBlock</span> <span class="kd">extends</span> <span class="n">Block</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">BaseBlock</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Material</span> <span class="n">material</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hardness</span><span class="p">,</span> <span class="kt">float</span> <span class="n">resistanse</span><span class="p">,</span> <span class="n">SoundType</span> <span class="n">soundType</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">super</span><span class="p">(</span><span class="n">material</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">setRegistryName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">setUnlocalizedName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">setHardness</span><span class="p">(</span><span class="n">hardness</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">setResistance</span><span class="p">(</span><span class="n">resistanse</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">setSoundType</span><span class="p">(</span><span class="n">soundType</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+* Он содержит обобщение, представляющее наш класс <code>TileEntity</code>. Он будет использован для создания вспомогательных средств для уменьшения количества необходимых приведений типов для получения экземпляра нашего тайла на определённой позиции и для уверенности в том, что созданный тайл имеет корректный тип.
+* Он переопределяет <code>hasTileEntity(IBlockState)</code> из <code>Block</code> и возвращает <code>true</code>. Это даёт понять Майнкрафту что у нашего блока есть тайл и его нужно создать.
+* Он содежит два абстрактных метода: 1) <code>getTileEntityClass()</code> - тут мы будем возвращать класс нашего <code>TileEntity</code>, что позволит ему быть зарегистрированным вместе с блоком, 2) <code>createTileEntity()</code> - более специфичная версия стандартного метода из <code>Block</code>. Майнкрафт вызывает его каждый раз когда нужно создать новый экземпляр тайла, например когда мы устанавливаем наш блок.</p>
+<h2 id="блок">Блок<a class="headerlink" href="#блок" title="Permanent link">#</a></h2>
+<p>Теперь когда у нас есть удобная основа самое время создать блок.</p>
+<p>Создадим <code>BlockCounter</code>, расширяющий <code>BlockTileEntity</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ru.austeretony.counter.block.BlockCounter.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BlockCounter</span> <span class="kd">extends</span> <span class="n">BlockTileEntity</span><span class="o">&lt;</span><span class="n">TileEntityCounter</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">BlockCounter</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">Material</span> <span class="n">material</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hardness</span><span class="p">,</span> <span class="kt">float</span> <span class="n">resistanse</span><span class="p">,</span> <span class="n">SoundType</span> <span class="n">soundType</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">material</span><span class="p">,</span> <span class="n">hardness</span><span class="p">,</span> <span class="n">resistanse</span><span class="p">,</span> <span class="n">soundType</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onBlockActivated</span><span class="p">(</span><span class="n">World</span> <span class="n">world</span><span class="p">,</span> <span class="n">BlockPos</span> <span class="n">position</span><span class="p">,</span> <span class="n">IBlockState</span> <span class="n">blockState</span><span class="p">,</span> <span class="n">EntityPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="n">EnumHand</span> <span class="n">hand</span><span class="p">,</span> <span class="n">EnumFacing</span> <span class="n">side</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hitX</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hitY</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hitZ</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">world</span><span class="p">.</span><span class="na">isRemote</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="n">TileEntityCounter</span> <span class="n">tileEntity</span> <span class="o">=</span> <span class="n">getTileEntity</span><span class="p">(</span><span class="n">world</span><span class="p">,</span> <span class="n">position</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">side</span> <span class="o">==</span> <span class="n">EnumFacing</span><span class="p">.</span><span class="na">DOWN</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">tileEntity</span><span class="p">.</span><span class="na">decrementCount</span><span class="p">();</span>
+
+            <span class="p">}</span>
+
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">side</span> <span class="o">==</span> <span class="n">EnumFacing</span><span class="p">.</span><span class="na">UP</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">tileEntity</span><span class="p">.</span><span class="na">incrementCount</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="n">player</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="k">new</span> <span class="n">TextComponentString</span><span class="p">(</span><span class="s">&quot;Count: &quot;</span> <span class="o">+</span> <span class="n">tileEntity</span><span class="p">.</span><span class="na">getCount</span><span class="p">()));</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Class</span><span class="o">&lt;</span><span class="n">TileEntityCounter</span><span class="o">&gt;</span> <span class="nf">getTileEntityClass</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="n">TileEntityCounter</span><span class="p">.</span><span class="na">class</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">TileEntityCounter</span> <span class="nf">createTileEntity</span><span class="p">(</span><span class="n">World</span> <span class="n">world</span><span class="p">,</span> <span class="n">IBlockState</span> <span class="n">blockState</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="n">TileEntityCounter</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Наш блок расширяет <code>BlockTileEntity</code> и содержит обобщение <code>TileEntityCounter</code> (который предстоит создать), так как этот тайл принадлежит этому блоку.</p>
+<p>В конструкторе мы просто напросто вызываем суперконструктор и передаём туда все параметры, которые будем указывать при создании блока.</p>
+<p>В методе <code>getTileEntityClass()</code> вернём <code>TileEntityCounter.class</code> (мы ещё создадим его).
+Это позволит зарегистрировать его ассоциировав с именем блока.</p>
+<p>В <code>createTileEntity()</code> мы возвращаем новый экземпляр класса <code>TileEntityCounter</code>.</p>
+<p>Ну и в конце концов в <code>onBlockActivated()</code>, вызываемый при правом клике по блоку мы делаем следующее:
+* Проверяем, что действия производятся на сервере (это очень важно при работе с <code>TileEntity</code>!).
+* Достаём экземпляр <code>TileEntityCounter</code>.
+* Если игрок кликнул по нижней стороне - уменьшаем значение счётчика.
+* Если клик по верхней стороне - увеличиваем значение.
+* Отправляем сообщение в чат, содержащие значение счётчика.
+* Возвращаем <code>true</code>.</p>
+<h2 id="разделение-клиент-и-сервер">Разделение: клиент и сервер<a class="headerlink" href="#разделение-клиент-и-сервер" title="Permanent link">#</a></h2>
+<p>Как было подмечено выше, перед тем как работать со счётчиком тайла, мы должны удостовериться, что действия происходят на сервере. Делаем мы это потому как в Майнкрафте клиент и сервер полностью разделены и некоторые методы вызываются для обеих сторон.</p>
+<p>В многопользовательской игре множество клиентов подключены к одному серверу. В этом случае разделение между сторонами очевидно, но в одиночной игре всё немного сложнее. В многопользовательской игре сервер, к которому происходит подключение, отражает <em>физический сервер</em> и все отдельные подключенные клиенты являются <em>физическими клиентами</em>.</p>
+<p>В одиночной игре клиент и сервер тоже разделены даже несмотря на то, что они исполняются на одном компьютере (на одной JVM, но в разных потоках). В одиночной игре клиент подключается к локальному, приватному серверу, функции которого схожи с физическим сервером. В этом случае серверный поток отражает <em>логический сервер</em>, а клиентский поток отражает <em>логический клиент</em>, так как обе логические стороны выполняются на одной физической стороне.</p>
+<p>Поле <code>World.isRemote</code> используется для проверки стороны, на которой происходит выполнение (будь она логической или физической). Оно равно <code>true</code> для <em>физического клиента</em> в многопользовательской игре и для <em>логического клиента</em> в одиночной игре. Это поле равно <code>false</code> для <em>физического сервера</em> в многопользовательской игре и для <em>логического сервера</em> в одиночной.</p>
+<p>Делая проверку в условии <code>!world.isRemote</code>, мы обеспечиваем уверенность что действия будут производится на сервере (физическом или логическом).</p>
+<h2 id="создание-тайла-для-блока">Создание тайла для блока<a class="headerlink" href="#создание-тайла-для-блока" title="Permanent link">#</a></h2>
+<p>Теперь когда у нас есть блок, мы должны создать тайл для него.</p>
+<p>Создадим класс <code>TileEntityCounter</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ru.austeretony.counter.block.tile.TileEntityCounter.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TileEntityCounter</span> <span class="kd">extends</span> <span class="n">TileEntity</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">NBTTagCompound</span> <span class="nf">writeToNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span> <span class="n">tagCompound</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">tagCompound</span><span class="p">.</span><span class="na">setInteger</span><span class="p">(</span><span class="s">&quot;count&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">tagCompound</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">readFromNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span> <span class="n">tagCompound</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span> <span class="o">=</span> <span class="n">tagCompound</span><span class="p">.</span><span class="na">getInteger</span><span class="p">(</span><span class="s">&quot;count&quot;</span><span class="p">);</span>
+
+        <span class="kd">super</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">tagCompound</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">incrementCount</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">markDirty</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decrementCount</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">--</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">markDirty</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Содержимое весьма не хитрое:
+* Класс расширяет стандартный <code>TileEntity</code>
+* Содержит приватное поле <code>count</code>, содержащее значение счётчика.
+* Переопределяет <code>writeToNBT()</code> и <code>readFromNBT()</code> что бы наши данные были сохранены и загружены с диска.
+* Предоставляет методы <code>getCount()</code>, <code>incrementCount()</code>, <code>decrementCount()</code> для работы с полем <code>count</code>.
+Кроме того, в методах, изменяющих значение счётчика (<code>count</code>) происходит вызов <code>markDirty()</code> из <code>TileEntity</code>. Он даёт игре понять что данные были изменены с момента последнего сохранения и их нужно перезаписать.</p>
+<h2 id="nbt-формат">NBT формат<a class="headerlink" href="#nbt-формат" title="Permanent link">#</a></h2>
+<p>Данный формат используется для хранения данных в виде пар ключ-значение, которые легко сериализуется в байты и сохраняется на диск. Вы можете ознакомиться с классом NBTTagCompound для представления о типах данных, которые он может хранить. Ванильный код содержит множество хороших примеров по сохранению и чтению сложных структур данных.</p>
+<p>В нашем случае мы сохраняем значение поля count как целочисленный тип <code>Integer</code> с ключём в виде строки "<code>count</code>" в NBT в методе <code>writeToNBT()</code> и читаем его в <code>readFromNBT()</code>.</p>
+<h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
+<p>Тайл нашего блока нужно зарегистрировать. Делать мы это будем там же, где регистрируем наши блоки.</p>
+<p>Регистрацию будем производить через вызов <code>GameRegistry.registerTileEntity()</code>
+и передавать в него класс тайла и его регистрационное имя. Это требуется для того, что бы при загрузке Майнкрафт определял какой <code>TileEntity</code> к какому блоку принадлежит и пересоздавал его загружая из NBT.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ru.austeretony.counter.main.BlockRegistry.java</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BlockRegistry</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Block</span>
+    <span class="n">BLOCK_COUNTER</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BlockCounter</span><span class="p">(</span><span class="s">&quot;block_counter&quot;</span><span class="p">,</span> <span class="n">Material</span><span class="p">.</span><span class="na">ROCK</span><span class="p">,</span> <span class="mf">10.0F</span><span class="p">,</span> <span class="mf">10.0F</span><span class="p">,</span> <span class="n">SoundType</span><span class="p">.</span><span class="na">STONE</span><span class="p">).</span><span class="na">setCreativeTab</span><span class="p">(</span><span class="n">CreativeTabs</span><span class="p">.</span><span class="na">BUILDING_BLOCKS</span><span class="p">);</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">register</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">setBlockRegister</span><span class="p">(</span><span class="n">BLOCK_COUNTER</span><span class="p">);</span>
+        <span class="n">setItemBlockRegister</span><span class="p">(</span><span class="n">BLOCK_COUNTER</span><span class="p">);</span>
+        <span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerTileEntity</span><span class="p">(((</span><span class="n">BlockCounter</span><span class="p">)</span> <span class="n">BLOCK_COUNTER</span><span class="p">).</span><span class="na">getTileEntityClass</span><span class="p">(),</span> <span class="n">BLOCK_COUNTER</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">registerRender</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="n">setItemBlockRender</span><span class="p">(</span><span class="n">BLOCK_COUNTER</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setBlockRegister</span><span class="p">(</span><span class="n">Block</span> <span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">ForgeRegistries</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setItemBlockRegister</span><span class="p">(</span><span class="n">Block</span> <span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">ForgeRegistries</span><span class="p">.</span><span class="na">ITEMS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="n">ItemBlock</span><span class="p">(</span><span class="n">block</span><span class="p">).</span><span class="na">setRegistryName</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">()));</span>
+    <span class="p">}</span>
+
+    <span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setItemBlockRender</span><span class="p">(</span><span class="n">Block</span> <span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">ModelLoader</span><span class="p">.</span><span class="na">setCustomModelResourceLocation</span><span class="p">(</span><span class="n">Item</span><span class="p">.</span><span class="na">getItemFromBlock</span><span class="p">(</span><span class="n">block</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="k">new</span> <span class="n">ModelResourceLocation</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">(),</span> <span class="s">&quot;inventory&quot;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Не забывайте, регистрация <code>Block</code>, <code>ItemBlock</code> и <code>TileEntity</code> происходит во время преинициализации в <code>CommonProxy</code>, а регистрация рендера для <code>ItemBlock</code> происходит в процессе преинициализации в <code>ClientProxy</code> (для рендера через <code>ModelLoader</code>).</p>
+<h2 id="финал">Финал<a class="headerlink" href="#финал" title="Permanent link">#</a></h2>
+<p>Теперь, когда все сделано, запускаем игру и достаем наш блок-счётчик из вкладки "блоки".
+Установив его, кликните ПКМ по верхней стороне блока - счётчик увеличит значение и в чате появится сообщение.</p>
+<p><a href="images/incremented.png"><img alt="Увеличение значения счетчика" src="images/incremented.png" /></a></p>
+<p>Нажав ПКМ по нижней стороне несколько раз вы увидите это:</p>
+<p><a href="images/decremented.png"><img alt="Уменьшение значения счетчика" src="images/decremented.png" /></a></p>
+<p>Клик ПКМ по другим сторонам выведет в чат сообщение с текущим значением счётчика.</p>
+
+              
+
+    <!-- Contributors -->
+    <div class="contributors" style="display: none;">
+        <h2 id="contributors">Вклад внесли <span class="contributors--count">0</span></h2>
+        <ul class="contributors--list"></ul>
+    </div>
+
+    <script>
+        $(function ()
+        {
+            var editUrl = 'https://github.com/mc-modding/book/edit/master/docs/1.12/tileentity/index.md';
+            var fpath = editUrl.split('https://github.com/mc-modding/book/edit/master/').pop();
+
+            var already = [];
+
+            fetch('https://api.github.com/repos/mc-modding/book/commits?path=' + fpath).then(function (response)
+            {
+                return response.json();
+            }).then(function (commits)
+            {
+                for (var i = 0; i < commits.length; i++)
+                {
+                    var author = commits[i].author;
+
+                    if (already.includes(author.login))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        already.push(author.login);
+                    }
+
+                    var url = 'https://github.com/mc-modding/book/commits/master/' + fpath + '?author=' + author.login;
+
+                    $('.contributors--list').append('<li><a title="' + author.login + '" href="' + url + '" target="_blank"><img src="' + author.avatar_url + '&s=40" /></a></li>');
+                }
+
+                $('.contributors--count').html(already.length);
+
+                if (already.length > 0)
+                {
+                    $('.contributors').show();
+                }
+            });
+        });
+    </script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- [MC Modding Book] После статьи -->
+    <ins class="adsbygoogle bottom"
+        style="display:block"
+        data-ad-client="ca-pub-8094912170389944"
+        data-ad-slot="8790828549"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+    <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid">
+
+            <!-- Link to previous page -->
+            
+            <a href="../block/blockstates/" title="Состояния блока"
+                class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                <div class="md-flex__cell md-flex__cell--shrink">
+                    <i class="md-icon md-icon--arrow-back
+                    md-footer-nav__button"></i>
+                </div>
+                <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+                    <span class="md-flex__ellipsis">
+                        <span class="md-footer-nav__direction">
+                            Назад
+                        </span>
+                        Состояния блока
+                    </span>
+                </div>
+            </a>
+            
+
+            <!-- Link to next page -->
+            
+            <a href="../creativetab/" title="Вкладка в креативе"
+                class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+                    <span class="md-flex__ellipsis">
+                        <span class="md-footer-nav__direction">
+                            Вперед
+                        </span>
+                        Вкладка в креативе
+                    </span>
+                </div>
+                <div class="md-flex__cell md-flex__cell--shrink">
+                    <i class="md-icon md-icon--arrow-forward
+                    md-footer-nav__button"></i>
+                </div>
+            </a>
+            
+        </nav>
+    </div>
+    
+</footer>
+
+<!-- Counters -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(21621697, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/21621697" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

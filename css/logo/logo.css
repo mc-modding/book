@@ -1,0 +1,24 @@
+.md-header-nav .md-flex__cell:first-of-type {
+  vertical-align: middle;
+}
+
+.md-header-nav .md-logo {
+  padding: 0;
+  margin: 0;
+}
+
+.md-header-nav .md-logo img {
+  width: 35px;
+  height: 35px;
+}
+
+.md-nav .md-logo {
+  width: auto !important;
+  height: auto !important;
+}
+
+.md-nav .md-logo img {
+  width: 80px;
+  height: 80px;
+}
+/*# sourceMappingURL=logo.css.map */

@@ -1,0 +1,40 @@
+.md-content
+{
+    h1, h2, h3, h4, h5, h6
+    {
+        font-weight: normal;
+    }
+
+    text-align: justify;
+
+    img
+    {
+        display: block;
+        margin: 0 auto;
+
+        &.border
+        {
+            border: 2px solid #ececec;
+            border-radius: 3px;
+        }
+
+        &.w9 { max-width: 90%; }
+        &.w8 { max-width: 80%; }
+        &.w7 { max-width: 70%; }
+        &.w6 { max-width: 60%; }
+        &.w5 { max-width: 50%; }
+    }
+
+    .adsbygoogle
+    {
+        &.top
+        {
+            margin-bottom: 15px;
+        }
+
+        &.bottom
+        {
+            margin-top: 15px;
+        }
+    }
+}

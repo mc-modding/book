@@ -1,0 +1,63 @@
+@media only screen and (max-width: 76.25em) {
+  html .md-nav .md-nav__title--site, html .md-nav .md-nav--secondary .md-nav__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  html .md-nav .md-nav__title--site .md-logo, html .md-nav .md-nav--secondary .md-nav__title .md-logo {
+    position: static;
+  }
+  html .md-nav .md-nav__title--site .site-name, html .md-nav .md-nav--secondary .md-nav__title .site-name {
+    display: none;
+  }
+}
+html .md-nav .md-nav--secondary .md-nav__title {
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+html .md-nav .md-nav--secondary .md-nav__title:before {
+  position: static;
+}
+html .md-nav .md-nav__donate {
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 76.25em) {
+  html .md-nav .md-nav__list .md-nav__item:last-of-type {
+    border-bottom: 1px solid #ececec;
+  }
+}
+html .md-nav .md-nav__list.nav-links {
+  flex: 0 1 auto;
+}
+html .md-nav .md-nav__list.nav-links i {
+  width: 15px;
+  margin-right: 5px;
+}
+@media only screen and (max-width: 76.25em) {
+  html .md-nav .md-nav__list.nav-links {
+    margin-bottom: 50px;
+  }
+  html .md-nav .md-nav__list.nav-links i {
+    margin-right: 7px;
+  }
+}
+html .md-sidebar--secondary .md-nav__list .md-nav__item:last-of-type {
+  border-bottom: none;
+}
+html .md-nav__toggle ~ .md-nav {
+  display: block;
+  overflow: hidden;
+  transition: max-height 0.35s linear, none;
+  max-height: 0;
+}
+html .md-nav__toggle:checked ~ .md-nav, html .md-nav__toggle:indeterminate ~ .md-nav {
+  display: block;
+  transition: max-height 0.35s linear, none;
+  max-height: 999px;
+}
+
+/*# sourceMappingURL=nav.css.map */

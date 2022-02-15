@@ -1,0 +1,34 @@
+$footer-color: #3F3F3F;
+
+.md-footer
+{
+    .md-footer-nav
+    {
+        border-top: 1px solid #ececec;
+        background: white;
+
+        color: $footer-color;
+
+        .md-footer-nav__direction
+        {
+            color: lighten($footer-color, 30%);
+        }
+    }
+
+    .md-footer-meta.md-quote
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 2rem .5rem;
+
+        font-size: .8rem;
+        //font-family: "Times New Roman";
+        //text-transform: uppercase;
+        color: lighten($footer-color, 35%);
+
+        border-top: 1px solid #ececec;
+        background: #F7F7F7;
+    }
+}

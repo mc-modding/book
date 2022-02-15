@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* ====================== SCROLLBARS ====================== */
+.md-typeset pre > code::-webkit-scrollbar {
+  width: .4rem;
+  height: .4rem;
+}
+
+/* ====================== Admonition ====================== */
+.md-typeset .admonition, .md-typeset details {
+  border-left-width: 2px;
+}
+
+.md-typeset .admonition.заметка, .md-typeset details.заметка {
+  border-left-color: #00B7FF;
+}
+
+[dir="rtl"] .md-typeset .admonition.заметка, [dir="rtl"] .md-typeset details.заметка {
+  border-right-color: #00B7FF;
+}
+
+.md-typeset .admonition.заметка > .admonition-title, .md-typeset .admonition.заметка > summary, .md-typeset details.заметка > .admonition-title, .md-typeset details.заметка > summary {
+  color: #005c80;
+  border-top: 1px solid rgba(0, 183, 255, 0.1);
+  border-bottom-color: px2rem(1px) solid rgba(0, 183, 255, 0.1);
+  background-color: rgba(0, 183, 255, 0.1);
+}
+
+.md-typeset .admonition.заметка > .admonition-title a, .md-typeset .admonition.заметка > summary a, .md-typeset details.заметка > .admonition-title a, .md-typeset details.заметка > summary a {
+  opacity: 0;
+  color: #005c80;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.md-typeset .admonition.заметка > .admonition-title:hover a, .md-typeset .admonition.заметка > summary:hover a, .md-typeset details.заметка > .admonition-title:hover a, .md-typeset details.заметка > summary:hover a {
+  opacity: 1;
+}
+
+.md-typeset .admonition.заметка > .admonition-title::before, .md-typeset .admonition.заметка > summary::before, .md-typeset details.заметка > .admonition-title::before, .md-typeset details.заметка > summary::before {
+  color: #00B7FF;
+  content: "";
+}
+
+.md-typeset .admonition.важно, .md-typeset details.важно {
+  border-left-color: #D04F47;
+}
+
+[dir="rtl"] .md-typeset .admonition.важно, [dir="rtl"] .md-typeset details.важно {
+  border-right-color: #D04F47;
+}
+
+.md-typeset .admonition.важно > .admonition-title, .md-typeset .admonition.важно > summary, .md-typeset details.важно > .admonition-title, .md-typeset details.важно > summary {
+  color: #682824;
+  border-top: 1px solid rgba(208, 79, 71, 0.1);
+  border-bottom-color: px2rem(1px) solid rgba(208, 79, 71, 0.1);
+  background-color: rgba(208, 79, 71, 0.1);
+}
+
+.md-typeset .admonition.важно > .admonition-title a, .md-typeset .admonition.важно > summary a, .md-typeset details.важно > .admonition-title a, .md-typeset details.важно > summary a {
+  opacity: 0;
+  color: #682824;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.md-typeset .admonition.важно > .admonition-title:hover a, .md-typeset .admonition.важно > summary:hover a, .md-typeset details.важно > .admonition-title:hover a, .md-typeset details.важно > summary:hover a {
+  opacity: 1;
+}
+
+.md-typeset .admonition.важно > .admonition-title::before, .md-typeset .admonition.важно > summary::before, .md-typeset details.важно > .admonition-title::before, .md-typeset details.важно > summary::before {
+  color: #D04F47;
+  content: "";
+}
+/*# sourceMappingURL=override.css.map */
