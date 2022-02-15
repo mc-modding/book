@@ -111,7 +111,7 @@ description: Основные файлы любого Minecraft мода. Для
 ```java
 package ru.mcmodding.tutorial;
 
-import net.minecraftforge.fml.common.Mod;
+import cpw.mods.fml.common.Mod;
 
 @Mod(modid = "mcmodding")
 public class McModding {}
