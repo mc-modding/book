@@ -1,0 +1,12 @@
+# IDE
+/.idea
+
+# mkdocs
+/site
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.LSOverride
