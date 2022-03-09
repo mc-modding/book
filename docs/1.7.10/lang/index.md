@@ -21,9 +21,10 @@ src
 
 **Содержание файла:**
 ```properties
-itemGroup.tut=Tutorial
-item.key.name=Ключ
-tile.best_stone.name=Лучший Камень
+itemGroup.mcmodding=McModding
+item.ruby.name=Рубин
+entity.mcmodding.goose.name=Гусь
+tile.ruby.name=Рубиновый блок
 ```
 Формат файла представляет из пары `ключ=значение`, размещённые каждая на отдельной строке. Файл представляет из себя обычный Java Properties file.
 
