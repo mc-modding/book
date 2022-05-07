@@ -22,7 +22,7 @@ description: Объяснение того, как Forge загружает мо
 
 Для начала нам надо создать класс для выполнения действий, которые должны выполняться на стороне и клиента, и сервера.
 
-Для этого создайте пакет proxy внутри пакета нашего мода и класс CommonProxy внутри него. Объявите внутри класса три уже знакомых вам
+Для этого создайте пакет common внутри пакета нашего мода и класс CommonProxy внутри него. Объявите внутри класса три уже знакомых вам
 метода:
 
 * pre
@@ -30,17 +30,20 @@ description: Объяснение того, как Forge загружает мо
 * post
 
 ```java
+package ru.mcmodding.tutorial.common;
+
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
 public class CommonProxy {
     public void pre(FMLPreInitializationEvent e) {
-        
     }
 
     public void init(FMLInitializationEvent e) {
-
     }
 
     public void post(FMLPostInitializationEvent e) {
-
     }
 }
 ```
@@ -53,9 +56,16 @@ public class CommonProxy {
 * Регистрация рендеров этих самых моделей
 * ...
 
-Для этого создадим класс ClientProxy, наследующий класс CommonProxy в пакете proxy:
+Для этого создадим класс ClientProxy, наследующий класс CommonProxy в пакете client:
 
 ```java
+package ru.mcmodding.tutorial.client;
+
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import ru.mcmodding.tutorial.common.CommonProxy;
+
 public class ClientProxy extends CommonProxy {
     @Override
     public void pre(FMLPreInitializationEvent e) {
@@ -84,13 +94,11 @@ public class ClientProxy extends CommonProxy {
 и добавим к ней аннотацию `@SidedProxy`:
 
 ```java
-public class McModding {
-    @SidedProxy(
-            clientSide = "ru.mcmodding.tutorial.client.ClientProxy",
-            serverSide = "ru.mcmodding.tutorial.common.CommonProxy"
-    )
-    public static CommonProxy proxy;
-}
+@SidedProxy(
+        clientSide = "ru.mcmodding.tutorial.client.ClientProxy",
+        serverSide = "ru.mcmodding.tutorial.common.CommonProxy"
+)
+public static CommonProxy proxy;
 ```
 
 Эта аннотация содержит два поля, которые обозначают пути до классов ClientProxy и CommonProxy. При запуске, Forge будет
@@ -99,21 +107,19 @@ public class McModding {
 Последнее, что нам нужно сделать: выполнить три метода (pre, init, post) в нашем главном файле мода:
 
 ```java
-public class McModding {
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent e) {
-        proxy.pre(e);
-    }
+@EventHandler
+public void preInit(FMLPreInitializationEvent e) {
+    proxy.pre(e);
+}
 
-    @EventHandler
-    public void init(FMLInitializationEvent e){
-        proxy.init(e);
-    }
+@EventHandler
+public void init(FMLInitializationEvent e){
+    proxy.init(e);
+}
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent e) {
-        proxy.post(e);
-    }
+@EventHandler
+public void postInit(FMLPostInitializationEvent e) {
+    proxy.post(e);
 }
 ```
 
@@ -123,17 +129,21 @@ public class McModding {
 package ru.mcmodding.tutorial;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import ru.mcmodding.tutorial.common.CommonProxy;
 
-@Mod(modid = MODID, version = VERSION)
-public class Tutorial {
+import static ru.mcmodding.tutorial.McModding.MOD_ID;
+import static ru.mcmodding.tutorial.McModding.VERSION;
+
+@Mod(modid = MOD_ID, version = VERSION)
+public class McModding {
     public static final String MOD_ID = "mcmodding";
     public static final String VERSION = "1.0.0";
-    
+
     @SidedProxy(
             clientSide = "ru.mcmodding.tutorial.client.ClientProxy",
             serverSide = "ru.mcmodding.tutorial.common.CommonProxy"
