@@ -22,7 +22,7 @@ description: Объяснение того, как Forge загружает мо
 
 Для начала нам надо создать класс для выполнения действий, которые должны выполняться на стороне и клиента, и сервера.
 
-Для этого создайте пакет proxy внутри пакета нашего мода и класс CommonProxy внутри него. Объявите внутри класса три уже знакомых вам
+Для этого создайте пакет `common` внутри пакета нашего мода и класс CommonProxy внутри него. Объявите внутри класса три уже знакомых вам
 метода:
 
 * pre
@@ -53,7 +53,7 @@ public class CommonProxy {
 * Регистрация рендеров этих самых моделей
 * ...
 
-Для этого создадим класс ClientProxy, наследующий класс CommonProxy в пакете proxy:
+Для этого создадим класс ClientProxy, наследующий класс CommonProxy в пакете `client`:
 
 ```java
 public class ClientProxy extends CommonProxy {
@@ -100,17 +100,17 @@ public class McModding {
 
 ```java
 public class McModding {
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
         proxy.pre(e);
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent e){
         proxy.init(e);
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
         proxy.post(e);
     }
@@ -140,17 +140,17 @@ public class Tutorial {
     )
     public static CommonProxy proxy;
 
-    @EventHandler
+    @Mod.EventHandler
     public void pre(FMLPreInitializationEvent e) {
         proxy.pre(e);
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
         proxy.init(e);
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void post(FMLPostInitializationEvent e) {
         proxy.post(e);
     }
