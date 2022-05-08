@@ -4119,9 +4119,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.
-* <code>setUnlocalizedName(String)</code> - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/lang/">Локализация</a>)
-* <code>setTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'
-* <code>setMaxStackSize(Integer)</code> - задаёт максимальное количество предметов</p>
+* setUnlocalizedName(String) - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/lang/">Локализация</a>)
+* setTextureName(String) - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'
+* setMaxStackSize(Integer) - задаёт максимальное количество предметов</p>
 <p>Остальные сеттеры вы можете самостоятельно просмотреть в классе Item, ко многим из них прилагаются комментарии от MCP и MinecraftForge.</p>
 <p>Теперь приступим к регистрации нашего предмета. Чтобы зарегистрировать наше кольцо, необходимо использовать <code>GameRegistry#registerItem</code> 
 в который передаётся экземпляр класса <code>Item</code> и регистрируемое имя предмета. Создадим для большего удобства класс <code>ModItems</code> 
@@ -4149,8 +4149,8 @@
 <p>Запускаем игру и заходим в мир. Чтобы получить только что написанный предмет, введите такую команду:
 <code>/give @p mcmodding:ring</code>.</p>
 <p>Где <code>mcmodding:ring</code>:
-1. <code>mcmodding</code> - это ModId мода
-2. <code>ring</code> - регистрируемое имя предмета</p>
+1. mcmodding - это ModId мода
+2. ring - регистрируемое имя предмета</p>
 <p><img alt="Предмет без текстуры" class="border" src="../images/item_without_texture.png" /></p>
 <h2 id="текстура">Текстура<a class="headerlink" href="#текстура" title="Permanent link">#</a></h2>
 <p>В прошлой разделе мы рассмотрели базовый принцип создания предмета и указали текстуру с помощью метода <code>Item#setTextureName</code>, 
@@ -4180,10 +4180,10 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-* <code>frametime</code> - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды
-* <code>width</code> - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину
-* <code>height</code> - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту
-* <code>frames</code> - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</p>
+* frametime - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды
+* width - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину
+* height - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту
+* frames - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</p>
 <h4 id="дополнение-к-frames">Дополнение к <code>frames</code><a class="headerlink" href="#дополнение-к-frames" title="Permanent link">#</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
