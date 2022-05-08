@@ -239,15 +239,15 @@ extra:
 
   nav_links:
     - title: 'Задать вопрос'
-      icon: 'far fa-question-circle'
+      icon: 'fas fa-question'
       url: 'https://forum.mcmodding.ru/forums/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.23/'
 
     - title: 'Форум'
-      icon: 'far fa-comments'
+      icon: 'fas fa-comments'
       url: 'https://forum.mcmodding.ru'
 
     - title: 'Как внести вклад?'
-      icon: 'far fa-edit'
+      icon: 'fas fa-feather-alt'
       url: 'editing-book/'
 
     - title: 'Мы в Discord'
@@ -255,5 +255,5 @@ extra:
       url: 'https://discord.gg/FVVG8p2QrW'
 
     - title: 'Примеры'
-      icon: 'fab fa-code'
+      icon: 'fas fa-code'
       url: 'https://github.com/mc-modding/example'
