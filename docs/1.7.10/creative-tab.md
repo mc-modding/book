@@ -103,7 +103,7 @@ public class ModTab extends CreativeTabs {
 
 ![Собственный фон вкладки](images/tab_mcmodding.png)
 
-Теперь укажем `setBackgroundImageName(String)` аналогично, как мы делали с `tab_search` в предыдущей главе, только в нашем случае это будет `tab_mcmodding.png`
+Теперь укажем `setBackgroundImageName(String)` аналогично, как мы делали с `item_search` в предыдущей главе, только в нашем случае это будет `tab_mcmodding.png`
 ```java
 public class ModTab extends CreativeTabs {
     private ModTab() {
