@@ -18,7 +18,7 @@ nav:
           - Сборка мода: '1.7.10/basics/building-mod.md'
       - Предмет:
           - Создание предмета: '1.7.10/item/basics.md'
-          - Еда: '1.7.10/prepare.md'
+          - Еда: '1.7.10/item/food.md'
           - Инструменты: '1.7.10/prepare.md'
           - Починка инструментов: '1.7.10/prepare.md'
           - Броня: '1.7.10/prepare.md'
