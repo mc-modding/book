@@ -4118,10 +4118,12 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.
-* setUnlocalizedName(String) - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/lang/">Локализация</a>)
-* setTextureName(String) - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'
-* setMaxStackSize(Integer) - задаёт максимальное количество предметов</p>
+Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.</p>
+<ul>
+<li><code>setUnlocalizedName(String)</code> - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/lang/">Локализация</a>)</li>
+<li><code>setTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'</li>
+<li><code>setMaxStackSize(Integer)</code> - задаёт максимальное количество предметов</li>
+</ul>
 <p>Остальные сеттеры вы можете самостоятельно просмотреть в классе Item, ко многим из них прилагаются комментарии от MCP и MinecraftForge.</p>
 <p>Теперь приступим к регистрации нашего предмета. Чтобы зарегистрировать наше кольцо, необходимо использовать <code>GameRegistry#registerItem</code> 
 в который передаётся экземпляр класса <code>Item</code> и регистрируемое имя предмета. Создадим для большего удобства класс <code>ModItems</code> 
@@ -4148,9 +4150,11 @@
 </code></pre></div></p>
 <p>Запускаем игру и заходим в мир. Чтобы получить только что написанный предмет, введите такую команду:
 <code>/give @p mcmodding:ring</code>.</p>
-<p>Где <code>mcmodding:ring</code>:
-1. mcmodding - это ModId мода
-2. ring - регистрируемое имя предмета</p>
+<p>Где <code>mcmodding:ring</code>:</p>
+<ol>
+<li><code>mcmodding</code> - это ModId мода</li>
+<li><code>ring</code> - регистрируемое имя предмета</li>
+</ol>
 <p><img alt="Предмет без текстуры" class="border" src="../images/item_without_texture.png" /></p>
 <h2 id="текстура">Текстура<a class="headerlink" href="#текстура" title="Permanent link">#</a></h2>
 <p>В прошлой разделе мы рассмотрели базовый принцип создания предмета и указали текстуру с помощью метода <code>Item#setTextureName</code>, 
@@ -4181,10 +4185,10 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <ul>
-<li>frametime - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды</li>
-<li>width - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину</li>
-<li>height - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту</li>
-<li>frames - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</li>
+<li><code>frametime</code> - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды</li>
+<li><code>width</code> - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину</li>
+<li><code>height</code> - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту</li>
+<li><code>frames</code> - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</li>
 </ul>
 <h4 id="дополнение-к-frames">Дополнение к <code>frames</code><a class="headerlink" href="#дополнение-к-frames" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
@@ -4209,10 +4213,90 @@
 <p>Вы можете также указать для конкретного кадра(по его индексу) время его воспроизведения. 
 Работает аналогично прошлому примеру, только достаточно менять параметр <code>index</code> для изменения порядка отображения.</p>
 <h3 id="наложение-текстур">Наложение текстур<a class="headerlink" href="#наложение-текстур" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Данный раздел рассчитан на разработчиков, прочитавших статью "Подтипы"!</p>
+</blockquote>
 <p>Возможно вы задумаетесь о том, как добавить не одну, а две и более текстур с наложением слоя или сменой от определённых условий, 
 как например это сделано у кожаной брони или у лука при натягивании тетивы.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// TODO в разработке</span><span class="w"></span>
+<p>Создадим предмет <code>Банка с краской</code>, имеющий основную текстуру и текстуру слоя, которую в дальнейшем мы окрасим в стандартные цвета Minecraft.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PaintCanItem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">IIcon</span><span class="w"> </span><span class="n">colorMask</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PaintCanItem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;paint_can&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:paint_can&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setMaxStackSize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setHasSubtypes</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">requiresMultipleRenderPasses</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IIcon</span><span class="w"> </span><span class="nf">getIconFromDamageForRenderPass</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meta</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">renderPass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">colorMask</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getIconFromDamageForRenderPass</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span><span class="w"> </span><span class="n">renderPass</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerIcons</span><span class="p">(</span><span class="n">IIconRegister</span><span class="w"> </span><span class="n">register</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">registerIcons</span><span class="p">(</span><span class="n">register</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">colorMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">register</span><span class="p">.</span><span class="na">registerIcon</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:paint_can_color&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getColorFromItemStack</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">renderPass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">renderPass</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">16777215</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="o">[</span><span class="n">stack</span><span class="p">.</span><span class="na">getItemDamage</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getSubItems</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">meta</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">meta</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<ul>
+<li><code>requiresMultipleRenderPasses</code> - требует от игры несколько проходов для отрисовки предмета(см. примечание ниже)</li>
+</ul>
+<blockquote>
+<p>Minecraft для большинства предметов использует один проход, но при включении <code>requiresMultipleRenderPasses</code> == true,
+кол-во проходов становится два. Чтобы изменить кол-во проходов для отрисовки предмета, 
+вы можете посмотреть метод <code>Item#getRenderPasses(Integer)</code></p>
+</blockquote>
+<ul>
+<li><code>getIconFromDamageForRenderPass(Integer, Iteger)</code> - возвращает иконку предмета в зависимости от меты предмета и текущего прохода рендера.</li>
+</ul>
+<blockquote>
+<p>Так как наш предмет имеет два прохода для отрисовки банки с краской, то нам необходимо указать, что во втором проходе нужно рисовать маску цвета банки.
+Почему мы начинаем не от 0, а от 1? Это связано с тем, что на 0 проходе находится основная текстура предмета, а уже от
+1 до N(см. <code>Item#getRenderPasses(Integer)</code>) дополнительные.</p>
+</blockquote>
+<ul>
+<li><code>registerIcons(IIconRegister)</code> - в данном методе проходит регистрация иконок предметов</li>
+<li><code>getColorFromItemStack(ItemStack, Integer)</code> - возвращает цвет предмета. Стандартный цвет предмета: 0xFFFFFF(16777215)</li>
+</ul>
+<blockquote>
+<p>В <code>getColorFromItemStack(ItemStack, Integer)</code> мы проверяем, если текущий проход равен 0, то цвет будет стандартный.
+Если же проход 1 до N(наша маска цвета), то окрашивать маску в цвет красителя по мете предмета.</p>
+</blockquote>
+<p>Нам осталось добавить текстуры и зарегистрировать предмет.
+<img alt="Основная текстура банки" src="../images/item_paint_can.png" />
+<img alt="Текстура для окраски" src="../images/item_paint_can_color.png" /></p>
+<p>Если вы всё сделали правильно, то в игре вы получите такой результат:
+<img alt="Все банки с краской" src="../images/all_paint_cans.png" /></p>
 <h2 id="модель">Модель<a class="headerlink" href="#модель" title="Permanent link">#</a></h2>
 <blockquote>
 <p>Данный раздел рассчитан на более опытных разработчиков!</p>
