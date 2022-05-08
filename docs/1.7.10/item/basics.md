@@ -228,8 +228,48 @@ public class PaintCanItem extends Item {
 Для это необходимо реализовать интерфейс `IItemRenderer`.
 
 ```java
-// TODO в разработке
+package ru.mcmodding.tutorial.client.render.item;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.IItemRenderer;
+
+public class RingItemRender implements IItemRenderer {
+    @Override
+    public boolean handleRenderType(ItemStack item, ItemRenderType type) {
+        return false;
+    }
+
+    @Override
+    public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper) {
+        return false;
+    }
+
+    @Override
+    public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
+
+    }
+}
 ```
+
+* `handleRenderType(ItemStack, ItemRenderType)` - обрабатывает текущий тип рендера, а именно:
+
+1. `ItemRenderType#ENTITY` - предмет лежит на земле или вставлен в рамку
+2. `ItemRenderType#EQUIPPED` - предмет находится в руке
+3. `ItemRenderType#EQUIPPED_FIRST_PERSON` - предмет находится в руке от первого лица
+4. `ItemRenderType#INVENTORY` - предмет находится в инвентаре
+5. `ItemRenderType#FIRST_PERSON_MAP` - предмет рисуется как карта в обеих руках
+
+* `shouldUseRenderHelper(ItemRenderType, ItemStack, ItemRendererHelper)` - нужно ли использовать вспомогательные обработки рендера(см. пояснение)
+
+#### Дополнение к `shouldUseRenderHelper`
+Если вернуть true, то к нашему рендеру предмету будет применена вспомогательная обработка:
+1. `ItemRendererHelper#ENTITY_ROTATION` - предмет будучи на земле вращается на 360
+2. `ItemRendererHelper#ENTITY_BOBBING` - предмет будет двигать при ходьбе вверх-вниз
+3. `ItemRendererHelper#EQUIPPED_BLOCK` - предмет будет отрисовываться 3D моделью, либо 2D текстурой
+4. `ItemRendererHelper#BLOCK_3D` - приравнивает предмет к блоку имеющий RenderBlocks#renderItemIn3d
+5. `ItemRendererHelper#INVENTORY_BLOCK` - предмет будет отрисовываться 3D модель, либо 2D текстурой в инвентаре
+
+* `renderItem(ItemRenderType, ItemStack, Object[])` - в данном методе происходит сама отрисовка нашего предмета. Параметр `data` принимает особые данные, которые передаются в зависимости от типа отрисовки. Подробнее смотрите `ItemRenderType` для получения подобной информации о данных передаваемых на каждый тип!
 
 Помимо реализации `IItemRenderer`, необходимо загрузить модель. Можно использовать любую модель, главное чтобы её загрузку 
 поддерживал MinecraftForge, иначе вам придётся реализовывать загрузку нужной вам модели самостоятельно! В данном случае
@@ -237,15 +277,69 @@ public class PaintCanItem extends Item {
 
 > Если вы будете использовать Wavefront как основной формат моделей, то не забудьте сделать триангуляцию модели, чтобы не получить исключение при загрузке!
 
-Реализация без обёртки:
 ```java
-// TODO в разработке
+package ru.mcmodding.tutorial.client.render.item;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.client.model.AdvancedModelLoader;
+import net.minecraftforge.client.model.IModelCustom;
+import net.minecraftforge.client.model.obj.WavefrontObject;
+import ru.mcmodding.tutorial.McModding;
+import ru.mcmodding.tutorial.client.render.ModelWrapperDisplayList;
+
+import static org.lwjgl.opengl.GL11.*;
+
+@SideOnly(Side.CLIENT)
+public class RingItemRender implements IItemRenderer {
+    private final ResourceLocation modelPath = new ResourceLocation(McModding.MOD_ID, "models/ring.obj");
+    private final IModelCustom ringModel = new ModelWrapperDisplayList((WavefrontObject) AdvancedModelLoader.loadModel(modelPath));
+
+    @Override
+    public boolean handleRenderType(ItemStack item, ItemRenderType type) {
+        return type == ItemRenderType.EQUIPPED_FIRST_PERSON;
+    }
+
+    @Override
+    public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper) {
+        return true;
+    }
+
+    @Override
+    public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
+        glPushMatrix();
+        glDisable(GL_TEXTURE_2D);// Отключаем текстурирование, так как у нас её нет для данной модели
+        glTranslatef(2F, 0F, 0F);// Смещаем по X модель, чтобы было хорошо видно модель
+        ringModel.renderAll();
+        glEnable(GL_TEXTURE_2D);// Включаем текстурирование
+        glPopMatrix();
+    }
+}
 ```
 
-Реализация с обёрткой:
+> Если вы хотите использовать текстуру, то вам необходимо сделать перед отрисовкой привязку текстуры
+
+Пример привязки текстуры к модели:
 ```java
-// TODO в разработке
+public class RingItemRender implements IItemRenderer {
+    private final ResourceLocation ringTexturePath = new ResourceLocation(McModding.MOD_ID, "textures/models/ring.png");
+    
+    @Override
+    public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
+        Minecraft.getMinecraft().renderEngine.bindTexture(ringTexturePath);
+        glPushMatrix();
+        glTranslatef(2F, 0F, 0F);
+        ringModel.renderAll();
+        glPopMatrix();
+    }
+}
 ```
 
-Как видите, особо код не меняется, лишь добавляется уже готовый класс обёртки над IModelCustom и рендер модели становится в разы быстрее с обёрткой, нежели без неё.
 Остаётся загрузить модели по указанным нами путям в ресурсах нашего мода и запустить игру!
+
+[Ссылка на модель](https://disk.yandex.ru/d/OkP_eFs4G8F0QQ)
+
+![Модель кольца в игре](images/ring_model.png)
