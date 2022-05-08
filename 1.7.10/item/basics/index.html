@@ -4168,7 +4168,7 @@
 <h3 id="текстура-с-анимацией">Текстура с анимацией<a class="headerlink" href="#текстура-с-анимацией" title="Permanent link">#</a></h3>
 <p>Вы можете добавить текстуру с KeyFrame анимацией, выглядят такие текстуры примерно так:
 <img alt="Текстура с покадровой анимацией компаса" class="border" src="../images/compass.png" /></p>
-<p>Для работы таких текстур необходимо создавать отдельный файл <code>названиеТекстуры.png.mcmeta</code>, который содержит такую информацию:
+<p>Для работы таких текстур необходимо создавать отдельный файл <code>названиеТекстуры.png.mcmeta</code>, который содержит такую информацию:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;frametime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
@@ -4180,12 +4180,14 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-* frametime - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды
-* width - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину
-* height - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту
-* frames - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</p>
+<ul>
+<li>frametime - длительность одного кадра в тиках. К примеру, если указать 40, то один кадр будет отображаться две секунды</li>
+<li>width - ширина кадра. Необходимо применять, если кадры имеют нестандартный ширину</li>
+<li>height - высота кадра. Необходимо применять, если кадры имеют нестандартную высоту</li>
+<li>frames - массив кадров. Принимает <code>Integer</code>, а также объект <code>frame</code>(см. ниже). Кадры начинаются от 0 и до N кадра(зависит от того сколько их в текстуре). Индексы можно менять местами, чтобы изменить порядок отображения кадров</li>
+</ul>
 <h4 id="дополнение-к-frames">Дополнение к <code>frames</code><a class="headerlink" href="#дополнение-к-frames" title="Permanent link">#</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;frames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">      </span><span class="p">{</span><span class="w"></span>
@@ -4204,7 +4206,7 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Вы можете также указать для конкретного кадра(по его индексу) время его воспроизведения. 
+<p>Вы можете также указать для конкретного кадра(по его индексу) время его воспроизведения. 
 Работает аналогично прошлому примеру, только достаточно менять параметр <code>index</code> для изменения порядка отображения.</p>
 <h3 id="наложение-текстур">Наложение текстур<a class="headerlink" href="#наложение-текстур" title="Permanent link">#</a></h3>
 <p>Возможно вы задумаетесь о том, как добавить не одну, а две и более текстур с наложением слоя или сменой от определённых условий, 
