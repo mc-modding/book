@@ -614,6 +614,19 @@
     Модель
   </a>
   
+    <nav class="md-nav" aria-label="Модель">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#дополнение-к-shoulduserenderhelper" class="md-nav__link">
+    Дополнение к shouldUseRenderHelper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4070,6 +4083,19 @@
     Модель
   </a>
   
+    <nav class="md-nav" aria-label="Модель">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#дополнение-к-shoulduserenderhelper" class="md-nav__link">
+    Дополнение к shouldUseRenderHelper
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4313,22 +4339,122 @@
 </blockquote>
 <p>Текстуру вы научились добавлять к своему предмету, но вы скорее всего захотите добавить модель к своему предмету.
 Для это необходимо реализовать интерфейс <code>IItemRenderer</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// TODO в разработке</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.item</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.IItemRenderer</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RingItemRender</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IItemRenderer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">handleRenderType</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">shouldUseRenderHelper</span><span class="p">(</span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">ItemRendererHelper</span><span class="w"> </span><span class="n">helper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">renderItem</span><span class="p">(</span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">...</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<ul>
+<li>
+<p><code>handleRenderType(ItemStack, ItemRenderType)</code> - обрабатывает текущий тип рендера, а именно:</p>
+</li>
+<li>
+<p><code>ItemRenderType#ENTITY</code> - предмет лежит на земле или вставлен в рамку</p>
+</li>
+<li><code>ItemRenderType#EQUIPPED</code> - предмет находится в руке</li>
+<li><code>ItemRenderType#EQUIPPED_FIRST_PERSON</code> - предмет находится в руке от первого лица</li>
+<li><code>ItemRenderType#INVENTORY</code> - предмет находится в инвентаре</li>
+<li>
+<p><code>ItemRenderType#FIRST_PERSON_MAP</code> - предмет рисуется как карта в обеих руках</p>
+</li>
+<li>
+<p><code>shouldUseRenderHelper(ItemRenderType, ItemStack, ItemRendererHelper)</code> - нужно ли использовать вспомогательные обработки рендера(см. пояснение)</p>
+</li>
+</ul>
+<h4 id="дополнение-к-shoulduserenderhelper">Дополнение к <code>shouldUseRenderHelper</code><a class="headerlink" href="#дополнение-к-shoulduserenderhelper" title="Permanent link">#</a></h4>
+<p>Если вернуть true, то к нашему рендеру предмету будет применена вспомогательная обработка:
+1. <code>ItemRendererHelper#ENTITY_ROTATION</code> - предмет будучи на земле вращается на 360
+2. <code>ItemRendererHelper#ENTITY_BOBBING</code> - предмет будет двигать при ходьбе вверх-вниз
+3. <code>ItemRendererHelper#EQUIPPED_BLOCK</code> - предмет будет отрисовываться 3D моделью, либо 2D текстурой
+4. <code>ItemRendererHelper#BLOCK_3D</code> - приравнивает предмет к блоку имеющий RenderBlocks#renderItemIn3d
+5. <code>ItemRendererHelper#INVENTORY_BLOCK</code> - предмет будет отрисовываться 3D модель, либо 2D текстурой в инвентаре</p>
+<ul>
+<li><code>renderItem(ItemRenderType, ItemStack, Object[])</code> - в данном методе происходит сама отрисовка нашего предмета. Параметр <code>data</code> принимает особые данные, которые передаются в зависимости от типа отрисовки. Подробнее смотрите <code>ItemRenderType</code> для получения подобной информации о данных передаваемых на каждый тип!</li>
+</ul>
 <p>Помимо реализации <code>IItemRenderer</code>, необходимо загрузить модель. Можно использовать любую модель, главное чтобы её загрузку 
 поддерживал MinecraftForge, иначе вам придётся реализовывать загрузку нужной вам модели самостоятельно! В данном случае
 мы воспользуемся готовым решением и будет использовать Wavefront(.obj) формат с <a href="https://forum.mcmodding.ru/threads/uskorenie-rendera-modelej.10481/">дополнительной обёрткой от Dahaka</a></p>
 <blockquote>
 <p>Если вы будете использовать Wavefront как основной формат моделей, то не забудьте сделать триангуляцию модели, чтобы не получить исключение при загрузке!</p>
 </blockquote>
-<p>Реализация без обёртки:
-<div class="highlight"><pre><span></span><code><span class="c1">// TODO в разработке</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.item</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.SideOnly</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ResourceLocation</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.IItemRenderer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.AdvancedModelLoader</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.IModelCustom</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.obj.WavefrontObject</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.ModelWrapperDisplayList</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.lwjgl.opengl.GL11.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RingItemRender</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IItemRenderer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="w"> </span><span class="n">modelPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;models/ring.obj&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IModelCustom</span><span class="w"> </span><span class="n">ringModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelWrapperDisplayList</span><span class="p">((</span><span class="n">WavefrontObject</span><span class="p">)</span><span class="w"> </span><span class="n">AdvancedModelLoader</span><span class="p">.</span><span class="na">loadModel</span><span class="p">(</span><span class="n">modelPath</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">handleRenderType</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ItemRenderType</span><span class="p">.</span><span class="na">EQUIPPED_FIRST_PERSON</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">shouldUseRenderHelper</span><span class="p">(</span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">ItemRendererHelper</span><span class="w"> </span><span class="n">helper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">renderItem</span><span class="p">(</span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">...</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPushMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span><span class="c1">// Отключаем текстурирование, так как у нас её нет для данной модели</span><span class="w"></span>
+<span class="w">        </span><span class="n">glTranslatef</span><span class="p">(</span><span class="mf">2F</span><span class="p">,</span><span class="w"> </span><span class="mf">0F</span><span class="p">,</span><span class="w"> </span><span class="mf">0F</span><span class="p">);</span><span class="c1">// Смещаем по X модель, чтобы было хорошо видно модель</span><span class="w"></span>
+<span class="w">        </span><span class="n">ringModel</span><span class="p">.</span><span class="na">renderAll</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span><span class="c1">// Включаем текстурирование</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPopMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<blockquote>
+<p>Если вы хотите использовать текстуру, то вам необходимо сделать перед отрисовкой привязку текстуры</p>
+</blockquote>
+<p>Пример привязки текстуры к модели:
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RingItemRender</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IItemRenderer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="w"> </span><span class="n">ringTexturePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;textures/models/ring.png&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">renderItem</span><span class="p">(</span><span class="n">ItemRenderType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">...</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Minecraft</span><span class="p">.</span><span class="na">getMinecraft</span><span class="p">().</span><span class="na">renderEngine</span><span class="p">.</span><span class="na">bindTexture</span><span class="p">(</span><span class="n">ringTexturePath</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPushMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glTranslatef</span><span class="p">(</span><span class="mf">2F</span><span class="p">,</span><span class="w"> </span><span class="mf">0F</span><span class="p">,</span><span class="w"> </span><span class="mf">0F</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">ringModel</span><span class="p">.</span><span class="na">renderAll</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPopMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<p>Реализация с обёрткой:
-<div class="highlight"><pre><span></span><code><span class="c1">// TODO в разработке</span><span class="w"></span>
-</code></pre></div></p>
-<p>Как видите, особо код не меняется, лишь добавляется уже готовый класс обёртки над IModelCustom и рендер модели становится в разы быстрее с обёрткой, нежели без неё.
-Остаётся загрузить модели по указанным нами путям в ресурсах нашего мода и запустить игру!</p>
+<p>Остаётся загрузить модели по указанным нами путям в ресурсах нашего мода и запустить игру!</p>
+<p><a href="https://disk.yandex.ru/d/OkP_eFs4G8F0QQ">Ссылка на модель</a></p>
+<p><img alt="Модель кольца в игре" src="../images/ring_model.png" /></p>
 
               
 
