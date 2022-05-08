@@ -253,3 +253,7 @@ extra:
     - title: 'Мы в Discord'
       icon: 'fab fa-discord'
       url: 'https://discord.gg/FVVG8p2QrW'
+
+    - title: 'Примеры'
+      icon: 'fab fa-code'
+      url: 'https://github.com/mc-modding/example'
