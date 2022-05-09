@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         Инструменты
       </a>
     </li>
@@ -799,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/creative-tab/" class="md-nav__link">
+      <a href="../../creative-tab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -4030,7 +4030,7 @@
 </code></pre></div></p>
 <p>Рассмотрим параметры переданные в супер-класс:</p>
 <ol>
-<li><code>healAmount</code> - сколько будет восстановлено очков голода. Всего у игрока 20 очков голода(10 окороков). В нашем случае будет восстановлен 1 окорок.</li>
+<li><code>healAmount</code> - сколько будет восстановлено здоровья. Всего у игрока 20 хп(10 сердце). В нашем случае будет восстановлено 1 сердце.</li>
 <li><code>saturationModifier</code> - модификатор насыщения. Данное значение используется для расчёта уровня насыщения игрока. Чем больше значение, тем дольше игрок не будет тратить очки голода.</li>
 <li><code>isWolfFood</code> - определяет, может ли волк есть данную еду.</li>
 </ol>
@@ -4040,16 +4040,13 @@
 <h2 id="эффект-зелья-при-съедании">Эффект зелья при съедании<a class="headerlink" href="#эффект-зелья-при-съедании" title="Permanent link">#</a></h2>
 <p>Возможно при съедании плоти или отравленной картошки вы получали различные эффекты: тошнота, голод. Чтобы задать эффект зелья,
 необходимо в конструкторе вызвать метод <code>setPotionEffect(Integer, Integer, Integer, Float)</code>.</p>
-<p>Рассмотрим передаваемые параметры подробнее.</p>
+<p>Рассмотрим передаваемые параметры подробнее!</p>
 <ol>
 <li><code>potionId</code> - идентификатор зелья. Все зелья самого Minecraft хранятся в классе <code>Potion</code>.</li>
 <li><code>potionDuration</code> - длительность эффекта в секундах.</li>
-<li><code>potionAmplifier</code> - уровень зелья, чем выше значение, тем сильнее эффект(скорость передвижения, наносимый урон и т.п.)</li>
+<li><code>potionAmplifier</code> - усиление эффекта. Некий уровень зелья - чем выше значение, тем сильнее эффект(скорость передвижения, наносимый урон и т.п.)</li>
 <li><code>potionEffectProbability</code> - вероятность с которой появится данный эффект зелья. Указывать от 0 до 1!</li>
 </ol>
-<blockquote>
-<p>Эффект зелья можно задать только один!</p>
-</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CherryItem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemFood</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CherryItem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
@@ -4157,7 +4154,7 @@
 
             <!-- Link to next page -->
             
-            <a href="../../prepare/" title="Инструменты"
+            <a href="../tools/" title="Инструменты"
                 class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                 <div class="md-flex__cell md-flex__cell--stretch
                   md-footer-nav__title">
