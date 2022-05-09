@@ -338,7 +338,39 @@ public class RingItemRender implements IItemRenderer {
 }
 ```
 
-Остаётся загрузить модели по указанным нами путям в ресурсах нашего мода и запустить игру!
+Нам необходимо зарегистрировать рендер для кольца, чтобы это сделать, создадим в `ModItems` метод `registerRender`.
+```java
+public class ModItems {
+    @SideOnly(Side.CLIENT)
+    public static void registerRender() {
+        
+    }
+}
+```
+В методе необходимо вызывать `MinecraftForgeClient#registerItemRenderer(Item, IItemRenderer)`.
+Первый параметр метода отвечает за предмет к которому будет привязан новый рендер. Второй параметр отвечает за
+получение объекта класса рендера предмета.
+
+```java
+public class ModItems {
+    @SideOnly(Side.CLIENT)
+    public static void registerRender() {
+        MinecraftForgeClient.registerItemRenderer(RING, new RingItemRender());
+    }
+}
+```
+
+Осталось добавить вызов метода `ModItems#registerRender` в `ClientProxy#init`
+```java
+public class CommonProxy {
+    public void pre(FMLPreInitializationEvent e) {
+        super.init(e);
+        ModItems.registerRender();
+    }
+}
+```
+
+Загружаем модель по указанному нами пути в ресурсах нашего мода и запускаем игру!
 
 [Ссылка на модель](https://disk.yandex.ru/d/OkP_eFs4G8F0QQ)
 
