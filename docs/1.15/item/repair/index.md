@@ -7,16 +7,16 @@ description: Прочность инструментов.
 
 ```java
 public enum TutTiers implements IItemTier {
-    MAGIC_TIER(4, 2500, 7.2F, 5.0F, 5, ()-> Ingredient.fromStacks(new ItemStack(Items.ENCHANTED_BOOK, 5)));
+    MAGIC_TIER(4, 2500, 7.2F, 5.0F, 5, Ingredient.fromStacks(new ItemStack(Items.ENCHANTED_BOOK, 5)));
 
     private final int harvestLevel;
     private final int maxUses;
     private final float efficiency;
     private final float attackDamage;
     private final int enchantability;
-    private final Supplier<Ingredient> repairMaterial;
+    private final Ingredient repairMaterial;
 
-    TutTiers(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialIn) {
+    TutTiers(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Ingredient repairMaterialIn) {
         this.harvestLevel = harvestLevelIn;
         this.maxUses = maxUsesIn;
         this.efficiency = efficiencyIn;
@@ -65,10 +65,8 @@ public enum TutTiers implements IItemTier {
 * `repairMaterial` - Предмет для починки
 У нас вышел уровень инструмента, который имеет 4 уровень добычи, 2500 прочности, 7.2 эффективности, 5 урона и полностью чинится 5 зачарованными книгами. Давайте применим его:
 ```java
-public class ItemToolAxe extends AxeItem
-{
-    public ItemToolAxe()
-    {
+public class ItemToolAxe extends AxeItem {
+    public ItemToolAxe() {
         super(TutTiers.MAGIC_TIER, 8, 1, new Properties().maxStackSize(1));
     }
 }
