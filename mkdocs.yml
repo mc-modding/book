@@ -17,8 +17,8 @@ nav:
           - Прокси: '1.7.10/basics/proxy.md'
           - Сборка мода: '1.7.10/basics/building-mod.md'
       - Предмет:
-          - Создание предмета: '1.7.10/prepare.md'
-          - Еда: '1.7.10/prepare.md'
+          - Создание предмета: '1.7.10/item/basics.md'
+          - Еда: '1.7.10/item/food.md'
           - Инструменты: '1.7.10/prepare.md'
           - Починка инструментов: '1.7.10/prepare.md'
           - Броня: '1.7.10/prepare.md'
@@ -31,8 +31,8 @@ nav:
           - Хранение данных(TileEntity): '1.7.10/prepare.md'
           - Жидкость: '1.7.10/prepare.md'
           - Хранение жидкости: '1.7.10/prepare.md'
-      - Вкладка в креативе: '1.7.10/prepare.md'
-      - Локализация: '1.7.10/lang/index.md'
+      - Вкладка в креативе: '1.7.10/basics/creative-tab.md'
+      - Локализация: '1.7.10/basics/lang.md'
       - События:
           - Использование событий: '1.7.10/prepare.md'
           - Собственные события: '1.7.10/prepare.md'
@@ -44,7 +44,7 @@ nav:
       - Сущность(Entity):
           - Собственная сущность: '1.7.10/prepare.md'
           - Спавн в мире: '1.7.10/prepare.md'
-          - Исскуственый интелект: '1.7.10/prepare.md'
+          - Искусственный интеллект: '1.7.10/prepare.md'
       - Пользовательский интерфейс(Gui):
           - Создание окна: '1.7.10/prepare.md'
           - Контейнер: '1.7.10/prepare.md'
@@ -239,17 +239,21 @@ extra:
 
   nav_links:
     - title: 'Задать вопрос'
-      icon: 'far fa-question-circle'
+      icon: 'fas fa-question'
       url: 'https://forum.mcmodding.ru/forums/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B.23/'
 
     - title: 'Форум'
-      icon: 'far fa-comments'
+      icon: 'fas fa-comments'
       url: 'https://forum.mcmodding.ru'
 
     - title: 'Как внести вклад?'
-      icon: 'far fa-edit'
+      icon: 'fas fa-feather-alt'
       url: 'editing-book/'
 
     - title: 'Мы в Discord'
       icon: 'fab fa-discord'
       url: 'https://discord.gg/FVVG8p2QrW'
+
+    - title: 'Примеры'
+      icon: 'fas fa-code'
+      url: 'https://github.com/mc-modding/example'
