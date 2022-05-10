@@ -4200,6 +4200,12 @@
 <p><img alt="Рубиновый меч от третьего лица" src="../images/ruby_sword_tp.png" /></p>
 <h2 id="топор">Топор<a class="headerlink" href="#топор" title="Permanent link">#</a></h2>
 <p>Для создания топора необходимо наследоваться от <code>ItemTool</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Примечание к наследованию</p>
+<p>Возможно у вас возникнет вопрос, почему мы сразу не можем наследоваться от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code>. </p>
+</div>
+<p>Связано это с тем, что Minecraft и MinecraftForge не предоставляют возможности изменять списки добываемых блоков и добавочный урон к инструментам.
+Если вам необходим инструмент только со своим материалом, то вы можете наследоваться сразу от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code></p>
 <p><div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
@@ -4241,6 +4247,28 @@
 <p>Для корректной работы инструмента необходимо указать <code>setHarvestLevel(String, Integer)</code>, так как мы не используем
 наследование от <code>ItemAxe</code>. Первым параметром выступает название инструмента, в данном случае <code>axe</code>, а вторым
 параметром выступает уровень инструмента.</p>
+<table>
+<thead>
+<tr>
+<th>Инструмент</th>
+<th>Название класса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Топор</td>
+<td>axe</td>
+</tr>
+<tr>
+<td>Кирка</td>
+<td>pickaxe</td>
+</tr>
+<tr>
+<td>Лопата</td>
+<td>shovel</td>
+</tr>
+</tbody>
+</table>
 <p>Добавился метод <code>func_150893_a(ItemStack, Block)</code>, данный метод возвращает эффективность инструмента, а также
 дополнительно регулирует эффективность инструмента для некоторых материалы блоков.</p>
 <p>Добавим текстуру топора
@@ -4364,10 +4392,6 @@
 <p>Регистрируем нашу лопату и запускаем игру.
 <img alt="Рубиновая лопата от первого лица" src="../images/ruby_spade_fp.png" /></p>
 <p><img alt="Рубиновая лопата от третьего лица" src="../images/ruby_spade_tp.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Примечание к наследованию</p>
-<p>Возможно у вас возникнет вопрос, почему мы сразу не можем наследоваться от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code>. Связано это с тем, что Minecraft и MinecraftForge не предоставляют возможности изменять списки добываемых блоков и добавочный урон к инструментам.</p>
-</div>
 <h2 id="мультиинструмент">Мультиинструмент<a class="headerlink" href="#мультиинструмент" title="Permanent link">#</a></h2>
 <p>Ранее мы создали топор, мотыгу, кирку и лопату, но как же их объединить в один мощный инструмент? Всё очень просто,
 делаем аналогичное наследование от <code>ItemTool</code>.</p>
