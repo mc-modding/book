@@ -12,7 +12,7 @@ description: Создание собственных инструментов
 
 ```java
 public class ModItems {
-    public static final Item.ToolMaterial RUBY_MATERIAL = EnumHelper.addToolMaterial("mcmodding:ruby", 4, 1800, 16F, 5F, 30);
+    public static final Item.ToolMaterial RUBY_TOOL_MATERIAL = EnumHelper.addToolMaterial("mcmodding:ruby", 4, 1800, 16F, 5F, 30);
 }
 ```
 
@@ -55,7 +55,7 @@ import ru.mcmodding.tutorial.common.handler.ModTab;
 
 public class RubySword extends ItemSword {
     public RubySword() {
-        super(ModItems.RUBY_MATERIAL);
+        super(ModItems.RUBY_TOOL_MATERIAL);
         setUnlocalizedName("ruby_sword");
         setTextureName(McModding.MOD_ID + ":ruby_sword");
         setCreativeTab(ModTab.INSTANCE);
@@ -102,12 +102,12 @@ public class RubyAxe extends ItemTool {
     );
 
     public RubyAxe() {
-        super(3F, ModItems.RUBY_MATERIAL, HARVEST_BLOCKS);
+        super(3F, ModItems.RUBY_TOOL_MATERIAL, HARVEST_BLOCKS);
         setUnlocalizedName("ruby_axe");
         setTextureName(McModding.MOD_ID + ":ruby_axe");
         setCreativeTab(ModTab.INSTANCE);
 
-        setHarvestLevel("axe", ModItems.RUBY_MATERIAL.getHarvestLevel());
+        setHarvestLevel("axe", ModItems.RUBY_TOOL_MATERIAL.getHarvestLevel());
     }
 
     @Override
@@ -158,7 +158,7 @@ import ru.mcmodding.tutorial.common.handler.ModTab;
 
 public class RubyHoe extends ItemHoe {
     public RubyHoe() {
-        super(ModItems.RUBY_MATERIAL);
+        super(ModItems.RUBY_TOOL_MATERIAL);
         setUnlocalizedName("ruby_hoe");
         setTextureName(McModding.MOD_ID + ":ruby_hoe");
         setCreativeTab(ModTab.INSTANCE);
@@ -203,12 +203,12 @@ public class RubyPickaxe extends ItemTool {
     );
 
     public RubyPickaxe() {
-        super(2F, ModItems.RUBY_MATERIAL, HARVEST_BLOCKS);
+        super(2F, ModItems.RUBY_TOOL_MATERIAL, HARVEST_BLOCKS);
         setUnlocalizedName("ruby_pickaxe");
         setTextureName(McModding.MOD_ID + ":ruby_pickaxe");
         setCreativeTab(ModTab.INSTANCE);
 
-        setHarvestLevel("pickaxe", ModItems.RUBY_MATERIAL.getHarvestLevel());
+        setHarvestLevel("pickaxe", ModItems.RUBY_TOOL_MATERIAL.getHarvestLevel());
     }
 
     @Override
@@ -262,12 +262,12 @@ public class RubySpade extends ItemTool {
     );
 
     public RubySpade() {
-        super(1F, ModItems.RUBY_MATERIAL, HARVEST_BLOCKS);
+        super(1F, ModItems.RUBY_TOOL_MATERIAL, HARVEST_BLOCKS);
         setUnlocalizedName("ruby_spade");
         setTextureName(McModding.MOD_ID + ":ruby_spade");
         setCreativeTab(ModTab.INSTANCE);
 
-        setHarvestLevel("shovel", ModItems.RUBY_MATERIAL.getHarvestLevel());
+        setHarvestLevel("shovel", ModItems.RUBY_TOOL_MATERIAL.getHarvestLevel());
     }
 }
 ```
@@ -308,12 +308,12 @@ public class RubyMultiTool extends ItemTool {
     public static final Set<Block> HARVEST_BLOCKS = Sets.newHashSet();
 
     public RubyMultiTool() {
-        super(5F, ModItems.RUBY_MATERIAL, HARVEST_BLOCKS);
+        super(5F, ModItems.RUBY_TOOL_MATERIAL, HARVEST_BLOCKS);
         setUnlocalizedName("ruby_multi_tool");
         setTextureName(McModding.MOD_ID + ":ruby_multi_tool");
         setCreativeTab(ModTab.INSTANCE);
 
-        final int harvestLvl = ModItems.RUBY_MATERIAL.getHarvestLevel();
+        final int harvestLvl = ModItems.RUBY_TOOL_MATERIAL.getHarvestLevel();
         setHarvestLevel("axe", harvestLvl);
         setHarvestLevel("pickaxe", harvestLvl);
         setHarvestLevel("shovel", harvestLvl);

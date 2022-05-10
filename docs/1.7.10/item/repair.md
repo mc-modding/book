@@ -7,7 +7,9 @@ description: Починка предметов с прочностью.
 1. Объединение одинаковых предметов в сетке крафта
 2. С помощью наковальни и предмета для починки
 
-Таблица предметов применяемых при починке:
+## Таблицы предметов применяемых при починке
+
+ToolMaterial:
 
 | Материал | Название предмета | Предмет            |
 |----------|-------------------|--------------------|
@@ -17,29 +19,46 @@ description: Починка предметов с прочностью.
 | IRON     | Железный слиток   | Items.iron_ingot   |
 | EMERALD  | Алмаз             | Items.diamond      |
 
-!!! warning "Внимание!"
-    Заменять предмет починки для материалов Minecraft не разрешено, при попытке заменить вы получите исключение!
+ArmorMaterial:
 
-Приступим к добавлению своего предмета для починки наших инструментов. Создайте предмет, который будет использоваться для
-починки. Затем перейдите в класс `ModItems` и вызовете метод `ToolMaterial#setRepairItem(ItemStack)`
+| Материал | Название предмета | Предмет          |
+|----------|-------------------|------------------|
+| CLOTH    | Кожа              | Items.leather    |
+| CHAIN    | Железный слиток   | Items.iron_ingot |
+| IRON     | Железный слиток   | Items.iron_ingot |
+| GOLD     | Золотой слиток    | Items.gold_ingot |
+| DIAMOND  | Алмаз             | Items.diamond    |
+
+!!! warning "Внимание!"
+    Заменять предмет починки для материалов Minecraft не разрешено, при попытке заменить вы получите исключение.
+Добавить можно только один предмет для починки!
+
+Приступим к добавлению своего предмета для починки наших инструментов и брони. Создайте предмет, который будет использоваться для
+починки. Затем перейдите в класс `ModItems` и вызовете метод `ToolMaterial#setRepairItem(ItemStack)`. К сожалению,
+у `ArmorMaterial` нет метода `setRepairItem(ItemStack)` поэтому, чтобы добавить предмет для починки, необходимо
+передать в переменную `customCraftingMaterial` предмет. Чтобы добавить блок, воспользуйтесь методом `Item#getItemFromBlock(Block)`.
 
 ```java
 public class ModItems {
-    public static final Item.ToolMaterial RUBY_MATERIAL = EnumHelper.addToolMaterial("mcmodding:ruby", 4, 1800, 16F, 5F, 30);
-
+    public static final Item.ToolMaterial RUBY_TOOL_MATERIAL = EnumHelper.addToolMaterial("mcmodding:ruby", 4, 1800, 16F, 5F, 30);
+    public static final ItemArmor.ArmorMaterial RUBY_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("mcmodding:ruby", 66, new int[]{5, 5, 5, 5}, 30);
+    
     static {
-        RUBY_MATERIAL.setRepairItem(new ItemStack(RUBY));
+        RUBY_TOOL_MATERIAL.setRepairItem(new ItemStack(RUBY));
+        RUBY_ARMOR_MATERIAL.customCraftingMaterial = RUBY;
     }
 }
 ```
 
-Метод `ToolMaterial#setRepairItem(ItemStack)` принимает стэк предметов. Первым параметром в `ItemStack` выступает
-класс `Item` или `Block`(см. статью "Создание блока"), вторым параметром идёт количество предметов в стэке, максимум
+Метод `ToolMaterial#setRepairItem(ItemStack)` принимает стэк предметов.
+
+!!! info "ItemStack"
+    Первым параметром в `ItemStack` выступает класс `Item` или `Block`(см. статью "Создание блока"), вторым параметром идёт количество предметов в стэке, максимум
 может быть 64 предмета(в зависимости от предмета это кол-во может меняться: 1 - лодка, 16 - снежки, 64 - камень и др.)
-Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать
+Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать 
 стандартные значения, поэтому достаточно в `ItemStack` передать только предмет.
 
-Запускаем игру и пробуем починить наш инструмент в наковальне.
+Запускаем игру и пробуем починить наш инструмент в наковальне(аналогично для брони).
 
 ![Повреждённая кирка](images/repair_ruby_damaged.png)
 
