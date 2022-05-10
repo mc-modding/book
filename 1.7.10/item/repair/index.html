@@ -6,18 +6,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Разбор различных параметров аннотации. Более подробная настройка mcmod.info файла с примерами. Пояснение некоторых неочевидных параметров.">
+        <meta name="description" content="Починка предметов с прочностью.">
       
       
       
-        <link rel="canonical" href="https://mcmodding.ru/1.7.10/basics/mod-annotation/">
+        <link rel="canonical" href="https://mcmodding.ru/1.7.10/item/repair/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
     
     
       
-        <title>Аннотация @Mod - Создание Minecraft модов</title>
+        <title>Починка инструментов - Создание Minecraft модов</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#аннотация-mod" class="md-skip">
+        <a href="#починка-предмета" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Аннотация @Mod
+              Починка инструментов
             
           </span>
         </div>
@@ -409,14 +409,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
       
@@ -439,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mod-structure/" class="md-nav__link">
+      <a href="../../basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -451,21 +449,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../basics/mod-annotation/" class="md-nav__link">
         Аннотация @Mod
       </a>
-      
     </li>
   
 
@@ -477,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../loading-stages/" class="md-nav__link">
+      <a href="../../basics/loading-stages/" class="md-nav__link">
         Стадии загрузки мода
       </a>
     </li>
@@ -491,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxy/" class="md-nav__link">
+      <a href="../../basics/proxy/" class="md-nav__link">
         Прокси
       </a>
     </li>
@@ -505,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../building-mod/" class="md-nav__link">
+      <a href="../../basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -524,12 +512,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
       
@@ -552,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/basics/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -566,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/food/" class="md-nav__link">
+      <a href="../food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -580,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/tools/" class="md-nav__link">
+      <a href="../tools/" class="md-nav__link">
         Инструменты
       </a>
     </li>
@@ -592,11 +582,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../item/repair/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Починка инструментов
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Починка инструментов
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#починка-в-сетке-крафта" class="md-nav__link">
+    Починка в сетке крафта
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -774,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../creative-tab/" class="md-nav__link">
+      <a href="../../basics/creative-tab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -788,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lang/" class="md-nav__link">
+      <a href="../../basics/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -3947,6 +3978,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#починка-в-сетке-крафта" class="md-nav__link">
+    Починка в сетке крафта
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3957,109 +4003,86 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/basics/mod-annotation.md" title="Редактировать страницу" class="md-content__button md-icon">
+  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/item/repair.md" title="Редактировать страницу" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="аннотация-mod">Аннотация @Mod<a class="headerlink" href="#аннотация-mod" title="Permanent link">#</a></h1>
+<h1 id="починка-предмета">Починка предмета<a class="headerlink" href="#починка-предмета" title="Permanent link">#</a></h1>
+<p>Как мы знаем в Minecraft можно чинить предметы с прочностью двумя способами:</p>
+<ol>
+<li>Объединение одинаковых предметов в сетке крафта</li>
+<li>С помощью наковальни и предмета для починки</li>
+</ol>
+<p>Таблица предметов применяемых при починке:</p>
 <table>
 <thead>
 <tr>
-<th>Переменная</th>
-<th>Описание</th>
-<th>Обязателен</th>
-<th>Пример</th>
+<th>Материал</th>
+<th>Название предмета</th>
+<th>Предмет</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>modid</td>
-<td>Задаёт уникальное идентификатор для мода.</td>
-<td>Да</td>
-<td>modid = "mcmodding"</td>
+<td>WOOD</td>
+<td>Доски</td>
+<td>Blocks.planks</td>
 </tr>
 <tr>
-<td>name</td>
-<td>Задаёт имя для мода.</td>
-<td>Нет</td>
-<td>name = "McModding Mod"</td>
+<td>STONE</td>
+<td>Булыжник</td>
+<td>Blocks.cobblestone</td>
 </tr>
 <tr>
-<td>version</td>
-<td>Задаёт версию для мода.</td>
-<td>нет</td>
-<td>version = "1.0 Beta"</td>
+<td>GOLD</td>
+<td>Золотой слиток</td>
+<td>Items.gold_ingot</td>
 </tr>
 <tr>
-<td>dependencies</td>
-<td>Задаёт зависимости для мода без которых мод не запуститься.</td>
-<td>Нет</td>
-<td>dependencies = "required-after:mylib" или dependencies="required-before:mylib"</td>
+<td>IRON</td>
+<td>Железный слиток</td>
+<td>Items.iron_ingot</td>
 </tr>
 <tr>
-<td>useMetadata</td>
-<td>При значение true данные о версии, id, имени мода будут браться из файла mcmod.info</td>
-<td>Нет</td>
-<td>useMetadata = true</td>
-</tr>
-<tr>
-<td>acceptedMinecraftVersions</td>
-<td>Если прописанная версия не совпадает с mc версией, то мод выдаст ошибку и не запуститься.</td>
-<td>Нет</td>
-<td>acceptedMinecraftVersions = "[1.11]"</td>
-</tr>
-<tr>
-<td>acceptableRemoteVersions</td>
-<td>Если прописанная версия не совпадает с серверной, то мод выдаст ошибку.</td>
-<td>Нет</td>
-<td>acceptableRemoteVersions = "[1.63.2]"</td>
-</tr>
-<tr>
-<td>acceptableSaveVersions</td>
-<td>Задаёт диапазон версий которые будут храниться. Должны следовать правильному тону! <a href="http://semver.org/">Тык</a></td>
-<td>Нет</td>
-<td>acceptableSaveVersions = "[1.10.beta.2]"</td>
-</tr>
-<tr>
-<td>bukkitPlugin</td>
-<td>Дополнительный плагин bukkit, который будет внедрен в платформу плагинов bukkit, если этот мод загружен в платформу FML и присутствует bukkit coremod.</td>
-<td>Нет</td>
-<td>bukkitPlugin = "mcmodding-plugin"</td>
-</tr>
-<tr>
-<td>certificateFingerprint</td>
-<td>Задаёт цифровую подпись для мода, без которой мод не будет запускаться.</td>
-<td>Нет</td>
-<td>certificateFingerprint = "mcmodding-certificate"</td>
-</tr>
-<tr>
-<td>modLanguage</td>
-<td>Задаёт язык на котором был написан мод для управления поведением совместимости.</td>
-<td>Нет</td>
-<td>modLanguage = "java"</td>
-</tr>
-<tr>
-<td>modLanguageAdapter</td>
-<td>Задаёт язык к которому будет адаптирован fml.</td>
-<td>Нет</td>
-<td>modLanguageAdapter = "kotlin"</td>
-</tr>
-<tr>
-<td>canBeDeactivated</td>
-<td>Если значение true, то мод можно будет выключить. При отключении на сервере, изменения войдут в силу только после перезагрузки!</td>
-<td>Нет</td>
-<td>canBeDeactivated = true</td>
-</tr>
-<tr>
-<td>guiFactory</td>
-<td>Задаёт класс для графического интерфейса конфига.</td>
-<td>Нет</td>
-<td>guiFactory = "ru.mcmodding.tutorial.client.screen.ConfigGuiFactory"</td>
+<td>EMERALD</td>
+<td>Алмаз</td>
+<td>Items.diamond</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Внимание!</p>
+<p>Заменять предмет починки для материалов Minecraft не разрешено, при попытке заменить вы получите исключение!</p>
+</div>
+<p>Приступим к добавлению своего предмета для починки наших инструментов. Создайте предмет, который будет использоваться для
+починки. Затем перейдите в класс <code>ModItems</code> и вызовете метод <code>ToolMaterial#setRepairItem(ItemStack)</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">RUBY_MATERIAL</span><span class="p">.</span><span class="na">setRepairItem</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">RUBY</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Метод <code>ToolMaterial#setRepairItem(ItemStack)</code> принимает стэк предметов. Первым параметром в <code>ItemStack</code> выступает
+класс <code>Item</code> или <code>Block</code>(см. статью "Создание блока"), вторым параметром идёт количество предметов в стэке, максимум
+может быть 64 предмета(в зависимости от предмета это кол-во может меняться: 1 - лодка, 16 - снежки, 64 - камень и др.)
+Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать
+стандартные значения, поэтому достаточно в <code>ItemStack</code> передать только предмет.</p>
+<p>Запускаем игру и пробуем починить наш инструмент в наковальне.</p>
+<p><img alt="Повреждённая кирка" src="../images/repair_ruby_damaged.png" /></p>
+<p><img alt="Починка кирки" src="../images/repair_ruby_repaired.png" /></p>
+<h2 id="починка-в-сетке-крафта">Починка в сетке крафта<a class="headerlink" href="#починка-в-сетке-крафта" title="Permanent link">#</a></h2>
+<p>Разработчики Minecraft заранее позаботились о том, что большинство предметов имеющих прочность должны чиниться за счёт
+объединения одинаковых по мете и типу предмета, но что если мы хотим чинить наш предмет только через наковальню?
+Для этого предусмотрено состояние <code>canRepair</code>, чтобы отключить починку через сетку крафта, добавьте в конструктор своего
+предмета вызов метода <code>Item#setNoRepair</code>.</p>
+<p>До добавления <code>Item#setNoRepair</code>:</p>
+<p><img alt="Починка в сетке крафта" src="../images/repair_merge.png" /></p>
+<p>После добавления <code>Item#setNoRepair</code>:</p>
+<p><img alt="Починка в сетке крафта" src="../images/repair_merge_disabled.png" /></p>
 
               
             </article>
@@ -4078,7 +4101,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул">
       
         
-        <a href="../mod-structure/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Структура мода" rel="prev">
+        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Инструменты" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -4087,20 +4110,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Структура мода
+              Инструменты
             </div>
           </div>
         </a>
       
       
         
-        <a href="../loading-stages/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Стадии загрузки мода" rel="next">
+        <a href="../../prepare/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Броня" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Стадии загрузки мода
+              Броня
             </div>
           </div>
           <div class="md-footer__button md-icon">
