@@ -4010,7 +4010,7 @@
 
 
 <h1 id="еда">Еда<a class="headerlink" href="#еда" title="Permanent link">#</a></h1>
-<p>Для создания предмета еды необходимо наследоваться от ItemFood
+<p>Для создания предмета еды необходимо наследоваться от ItemFood</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemFood</span><span class="p">;</span><span class="w"></span>
@@ -4020,16 +4020,17 @@
 <span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Рассмотрим параметры переданные в супер-класс:</p>
 <ol>
 <li><code>healAmount</code> - сколько будет восстановлено очков голода. Всего у игрока 20 очков голода(10 окороков). В нашем случае будет восстановлен 1 окорок.</li>
 <li><code>saturationModifier</code> - модификатор насыщения. Данное значение используется для расчёта уровня насыщения игрока. Чем больше значение, тем дольше игрок не будет тратить очки голода.</li>
 <li><code>isWolfFood</code> - определяет, может ли волк есть данную еду.</li>
 </ol>
-<blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Подсказка</p>
 <p>Если вы хотите, чтобы еду можно было есть всегда, вне зависимости от насыщенности игрока, то вызовете в конструкторе метод <code>setAlwaysEdible</code></p>
-</blockquote>
+</div>
 <h2 id="эффект-зелья-при-съедании">Эффект зелья при съедании<a class="headerlink" href="#эффект-зелья-при-съедании" title="Permanent link">#</a></h2>
 <p>Возможно при съедании плоти или отравленной картошки вы получали различные эффекты: тошнота, голод. Чтобы задать эффект зелья,
 необходимо в конструкторе вызвать метод <code>setPotionEffect(Integer, Integer, Integer, Float)</code>.</p>
@@ -4040,9 +4041,10 @@
 <li><code>potionAmplifier</code> - уровень зелья, чем выше значение, тем сильнее эффект(скорость передвижения, наносимый урон и т.п.)</li>
 <li><code>potionEffectProbability</code> - вероятность с которой появится данный эффект зелья. Указывать от 0 до 1!</li>
 </ol>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Внимание!</p>
 <p>Эффект зелья можно задать только один!</p>
-</blockquote>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CherryItem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemFood</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CherryItem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
