@@ -1,0 +1,33 @@
+/* Фикс маленького логотипа в шапке */
+
+.md-header__button.md-logo
+{
+    padding: 0;
+    margin: 0;
+}
+
+.md-header__button.md-logo img
+{
+    height: 1.75rem !important;
+}
+
+/* Только логотип в левом сайдбаре */
+
+.md-nav.md-nav--primary > .md-nav__title
+{
+    font-size: 0 !important;
+    height: auto !important;
+    line-height: 0 !important;
+    padding-top: .2rem !important;
+}
+
+.md-nav.md-nav--primary > .md-nav__title .md-nav__button.md-logo
+{
+    position: static !important;
+}
+
+.md-nav.md-nav--primary > .md-nav__title .md-nav__button.md-logo img
+{
+    margin: auto;
+}
+
