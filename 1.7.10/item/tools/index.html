@@ -667,8 +667,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../repair/" class="md-nav__link">
-        Починка инструментов
+      <a href="../../prepare/" class="md-nav__link">
+        Броня
       </a>
     </li>
   
@@ -681,8 +681,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
-        Броня
+      <a href="../repair/" class="md-nav__link">
+        Починка
       </a>
     </li>
   
@@ -4100,7 +4100,7 @@
 <h2 id="материал-инструментов">Материал инструментов<a class="headerlink" href="#материал-инструментов" title="Permanent link">#</a></h2>
 <p>Создадим материал для наших инструментов. Для удобства, создадим его в <code>ModItems</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_TOOL_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Теперь ознакомимся с параметрами метода <code>EnumHelper#addToolMaterial(String, Integer, Integer, Float, Float, Integer)</code></p>
@@ -4186,7 +4186,7 @@
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubySword</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemSword</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubySword</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_sword&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_sword&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
@@ -4226,12 +4226,12 @@
 <span class="w">    </span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyAxe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">3F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">3F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_axe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_axe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
@@ -4289,7 +4289,7 @@
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyHoe</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemHoe</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyHoe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_hoe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_hoe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
@@ -4327,12 +4327,12 @@
 <span class="w">    </span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyPickaxe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">2F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">2F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_pickaxe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_pickaxe&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
@@ -4378,12 +4378,12 @@
 <span class="w">    </span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubySpade</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">1F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">1F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_spade&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_spade&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -4417,12 +4417,12 @@
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sets</span><span class="p">.</span><span class="na">newHashSet</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyMultiTool</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_multi_tool&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_multi_tool&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">harvestLvl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">harvestLvl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
@@ -4527,13 +4527,13 @@
       
       
         
-        <a href="../repair/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Починка инструментов" rel="next">
+        <a href="../../prepare/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Броня" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Починка инструментов
+              Броня
             </div>
           </div>
           <div class="md-footer__button md-icon">

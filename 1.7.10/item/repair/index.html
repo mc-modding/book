@@ -17,7 +17,7 @@
     
     
       
-        <title>Починка инструментов - Создание Minecraft модов</title>
+        <title>Починка - Создание Minecraft модов</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Починка инструментов
+              Починка
             
           </span>
         </div>
@@ -582,6 +582,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../prepare/" class="md-nav__link">
+        Броня
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -594,12 +608,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Починка инструментов
+          Починка
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Починка инструментов
+        Починка
       </a>
       
         
@@ -618,6 +632,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#таблицы-предметов-применяемых-при-починке" class="md-nav__link">
+    Таблицы предметов применяемых при починке
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#починка-в-сетке-крафта" class="md-nav__link">
     Починка в сетке крафта
   </a>
@@ -628,20 +649,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
-        Броня
-      </a>
     </li>
   
 
@@ -3985,6 +3992,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#таблицы-предметов-применяемых-при-починке" class="md-nav__link">
+    Таблицы предметов применяемых при починке
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#починка-в-сетке-крафта" class="md-nav__link">
     Починка в сетке крафта
   </a>
@@ -4015,7 +4029,8 @@
 <li>Объединение одинаковых предметов в сетке крафта</li>
 <li>С помощью наковальни и предмета для починки</li>
 </ol>
-<p>Таблица предметов применяемых при починке:</p>
+<h2 id="таблицы-предметов-применяемых-при-починке">Таблицы предметов применяемых при починке<a class="headerlink" href="#таблицы-предметов-применяемых-при-починке" title="Permanent link">#</a></h2>
+<p>ToolMaterial:</p>
 <table>
 <thead>
 <tr>
@@ -4052,26 +4067,71 @@
 </tr>
 </tbody>
 </table>
+<p>ArmorMaterial:</p>
+<table>
+<thead>
+<tr>
+<th>Материал</th>
+<th>Название предмета</th>
+<th>Предмет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLOTH</td>
+<td>Кожа</td>
+<td>Items.leather</td>
+</tr>
+<tr>
+<td>CHAIN</td>
+<td>Железный слиток</td>
+<td>Items.iron_ingot</td>
+</tr>
+<tr>
+<td>IRON</td>
+<td>Железный слиток</td>
+<td>Items.iron_ingot</td>
+</tr>
+<tr>
+<td>GOLD</td>
+<td>Золотой слиток</td>
+<td>Items.gold_ingot</td>
+</tr>
+<tr>
+<td>DIAMOND</td>
+<td>Алмаз</td>
+<td>Items.diamond</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Внимание!</p>
-<p>Заменять предмет починки для материалов Minecraft не разрешено, при попытке заменить вы получите исключение!</p>
+<p>Заменять предмет починки для материалов Minecraft не разрешено, при попытке заменить вы получите исключение.</p>
 </div>
-<p>Приступим к добавлению своего предмета для починки наших инструментов. Создайте предмет, который будет использоваться для
-починки. Затем перейдите в класс <code>ModItems</code> и вызовете метод <code>ToolMaterial#setRepairItem(ItemStack)</code></p>
+<p>Добавить можно только один предмет для починки!</p>
+<p>Приступим к добавлению своего предмета для починки наших инструментов и брони. Создайте предмет, который будет использоваться для
+починки. Затем перейдите в класс <code>ModItems</code> и вызовете метод <code>ToolMaterial#setRepairItem(ItemStack)</code>. К сожалению,
+у <code>ArmorMaterial</code> нет метода <code>setRepairItem(ItemStack)</code> поэтому, чтобы добавить предмет для починки, необходимо
+передать в переменную <code>customCraftingMaterial</code> предмет. Чтобы добавить блок, воспользуйтесь методом <code>Item#getItemFromBlock(Block)</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_TOOL_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ItemArmor</span><span class="p">.</span><span class="na">ArmorMaterial</span><span class="w"> </span><span class="n">RUBY_ARMOR_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addArmorMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">RUBY_MATERIAL</span><span class="p">.</span><span class="na">setRepairItem</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">RUBY</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">setRepairItem</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">RUBY</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">RUBY_ARMOR_MATERIAL</span><span class="p">.</span><span class="na">customCraftingMaterial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RUBY</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Метод <code>ToolMaterial#setRepairItem(ItemStack)</code> принимает стэк предметов. Первым параметром в <code>ItemStack</code> выступает
-класс <code>Item</code> или <code>Block</code>(см. статью "Создание блока"), вторым параметром идёт количество предметов в стэке, максимум
-может быть 64 предмета(в зависимости от предмета это кол-во может меняться: 1 - лодка, 16 - снежки, 64 - камень и др.)
-Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать
+<p>Метод <code>ToolMaterial#setRepairItem(ItemStack)</code> принимает стэк предметов.</p>
+<div class="admonition info">
+<p class="admonition-title">ItemStack</p>
+<p>Первым параметром в <code>ItemStack</code> выступает класс <code>Item</code> или <code>Block</code>(см. статью "Создание блока"), вторым параметром идёт количество предметов в стэке, максимум</p>
+</div>
+<p>может быть 64 предмета(в зависимости от предмета это кол-во может меняться: 1 - лодка, 16 - снежки, 64 - камень и др.)
+Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать 
 стандартные значения, поэтому достаточно в <code>ItemStack</code> передать только предмет.</p>
-<p>Запускаем игру и пробуем починить наш инструмент в наковальне.</p>
+<p>Запускаем игру и пробуем починить наш инструмент в наковальне(аналогично для брони).</p>
 <p><img alt="Повреждённая кирка" src="../images/repair_ruby_damaged.png" /></p>
 <p><img alt="Починка кирки" src="../images/repair_ruby_repaired.png" /></p>
 <h2 id="починка-в-сетке-крафта">Починка в сетке крафта<a class="headerlink" href="#починка-в-сетке-крафта" title="Permanent link">#</a></h2>
@@ -4101,7 +4161,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул">
       
         
-        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Инструменты" rel="prev">
+        <a href="../../prepare/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Броня" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -4110,20 +4170,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Инструменты
+              Броня
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../prepare/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Броня" rel="next">
+        <a href="../../prepare/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Подтипы" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Броня
+              Подтипы
             </div>
           </div>
           <div class="md-footer__button md-icon">
