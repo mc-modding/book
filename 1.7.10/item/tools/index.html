@@ -646,13 +646,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#пояснение-за-наследование" class="md-nav__link">
-    Пояснение за наследование
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#мультиинструмент" class="md-nav__link">
     Мультиинструмент
   </a>
@@ -4076,13 +4069,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#пояснение-за-наследование" class="md-nav__link">
-    Пояснение за наследование
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#мультиинструмент" class="md-nav__link">
     Мультиинструмент
   </a>
@@ -4112,11 +4098,11 @@
 инструменты, такие как: меч, кирка, топор, мотыга и лопата, а также мультиинструмент, имеющий некоторые свойства других
 инструментов.</p>
 <h2 id="материал-инструментов">Материал инструментов<a class="headerlink" href="#материал-инструментов" title="Permanent link">#</a></h2>
-<p>Создадим материал для наших инструментов. Для удобства, создадим его в <code>ModItems</code>.
+<p>Создадим материал для наших инструментов. Для удобства, создадим его в <code>ModItems</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Теперь ознакомимся с параметрами метода <code>EnumHelper#addToolMaterial(String, Integer, Integer, Float, Float, Integer)</code></p>
 <ol>
 <li>Название материала, в нашем случае будет <code>mcmodding:ruby</code>. Рекомендуется добавлять <code>ModId</code> перед названием, чтобы случайно не заменить материалы из других модов!</li>
@@ -4126,11 +4112,71 @@
 <li>Урон наносимый инструментом. Данное значение суммируется дополнительным значением урона в зависимости от типа инструмента. Для лопаты +1, кирки +2, топора +3 и меча +4.</li>
 <li>Коэффициент зачаровывания. Чем больше значение, тем лучше будут чары при зачаровывание.</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Уровень добычи для некоторых блоков</p>
+<p>Обсидиан уровень 3, алмазная, изумрудная, золотая и редстоун руды 2, железная и лазуритовая 1, уголь, камень и все остальное 0</p>
+</div>
+<p>Таблица материалов <code>Item$ToolMaterial</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Материал</th>
+<th>Уровень добычи</th>
+<th>Прочность</th>
+<th>Эффективность</th>
+<th>Урон</th>
+<th>Зачаровываемость</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WOOD</td>
+<td>0</td>
+<td>59</td>
+<td>2</td>
+<td>0</td>
+<td>15</td>
+</tr>
+<tr>
+<td>STONE</td>
+<td>1</td>
+<td>131</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>IRON</td>
+<td>2</td>
+<td>250</td>
+<td>6</td>
+<td>2</td>
+<td>14</td>
+</tr>
+<tr>
+<td>EMERALD</td>
+<td>3</td>
+<td>1561</td>
+<td>8</td>
+<td>3</td>
+<td>10</td>
+</tr>
+<tr>
+<td>GOLD</td>
+<td>0</td>
+<td>32</td>
+<td>12</td>
+<td>0</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
 <h2 id="меч">Меч<a class="headerlink" href="#меч" title="Permanent link">#</a></h2>
 <p>Для создания меча необходимо наследоваться от <code>ItemSword</code> и передать в супер-класс материал.</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Подсказка</p>
 <p>Вы можете брать уже готовые материалы, которые находятся в <code>Item$ToolMaterial</code></p>
-</blockquote>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemSword</span><span class="p">;</span><span class="w"></span>
@@ -4318,16 +4364,14 @@
 <p>Регистрируем нашу лопату и запускаем игру.
 <img alt="Рубиновая лопата от первого лица" src="../images/ruby_spade_fp.png" /></p>
 <p><img alt="Рубиновая лопата от третьего лица" src="../images/ruby_spade_tp.png" /></p>
-<h2 id="пояснение-за-наследование">Пояснение за наследование<a class="headerlink" href="#пояснение-за-наследование" title="Permanent link">#</a></h2>
-<blockquote>
-<p>Возможно у вас возникнет вопрос, почему мы сразу не можем наследоваться от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code>.
-Связано это с тем, что Minecraft и MinecraftForge не предоставляют возможности изменять списки добываемых блоков и 
-добавочный урон к инструментам.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Примечание к наследованию</p>
+<p>Возможно у вас возникнет вопрос, почему мы сразу не можем наследоваться от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code>. Связано это с тем, что Minecraft и MinecraftForge не предоставляют возможности изменять списки добываемых блоков и добавочный урон к инструментам.</p>
+</div>
 <h2 id="мультиинструмент">Мультиинструмент<a class="headerlink" href="#мультиинструмент" title="Permanent link">#</a></h2>
 <p>Ранее мы создали топор, мотыгу, кирку и лопату, но как же их объединить в один мощный инструмент? Всё очень просто,
 делаем аналогичное наследование от <code>ItemTool</code>.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Event</span><span class="p">;</span><span class="w"></span>
@@ -4405,7 +4449,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Создаём собственный список с добываемыми блоками и добавляем туда обсидиант, изумрудную руду и изумрудный блок, чтобы
+<p>Создаём собственный список с добываемыми блоками и добавляем туда обсидиант, изумрудную руду и изумрудный блок, чтобы
 они правильно обрабатывались, а также добавляем все ранее созданные списки блоков из других инструментов.</p>
 <p>Указываем уровень добычи для каждого типа: топор, кирка и лопата. Не забывайте, что все значения вы можете редактировать
 на своё усмотрение!</p>
