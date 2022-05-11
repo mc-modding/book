@@ -2,7 +2,7 @@ description: Объяснение того, как Forge загружает мо
 
 # Стадии загрузки мода
 
-Forge загружает моды в 3 стадии: предварительная инициализация, инициализация и пост-инициализация или `pre`, `init`, `post`.
+Forge загружает моды в 3 стадии: предварительная инициализация, инициализация и пост-инициализация или `preInit`, `init`, `postInit`.
 
 Есть и другие стадии, но эти три являются самыми главными. Все они выполняются в разные моменты загрузки мода и предназначены для
 разных целей.
@@ -28,7 +28,7 @@ Forge загружает моды в 3 стадии: предварительн�
 ```java
 public class McModding {
     @Mod.EventHandler
-    public void pre(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent event) {
     }
 }
 ```
@@ -47,7 +47,7 @@ public class McModding {
 ```java
 public class McModding {
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e) {
+    public void init(FMLInitializationEvent event) {
     }
 }
 ```
@@ -61,7 +61,7 @@ public class McModding {
 ```java
 public class McModding {
     @Mod.EventHandler
-    public void post(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent event) {
     }
 }
 ```
@@ -81,17 +81,17 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = "mcmodding")
 public class McModding {
     @Mod.EventHandler
-    public void pre(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent event) {
         System.out.println("Предварительная инициализация мода");
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e) {
+    public void init(FMLInitializationEvent event) {
         System.out.println("Инициализация мода");
     }
 
     @Mod.EventHandler
-    public void post(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent event) {
         System.out.println("Пост-инициализация мода");
     }
 }

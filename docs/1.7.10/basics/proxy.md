@@ -25,21 +25,21 @@ description: Объяснение того, как Forge загружает мо
 Для этого создайте пакет `common` внутри пакета нашего мода и класс CommonProxy внутри него. Объявите внутри класса три уже знакомых вам
 метода:
 
-* pre
+* preInit
 * init
-* post
+* postInit
 
 ```java
 public class CommonProxy {
-    public void pre(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent event) {
         
     }
 
-    public void init(FMLInitializationEvent e) {
+    public void init(FMLInitializationEvent event) {
 
     }
 
-    public void post(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 }
@@ -57,18 +57,18 @@ public class CommonProxy {
 ```java
 public class ClientProxy extends CommonProxy {
     @Override
-    public void pre(FMLPreInitializationEvent e) {
-        super.pre(e);
+    public void preInit(FMLPreInitializationEvent event) {
+        super.preInit(event);
     }
 
     @Override
-    public void init(FMLInitializationEvent e) {
-        super.init(e);
+    public void init(FMLInitializationEvent event) {
+        super.init(event);
     }
 
     @Override
-    public void post(FMLPostInitializationEvent e) {
-        super.post(e);
+    public void postInit(FMLPostInitializationEvent event) {
+        super.postInit(event);
     }
 }
 ```
@@ -100,18 +100,18 @@ public class McModding {
 ```java
 public class McModding {
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent e) {
-        proxy.pre(e);
+    public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit(event);
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e){
-        proxy.init(e);
+    public void init(FMLInitializationEvent event){
+        proxy.init(event);
     }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent e) {
-        proxy.post(e);
+    public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit(event);
     }
 }
 ```
@@ -140,18 +140,18 @@ public class Tutorial {
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void pre(FMLPreInitializationEvent e) {
-        proxy.pre(e);
+    public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit(event);
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e) {
-        proxy.init(e);
+    public void init(FMLInitializationEvent event) {
+        proxy.init(event);
     }
 
     @Mod.EventHandler
-    public void post(FMLPostInitializationEvent e) {
-        proxy.post(e);
+    public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit(event);
     }
 }
 ```
