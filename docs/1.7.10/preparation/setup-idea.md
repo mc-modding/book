@@ -22,12 +22,14 @@ description: Настройка рабочего пространства для
 задачами/заданиями/тасками — **tasks**.
 
 Выглядит оно примерно так:
+
 [![Демнострация Gradle задач](images/gradle_tasks_idea.png){: .border }](images/gradle_tasks_idea.png)
 
 Выполните задачу `setupDecompWorkspace` из группы `forgegradle`. Тем самым мы произведём загрузку необходимых библиотек
 для написания мода и работы с исходным кодом Minecraft и Minecraft Forge.
 
 ## Решение проблем
+
 К сожалению, на старых версиях Forge Gradle профили запуска проекта для Intellij Idea не создаются автоматически и приходится производить 
 дополнительные манипуляции для исправления этого. Либо вы можете открыть папку с проектом через консоль и выполнить установку так
 `.\gradlew setupDecompWorkspace idea`.
@@ -36,18 +38,24 @@ description: Настройка рабочего пространства для
 Если по какой-то причине вам выдаёт ошибку вида "NullPointerException", то найдите "build setup" и запустите задачу "init".
 
 В новых версиях Intellij Idea вы можете столкнуться с красным крестиком на кнопке запуска вашего проекта
+
 [![Ошибка запуска](images/run_error_idea.png){: .border }](images/run_error_idea.png)
 
 Откройте список и выберите "Edit Configurations..."
+
 [![Настройка](images/edit_config_idea.png){: .border }](images/edit_config_idea.png)
 
 В открывшемся окне выберите "Minecraft Client", затем в выпадающем меню classPath выберите "McModding.main"
+
 [![Настройка конфига проекта](images/fix_config_idea.png){: .border }](images/fix_config_idea.png)
 
 Повторите аналогичную процедуру для "Minecraft Server", нажмите "Apply" и "OK".
 
 ### В игре нет текстур/переводов/звуков из мода
+
 Возможно вы столкнётесь с проблемой, что не загружаются ресурсы мода, чтобы это исправить, необходимо открыть настройки Intellij Idea
 и проделать такие манипуляции:
+
 [![Настройка загрузки ресурсов](images/build_run_using_idea.png){: .border }](images/build_run_using_idea.png)
+
 Нажмите "OK" и ваш проект полностью готов к разработке мода в Intellij Idea!

@@ -1,6 +1,7 @@
 description: Вкладка для предметов в креативе.
 
 # Вкладка в креативе
+
 Предметов и блоков становится всё больше, а получать их через команду `/give` становится проблематично и неудобно.
 Давайте создадим свою вкладку в творческом режиме!
 
@@ -47,9 +48,11 @@ public class RingItem extends Item {
 ```
 
 Запускаем игру и видим:
+
 ![Вкладка](images/creative_tab.png)
 
-Всё работает, но отображается банка с краской чёрного цвета, а мы хотим жёлтый цвет. Для этого нам понадобится метод
+Всё работает, но отображается банка с краской чёрного цвета, а мы хотим жёлтый цвет. Для этого нам понадобится метод `func_151243_f`.
+
 ```java
 public class ModTab extends CreativeTabs {
     @Override
@@ -64,6 +67,7 @@ public class ModTab extends CreativeTabs {
 ![Вкладка с метой](images/creative_tab_meta.png)
 
 ## Поиск во вкладке
+
 Представим, что предметов и блоков во вкладке стало настолько много, что их становится тяжело искать, глаза разбегаются
 в разные стороны. Для того чтобы исправить данную проблему, добавим поле поиска, как во вкладке со всеми предметами!
 
@@ -82,6 +86,7 @@ public class ModTab extends CreativeTabs {
 ```
 
 Вы также можете изменять длину поля для поиска с помощью метод `CreativeTabs#getSearchbarWidth`.
+
 ```java
 public class ModTab extends CreativeTabs {
     @Override
@@ -94,6 +99,7 @@ public class ModTab extends CreativeTabs {
 ![Вкладка с поиском](images/creative_tab_searchbar.png)
 
 ## Фон вкладки
+
 Мы добавили свою вкладку, добавили поиск по ней, но кажется чего-то не хватает...
 К вкладкам можно добавлять свои фоны, ранее мы уже выставляли готовый фон для отображения поиска, так давайте создадим
 собственный фон!
@@ -104,6 +110,7 @@ public class ModTab extends CreativeTabs {
 ![Собственный фон вкладки](images/tab_mcmodding.png)
 
 Теперь укажем `setBackgroundImageName(String)` аналогично, как мы делали с `item_search` в предыдущей главе, только в нашем случае это будет `tab_mcmodding.png`
+
 ```java
 public class ModTab extends CreativeTabs {
     private ModTab() {
