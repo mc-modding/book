@@ -14,7 +14,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import ru.mcmodding.tutorial.McModding;
 
-@SideOnly(Side.CLIENT)
 public class ModTab extends CreativeTabs {
     public static final ModTab INSTANCE = new ModTab();
 
@@ -23,6 +22,7 @@ public class ModTab extends CreativeTabs {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
         return ModItems.PAINT_CAN;
     }
@@ -56,12 +56,14 @@ public class RingItem extends Item {
 ```java
 public class ModTab extends CreativeTabs {
     @Override
+    @SideOnly(Side.CLIENT)
     public int func_151243_f() {
         return 11;
     }
 }
 ```
-Данный метод возвращает мету для предмета, который будет отображаться во вкладке. Банка с жёлтой краской имеет 11 мету,
+
+Данный метод возвращает damage для предмета, который будет отображаться во вкладке. Банка с жёлтой краской имеет 11 damage,
 поэтому пишем 11.
 
 ![Вкладка с метой](images/creative_tab_meta.png)
