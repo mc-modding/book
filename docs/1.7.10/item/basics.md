@@ -3,7 +3,9 @@ description: Создание собственного предмета.
 # Создание предмета
 
 ## Основа
+
 Чтобы написать свой первый предмет, вам необходимо создать класс и наследоваться от Item.
+
 ```java
 package ru.mcmodding.tutorial.common.item;
 
@@ -17,6 +19,7 @@ public class RingItem extends Item {
     }
 }
 ```
+
 Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.
 
 * `setUnlocalizedName(String)` - задаёт нелокализованное название предмета(см. статью [Локализация](https://mcmodding.ru/1.7.10/lang/))
@@ -28,6 +31,7 @@ public class RingItem extends Item {
 Теперь приступим к регистрации нашего предмета. Чтобы зарегистрировать наше кольцо, необходимо использовать `GameRegistry#registerItem` 
 в который передаётся экземпляр класса `Item` и регистрируемое имя предмета. Создадим для большего удобства класс `ModItems` 
 в котором будут храниться объекты наших предметов и будет происходить регистрация.
+
 ```java
 package ru.mcmodding.tutorial.common.handler;
 
@@ -43,10 +47,11 @@ public class ModItems {
 }
 ```
 
-Осталось добавить вызов метода `ModItems#register` в `CommonProxy#pre`
+Осталось добавить вызов метода `ModItems#register` в `CommonProxy#preInit`
+
 ```java
 public class CommonProxy {
-    public void pre(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent event) {
         ModItems.register();
     }
 }
@@ -63,22 +68,28 @@ public class CommonProxy {
 ![Предмет без текстуры](images/item_without_texture.png){: .border }
 
 ## Текстура
+
 В прошлой разделе мы рассмотрели базовый принцип создания предмета и указали текстуру с помощью метода `Item#setTextureName`, 
 но мы получили отсутствующую текстуру. Для того чтобы это исправить, необходимо поместить свою текстуру предмета в папку с ресурсами(resources) по пути
 `assets/modId/textures/items`(вместо `modId` должен быть ваш идентификатор мода! В нашем случае это `mcmodding`).
 
 Возьмём такую текстуру кольца:
+
 ![Текстура кольца](images/item_ring.png){: .border }
 
 > Соотношение сторон должно быть 1:1, т.е если ваша текстура шириной 32 пикселя, то и высота должна быть 32 пикселя, иначе текстура не будет загружена!
 > Исключением являются текстуры с KeyFrame анимацией.
 
 Если всё было сделано, как написано в статье, то в результате наш предмет получит текстуру:
+
 ![Кольцо от первого лица](images/item_ring_fp.png){: .border }
+
 ![Кольцо от третьего лица](images/item_ring_tp.png){: .border }
 
 ### Текстура с анимацией
+
 Вы можете добавить текстуру с KeyFrame анимацией, выглядят такие текстуры примерно так:
+
 ![Текстура с покадровой анимацией компаса](images/compass.png){: .border }
 
 Для работы таких текстур необходимо создавать отдельный файл `названиеТекстуры.png.mcmeta`, который содержит такую информацию:
@@ -128,7 +139,9 @@ public class CommonProxy {
 Работает аналогично прошлому примеру, только достаточно менять параметр `index` для изменения порядка отображения.
 
 ### Наложение текстур
-> Данный раздел рассчитан на разработчиков, прочитавших статью "Подтипы"!
+
+!!! info "Важно!"
+    Данный раздел рассчитан на разработчиков, прочитавших статью "Подтипы"!
 
 Возможно вы задумаетесь о том, как добавить не одну, а две и более текстур с наложением слоя или сменой от определённых условий, 
 как например это сделано у кожаной брони или у лука при натягивании тетивы.
@@ -183,14 +196,14 @@ public class PaintCanItem extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public int getColorFromItemStack(ItemStack stack, int renderPass) {
-        return renderPass == 0 ? 16777215 : ItemDye.field_150922_c[stack.getItemDamage() % ItemDye.field_150922_c.length];
+        return renderPass == 0 ? 0xFFFFFF : ItemDye.field_150922_c[stack.getItemDamage() % ItemDye.field_150922_c.length];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs tab, List items) {
-        for (int meta = 0, size = ItemDye.field_150922_c.length; meta < size; meta++) {
-            items.add(new ItemStack(item, 1, meta));
+        for (int damage = 0, size = ItemDye.field_150922_c.length; damage < size; damage++) {
+            items.add(new ItemStack(item, 1, damage));
         }
     }
 }
@@ -222,7 +235,9 @@ public class PaintCanItem extends Item {
 ![Все банки с краской](images/all_paint_cans.png)
 
 ## Модель
-> Данный раздел рассчитан на более опытных разработчиков!
+
+!!! info "Важно!"
+    Данный раздел рассчитан на более опытных разработчиков!
 
 Текстуру вы научились добавлять к своему предмету, но вы скорее всего захотите добавить модель к своему предмету.
 Для это необходимо реализовать интерфейс `IItemRenderer`.
@@ -262,7 +277,9 @@ public class RingItemRender implements IItemRenderer {
 * `shouldUseRenderHelper(ItemRenderType, ItemStack, ItemRendererHelper)` - нужно ли использовать вспомогательные обработки рендера(см. пояснение)
 
 #### Дополнение к `shouldUseRenderHelper`
+
 Если вернуть true, то к нашему рендеру предмету будет применена вспомогательная обработка:
+
 1. `ItemRendererHelper#ENTITY_ROTATION` - предмет будучи на земле вращается на 360
 2. `ItemRendererHelper#ENTITY_BOBBING` - предмет будет двигать при ходьбе вверх-вниз
 3. `ItemRendererHelper#EQUIPPED_BLOCK` - предмет будет отрисовываться 3D моделью, либо 2D текстурой
@@ -275,7 +292,8 @@ public class RingItemRender implements IItemRenderer {
 поддерживал MinecraftForge, иначе вам придётся реализовывать загрузку нужной вам модели самостоятельно! В данном случае
 мы воспользуемся готовым решением и будет использовать Wavefront(.obj) формат с [дополнительной обёрткой от Dahaka](https://forum.mcmodding.ru/threads/uskorenie-rendera-modelej.10481/)
 
-> Если вы будете использовать Wavefront как основной формат моделей, то не забудьте сделать триангуляцию модели, чтобы не получить исключение при загрузке!
+!!! tip "Совет" 
+    Если вы будете использовать Wavefront как основной формат моделей, то не забудьте сделать триангуляцию модели, чтобы не получить исключение при загрузке!
 
 ```java
 package ru.mcmodding.tutorial.client.render.item;
@@ -320,9 +338,11 @@ public class RingItemRender implements IItemRenderer {
 }
 ```
 
-> Если вы хотите использовать текстуру, то вам необходимо сделать перед отрисовкой привязку текстуры
+!!! tip "Совет"
+    Если вы хотите использовать текстуру, то вам необходимо сделать перед отрисовкой привязку текстуры
 
 Пример привязки текстуры к модели:
+
 ```java
 public class RingItemRender implements IItemRenderer {
     private final ResourceLocation ringTexturePath = new ResourceLocation(McModding.MOD_ID, "textures/models/ring.png");
@@ -339,6 +359,7 @@ public class RingItemRender implements IItemRenderer {
 ```
 
 Нам необходимо зарегистрировать рендер для кольца, чтобы это сделать, создадим в `ModItems` метод `registerRender`.
+
 ```java
 public class ModItems {
     @SideOnly(Side.CLIENT)
@@ -347,6 +368,7 @@ public class ModItems {
     }
 }
 ```
+
 В методе необходимо вызывать `MinecraftForgeClient#registerItemRenderer(Item, IItemRenderer)`.
 Первый параметр метода отвечает за предмет к которому будет привязан новый рендер. Второй параметр отвечает за
 получение объекта класса рендера предмета.
@@ -361,9 +383,10 @@ public class ModItems {
 ```
 
 Осталось добавить вызов метода `ModItems#registerRender` в `ClientProxy#init`
+
 ```java
-public class CommonProxy {
-    public void pre(FMLPreInitializationEvent e) {
+public class ClientProxy {
+    public void init(FMLInitializationEvent e) {
         super.init(e);
         ModItems.registerRender();
     }
