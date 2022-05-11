@@ -4032,7 +4032,6 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
 
-<span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ModTab</span><span class="w"> </span><span class="n">INSTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModTab</span><span class="p">();</span><span class="w"></span>
 
@@ -4041,6 +4040,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">getTabIconItem</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">PAINT_CAN</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
@@ -4062,14 +4062,15 @@
 <p>Запускаем игру и видим:</p>
 <p><img alt="Вкладка" src="../images/creative_tab.png" /></p>
 <p>Всё работает, но отображается банка с краской чёрного цвета, а мы хотим жёлтый цвет. Для этого нам понадобится метод <code>func_151243_f</code>.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">func_151243_f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Данный метод возвращает мету для предмета, который будет отображаться во вкладке. Банка с жёлтой краской имеет 11 мету,
+<p>Данный метод возвращает damage для предмета, который будет отображаться во вкладке. Банка с жёлтой краской имеет 11 damage,
 поэтому пишем 11.</p>
 <p><img alt="Вкладка с метой" src="../images/creative_tab_meta.png" /></p>
 <h2 id="поиск-во-вкладке">Поиск во вкладке<a class="headerlink" href="#поиск-во-вкладке" title="Permanent link">#</a></h2>

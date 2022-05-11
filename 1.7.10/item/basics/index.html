@@ -4131,7 +4131,7 @@
 
 <h1 id="создание-предмета">Создание предмета<a class="headerlink" href="#создание-предмета" title="Permanent link">#</a></h1>
 <h2 id="основа">Основа<a class="headerlink" href="#основа" title="Permanent link">#</a></h2>
-<p>Чтобы написать свой первый предмет, вам необходимо создать класс и наследоваться от Item.
+<p>Чтобы написать свой первый предмет, вам необходимо создать класс и наследоваться от Item.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
@@ -4144,7 +4144,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.</p>
+<p>Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.</p>
 <ul>
 <li><code>setUnlocalizedName(String)</code> - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/lang/">Локализация</a>)</li>
 <li><code>setTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'</li>
@@ -4153,7 +4153,7 @@
 <p>Остальные сеттеры вы можете самостоятельно просмотреть в классе Item, ко многим из них прилагаются комментарии от MCP и MinecraftForge.</p>
 <p>Теперь приступим к регистрации нашего предмета. Чтобы зарегистрировать наше кольцо, необходимо использовать <code>GameRegistry#registerItem</code> 
 в который передаётся экземпляр класса <code>Item</code> и регистрируемое имя предмета. Создадим для большего удобства класс <code>ModItems</code> 
-в котором будут храниться объекты наших предметов и будет происходить регистрация.
+в котором будут храниться объекты наших предметов и будет происходить регистрация.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
@@ -4166,14 +4166,14 @@
 <span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerItem</span><span class="p">(</span><span class="n">RING</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ring&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-<p>Осталось добавить вызов метода <code>ModItems#register</code> в <code>CommonProxy#pre</code>
+</code></pre></div>
+<p>Осталось добавить вызов метода <code>ModItems#register</code> в <code>CommonProxy#preInit</code></p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pre</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">ModItems</span><span class="p">.</span><span class="na">register</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Запускаем игру и заходим в мир. Чтобы получить только что написанный предмет, введите такую команду:
 <code>/give @p mcmodding:ring</code>.</p>
 <p>Где <code>mcmodding:ring</code>:</p>
@@ -4186,18 +4186,18 @@
 <p>В прошлой разделе мы рассмотрели базовый принцип создания предмета и указали текстуру с помощью метода <code>Item#setTextureName</code>, 
 но мы получили отсутствующую текстуру. Для того чтобы это исправить, необходимо поместить свою текстуру предмета в папку с ресурсами(resources) по пути
 <code>assets/modId/textures/items</code>(вместо <code>modId</code> должен быть ваш идентификатор мода! В нашем случае это <code>mcmodding</code>).</p>
-<p>Возьмём такую текстуру кольца:
-<img alt="Текстура кольца" class="border" src="../images/item_ring.png" /></p>
+<p>Возьмём такую текстуру кольца:</p>
+<p><img alt="Текстура кольца" class="border" src="../images/item_ring.png" /></p>
 <blockquote>
 <p>Соотношение сторон должно быть 1:1, т.е если ваша текстура шириной 32 пикселя, то и высота должна быть 32 пикселя, иначе текстура не будет загружена!
 Исключением являются текстуры с KeyFrame анимацией.</p>
 </blockquote>
-<p>Если всё было сделано, как написано в статье, то в результате наш предмет получит текстуру:
-<img alt="Кольцо от первого лица" class="border" src="../images/item_ring_fp.png" />
-<img alt="Кольцо от третьего лица" class="border" src="../images/item_ring_tp.png" /></p>
+<p>Если всё было сделано, как написано в статье, то в результате наш предмет получит текстуру:</p>
+<p><img alt="Кольцо от первого лица" class="border" src="../images/item_ring_fp.png" /></p>
+<p><img alt="Кольцо от третьего лица" class="border" src="../images/item_ring_tp.png" /></p>
 <h3 id="текстура-с-анимацией">Текстура с анимацией<a class="headerlink" href="#текстура-с-анимацией" title="Permanent link">#</a></h3>
-<p>Вы можете добавить текстуру с KeyFrame анимацией, выглядят такие текстуры примерно так:
-<img alt="Текстура с покадровой анимацией компаса" class="border" src="../images/compass.png" /></p>
+<p>Вы можете добавить текстуру с KeyFrame анимацией, выглядят такие текстуры примерно так:</p>
+<p><img alt="Текстура с покадровой анимацией компаса" class="border" src="../images/compass.png" /></p>
 <p>Для работы таких текстур необходимо создавать отдельный файл <code>названиеТекстуры.png.mcmeta</code>, который содержит такую информацию:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4239,9 +4239,10 @@
 <p>Вы можете также указать для конкретного кадра(по его индексу) время его воспроизведения. 
 Работает аналогично прошлому примеру, только достаточно менять параметр <code>index</code> для изменения порядка отображения.</p>
 <h3 id="наложение-текстур">Наложение текстур<a class="headerlink" href="#наложение-текстур" title="Permanent link">#</a></h3>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Важно!</p>
 <p>Данный раздел рассчитан на разработчиков, прочитавших статью "Подтипы"!</p>
-</blockquote>
+</div>
 <p>Возможно вы задумаетесь о том, как добавить не одну, а две и более текстур с наложением слоя или сменой от определённых условий, 
 как например это сделано у кожаной брони или у лука при натягивании тетивы.</p>
 <p>Создадим предмет <code>Банка с краской</code>, имеющий основную текстуру и текстуру слоя, которую в дальнейшем мы окрасим в стандартные цвета Minecraft.</p>
@@ -4292,14 +4293,14 @@
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getColorFromItemStack</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">renderPass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">renderPass</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">16777215</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="o">[</span><span class="n">stack</span><span class="p">.</span><span class="na">getItemDamage</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">renderPass</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mh">0xFFFFFF</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="o">[</span><span class="n">stack</span><span class="p">.</span><span class="na">getItemDamage</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">getSubItems</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">meta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">meta</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">meta</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemDye</span><span class="p">.</span><span class="na">field_150922_c</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">items</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="p">));</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -4334,9 +4335,10 @@
 <p>Если вы всё сделали правильно, то в игре вы получите такой результат:
 <img alt="Все банки с краской" src="../images/all_paint_cans.png" /></p>
 <h2 id="модель">Модель<a class="headerlink" href="#модель" title="Permanent link">#</a></h2>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Важно!</p>
 <p>Данный раздел рассчитан на более опытных разработчиков!</p>
-</blockquote>
+</div>
 <p>Текстуру вы научились добавлять к своему предмету, но вы скорее всего захотите добавить модель к своему предмету.
 Для это необходимо реализовать интерфейс <code>IItemRenderer</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.item</span><span class="p">;</span><span class="w"></span>
@@ -4379,21 +4381,26 @@
 </li>
 </ul>
 <h4 id="дополнение-к-shoulduserenderhelper">Дополнение к <code>shouldUseRenderHelper</code><a class="headerlink" href="#дополнение-к-shoulduserenderhelper" title="Permanent link">#</a></h4>
-<p>Если вернуть true, то к нашему рендеру предмету будет применена вспомогательная обработка:
-1. <code>ItemRendererHelper#ENTITY_ROTATION</code> - предмет будучи на земле вращается на 360
-2. <code>ItemRendererHelper#ENTITY_BOBBING</code> - предмет будет двигать при ходьбе вверх-вниз
-3. <code>ItemRendererHelper#EQUIPPED_BLOCK</code> - предмет будет отрисовываться 3D моделью, либо 2D текстурой
-4. <code>ItemRendererHelper#BLOCK_3D</code> - приравнивает предмет к блоку имеющий RenderBlocks#renderItemIn3d
-5. <code>ItemRendererHelper#INVENTORY_BLOCK</code> - предмет будет отрисовываться 3D модель, либо 2D текстурой в инвентаре</p>
-<ul>
-<li><code>renderItem(ItemRenderType, ItemStack, Object[])</code> - в данном методе происходит сама отрисовка нашего предмета. Параметр <code>data</code> принимает особые данные, которые передаются в зависимости от типа отрисовки. Подробнее смотрите <code>ItemRenderType</code> для получения подобной информации о данных передаваемых на каждый тип!</li>
-</ul>
+<p>Если вернуть true, то к нашему рендеру предмету будет применена вспомогательная обработка:</p>
+<ol>
+<li><code>ItemRendererHelper#ENTITY_ROTATION</code> - предмет будучи на земле вращается на 360</li>
+<li><code>ItemRendererHelper#ENTITY_BOBBING</code> - предмет будет двигать при ходьбе вверх-вниз</li>
+<li><code>ItemRendererHelper#EQUIPPED_BLOCK</code> - предмет будет отрисовываться 3D моделью, либо 2D текстурой</li>
+<li><code>ItemRendererHelper#BLOCK_3D</code> - приравнивает предмет к блоку имеющий RenderBlocks#renderItemIn3d</li>
+<li>
+<p><code>ItemRendererHelper#INVENTORY_BLOCK</code> - предмет будет отрисовываться 3D модель, либо 2D текстурой в инвентаре</p>
+</li>
+<li>
+<p><code>renderItem(ItemRenderType, ItemStack, Object[])</code> - в данном методе происходит сама отрисовка нашего предмета. Параметр <code>data</code> принимает особые данные, которые передаются в зависимости от типа отрисовки. Подробнее смотрите <code>ItemRenderType</code> для получения подобной информации о данных передаваемых на каждый тип!</p>
+</li>
+</ol>
 <p>Помимо реализации <code>IItemRenderer</code>, необходимо загрузить модель. Можно использовать любую модель, главное чтобы её загрузку 
 поддерживал MinecraftForge, иначе вам придётся реализовывать загрузку нужной вам модели самостоятельно! В данном случае
 мы воспользуемся готовым решением и будет использовать Wavefront(.obj) формат с <a href="https://forum.mcmodding.ru/threads/uskorenie-rendera-modelej.10481/">дополнительной обёрткой от Dahaka</a></p>
-<blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Совет</p>
 <p>Если вы будете использовать Wavefront как основной формат моделей, то не забудьте сделать триангуляцию модели, чтобы не получить исключение при загрузке!</p>
-</blockquote>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span><span class="w"></span>
@@ -4435,10 +4442,11 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Совет</p>
 <p>Если вы хотите использовать текстуру, то вам необходимо сделать перед отрисовкой привязку текстуры</p>
-</blockquote>
-<p>Пример привязки текстуры к модели:
+</div>
+<p>Пример привязки текстуры к модели:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RingItemRender</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IItemRenderer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="w"> </span><span class="n">ringTexturePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;textures/models/ring.png&quot;</span><span class="p">);</span><span class="w"></span>
 
@@ -4451,8 +4459,8 @@
 <span class="w">        </span><span class="n">glPopMatrix</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-<p>Нам необходимо зарегистрировать рендер для кольца, чтобы это сделать, создадим в <code>ModItems</code> метод <code>registerRender</code>.
+</code></pre></div>
+<p>Нам необходимо зарегистрировать рендер для кольца, чтобы это сделать, создадим в <code>ModItems</code> метод <code>registerRender</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4460,7 +4468,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-В методе необходимо вызывать <code>MinecraftForgeClient#registerItemRenderer(Item, IItemRenderer)</code>.
+<p>В методе необходимо вызывать <code>MinecraftForgeClient#registerItemRenderer(Item, IItemRenderer)</code>.
 Первый параметр метода отвечает за предмет к которому будет привязан новый рендер. Второй параметр отвечает за
 получение объекта класса рендера предмета.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4470,14 +4478,14 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Осталось добавить вызов метода <code>ModItems#registerRender</code> в <code>ClientProxy#init</code>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">pre</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<p>Осталось добавить вызов метода <code>ModItems#registerRender</code> в <code>ClientProxy#init</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClientProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">FMLInitializationEvent</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">ModItems</span><span class="p">.</span><span class="na">registerRender</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Загружаем модель по указанному нами пути в ресурсах нашего мода и запускаем игру!</p>
 <p><a href="https://disk.yandex.ru/d/OkP_eFs4G8F0QQ">Ссылка на модель</a></p>
 <p><img alt="Модель кольца в игре" src="../images/ring_model.png" /></p>
