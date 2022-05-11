@@ -64,13 +64,14 @@ public class RubySword extends ItemSword {
 ```
 
 Добавим текстуру меча
-![Рубиновый меч](images/ruby_sword.png)
+
+![Рубиновый меч](images/tools/ruby_sword.png)
 
 Регистрируем наш меч и запускаем игру.
 
-![Рубиновый меч от первого лица](images/ruby_sword_fp.png)
+![Рубиновый меч от первого лица](images/tools/ruby_sword_fp.png)
 
-![Рубиновый меч от третьего лица](images/ruby_sword_tp.png)
+![Рубиновый меч от третьего лица](images/tools/ruby_sword_tp.png)
 
 ## Топор
 
@@ -118,6 +119,7 @@ public class RubyAxe extends ItemTool {
     }
 }
 ```
+
 В отличие от меча помимо материала нам необходимо передать в супер-класс доп. значение урона и список добываемых блоков.
 Мы будем использовать стандартный список.
 
@@ -135,12 +137,14 @@ public class RubyAxe extends ItemTool {
 дополнительно регулирует эффективность инструмента для некоторых материалы блоков.
 
 Добавим текстуру топора
-![Рубиновый топор](images/ruby_axe.png)
+
+![Рубиновый топор](images/tools/ruby_axe.png)
 
 Регистрируем наш топор и запускаем игру.
-![Рубиновый топор от первого лица](images/ruby_axe_fp.png)
 
-![Рубиновый топор от третьего лица](images/ruby_axe_tp.png)
+![Рубиновый топор от первого лица](images/tools/ruby_axe_fp.png)
+
+![Рубиновый топор от третьего лица](images/tools/ruby_axe_tp.png)
 
 ## Мотыга
 
@@ -167,12 +171,14 @@ public class RubyHoe extends ItemHoe {
 ```
 
 Добавим текстуру мотыги
-![Рубиновая мотыга](images/ruby_hoe.png)
+
+![Рубиновая мотыга](images/tools/ruby_hoe.png)
 
 Регистрируем нашу мотыгу и запускаем игру.
-![Рубиновая мотыга от первого лица](images/ruby_hoe_fp.png)
 
-![Рубиновая мотыга от третьего лица](images/ruby_hoe_tp.png)
+![Рубиновая мотыга от первого лица](images/tools/ruby_hoe_fp.png)
+
+![Рубиновая мотыга от третьего лица](images/tools/ruby_hoe_tp.png)
 
 ## Кирка
 
@@ -231,12 +237,14 @@ public class RubyPickaxe extends ItemTool {
 "может ли инструмент добывать переданный блок". В случае нашего метода, используются стандартные условия.
 
 Добавим текстуру кирки
-![Рубиновая кирка](images/ruby_pickaxe.png)
+
+![Рубиновая кирка](images/tools/ruby_pickaxe.png)
 
 Регистрируем нашу кирку и запускаем игру.
-![Рубиновая кирка от первого лица](images/ruby_pickaxe_fp.png)
 
-![Рубиновая кирка от третьего лица](images/ruby_pickaxe_tp.png)
+![Рубиновая кирка от первого лица](images/tools/ruby_pickaxe_fp.png)
+
+![Рубиновая кирка от третьего лица](images/tools/ruby_pickaxe_tp.png)
 
 ## Лопата
 
@@ -273,12 +281,14 @@ public class RubySpade extends ItemTool {
 ```
 
 Добавим текстуру лопаты
-![Рубиновая лопата](images/ruby_spade.png)
+
+![Рубиновая лопата](images/tools/ruby_spade.png)
 
 Регистрируем нашу лопату и запускаем игру.
-![Рубиновая лопата от первого лица](images/ruby_spade_fp.png)
 
-![Рубиновая лопата от третьего лица](images/ruby_spade_tp.png)
+![Рубиновая лопата от первого лица](images/tools/ruby_spade_fp.png)
+
+![Рубиновая лопата от третьего лица](images/tools/ruby_spade_tp.png)
 
 ## Мультиинструмент
 
@@ -383,9 +393,11 @@ public class RubyMultiTool extends ItemTool {
 6. `hitX`, `hitY`, `hitZ` - положение курсора игрока на стороне блока.
 
 Добавим текстуру мультиинструменту
-![Рубиновый мультиинструмент](images/ruby_multi_tool.png)
+
+![Рубиновый мультиинструмент](images/tools/ruby_multi_tool.png)
 
 Регистрируем наш мультиинструмент и запускаем игру.
-![Рубиновый мультиинструмент от первого лица](images/ruby_multi_tool_fp.png)
 
-![Рубиновый мультиинструмент от третьего лица](images/ruby_multi_tool_tp.png)
+![Рубиновый мультиинструмент от первого лица](images/tools/ruby_multi_tool_fp.png)
+
+![Рубиновый мультиинструмент от третьего лица](images/tools/ruby_multi_tool_tp.png)

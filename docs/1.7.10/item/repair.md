@@ -60,9 +60,9 @@ public class ModItems {
 
 Запускаем игру и пробуем починить наш инструмент в наковальне(аналогично для брони).
 
-![Повреждённая кирка](images/repair_ruby_damaged.png)
+![Повреждённая кирка](images/repair/repair_ruby_damaged.png)
 
-![Починка кирки](images/repair_ruby_repaired.png)
+![Починка кирки](images/repair/repair_ruby_repaired.png)
 
 ## Починка в сетке крафта
 
@@ -73,8 +73,8 @@ public class ModItems {
 
 До добавления `Item#setNoRepair`:
 
-![Починка в сетке крафта](images/repair_merge.png)
+![Починка в сетке крафта](images/repair/repair_merge.png)
 
 После добавления `Item#setNoRepair`:
 
-![Починка в сетке крафта](images/repair_merge_disabled.png)
+![Починка в сетке крафта](images/repair/repair_merge_disabled.png)
