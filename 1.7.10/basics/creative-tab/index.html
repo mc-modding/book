@@ -4059,10 +4059,10 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Запускаем игру и видим:
-<img alt="Вкладка" src="../images/creative_tab.png" /></p>
-<p>Всё работает, но отображается банка с краской чёрного цвета, а мы хотим жёлтый цвет. Для этого нам понадобится метод
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<p>Запускаем игру и видим:</p>
+<p><img alt="Вкладка" src="../images/creative_tab.png" /></p>
+<p>Всё работает, но отображается банка с краской чёрного цвета, а мы хотим жёлтый цвет. Для этого нам понадобится метод <code>func_151243_f</code>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">func_151243_f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w"></span>
@@ -4087,14 +4087,14 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Вы также можете изменять длину поля для поиска с помощью метод <code>CreativeTabs#getSearchbarWidth</code>.
+<p>Вы также можете изменять длину поля для поиска с помощью метод <code>CreativeTabs#getSearchbarWidth</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getSearchbarWidth</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">70</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p><img alt="Вкладка с поиском" src="../images/creative_tab_searchbar.png" /></p>
 <h2 id="фон-вкладки">Фон вкладки<a class="headerlink" href="#фон-вкладки" title="Permanent link">#</a></h2>
 <p>Мы добавили свою вкладку, добавили поиск по ней, но кажется чего-то не хватает...
@@ -4103,14 +4103,14 @@
 <p>Помещать фоны придётся по такому пути: <code>assets/minecraft/textures/gui/container/creative_inventory</code>. Название
 текстуры с фоном должно начинаться с <code>tab_</code>!</p>
 <p><img alt="Собственный фон вкладки" src="../images/tab_mcmodding.png" /></p>
-<p>Теперь укажем <code>setBackgroundImageName(String)</code> аналогично, как мы делали с <code>item_search</code> в предыдущей главе, только в нашем случае это будет <code>tab_mcmodding.png</code>
+<p>Теперь укажем <code>setBackgroundImageName(String)</code> аналогично, как мы делали с <code>item_search</code> в предыдущей главе, только в нашем случае это будет <code>tab_mcmodding.png</code></p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModTab</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CreativeTabs</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">ModTab</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setBackgroundImageName</span><span class="p">(</span><span class="s">&quot;mcmodding.png&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p><img alt="Фон вкладки в игре" src="../images/creative_tab_background.png" /></p>
 
               

@@ -4132,17 +4132,17 @@
 Третий параметр это мета. Стандартное значение последних двух параметров: размер - 1, мета - 0. Мы будем использовать 
 стандартные значения, поэтому достаточно в <code>ItemStack</code> передать только предмет.</p>
 <p>Запускаем игру и пробуем починить наш инструмент в наковальне(аналогично для брони).</p>
-<p><img alt="Повреждённая кирка" src="../images/repair_ruby_damaged.png" /></p>
-<p><img alt="Починка кирки" src="../images/repair_ruby_repaired.png" /></p>
+<p><img alt="Повреждённая кирка" src="../images/repair/repair_ruby_damaged.png" /></p>
+<p><img alt="Починка кирки" src="../images/repair/repair_ruby_repaired.png" /></p>
 <h2 id="починка-в-сетке-крафта">Починка в сетке крафта<a class="headerlink" href="#починка-в-сетке-крафта" title="Permanent link">#</a></h2>
 <p>Разработчики Minecraft заранее позаботились о том, что большинство предметов имеющих прочность должны чиниться за счёт
 объединения одинаковых по мете и типу предмета, но что если мы хотим чинить наш предмет только через наковальню?
 Для этого предусмотрено состояние <code>canRepair</code>, чтобы отключить починку через сетку крафта, добавьте в конструктор своего
 предмета вызов метода <code>Item#setNoRepair</code>.</p>
 <p>До добавления <code>Item#setNoRepair</code>:</p>
-<p><img alt="Починка в сетке крафта" src="../images/repair_merge.png" /></p>
+<p><img alt="Починка в сетке крафта" src="../images/repair/repair_merge.png" /></p>
 <p>После добавления <code>Item#setNoRepair</code>:</p>
-<p><img alt="Починка в сетке крафта" src="../images/repair_merge_disabled.png" /></p>
+<p><img alt="Починка в сетке крафта" src="../images/repair/repair_merge_disabled.png" /></p>
 
               
             </article>
