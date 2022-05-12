@@ -1,0 +1,14 @@
+/* Более толстые заголовки */
+
+.md-typeset h1, .md-typeset h2
+{
+    font-weight: 400 !important;
+}
+
+/* Скругленные углы и тень под картинками */
+
+article.md-content__inner.md-typeset img
+{
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / 20%);
+}
