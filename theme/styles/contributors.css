@@ -1,0 +1,29 @@
+article .contributors h2 span
+{
+    margin-left: 5px;
+    font-weight: lighter;
+    color: gray;
+}
+
+article .contributors ul
+{
+    list-style-type: none;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+article .contributors ul li
+{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+article .contributors ul img
+{
+    display: block;
+    width: 45px;
+    height: 45px;
+}

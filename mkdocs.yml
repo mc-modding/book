@@ -237,15 +237,15 @@ theme:
     palette:
         - media: "(prefers-color-scheme: light)"
           scheme: default
-          primary: teal
-          accent: teal
+          primary: mcmodding
+          accent: mcmodding
           toggle:
               icon: material/toggle-switch
               name: Темная тема
         - media: "(prefers-color-scheme: dark)"
           scheme: slate
-          primary: teal
-          accent: teal
+          primary: mcmodding
+          accent: mcmodding
           toggle:
               icon: material/toggle-switch-off-outline
               name: Светлая тема

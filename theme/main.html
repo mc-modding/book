@@ -3,8 +3,11 @@
 {% block styles %}
     {{ super() }}
 
+    <link rel="stylesheet" href="{{ 'styles/colors.css' | url }}">
     <link rel="stylesheet" href="{{ 'styles/logo.css' | url }}">
     <link rel="stylesheet" href="{{ 'styles/copyright.css' | url }}">
+    <link rel="stylesheet" href="{{ 'styles/article.css' | url }}">
+    <link rel="stylesheet" href="{{ 'styles/contributors.css' | url }}">
 
 {% endblock %}
 
@@ -25,5 +28,15 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/21621697" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+    {% if page.edit_url %}
+        <div class="contributors" style="display: none;" data-url="{{ page.edit_url }}"></div>
+        <script src="{{ 'scripts/contributors.js' | url }}"></script>
+    {% endif %}
 
 {% endblock %}

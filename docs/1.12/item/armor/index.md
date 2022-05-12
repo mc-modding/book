@@ -298,6 +298,7 @@ ARMOR_MODELS.put(BOOTS, BootsModel);
 ```
 
 Если вы хотите добавить текстуру к своей броне, то вам нужно создать метод в ItemMagicArmor:
+
 ```java
 public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
     return "tut:textures/MagicArmor.png";
@@ -305,4 +306,5 @@ public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlo
 ```
 
 Заходим в игру и надеваем нашу броню из прошлого урока.
+
 [![Модель брони](images/model_armor.png)](images/model_armor.png)
