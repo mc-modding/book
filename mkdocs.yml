@@ -182,7 +182,7 @@ nav:
                 - Структура мода: "1.16/basics/mod-structure/index.md"
                 - Организация папок: "1.16/basics/organizing-folders/index.md"
           - Дополнительно:
-                - Семантическое версионирование: "1.16/other/semantic-versioning/index.md"
+                - Семантическое управление версиями: "1.16/other/semantic-versioning/index.md"
 
     - "Fabric 1.16":
           - Подготовка:
