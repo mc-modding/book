@@ -2,6 +2,9 @@
 {
     --md-primary-fg-color:  #597d48;
     --md-typeset-a-color:   #6F965B;
+
+    --md-primary-fg-color--light: #7db064;
+    --md-primary-fg-color--dark: #476439;
 }
 
 [data-md-color-accent="mcmodding"]
