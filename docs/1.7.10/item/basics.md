@@ -386,8 +386,8 @@ public class ModItems {
 
 ```java
 public class ClientProxy {
-    public void init(FMLInitializationEvent e) {
-        super.init(e);
+    public void init(FMLInitializationEvent event) {
+        super.init(event);
         ModItems.registerRender();
     }
 }
