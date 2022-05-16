@@ -73,7 +73,7 @@ nav:
                 - Словарь руд: "1.7.10/prepare.md"
                 - Собственный эффект зелья: "1.7.10/prepare.md"
                 - Привязка клавиш: "1.7.10/prepare.md"
-                - Access Transformers: "1.7.10/prepare.md"
+                - Access Transformers: "1.7.10/advanced/access_transformers.md"
 
     - "1.12":
           - Подготовка:
