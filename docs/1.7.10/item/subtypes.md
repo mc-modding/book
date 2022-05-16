@@ -78,7 +78,7 @@ public class BalloonItem extends Item {
 public class BalloonItem extends Item {
     public void getSubItems(Item item, CreativeTabs tab, List items) {
         final ItemStack balloonStack = new ItemStack(item);
-        EnergManager.fillStack(balloonStack, 10_000);
+        EnergyManager.fillStack(balloonStack, 10_000);
         items.add(balloonStack);
     }
 }
