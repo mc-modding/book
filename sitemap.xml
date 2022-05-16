@@ -471,6 +471,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/item/subtypes/</loc>
+         <lastmod>2022-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/item/tools/</loc>
          <lastmod>2022-05-16</lastmod>
          <changefreq>daily</changefreq>
