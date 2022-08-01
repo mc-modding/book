@@ -24,11 +24,11 @@ nav:
                 - Подтипы: "1.7.10/item/subtypes.md"
                 - Редкость: "1.7.10/item/rarity.md"
           - Блок:
-                - Создание блока: "1.7.10/prepare.md"
-                - Метадата: "1.7.10/prepare.md"
-                - Хранение данных(TileEntity): "1.7.10/prepare.md"
-                - Жидкость: "1.7.10/prepare.md"
-                - Хранение жидкости: "1.7.10/prepare.md"
+                - Создание блока: "1.7.10/block/basics.md"
+                - Метаданные: "1.7.10/prepare.md"
+                - Хранение данных(TileEntity): "1.7.10/block/tile-entity.md"
+                - Жидкость: "1.7.10/block/fluid.md"
+                - Хранение жидкости: "1.7.10/block/fluid-tank.md"
           - Вкладка в креативе: "1.7.10/basics/creative-tab.md"
           - Локализация: "1.7.10/basics/lang.md"
           - События:
