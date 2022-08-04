@@ -211,11 +211,19 @@ import ru.mcmodding.tutorial.common.handler.ModBlocks;
 
 public class RubyBlock extends Block {
     @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+    
+    @Override
     public int getRenderType() {
         return ModBlocks.rubyRenderId;
     }
 }
 ```
+
+Если этот блок не выглядит как обычный блок, метод `Block#renderAsNormalBlock` должен вернуть значение `false`(примеры: знаки, кнопки, лестницы и т.д.),
+иначе могут возникнуть графические артефакты! В нашем же случае это делать необязательно, так как наш рендер будет являться "обычным блоком".
 
 В `ClientProxy#init`:
 
