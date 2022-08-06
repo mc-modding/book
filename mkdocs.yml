@@ -25,7 +25,7 @@ nav:
                 - Редкость: "1.7.10/item/rarity.md"
           - Блок:
                 - Создание блока: "1.7.10/block/basics.md"
-                - Метаданные: "1.7.10/prepare.md"
+                - Метаданные: "1.7.10/block/metadata.md"
                 - Хранение данных(TileEntity): "1.7.10/block/tile-entity.md"
                 - Жидкость: "1.7.10/block/fluid.md"
                 - Хранение жидкости: "1.7.10/block/fluid-tank.md"
