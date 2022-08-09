@@ -38,6 +38,8 @@ public net.minecraft.item.Item field_77774_bZ
 
 # Метод Item#registerItem(int, String, Item) станет публичным.
 public net.minecraft.item.Item func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V
+
+# Конструктор класса называется <init>.
 ```
 
 Магическая строка `func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V` это srg имя с дескриптором. Узнать их можно, например, при помощи программки [MCP Mapping Viewer](http://bspk.rs/MC/MCPMappingViewer/index.html). В ней интуитивно понятный интерфейс, так что проблем возникнуть не должно. Выбираем маппинги под нужную версию и через поиск ищем метод или поле.
@@ -60,3 +62,4 @@ jar {
 2. Иногда трансформер может не примениться, т.е. поле/метод так и останется инкапсулировано. Но это редкость. Зачастую это вставки forge.
 3. Указанные в примере трансформеры относятся к версии 1.12.
 4. В прикрепленном архиве лежит исходный `build.gradle` файл, в который добавлены указанные выше строки, а также файл `example_at.cfg` в нужной папке. Достаточно лишь скопировать к себе в проект, пересобрать, и все должно работать.
+5. Если вдруг ваша версия Minecraft более ранняя, то об использовании AT можно почитать [здесь](https://web.archive.org/web/20160906133747/http://www.minecraftforge.net/wiki/Using_Access_Transformers).
