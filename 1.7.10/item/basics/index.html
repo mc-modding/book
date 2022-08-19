@@ -780,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
+      <a href="../../block/basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -795,7 +795,7 @@
   
     <li class="md-nav__item">
       <a href="../../prepare/" class="md-nav__link">
-        Метадата
+        Метаданные
       </a>
     </li>
   
@@ -808,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
+      <a href="../../block/tile-entity.md" class="md-nav__link">
         Хранение данных(TileEntity)
       </a>
     </li>
@@ -822,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
+      <a href="../../block/fluid.md" class="md-nav__link">
         Жидкость
       </a>
     </li>
@@ -836,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
+      <a href="../../block/fluid-tank.md" class="md-nav__link">
         Хранение жидкости
       </a>
     </li>
@@ -4154,7 +4154,7 @@
 <p>Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.</p>
 <ul>
 <li><code>setUnlocalizedName(String)</code> - задаёт нелокализованное название предмета(см. статью <a href="https://mcmodding.ru/1.7.10/basics/lang/">Локализация</a>)</li>
-<li><code>setTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а именно нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'</li>
+<li><code>setTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а из ресурсов нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'</li>
 <li><code>setMaxStackSize(Integer)</code> - задаёт максимальное количество предметов</li>
 </ul>
 <p>Остальные сеттеры вы можете самостоятельно просмотреть в классе Item, ко многим из них прилагаются комментарии от MCP и MinecraftForge.</p>
@@ -4195,10 +4195,11 @@
 <code>assets/modId/textures/items</code>(вместо <code>modId</code> должен быть ваш идентификатор мода! В нашем случае это <code>mcmodding</code>).</p>
 <p>Возьмём такую текстуру кольца:</p>
 <p><img alt="Текстура кольца" class="border" src="../images/item_ring.png" /></p>
-<blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Внимание!</p>
 <p>Соотношение сторон должно быть 1:1, т.е если ваша текстура шириной 32 пикселя, то и высота должна быть 32 пикселя, иначе текстура не будет загружена!
 Исключением являются текстуры с KeyFrame анимацией.</p>
-</blockquote>
+</div>
 <p>Если всё было сделано, как написано в статье, то в результате наш предмет получит текстуру:</p>
 <p><img alt="Кольцо от первого лица" class="border" src="../images/item_ring_fp.png" /></p>
 <p><img alt="Кольцо от третьего лица" class="border" src="../images/item_ring_tp.png" /></p>

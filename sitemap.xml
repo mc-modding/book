@@ -456,6 +456,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/block/basics/</loc>
+         <lastmod>2022-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/item/armor/</loc>
          <lastmod>2022-08-19</lastmod>
          <changefreq>daily</changefreq>
