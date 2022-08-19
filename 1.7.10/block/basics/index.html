@@ -4209,11 +4209,18 @@
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">renderAsNormalBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRenderType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ModBlocks</span><span class="p">.</span><span class="na">rubyRenderId</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<p>Если этот блок не выглядит как обычный блок, метод <code>Block#renderAsNormalBlock</code> должен вернуть значение <code>false</code>(примеры: знаки, кнопки, лестницы и т.д.),
+иначе могут возникнуть графические артефакты! В нашем же случае это делать необязательно, так как наш рендер будет являться "обычным блоком".</p>
 <p>В <code>ClientProxy#init</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client</span><span class="p">;</span><span class="w"></span>
 
