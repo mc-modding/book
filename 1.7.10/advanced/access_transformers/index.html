@@ -4047,6 +4047,8 @@ public net.minecraft.item.Item field_77774_bZ
 
 # Метод Item#registerItem(int, String, Item) станет публичным.
 public net.minecraft.item.Item func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V
+
+# Конструктор класса называется &lt;init&gt;.
 </code></pre></div>
 <p>Магическая строка <code>func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V</code> это srg имя с дескриптором. Узнать их можно, например, при помощи программки <a href="http://bspk.rs/MC/MCPMappingViewer/index.html">MCP Mapping Viewer</a>. В ней интуитивно понятный интерфейс, так что проблем возникнуть не должно. Выбираем маппинги под нужную версию и через поиск ищем метод или поле.</p>
 <p>После того как создали и заполнили файл <code>example_at.cfg</code>, необходимо добавить в файл <code>build.gradle</code> следующие строки:</p>
@@ -4063,6 +4065,7 @@ public net.minecraft.item.Item func_179217_a(ILjava/lang/String;Lnet/minecraft/i
 <li>Иногда трансформер может не примениться, т.е. поле/метод так и останется инкапсулировано. Но это редкость. Зачастую это вставки forge.</li>
 <li>Указанные в примере трансформеры относятся к версии 1.12.</li>
 <li>В прикрепленном архиве лежит исходный <code>build.gradle</code> файл, в который добавлены указанные выше строки, а также файл <code>example_at.cfg</code> в нужной папке. Достаточно лишь скопировать к себе в проект, пересобрать, и все должно работать.</li>
+<li>Если вдруг ваша версия Minecraft более ранняя, то об использовании AT можно почитать <a href="https://web.archive.org/web/20160906133747/http://www.minecraftforge.net/wiki/Using_Access_Transformers">здесь</a>.</li>
 </ol>
 
 
