@@ -4049,6 +4049,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Разберёмся, что у нас в конструкторе написано.</p>
+<p><code>Material#rock</code> - материал блока - "камень". Вы можете создать свой собственный материал для блока, который будет иметь,
+как ванильные свойства, так и совершенно иные.</p>
+<p>Далее идут сеттеры:</p>
 <ul>
 <li><code>setBlockName(String)</code> - задаёт нелокализованное название блоку(см. статью <a href="https://mcmodding.ru/1.7.10/basics/lang/">Локализация</a>)</li>
 <li><code>setBlockTextureName(String)</code> - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а из ресурсов нашего мода. Пример: <code>modId:textureName</code>, можно также указывать путь: 'modId:folder/textureName'</li>
