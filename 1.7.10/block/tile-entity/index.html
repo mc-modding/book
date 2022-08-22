@@ -6,18 +6,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Создание собственных инструментов">
+        <meta name="description" content="Tile Entity">
       
       
       
-        <link rel="canonical" href="https://mcmodding.ru/1.7.10/item/tools/">
+        <link rel="canonical" href="https://mcmodding.ru/1.7.10/block/tile-entity/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
     
     
       
-        <title>Инструменты - Создание Minecraft модов</title>
+        <title>Хранение данных(TileEntity) - Создание Minecraft модов</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#собственные-инструменты" class="md-skip">
+        <a href="#tile-entity" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Инструменты
+              Хранение данных(TileEntity)
             
           </span>
         </div>
@@ -518,14 +518,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
       
       
@@ -548,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basics/" class="md-nav__link">
+      <a href="../../item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -562,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../food/" class="md-nav__link">
+      <a href="../../item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -574,94 +572,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Инструменты
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../item/tools/" class="md-nav__link">
         Инструменты
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#материал-инструментов" class="md-nav__link">
-    Материал инструментов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#меч" class="md-nav__link">
-    Меч
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#топор" class="md-nav__link">
-    Топор
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#мотыга" class="md-nav__link">
-    Мотыга
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#кирка" class="md-nav__link">
-    Кирка
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#лопата" class="md-nav__link">
-    Лопата
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#мультиинструмент" class="md-nav__link">
-    Мультиинструмент
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -673,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../armor/" class="md-nav__link">
+      <a href="../../item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -687,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../repair/" class="md-nav__link">
+      <a href="../../item/repair/" class="md-nav__link">
         Починка
       </a>
     </li>
@@ -701,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../subtypes/" class="md-nav__link">
+      <a href="../../item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -715,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rarity/" class="md-nav__link">
+      <a href="../../item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -734,12 +649,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
       
       
       
@@ -762,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../block/basics/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -776,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../block/metadata/" class="md-nav__link">
+      <a href="../metadata/" class="md-nav__link">
         Метаданные
       </a>
     </li>
@@ -788,11 +705,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../block/tile-entity/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Хранение данных(TileEntity)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Хранение данных(TileEntity)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#таблица-nbt-идентификаторов" class="md-nav__link">
+    Таблица NBT идентификаторов
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#механизм" class="md-nav__link">
+    Механизм
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tileentityspecialrenderer" class="md-nav__link">
+    TileEntitySpecialRenderer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#синхронизация-с-клиентом" class="md-nav__link">
+    Синхронизация с клиентом
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -804,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../block/fluid.md" class="md-nav__link">
+      <a href="../fluid.md" class="md-nav__link">
         Жидкость
       </a>
     </li>
@@ -818,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../block/fluid-tank.md" class="md-nav__link">
+      <a href="../fluid-tank.md" class="md-nav__link">
         Хранение жидкости
       </a>
     </li>
@@ -4033,50 +4012,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#материал-инструментов" class="md-nav__link">
-    Материал инструментов
+  <a href="#таблица-nbt-идентификаторов" class="md-nav__link">
+    Таблица NBT идентификаторов
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#меч" class="md-nav__link">
-    Меч
+  <a href="#механизм" class="md-nav__link">
+    Механизм
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#топор" class="md-nav__link">
-    Топор
+  <a href="#tileentityspecialrenderer" class="md-nav__link">
+    TileEntitySpecialRenderer
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#мотыга" class="md-nav__link">
-    Мотыга
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#кирка" class="md-nav__link">
-    Кирка
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#лопата" class="md-nav__link">
-    Лопата
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#мультиинструмент" class="md-nav__link">
-    Мультиинструмент
+  <a href="#синхронизация-с-клиентом" class="md-nav__link">
+    Синхронизация с клиентом
   </a>
   
 </li>
@@ -4094,412 +4052,585 @@
               
     
                 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/item/tools.md" title="Редактировать страницу" class="md-content__button md-icon">
+  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/block/tile-entity.md" title="Редактировать страницу" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="собственные-инструменты">Собственные инструменты<a class="headerlink" href="#собственные-инструменты" title="Permanent link">#</a></h1>
-<p>Стандартный предмет создать было легко, как и еду, но как насчёт создания инструментов? Давайте создадим свои собственные
-инструменты, такие как: меч, кирка, топор, мотыга и лопата, а также мультиинструмент, имеющий некоторые свойства других
-инструментов.</p>
-<h2 id="материал-инструментов">Материал инструментов<a class="headerlink" href="#материал-инструментов" title="Permanent link">#</a></h2>
-<p>Создадим материал для наших инструментов. Для удобства, создадим его в <code>ModItems</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">ToolMaterial</span><span class="w"> </span><span class="n">RUBY_TOOL_MATERIAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EnumHelper</span><span class="p">.</span><span class="na">addToolMaterial</span><span class="p">(</span><span class="s">&quot;mcmodding:ruby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Теперь ознакомимся с параметрами метода <code>EnumHelper#addToolMaterial(String, Integer, Integer, Float, Float, Integer)</code></p>
-<ol>
-<li>Название материала, в нашем случае будет <code>mcmodding:ruby</code>. Рекомендуется добавлять <code>ModId</code> перед названием, чтобы случайно не заменить материалы из других модов!</li>
-<li>Уровень добычи, чем выше уровень, тем больше видов блоков сможет уничтожать наш инструмент.</li>
-<li>Кол-во использований или проще говоря - прочность инструмента.</li>
-<li>Эффективность, чем выше значение, тем быстрее блок будет ломаться.</li>
-<li>Урон наносимый инструментом. Данное значение суммируется дополнительным значением урона в зависимости от типа инструмента. Для лопаты +1, кирки +2, топора +3 и меча +4.</li>
-<li>Коэффициент зачаровывания. Чем больше значение, тем лучше будут чары при зачаровывание.</li>
-</ol>
+<h1 id="tile-entity">Tile Entity<a class="headerlink" href="#tile-entity" title="Permanent link">#</a></h1>
+<p>Tile Entity - это своего рода "ячейка" памяти хранящая NBT данные на позиции блока. С помощью Tile Entity создаются
+механизмы такие как: печка, сундук, выбрасыватель, воронка и др. Данный вариант хранения данных блока более эффективен
+для большого кол-ва информации, но у него есть свои недостатки, которые решаются по мере написания кода.</p>
+<p>В данной статье вы научитесь хранить данные в Tile Entity, а также создадите свой первый механизм, который будет выполнять
+минимальные действия для получения какого-либо результата.</p>
+<p>Создадим класс и унаследуемся от <code>BlockContainer</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">Уровень добычи для некоторых блоков</p>
-<p>Обсидиан уровень 3, алмазная, изумрудная, золотая и редстоун руды 2, железная и лазуритовая 1, уголь, камень и все остальное 0</p>
+<p class="admonition-title">Информация</p>
+<p>В большинстве случаев <code>BlockContainer</code> будет использоваться вами постоянно, но для достижения лучшего масштабирования
+кода вашего мода, мы рекомендуем реализовывать интерфейс <code>ITileEntityProvider</code>(пример реализации можно посмотреть в <code>BlockContainer</code>)</p>
 </div>
-<p>Таблица материалов <code>Item$ToolMaterial</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Материал</th>
-<th>Уровень добычи</th>
-<th>Прочность</th>
-<th>Эффективность</th>
-<th>Урон</th>
-<th>Зачаровываемость</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WOOD</td>
-<td>0</td>
-<td>59</td>
-<td>2</td>
-<td>0</td>
-<td>15</td>
-</tr>
-<tr>
-<td>STONE</td>
-<td>1</td>
-<td>131</td>
-<td>4</td>
-<td>1</td>
-<td>5</td>
-</tr>
-<tr>
-<td>IRON</td>
-<td>2</td>
-<td>250</td>
-<td>6</td>
-<td>2</td>
-<td>14</td>
-</tr>
-<tr>
-<td>EMERALD</td>
-<td>3</td>
-<td>1561</td>
-<td>8</td>
-<td>3</td>
-<td>10</td>
-</tr>
-<tr>
-<td>GOLD</td>
-<td>0</td>
-<td>32</td>
-<td>12</td>
-<td>0</td>
-<td>22</td>
-</tr>
-</tbody>
-</table>
-<h2 id="меч">Меч<a class="headerlink" href="#меч" title="Permanent link">#</a></h2>
-<p>Для создания меча необходимо наследоваться от <code>ItemSword</code> и передать в супер-класс материал.</p>
-<div class="admonition info">
-<p class="admonition-title">Подсказка</p>
-<p>Вы можете брать уже готовые материалы, которые находятся в <code>Item$ToolMaterial</code></p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.block</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemSword</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubySword</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemSword</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubySword</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_sword&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_sword&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Добавим текстуру меча</p>
-<p><img alt="Рубиновый меч" src="../images/tools/ruby_sword.png" /></p>
-<p>Регистрируем наш меч и запускаем игру.</p>
-<p><img alt="Рубиновый меч от первого лица" src="../images/tools/ruby_sword_fp.png" /></p>
-<p><img alt="Рубиновый меч от третьего лица" src="../images/tools/ruby_sword_tp.png" /></p>
-<h2 id="топор">Топор<a class="headerlink" href="#топор" title="Permanent link">#</a></h2>
-<p>Для создания топора необходимо наследоваться от <code>ItemTool</code>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Примечание к наследованию</p>
-<p>Возможно у вас возникнет вопрос, почему мы сразу не можем наследоваться от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code>. </p>
-</div>
-<p>Связано это с тем, что Minecraft и MinecraftForge не предоставляют возможности изменять списки добываемых блоков и добавочный урон к инструментам.
-Если вам необходим инструмент только со своим материалом, то вы можете наследоваться сразу от <code>ItemAxe</code>, <code>ItemPickaxe</code>, <code>ItemSpade</code></p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.Block</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.BlockContainer</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.material.Material</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemTool</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyAxe</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemTool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sets</span><span class="p">.</span><span class="na">newHashSet</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">planks</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">bookshelf</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">log</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">log2</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">chest</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">pumpkin</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lit_pumpkin</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyAxe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">3F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_axe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_axe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">func_150893_a</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">toolStack</span><span class="p">,</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">wood</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">plants</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">vine</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">func_150893_a</span><span class="p">(</span><span class="n">toolStack</span><span class="p">,</span><span class="w"> </span><span class="n">block</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">efficiencyOnProperMaterial</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>В отличие от меча помимо материала нам необходимо передать в супер-класс доп. значение урона и список добываемых блоков.
-Мы будем использовать стандартный список.</p>
-<p>Для корректной работы инструмента необходимо указать <code>setHarvestLevel(String, Integer)</code>, так как мы не используем
-наследование от <code>ItemAxe</code>. Первым параметром выступает название инструмента, в данном случае <code>axe</code>, а вторым
-параметром выступает уровень инструмента.</p>
-<table>
-<thead>
-<tr>
-<th>Инструмент</th>
-<th>Название класса</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Топор</td>
-<td>axe</td>
-</tr>
-<tr>
-<td>Кирка</td>
-<td>pickaxe</td>
-</tr>
-<tr>
-<td>Лопата</td>
-<td>shovel</td>
-</tr>
-</tbody>
-</table>
-<p>Добавился метод <code>func_150893_a(ItemStack, Block)</code>, данный метод возвращает эффективность инструмента, а также
-дополнительно регулирует эффективность инструмента для некоторых материалы блоков.</p>
-<p>Добавим текстуру топора</p>
-<p><img alt="Рубиновый топор" src="../images/tools/ruby_axe.png" /></p>
-<p>Регистрируем наш топор и запускаем игру.</p>
-<p><img alt="Рубиновый топор от первого лица" src="../images/tools/ruby_axe_fp.png" /></p>
-<p><img alt="Рубиновый топор от третьего лица" src="../images/tools/ruby_axe_tp.png" /></p>
-<h2 id="мотыга">Мотыга<a class="headerlink" href="#мотыга" title="Permanent link">#</a></h2>
-<p>Для создания мотыги необходимо наследоваться от <code>ItemHoe</code>. Почему мы не наследуемся от <code>ItemTool</code>? Связано это с тем,
-что разработчики Minecraft не предусмотрели такой функционал в <code>ItemTool</code>. В <code>ItemHoe</code> происходит дополнительная
-обработка через событие <code>UseHoeEvent</code>, что обеспечивает совместимость с другими модами, использующие <code>UseHoeEvent</code> событие.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemHoe</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyHoe</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemHoe</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyHoe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_hoe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_hoe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Добавим текстуру мотыги</p>
-<p><img alt="Рубиновая мотыга" src="../images/tools/ruby_hoe.png" /></p>
-<p>Регистрируем нашу мотыгу и запускаем игру.</p>
-<p><img alt="Рубиновая мотыга от первого лица" src="../images/tools/ruby_hoe_fp.png" /></p>
-<p><img alt="Рубиновая мотыга от третьего лица" src="../images/tools/ruby_hoe_tp.png" /></p>
-<h2 id="кирка">Кирка<a class="headerlink" href="#кирка" title="Permanent link">#</a></h2>
-<p>Для создания кирки необходимо наследоваться от <code>ItemTool</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.Block</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.material.Material</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemTool</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyPickaxe</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemTool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sets</span><span class="p">.</span><span class="na">newHashSet</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">cobblestone</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">double_stone_slab</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">stone_slab</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">stone</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">sandstone</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">mossy_cobblestone</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">iron_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">iron_block</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">coal_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">gold_block</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">gold_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">diamond_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">diamond_block</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">ice</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">netherrack</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lapis_ore</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lapis_block</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">redstone_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lit_redstone_ore</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">rail</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">detector_rail</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">golden_rail</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">activator_rail</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyPickaxe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">2F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_pickaxe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_pickaxe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">func_150897_b</span><span class="p">(</span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">obsidian</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">diamond_block</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">diamond_ore</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">emerald_ore</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">emerald_block</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">gold_block</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">gold_ore</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">iron_block</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">iron_ore</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lapis_block</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lapis_ore</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">redstone_ore</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">lit_redstone_ore</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">rock</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">iron</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">anvil</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">toolMaterial</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">func_150893_a</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">toolStack</span><span class="p">,</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">iron</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">anvil</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">block</span><span class="p">.</span><span class="na">getMaterial</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Material</span><span class="p">.</span><span class="na">rock</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">func_150893_a</span><span class="p">(</span><span class="n">toolStack</span><span class="p">,</span><span class="w"> </span><span class="n">block</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">efficiencyOnProperMaterial</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Добавился метод <code>func_150897_b(Block)</code> данный метод возвращает логическое значение отвечающее условию 
-"может ли инструмент добывать переданный блок". В случае нашего метода, используются стандартные условия.</p>
-<p>Добавим текстуру кирки</p>
-<p><img alt="Рубиновая кирка" src="../images/tools/ruby_pickaxe.png" /></p>
-<p>Регистрируем нашу кирку и запускаем игру.</p>
-<p><img alt="Рубиновая кирка от первого лица" src="../images/tools/ruby_pickaxe_fp.png" /></p>
-<p><img alt="Рубиновая кирка от третьего лица" src="../images/tools/ruby_pickaxe_tp.png" /></p>
-<h2 id="лопата">Лопата<a class="headerlink" href="#лопата" title="Permanent link">#</a></h2>
-<p>Для создания лопаты необходимо наследоваться от <code>ItemTool</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.Block</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemTool</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubySpade</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemTool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sets</span><span class="p">.</span><span class="na">newHashSet</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">grass</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">dirt</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">sand</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">gravel</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">snow_layer</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">Blocks</span><span class="p">.</span><span class="na">snow</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">clay</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">farmland</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">soul_sand</span><span class="p">,</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">mycelium</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubySpade</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">1F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_spade&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_spade&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Добавим текстуру лопаты</p>
-<p><img alt="Рубиновая лопата" src="../images/tools/ruby_spade.png" /></p>
-<p>Регистрируем нашу лопату и запускаем игру.</p>
-<p><img alt="Рубиновая лопата от первого лица" src="../images/tools/ruby_spade_fp.png" /></p>
-<p><img alt="Рубиновая лопата от третьего лица" src="../images/tools/ruby_spade_tp.png" /></p>
-<h2 id="мультиинструмент">Мультиинструмент<a class="headerlink" href="#мультиинструмент" title="Permanent link">#</a></h2>
-<p>Ранее мы создали топор, мотыгу, кирку и лопату, но как же их объединить в один мощный инструмент? Всё очень просто,
-делаем аналогичное наследование от <code>ItemTool</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.collect.Sets</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Event</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.Block</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemTool</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.world.World</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.common.MinecraftForge</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.event.entity.player.UseHoeEvent</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModItems</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.ModTab</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RubyMultiTool</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ItemTool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sets</span><span class="p">.</span><span class="na">newHashSet</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RubyMultiTool</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mf">5F</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">,</span><span class="w"> </span><span class="n">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setUnlocalizedName</span><span class="p">(</span><span class="s">&quot;ruby_multi_tool&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:ruby_multi_tool&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StorageBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BlockContainer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">StorageBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">Material</span><span class="p">.</span><span class="na">wood</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setBlockName</span><span class="p">(</span><span class="s">&quot;storage&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setBlockTextureName</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:storage&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">setCreativeTab</span><span class="p">(</span><span class="n">ModTab</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">harvestLvl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_TOOL_MATERIAL</span><span class="p">.</span><span class="na">getHarvestLevel</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">setHarvestLevel</span><span class="p">(</span><span class="s">&quot;shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">harvestLvl</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод отвечает за создание Tile Entity.</span>
+<span class="cm">     * </span>
+<span class="cm">     * @param world     мир в котором расположен блок.</span>
+<span class="cm">     * @param metadata  метаданные блока</span>
+<span class="cm">     * @return Возвращает новый экземпляр Tile Entity</span>
+<span class="cm">     */</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onItemUse</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">heldStack</span><span class="p">,</span><span class="w"> </span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">World</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">posZ</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">side</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitX</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitY</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitZ</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="na">canPlayerEdit</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">,</span><span class="w"> </span><span class="n">side</span><span class="p">,</span><span class="w"> </span><span class="n">heldStack</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="kd">final</span><span class="w"> </span><span class="n">UseHoeEvent</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UseHoeEvent</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">heldStack</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MinecraftForge</span><span class="p">.</span><span class="na">EVENT_BUS</span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="nf">createNewTileEntity</span><span class="p">(</span><span class="n">World</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">metadata</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Далее необходимо создать класс <code>StorageTile</code> и наследовать в нём от <code>TileEntity</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getResult</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Event</span><span class="p">.</span><span class="na">Result</span><span class="p">.</span><span class="na">ALLOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">heldStack</span><span class="p">.</span><span class="na">damageItem</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">            </span><span class="kd">final</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">blockAtPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="na">getBlock</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">);</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StorageTile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">side</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="na">getBlock</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">).</span><span class="na">isAir</span><span class="p">(</span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">blockAtPos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">grass</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">blockAtPos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">dirt</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="kd">final</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">farmland</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Blocks</span><span class="p">.</span><span class="na">farmland</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="n">world</span><span class="p">.</span><span class="na">playSoundEffect</span><span class="p">((</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">posX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5F</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5F</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">posZ</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5F</span><span class="p">,</span><span class="w"> </span><span class="n">farmland</span><span class="p">.</span><span class="na">stepSound</span><span class="p">.</span><span class="na">getStepResourcePath</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="n">farmland</span><span class="p">.</span><span class="na">stepSound</span><span class="p">.</span><span class="na">getVolume</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0F</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0F</span><span class="p">,</span><span class="w"> </span><span class="n">farmland</span><span class="p">.</span><span class="na">stepSound</span><span class="p">.</span><span class="na">getPitch</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.8F</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Вернём в методе <code>BlockContainer#createNewTileEntity</code> объект класса <code>StorageTile</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.block</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">world</span><span class="p">.</span><span class="na">isRemote</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">world</span><span class="p">.</span><span class="na">setBlock</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">posZ</span><span class="p">,</span><span class="w"> </span><span class="n">farmland</span><span class="p">);</span><span class="w"></span>
-<span class="w">                    </span><span class="n">heldStack</span><span class="p">.</span><span class="na">damageItem</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="p">}</span><span class="w"></span>
-<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.BlockContainer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.world.World</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile.StorageTile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StorageBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BlockContainer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="nf">createNewTileEntity</span><span class="p">(</span><span class="n">World</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">metadata</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StorageTile</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Регистрация Tile Entity происходит аналогично с блоками и предметами.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile.StorageTile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModBlocks</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerTileEntity</span><span class="p">(</span><span class="n">StorageTile</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;:storage&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Информация</p>
+<p>Мы рекомендуем указывать <code>ModId</code> во время регистрации Tile Entity, так как MinecraftForge не продумали момент регистрации
+и следовательно, если не использовать <code>ModId</code>, то есть высокая вероятность, что название вашего Tile Entity может пересечься
+с Tile Entity из других модов.</p>
+</div>
+<p>Теперь мы можем добавить какую-нибудь логику для работы нашего хранилища. Давайте добавим возможность класть и забирать
+предмет из хранилища. Для этого переопределим метод <code>Block#</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.block</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.BlockContainer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.world.World</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile.StorageTile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StorageBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BlockContainer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Вызывается когда игрок, нажимает по блоку правой кнопкой мыши.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param world         мир в котором установлен блок.</span>
+<span class="cm">     * @param x             позиция блока по X координате.</span>
+<span class="cm">     * @param y             позиция блока по Y координате.</span>
+<span class="cm">     * @param z             позиция блока по Z координате.</span>
+<span class="cm">     * @param activator     игрок, который взаимодействует с блоком.</span>
+<span class="cm">     * @param side          сторона блока по которой было произведён клик.</span>
+<span class="cm">     * @param hitX          позицию на блоке, на которой производилось нажатие по X координате.</span>
+<span class="cm">     * @param hitY          позицию на блоке, на которой производилось нажатие по Y координате.</span>
+<span class="cm">     * @param hitZ          позицию на блоке, на которой производилось нажатие по Z координате.</span>
+<span class="cm">     * @return Возвращает true/false если блок был активирован. Если блок не был активирован(false), то если в руке находился блок, он будет установлен в мире.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onBlockActivated</span><span class="p">(</span><span class="n">World</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">activator</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">side</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitX</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitY</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hitZ</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Все логические операции должны выполняться на серверной стороне, иначе могут возникнуть ошибки с обработкой и хранением данных.</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">world</span><span class="p">.</span><span class="na">isRemote</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Получаем Tile Entity по координатам блока</span><span class="w"></span>
+<span class="w">            </span><span class="n">TileEntity</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="na">getTileEntity</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">            </span><span class="c1">// Проверяем, что полученный Tile Entity является StorageTile</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">StorageTile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">StorageTile</span><span class="w"> </span><span class="n">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">StorageTile</span><span class="p">)</span><span class="w"> </span><span class="n">tile</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// Передаём объект игрока и предмет из его руки в метод обработки стека.</span><span class="w"></span>
+<span class="w">                </span><span class="n">storage</span><span class="p">.</span><span class="na">handleInputStack</span><span class="p">(</span><span class="n">activator</span><span class="p">,</span><span class="w"> </span><span class="n">activator</span><span class="p">.</span><span class="na">getHeldItem</span><span class="p">());</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Код <code>StorageTile</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.nbt.NBTTagCompound</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.common.util.Constants</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StorageTile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Чтобы избежать ошибок в названии тега, рекомендуется создавать константы</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INV_TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inventory&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается при записи данных Tile Entity в чанк. Мы не рекомендуем удалять вызов родительского метода,</span>
+<span class="cm">     * так как это может привести к ошибке загрузки данных Tile Entity.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param nbt данные NBT в которых будет храниться информация о Tile Entity.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">writeToNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">inventoryTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NBTTagCompound</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">stack</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">nbt</span><span class="p">.</span><span class="na">setTag</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">,</span><span class="w"> </span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается при чтении данных Tile Entity из чанка. Мы не рекомендуем удалять вызов родительского метода,</span>
+<span class="cm">     * так как это может привести к потере информации о Tile Entity во время загрузки Tile Entity.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param nbt данные NBT которые содержат информацию о Tile Entity.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFromNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nbt</span><span class="p">.</span><span class="na">hasKey</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">,</span><span class="w"> </span><span class="n">Constants</span><span class="p">.</span><span class="na">NBT</span><span class="p">.</span><span class="na">TAG_COMPOUND</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">inventoryTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nbt</span><span class="p">.</span><span class="na">getCompoundTag</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">.</span><span class="na">loadItemStackFromNBT</span><span class="p">(</span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Будет ли Tile Entity обновляться. В нашем случае Tile Entity не имеет метода {@link TileEntity#updateEntity}, а значит обновлять</span>
+<span class="cm">     * Tile Entity не нужно.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return Возвращает логическое условие.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canUpdate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Вспомогательный метод, проверяющий наличие стека в Tile Entity.</span>
+<span class="cm">     * @return Возвращает логическое условие.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается при активации блока и в зависимости от переданных данных, производит действие.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param player    игрок взаимодействующий с блоком</span>
+<span class="cm">     * @param stack     стек предмета игрока в руке</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleInputStack</span><span class="p">(</span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Если в StorageTile есть стек, то выполнится действия со взятием предмета из StorageTile</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hasStack</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Если инвентарь заполнен, то предмет будет выброшен, в ином случае будет добавлен игроку в инвентарь.</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">player</span><span class="p">.</span><span class="na">inventory</span><span class="p">.</span><span class="na">addItemStackToInventory</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">stack</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="na">dropPlayerItemWithRandomChoice</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">stack</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// Иногда бывает, что предмет не отображается в инвентаре после активации блока, данный код исправляет это.</span><span class="w"></span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="na">inventoryContainer</span><span class="p">.</span><span class="na">detectAndSendChanges</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Очищаем стек из StorageTile</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Если стек в руке не равен null, то он будет положен в кол-ве 1 шт., в StorageTile</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Создаём копию стека и устанавливаем ей размер в 1 шт.</span><span class="w"></span>
+<span class="w">            </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">copy</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">copy</span><span class="p">.</span><span class="na">stackSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">copy</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Убираем один предмет из инвентаря игрока.</span><span class="w"></span>
+<span class="w">            </span><span class="o">--</span><span class="n">stack</span><span class="p">.</span><span class="na">stackSize</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Не забываем пометить Tile Entity как &quot;грязный&quot;, чтобы игра сохранила наши данные.</span><span class="w"></span>
+<span class="w">        </span><span class="n">markDirty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Разберём немного принцип работы NBT. NBTTagCompound своего рода <code>Map</code>, т.е. вместо метода <code>Map#put</code> вы будете использовать
+геттеры и сеттеры для большего удобства. На данный момент NBT поддерживает запись все типов данных. Настоятельно
+рекомендуется при проверке ключа NBT передавать вторым параметром идентификатор NBT, чтобы убедиться, что данные
+при чтении будут верными.</p>
+<h3 id="таблица-nbt-идентификаторов">Таблица NBT идентификаторов<a class="headerlink" href="#таблица-nbt-идентификаторов" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Идентификатор</th>
+<th>NBT</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>END</td>
+<td>Используется для обозначения пустого тега</td>
+</tr>
+<tr>
+<td>1</td>
+<td>BYTE</td>
+<td>Используется для byte данных</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SHORT</td>
+<td>Используется для short данных</td>
+</tr>
+<tr>
+<td>3</td>
+<td>INT</td>
+<td>Используется для integer данных</td>
+</tr>
+<tr>
+<td>4</td>
+<td>LONG</td>
+<td>Используется для long данных</td>
+</tr>
+<tr>
+<td>5</td>
+<td>FLOAT</td>
+<td>Используется для float данных</td>
+</tr>
+<tr>
+<td>6</td>
+<td>DOUBLE</td>
+<td>Используется для double данных</td>
+</tr>
+<tr>
+<td>7</td>
+<td>BYTE_ARRAY</td>
+<td>Используется для массива byte</td>
+</tr>
+<tr>
+<td>8</td>
+<td>STRING</td>
+<td>Используется для string</td>
+</tr>
+<tr>
+<td>9</td>
+<td>LIST</td>
+<td>Используется для различных типов NBT данных(List<NBTBase>)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>COMPOUND</td>
+<td>Используется для различных типов NBT данных(Map<String, NBTBase>)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>INT_ARRAY</td>
+<td>Используется для массива integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="механизм">Механизм<a class="headerlink" href="#механизм" title="Permanent link">#</a></h2>
+<p>В предыдущей части статьи мы рассмотрели базовый принцип создания Tile Entity, в этой части мы рассмотрим создание
+механизма способного обработать входящий предмет и выдать результат. Создадим <code>SmelterBlock</code> и <code>SmelterTile</code>, по
+предыдущей части статьи и уберём в <code>SmelterTile</code> переопределение метода <code>TileEntity#canUpdate</code>(в родительском классе он возвращает всегда <code>true</code>).
+Переопределим метод <code>TileEntity#updateEntity</code> и пропишем в нём логику работы нашего механизма.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.item.EntityItem</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Items</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.nbt.NBTTagCompound</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.common.util.Constants</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterTile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INV_TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inventory&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">writeToNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Аналогично тому, как мы делали в StorageTile</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFromNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Аналогично тому, как мы делали в StorageTile</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается каждый игровой тик. 20 тиков = 1 секунда</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateEntity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="cm">/*</span>
+<span class="cm">         * Обязательно проверяем, что действия производятся на серверной стороне, затем проверяем, что имеется стек предмета.</span>
+<span class="cm">         * Если игровое время в результате деления 100(5 сек) с остатком возвращает 0, то выполняется проверка на стек внутри плавильни.</span>
+<span class="cm">         */</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">worldObj</span><span class="p">.</span><span class="na">isRemote</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hasStack</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">worldObj</span><span class="p">.</span><span class="na">getTotalWorldTime</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Если предмет является блоком угольной руды, то создаём сущность предмета, которая содержит в себе стек с предметом &quot;уголь&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">getItem</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">getItemFromBlock</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">coal_ore</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">worldObj</span><span class="p">.</span><span class="na">spawnEntityInWorld</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EntityItem</span><span class="p">(</span><span class="n">worldObj</span><span class="p">,</span><span class="w"> </span><span class="n">xCoord</span><span class="p">,</span><span class="w"> </span><span class="n">yCoord</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">zCoord</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">coal</span><span class="p">)));</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// Не забываем удалить стек</span><span class="w"></span>
+<span class="w">                </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// А также не забывает сохранить данные</span><span class="w"></span>
+<span class="w">                </span><span class="n">markDirty</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Если предмет является блоком железной руды, то создаём сущность предмета, которая содержит в себе стек с предметом &quot;железный слиток&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">getItem</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">getItemFromBlock</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">iron_ore</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">worldObj</span><span class="p">.</span><span class="na">spawnEntityInWorld</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EntityItem</span><span class="p">(</span><span class="n">worldObj</span><span class="p">,</span><span class="w"> </span><span class="n">xCoord</span><span class="p">,</span><span class="w"> </span><span class="n">yCoord</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">zCoord</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">iron_ingot</span><span class="p">)));</span><span class="w"></span>
+<span class="w">                </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">markDirty</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasStack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleInputStack</span><span class="p">(</span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Аналогично тому, как мы делали в StorageTile</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Вот таким нехитрым способом можно сделать механизм, который будет обрабатывать данные находящиеся в Tile Entity.
+Дальше всё ограничивается лишь вашей фантазией и возможностями ПК.</p>
+<h2 id="tileentityspecialrenderer">TileEntitySpecialRenderer<a class="headerlink" href="#tileentityspecialrenderer" title="Permanent link">#</a></h2>
+<p>Ранее мы уже рассказывали вам о том, как добавить собственную отрисовку блока по средствам запечённого рендера. В данной
+части статьи вы научитесь добавлять модели к своему блоку с использованием <code>TileEntitySpecialRenderer</code>. Минусом данного
+подхода является то, что на каждый <code>TileEntitySpecialRenderer</code> будет производиться вызов отрисовки, что в реалиях
+игры является плохим тоном.</p>
+<p>Переопределим три метода в классе блока плавильни:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.block</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.BlockContainer</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BlockContainer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Указывает Minecraft, что блок является нормальным блоком для отрисовки(обычным кубом).</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return Возвращает логическое условие.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">renderAsNormalBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Указывает Minecraft, что блок является непрозрачным. Если указать true, то пространство внутри блока будет создавать</span>
+<span class="cm">     * x-ray эффект.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return Возвращает логическое условие.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isOpaqueCube</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">func_150897_b</span><span class="p">(</span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">obsidian</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">emerald_ore</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">emerald_block</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">RubyAxe</span><span class="p">.</span><span class="na">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">RubyPickaxe</span><span class="p">.</span><span class="na">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">HARVEST_BLOCKS</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">RubySpade</span><span class="p">.</span><span class="na">HARVEST_BLOCKS</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRenderType</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Создаём собственный список с добываемыми блоками и добавляем туда обсидиант, изумрудную руду и изумрудный блок, чтобы
-они правильно обрабатывались, а также добавляем все ранее созданные списки блоков из других инструментов.</p>
-<p>Указываем уровень добычи для каждого типа: топор, кирка и лопата. Не забывайте, что все значения вы можете редактировать
-на своё усмотрение!</p>
-<p>Вы могли заметить, что добавился метод <code>onItemUse(ItemStack, EntityPlayer, World, Integer, Integer, Integer, Integer, Float, Float, Float)</code>,
-в данном методе обрабатывается нажатие ПКМ по блоку. В нашем случае обрабатывается поведение как у мотыги, так как она
-при нажатии на ПКМ вспахивает землю.</p>
-<ol>
-<li><code>heldStack</code> - текущий стэк предмета в руке.</li>
-<li><code>player</code> - игрок, держащий инструмент.</li>
-<li><code>world</code> - мир в котором используется инструмент.</li>
-<li><code>posX</code>, <code>posY</code>, <code>posZ</code> - позиция блока с которым произошло взаимодействие.</li>
-<li><code>side</code> - сторона блока с которой произошло взаимодействие. Низ 0, верх 1, восток 2, запад 3, север 4, юг = 5.</li>
-<li><code>hitX</code>, <code>hitY</code>, <code>hitZ</code> - положение курсора игрока на стороне блока.</li>
-</ol>
-<p>Добавим текстуру мультиинструменту</p>
-<p><img alt="Рубиновый мультиинструмент" src="../images/tools/ruby_multi_tool.png" /></p>
-<p>Регистрируем наш мультиинструмент и запускаем игру.</p>
-<p><img alt="Рубиновый мультиинструмент от первого лица" src="../images/tools/ruby_multi_tool_fp.png" /></p>
-<p><img alt="Рубиновый мультиинструмент от третьего лица" src="../images/tools/ruby_multi_tool_tp.png" /></p>
+<p>Создадим класс с отрисовкой для Tile Entity:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.tile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ResourceLocation</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.AdvancedModelLoader</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.IModelCustom</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.model.obj.WavefrontObject</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.ModelWrapperDisplayList</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.lwjgl.opengl.GL11.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterTesr</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntitySpecialRenderer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="w"> </span><span class="n">modelPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResourceLocation</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;models/smelter.obj&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IModelCustom</span><span class="w"> </span><span class="n">smelterModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ModelWrapperDisplayList</span><span class="p">((</span><span class="n">WavefrontObject</span><span class="p">)</span><span class="w"> </span><span class="n">AdvancedModelLoader</span><span class="p">.</span><span class="na">loadModel</span><span class="p">(</span><span class="n">modelPath</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается для отрисовки Tile Entity. Отрисовка происходит каждый кадр.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param tile текущий Tile Entity к которому прикреплён Tesr.</span>
+<span class="cm">     * @param x позиция блока по X координате.</span>
+<span class="cm">     * @param y позиция блока по Y координате.</span>
+<span class="cm">     * @param z позиция блока по Z координате.</span>
+<span class="cm">     * @param delta Разница во времени с момента последнего тика. Диапазон между 0 и 1.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">renderTileEntityAt</span><span class="p">(</span><span class="n">TileEntity</span><span class="w"> </span><span class="n">tile</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPushMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">glTranslated</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">smelterModel</span><span class="p">.</span><span class="na">renderAll</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">glPopMatrix</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Как вы могли заметить, все действия аналогичны тому, как мы добавляли отрисовку .obj модели для предмета, за исключением
+того, что для Tile Entity необходимо сдвигать модель в центр блока.</p>
+<div class="admonition tip">
+<p class="admonition-title">Подсказка</p>
+<p>Вы можете объединять отрисовку блока и Tile Entity, для этого достаточно выбрать тип отрисовки в самом блоке <code>Block#getRenderType</code>.</p>
+</div>
+<p>Теперь необходимо прикрепить <code>SmelterTesr</code> к <code>SmelterTile</code>, делается это с помощью метода <code>ClientRegistry#bindTileEntitySpecialRenderer(Class&lt;TileEntity&gt;, TileEntitySpecialRenderer)</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.client.registry.ClientRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.SideOnly</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.render.tile.SmelterTesr</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile.SmelterTile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModBlocks</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ClientRegistry</span><span class="p">.</span><span class="na">bindTileEntitySpecialRenderer</span><span class="p">(</span><span class="n">SmelterTile</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SmelterTesr</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Плавильня в мире с моделью" src="../images/smelter_world.png" /></p>
+<h2 id="синхронизация-с-клиентом">Синхронизация с клиентом<a class="headerlink" href="#синхронизация-с-клиентом" title="Permanent link">#</a></h2>
+<p>Мы разобрали основные моменты создания Tile Entity, прикрепления к нему отрисовки и даже сделали свой первый, пусть и
+простой механизм, но чтобы завершить статью, необходимо ещё рассказать про синхронизацию NBT данных Tile Entity.</p>
+<p>Синхронизация с клиентом нужна для того, чтобы клиентская часть игры знала о каких-то данных, например о том какой предмет
+содержится или свои, определённые данные в Tile Entity. Стоит ещё учитывать тот факт, что размер отправляемых данных в NBT формате
+ограничен <code>Short#MAX_VALUE</code>. Так что мы настоятельно рекомендуем оптимизировать отправляемые, а также хранимые в Tile Entity
+данные, в противном случае, вы получите исключение.</p>
+<p>Для начала, чтобы уменьшить размер отправляемых данных, разделим запись и чтение на два метода, такие как:
+<code>writeExtendedData(NBTTagCompound)</code> и <code>readExtendedData(NBTTagCompound)</code>, так мы сможем записывать наши данные, отсекая
+родительские данные самого Tile Entity(позиция и прочее).</p>
+<p>Переопределим два метода <code>TileEntity#getDescriptionPacket</code> и <code>TileEntity#onDataPacket</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.nbt.NBTTagCompound</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.network.NetworkManager</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.network.Packet</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.network.play.server.S35PacketUpdateTileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.common.util.Constants</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterTile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">INV_TAG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inventory&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">writeToNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">writeExtendedData</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readFromNBT</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">readExtendedData</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается для отправки пакета с информацией о Tile Entity на клиент.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return Возвращает пакет с информацией о Tile Entity.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Packet</span><span class="w"> </span><span class="nf">getDescriptionPacket</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Создаём объект NBTTagCompound, чтобы записать в него данные для отправки</span><span class="w"></span>
+<span class="w">        </span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NBTTagCompound</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Записываем изолированные от родительских данные</span><span class="w"></span>
+<span class="w">        </span><span class="n">writeExtendedData</span><span class="p">(</span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">S35PacketUpdateTileEntity</span><span class="p">(</span><span class="n">xCoord</span><span class="p">,</span><span class="w"> </span><span class="n">yCoord</span><span class="p">,</span><span class="w"> </span><span class="n">zCoord</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">nbt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Данный метод вызывается на клиенте при получении пакета с информацией о Tile Entity с сервера.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param net NetworkManager от которого исходил пакет</span>
+<span class="cm">     * @param packet пакет данных</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDataPacket</span><span class="p">(</span><span class="n">NetworkManager</span><span class="w"> </span><span class="n">net</span><span class="p">,</span><span class="w"> </span><span class="n">S35PacketUpdateTileEntity</span><span class="w"> </span><span class="n">packet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Получаем Tile Entity по</span><span class="w"></span>
+<span class="w">        </span><span class="n">TileEntity</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">worldObj</span><span class="p">.</span><span class="na">getTileEntity</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">func_148856_c</span><span class="p">(),</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">func_148855_d</span><span class="p">(),</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">func_148854_e</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">SmelterTile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">((</span><span class="n">SmelterTile</span><span class="p">)</span><span class="w"> </span><span class="n">tile</span><span class="p">).</span><span class="na">readExtendedData</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">func_148857_g</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">writeExtendedData</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">inventoryTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NBTTagCompound</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">stack</span><span class="p">.</span><span class="na">writeToNBT</span><span class="p">(</span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">nbt</span><span class="p">.</span><span class="na">setTag</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">,</span><span class="w"> </span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">readExtendedData</span><span class="p">(</span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">nbt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nbt</span><span class="p">.</span><span class="na">hasKey</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">,</span><span class="w"> </span><span class="n">Constants</span><span class="p">.</span><span class="na">NBT</span><span class="p">.</span><span class="na">TAG_COMPOUND</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">NBTTagCompound</span><span class="w"> </span><span class="n">inventoryTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nbt</span><span class="p">.</span><span class="na">getCompoundTag</span><span class="p">(</span><span class="n">INV_TAG</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">.</span><span class="na">loadItemStackFromNBT</span><span class="p">(</span><span class="n">inventoryTag</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Разберём <code>S35PacketUpdateTileEntity(Integer, Integer, Integer, Integer, NBTTagCompound)</code>:</p>
+<ul>
+<li>x(field_148863_a) - позиция блока по X координате.</li>
+<li>y(field_148861_b) - позиция блока по Y координате.</li>
+<li>z(field_148862_c) - позиция блока по Z координате.</li>
+<li>id(field_148859_d) - идентификатор Tile Entity(должен быть уникальным, но можно использовать 0, но не пересекаться с 1-5!)</li>
+<li>nbt(field_148860_e) - NBT данные</li>
+</ul>
+<p>И наконец разберём метод <code>TileEntity#onDataPacket</code>. Во избежание каких-либо ошибок, рекомендуется получать Tile Entity
+по входящим данным из пакета, а также проверять, что Tile Entity на текущих координатах тот, который нам нужен.
+Затем производится чтение на клиенте и следовательно, данные синхронизированы от сервера на клиенте. В большинстве
+случаев, вы можете не прибегать к проверкам, которые были сделаны в <code>TileEntity#onDataPacket</code>, но это не является хорошей
+практикой, а значит в дальнейшем может вызвать проблемы.</p>
 
 
   
@@ -4509,7 +4640,7 @@
               
 
     
-        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/item/tools.md"></div>
+        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/block/tile-entity.md"></div>
         <script src="../../../scripts/contributors.js"></script>
     
 
@@ -4532,7 +4663,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
       
         
-        <a href="../food/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Еда" rel="prev">
+        <a href="../metadata/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Метаданные" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -4541,20 +4672,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Еда
+              Метаданные
             </div>
           </div>
         </a>
       
       
         
-        <a href="../armor/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Броня" rel="next">
+        <a href="../../basics/creative-tab/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Вкладка в креативе" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Броня
+              Вкладка в креативе
             </div>
           </div>
           <div class="md-footer__button md-icon">
