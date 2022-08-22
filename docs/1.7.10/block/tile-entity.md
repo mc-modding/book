@@ -525,9 +525,10 @@ public class SmelterTile extends TileEntity {
      */
     @Override
     public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity packet) {
-        // Получаем Tile Entity по
+        // Получаем Tile Entity по координатам из пакета
         TileEntity tile = worldObj.getTileEntity(packet.func_148856_c(), packet.func_148855_d(), packet.func_148854_e());
         if (tile instanceof SmelterTile) {
+            // Читаем изолированные данные
             ((SmelterTile) tile).readExtendedData(packet.func_148857_g());
         }
     }
