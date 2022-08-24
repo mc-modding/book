@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3908,7 +3908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -3967,10 +3967,10 @@
 
 
 <h1 id="вкладки-в-креативе">Вкладки в креативе<a class="headerlink" href="#вкладки-в-креативе" title="Permanent link">#</a></h1>
-<p>В нашем главном классе пишем:
+<p>В нашем главном классе пишем:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ItemGroup</span><span class="w"> </span><span class="n">TUTORIAL_GROUP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FabricItemGroupBuilder</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="n">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tutorial_group&quot;</span><span class="p">)).</span><span class="na">icon</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">FTutItems</span><span class="p">.</span><span class="na">RUBY_ITEM</span><span class="p">)).</span><span class="na">build</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
-<code>"tutorial_group"</code> - ID нашей вкладки, <code>() -&gt; new ItemStack(FTutItems.RUBY_ITEM)</code> - ItemStack, который будет отображаться в качестве иконки вкладки.</p>
+<p><code>"tutorial_group"</code> - ID нашей вкладки, <code>() -&gt; new ItemStack(FTutItems.RUBY_ITEM)</code> - ItemStack, который будет отображаться в качестве иконки вкладки.</p>
 <p>Установим нашим предметам вкладку с помощью <code>FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)</code>.</p>
 <p><img alt="предметы во вкладке" src="images/item_group.png" /></p>
 

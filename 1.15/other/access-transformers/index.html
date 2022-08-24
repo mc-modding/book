@@ -2450,12 +2450,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2609,20 +2611,6 @@
     <li class="md-nav__item">
       <a href="../../basics/mod-structure/" class="md-nav__link">
         Структура мода, @Mod, mods.toml
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
       </a>
     </li>
   
@@ -3197,12 +3185,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" checked>
       
       
       
@@ -3242,6 +3232,30 @@
       <a href="../jei-integration/" class="md-nav__link">
         Интеграция с JEI
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Access Transformers
+      </a>
+      
     </li>
   
 
@@ -3898,7 +3912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../fabric/other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../../fabric/other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -3961,7 +3975,7 @@
 <p>Во время написания мода иногда возникают ситуации, когда хочется использовать приватные методы и поля данных, но, к сожалению, мы не можем этого сделать. Первое, что приходит в голову, это использовать возможности рефлексии. И, естественно, это плохое решение проблемы, начиная с того, что падает производительность, заканчивая уродованием кода. </p>
 <p>Но решение есть - трансформеры доступа (Access Transformers - AT). Смысл в том, что они позволяют изменить модификаторы доступа к полям и методам в исходниках майнкрафта(но не форджа - с 1.15 использовать трансформеры на его классах нельзя) сразу при сборке рабочего пространства (проекта), и это будет работать в отдельном клиенте из-за того, что forge в runtime (во время выполнения) меняет модификаторы доступа на <code>public</code>.</p>
 <p>Перейдем к практике.
-Необходимо создать файл <code>example_at.cfg</code> в каталоге <code>/src/main/resources/META-INF/</code>. Имя <code>example</code> значения не имеет, можно выбрать любое. Например, <code>&lt;modid&gt;</code>. Но важно, чтобы файл заканчивался на <code>_at.cfg</code>. Сам файл описывает, какие методы и поля должны быть преобразованы.
+Необходимо создать файл <code>example_at.cfg</code> в каталоге <code>/src/main/resources/META-INF/</code>. Имя <code>example</code> значения не имеет, можно выбрать любое. Например, <code>&lt;modid&gt;</code>. Но важно, чтобы файл заканчивался на <code>_at.cfg</code>. Сам файл описывает, какие методы и поля должны быть преобразованы.</p>
 <div class="highlight"><pre><span></span><code># Это комментарий.
 
 # Все поля в классе Item станут публичными.
@@ -3987,16 +4001,18 @@ public net.minecraft.item.Item field_77699_b
 # Метод Block#isSolid(BlockState) станет публичным.
 public net.minecraft.block.Block func_76220_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V
 </code></pre></div>
-Магическая строка <code>func_76220_a(ILnet/minecraft/block/BlockState;)V</code> это srg имя с дескриптором. Узнать их можно, например, при помощи программки <a href="http://bspk.rs/MC/MCPMappingViewer/index.html">MCP Mapping Viewer</a>(увы, с версиями выше 1.12.2 она не работает), или напрямую из <a href="http://export.mcpbot.bspk.rs/">маппингов</a>. Скачиваем версию маппингов, указаную в build.gradle. Открываем все 3 файла через Notepad++  и ищем по всем файлам имя поля/метода.</p>
-<p>После того, как создали и заполнили файл <code>example_at.cfg</code>, необходимо найти в файле <code>build.gradle</code> следующую строку:
+<p>Магическая строка <code>func_76220_a(ILnet/minecraft/block/BlockState;)V</code> это srg имя с дескриптором. Узнать их можно, например, при помощи программки <a href="http://bspk.rs/MC/MCPMappingViewer/index.html">MCP Mapping Viewer</a>(увы, с версиями выше 1.12.2 она не работает), или напрямую из <a href="http://export.mcpbot.bspk.rs/">маппингов</a>. Скачиваем версию маппингов, указаную в build.gradle. Открываем все 3 файла через Notepad++  и ищем по всем файлам имя поля/метода.</p>
+<p>После того как создали и заполнили файл <code>example_at.cfg</code>, необходимо найти в файле <code>build.gradle</code> следующую строку:</p>
 <div class="highlight"><pre><span></span><code>    // accessTransformer = file(&#39;src/main/resources/META-INF/accesstransformer.cfg&#39;)
 </code></pre></div>
-Нам надо раскомментировать и заменить имя файла на своё. 
+<p>Нам надо раскомментировать и заменить имя файла на своё. 
 Теперь остается выполнить сборку и пересобрать проект. В результате вы увидите, что указанные поля и методы имеют <code>public</code> модификатор.</p>
-<p>Заметки.
-1. Указывать можно не только <code>public</code> модификатор, но и <code>protected</code>. Правда я не знаю, для чего это может пригодится. И работать это будет только в сторону снятия инкапсуляции, но не наоборот.
-2. Печально, но иногда трансформер может не примениться, т.е. поле/метод так и останется инкапсулировано. Но это редкость. Зачастую это вставки forge.
-3. Указанные в примере трансформеры относятся к версии 1.15.</p>
+<p>Заметки.</p>
+<ol>
+<li>Указывать можно не только <code>public</code> модификатор, но и <code>protected</code>. Правда я не знаю, для чего это может пригодится. И работать это будет только в сторону снятия инкапсуляции, но не наоборот.</li>
+<li>Печально, но иногда трансформер может не примениться, т.е. поле/метод так и останется инкапсулировано. Но это редкость. Зачастую это вставки forge.</li>
+<li>Указанные в примере трансформеры относятся к версии 1.15.</li>
+</ol>
 
 
   
@@ -4024,6 +4040,42 @@ public net.minecraft.block.Block func_76220_a(ILjava/lang/String;Lnet/minecraft/
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+      
+        
+        <a href="../jei-integration/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Интеграция с JEI" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Интеграция с JEI
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../1.16/preparation/install-program/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Установка программ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Установка программ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

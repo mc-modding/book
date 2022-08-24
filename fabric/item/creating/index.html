@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3962,7 +3962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4060,7 +4060,7 @@
 <h2 id="основа">Основа<a class="headerlink" href="#основа" title="Permanent link">#</a></h2>
 <p>Создадим где-нибудь пакет <code>item</code>, в котором у нас будут наши предметы. Вы заметили, что мы создаем пакет каждый раз для каждого типа класса?
 Это нужно чтобы не захламлять основной пакет мода и для лучшей навигации по директориям.</p>
-<p>Итак, создадим класс для нашего предмета:
+<p>Итак, создадим класс для нашего предмета:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
@@ -4073,10 +4073,10 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<code>settings.group(ItemGroup.MATERIALS);</code> поместит наш предмет во вкладку "Материалы" в инвентаре креатива. Вообще, эта строка не обязательна, но зато нам не придется выдавать себе предмет командой.</p>
+<p><code>settings.group(ItemGroup.MATERIALS);</code> поместит наш предмет во вкладку "Материалы" в инвентаре креатива. Вообще, эта строка не обязательна, но зато нам не придется выдавать себе предмет командой.</p>
 <h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
 <p>Создаем в том же пакете класс где будут объявлены наши предметы, я назову его <code>FTutItems</code>.</p>
-<p>В прошлом разделе мы создали класс для работы с реестром, который сейчас нам пригодится:
+<p>В прошлом разделе мы создали класс для работы с реестром, который сейчас нам пригодится:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.fabricmc.fabric.api.item.v1.FabricItemSettings</span><span class="p">;</span><span class="w"></span>
@@ -4089,7 +4089,7 @@
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// зачем это нужно я объясню позже</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Для того чтобы не писать каждый раз длинное название класса <code>FabricTutRegistry</code>, мы можем просто импортировать нужные методы статично:
+<p>Для того чтобы не писать каждый раз длинное название класса <code>FabricTutRegistry</code>, мы можем просто импортировать нужные методы статично:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.fabricmc.fabric.api.item.v1.FabricItemSettings</span><span class="p">;</span><span class="w"></span>
@@ -4102,8 +4102,8 @@
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// зачем это нужно я объясню позже</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Если мы запустим игру, наш предмет все еще не появится. Именно поэтому нам нужен метод <code>init()</code>, несмотря на то, что он пустой.
-Мы просто вызываем этот пустой метод в нашем главном классе, в методе <code>onInitialize()</code>:
+<p>Если мы запустим игру, наш предмет все еще не появится. Именно поэтому нам нужен метод <code>init()</code>, несмотря на то, что он пустой.
+Мы просто вызываем этот пустой метод в нашем главном классе, в методе <code>onInitialize()</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FabricTutorial</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ModInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MOD_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fabrictut&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
@@ -4112,12 +4112,12 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Опытные Java разработчики могут сказать что это костыль, возможно это и так, но они должны понимать зачем это было сделано.</p>
-<p>Запускаем игру:
-<img alt="скриншот в игре" src="images/creating_item_1.png" /></p>
+<p>Опытные Java разработчики могут сказать что это костыль, возможно это и так, но они должны понимать зачем это было сделано.</p>
+<p>Запускаем игру:</p>
+<p><img alt="скриншот в игре" src="images/creating_item_1.png" /></p>
 <h2 id="модель-и-текстура">Модель и текстура<a class="headerlink" href="#модель-и-текстура" title="Permanent link">#</a></h2>
 <p>Создаем в папке с ресурсами еще одну директорию: <code>assets/&lt;mod_id&gt;</code>, где <code>&lt;mod_id&gt;</code> - ID мода. В ней хранятся такие ресурсы как модели, текстуры, файлы локализации и прочее.</p>
-<p>Создаем файл <code>ruby.json</code> по пути <code>assets/&lt;mod_id&gt;/models/item</code> с таким содержимым:
+<p>Создаем файл <code>ruby.json</code> по пути <code>assets/&lt;mod_id&gt;/models/item</code> с таким содержимым:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:item/generated&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4125,17 +4125,17 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<code>fabrictut</code> - ID мода, <code>ruby</code> - ID предмета.</p>
+<p><code>fabrictut</code> - ID мода, <code>ruby</code> - ID предмета.</p>
 <p>В <code>assets/&lt;mod_id&gt;/textures/item</code> кладём нашу текстуру предмета. Я достал текстуру рубина из самой игры, Вы можете взять любую другую текстуру.</p>
 <p><strong>Важно</strong>: название файла текстуры и модели должно соответствовать ID предмета! Т.е. для предмета с ID <code>ruby</code> модель и текстура будут называться <code>ruby.json</code> и <code>ruby.png</code> соответственно.</p>
-<p>Запустим игру и проверим, что получилось.
-<img alt="скриншот в игре" src="images/creating_item_2.png" /></p>
+<p>Запустим игру и проверим, что получилось.</p>
+<p><img alt="скриншот в игре" src="images/creating_item_2.png" /></p>
 <h2 id="еще-немного-о-регистрации">Еще немного о регистрации<a class="headerlink" href="#еще-немного-о-регистрации" title="Permanent link">#</a></h2>
-<p>На самом деле, необязательно создавать каждому предмету новый класс. Если у Вас есть несколько однотипных предметов (например, слитков), Вы можете просто объявить их в классе с предметами, т.е.
+<p>На самом деле, необязательно создавать каждому предмету новый класс. Если у Вас есть несколько однотипных предметов (например, слитков), Вы можете просто объявить их в классе с предметами, т.е.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">COPPER_INGOT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;copper_ingot&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">()));</span><span class="w"></span>
 <span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">ALUMINIUM_INGOT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;aluminium_ingot&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">()));</span><span class="w"></span>
 </code></pre></div>
-Как мы видим, предметы имеют абсолютно одинаковый класс и отличаются лишь своими ID и названиями переменных.</p>
+<p>Как мы видим, предметы имеют абсолютно одинаковый класс и отличаются лишь своими ID и названиями переменных.</p>
 
 
   

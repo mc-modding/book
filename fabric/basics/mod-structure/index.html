@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3961,7 +3961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4055,17 +4055,17 @@
 
 
 <h1 id="структура-мода">Структура мода<a class="headerlink" href="#структура-мода" title="Permanent link">#</a></h1>
-<p>Fabric использует автоматический сборщик Gradle, поэтому нам стоит придерживаться определенной структуры папок:
+<p>Fabric использует автоматический сборщик Gradle, поэтому нам стоит придерживаться определенной структуры папок:</p>
 <div class="highlight"><pre><span></span><code>└── src    
     └── main
         ├── java
         └── resources
 </code></pre></div>
-В <code>java</code> хранится весь Ваш исходный код. В <code>resources</code> хранятся текстуры, модели, звуки, рецепты и прочее.</p>
+<p>В <code>java</code> хранится весь Ваш исходный код. В <code>resources</code> хранятся текстуры, модели, звуки, рецепты и прочее.</p>
 <h2 id="fabricmodjson">fabric.mod.json<a class="headerlink" href="#fabricmodjson" title="Permanent link">#</a></h2>
 <p>Fabric использует файл <code>fabric.mod.json</code> для обнаружения и загрузки Вашего мода. Он должен обязательно находится по пути <code>src/main/resources</code>.
 Файл определяет данные Вашего мода: ModId, название, зависимости, точки входа, Mixins, авторов и так далее.
-Примерный <code>fabric.mod.json</code> выглядит так:
+Примерный <code>fabric.mod.json</code> выглядит так:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fabrictut&quot;</span><span class="p">,</span><span class="w"></span>
@@ -4094,7 +4094,7 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Параметры <code>name</code>, <code>description</code> и <code>authors</code> могут содержать коды цветового форматирования.</p>
+<p>Параметры <code>name</code>, <code>description</code> и <code>authors</code> могут содержать коды цветового форматирования.</p>
 <table>
 <thead>
 <tr>
@@ -4247,10 +4247,10 @@
 </tbody>
 </table>
 <p>Обычно моды содержат либо реализацию <code>ModInitializer</code> и <code>ClientModInitializer</code>, либо только <code>ModInitializer</code>.</p>
-<p>Для начала мы сделаем самый обычный мод, реализовав <code>ModInitializer</code>. В отличие от Forge, нам не нужны никакие дополнительные аннотации вроде "@Mod", достаточно лишь указать, что мы реализуем интерфейс.</p>
+<p>Для начала мы сделаем самый простой мод, реализовав <code>ModInitializer</code>. В отличие от Forge, нам не нужны никакие дополнительные аннотации вроде "@Mod", достаточно лишь указать, что мы реализуем интерфейс.</p>
 <p>Создаем класс нашего мода по пути <code>наш_домен/никнейм/ID_мода</code>, например <code>ru/mcmodding/fabrictut</code>. Конечно, можно использовать абсолютно любой путь, но это не очень правильно.
 Назовем класс <code>FabricTutorial</code> и укажем, что мы реализуем интерфейс <code>ModInitializer</code>. Затем нам нужно переопределить метод <code>onInitialize()</code>, иначе будет ошибка.</p>
-<p>В итоге у нас получится такой класс:
+<p>В итоге у нас получится такой класс:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.fabricmc.api.ModInitializer</span><span class="p">;</span><span class="w"></span>
@@ -4262,7 +4262,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Структура файлов при этом будет выглядеть так:
+<p>Структура файлов при этом будет выглядеть так:</p>
 <div class="highlight"><pre><span></span><code>└── src    
     └── main
          ├── java
@@ -4273,7 +4273,7 @@
          └── resources
                  └── fabric.mod.json
 </code></pre></div>
-Не забывайте, что указанные тут имена классов и пакетов - всего лишь пример для урока.</p>
+<p>Не забывайте, что указанные тут имена классов и пакетов - всего лишь пример для урока.</p>
 
 
   

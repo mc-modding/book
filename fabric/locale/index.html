@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3946,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4031,21 +4031,23 @@
 <p>Локализация нужна для того, чтобы Вы могли добавить в мод несколько языков.
 В данный момент у нас нет совершенно никакого языка в моде, и именно из-за этого все названия предметов, блоков, вкладок и прочего отображаются странно.</p>
 <p>В <code>assets/&lt;mod_id&gt;/lang</code> создаем json файл с языковым кодом нужного языка, например,<code>ru_ru.json</code>.</p>
-<p>Каждый объект который имеет локализацию обязательно, имеет свой локализационный ключ:
-* <code>itemGroup.&lt;mod_id&gt;.&lt;group_id&gt;</code> для вкладок в креативе
-* <code>item.&lt;mod_id&gt;.&lt;item_id&gt;</code> для предметов
-* <code>block.&lt;mod_id&gt;.&lt;block_id&gt;</code> для блоков
-* <code>enchantment.&lt;mod_id&gt;.&lt;ench_id&gt;</code> для зачарований</p>
+<p>Каждый объект который имеет локализацию обязательно, имеет свой локализационный ключ:</p>
+<ul>
+<li><code>itemGroup.&lt;mod_id&gt;.&lt;group_id&gt;</code> для вкладок в креативе</li>
+<li><code>item.&lt;mod_id&gt;.&lt;item_id&gt;</code> для предметов</li>
+<li><code>block.&lt;mod_id&gt;.&lt;block_id&gt;</code> для блоков</li>
+<li><code>enchantment.&lt;mod_id&gt;.&lt;ench_id&gt;</code> для зачарований</li>
+</ul>
 <p>И так далее, всевозможные ключи можно посмотреть в самой игре.</p>
-<p>Конечно, мы можем переопределить ключ, но это не очень правильно и удобно:
+<p>Конечно, мы можем переопределить ключ, но это не очень правильно и удобно:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Override</span><span class="w"></span>
 <span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTranslationKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;white_stone_block&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-В таком случае ключ будет не <code>block.fabrictut.white_stone</code>, а <code>white_stone_block</code>. А что если у какого-то блока из другого мода будет такой же ключ?</p>
+<p>В таком случае ключ будет не <code>block.fabrictut.white_stone</code>, а <code>white_stone_block</code>. А что если у какого-то блока из другого мода будет такой же ключ?</p>
 <h2 id="создание-локализации">Создание локализации<a class="headerlink" href="#создание-локализации" title="Permanent link">#</a></h2>
-<p>Мы создали файл <code>ru_ru.json</code> для русского перевода нашего мода, и теперь нам надо его заполнить, основываясь на раннее приведенном списке:
+<p>Мы создали файл <code>ru_ru.json</code> для русского перевода нашего мода, и теперь нам надо его заполнить, основываясь на раннее приведенном списке:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;item.fabrictut.ruby&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Рубин&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;item.fabrictut.tomato&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Томат&quot;</span><span class="p">,</span><span class="w"></span>
@@ -4053,7 +4055,7 @@
 <span class="w">  </span><span class="nt">&quot;itemGroup.fabrictut.tutorial_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Учебная вкладка&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<img alt="переведенные предметы" src="images/locale.png" /></p>
+<p><img alt="переведенные предметы" src="images/locale.png" /></p>
 
 
   

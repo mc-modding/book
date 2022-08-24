@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3948,7 +3948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4035,7 +4035,7 @@
 <h2 id="прослушивание-событий">Прослушивание событий<a class="headerlink" href="#прослушивание-событий" title="Permanent link">#</a></h2>
 <p>Рассмотрим работу с событиями на примере изменения таблиц лута.</p>
 <p>Fabric API зажжёт событие <code>LootTableLoadingCallback</code> при загрузке таблиц лута. Нам необходимо зарегистрировать где-нибудь слушатель, например, в методе <code>onInitialize()</code> нашего главного класса.</p>
-<p>В таблицах лута предметы расположены в записях лута, а сами записи содержаться в пулах лута. Мы можем сделать пул с помощью <code>FabricLootPoolBuilder</code>:
+<p>В таблицах лута предметы расположены в записях лута, а сами записи содержаться в пулах лута. Мы можем сделать пул с помощью <code>FabricLootPoolBuilder</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// ID таблицы лута</span><span class="w"></span>
 <span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Identifier</span><span class="w"> </span><span class="n">COAL_ORE_LOOT_TABLE_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="s">&quot;minecraft&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blocks/coal_ore&quot;</span><span class="p">);</span><span class="w"></span>
 
@@ -4054,7 +4054,7 @@
 <span class="w">        </span><span class="p">});</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Сейчас наш пул не содержит никаких записей, исправим это:
+<p>Сейчас наш пул не содержит никаких записей, исправим это:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">LootTableLoadingCallback</span><span class="p">.</span><span class="na">EVENT</span><span class="p">.</span><span class="na">register</span><span class="p">((</span><span class="n">resourceManager</span><span class="p">,</span><span class="w"> </span><span class="n">lootManager</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">supplier</span><span class="p">,</span><span class="w"> </span><span class="n">setter</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">COAL_ORE_LOOT_TABLE_ID</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="n">FabricLootPoolBuilder</span><span class="w"> </span><span class="n">poolBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FabricLootPoolBuilder</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span><span class="w"></span>
@@ -4065,7 +4065,7 @@
 <span class="w">                </span><span class="n">supplier</span><span class="p">.</span><span class="na">pool</span><span class="p">(</span><span class="n">poolBuilder</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">});</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 
 
   
@@ -4112,6 +4112,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../../other/accesswideners/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Access Wideners" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Access Wideners
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

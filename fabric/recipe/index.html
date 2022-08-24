@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3966,7 +3966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4071,7 +4071,7 @@
 <p>Создадим в папке <code>resources</code> директорию <code>data/&lt;mod_id&gt;/recipes</code>, где <code>&lt;mod_id&gt;</code> - ID мода.</p>
 <p>В папке <code>recipes</code> создадим json файл с любым названием, но я рекомендую делать такие названия, чтобы было сразу понятно, что это за рецепт.</p>
 <h3 id="форменный-рецепт">Форменный рецепт<a class="headerlink" href="#форменный-рецепт" title="Permanent link">#</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:crafting_shaped&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;pattern&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="w"></span>
@@ -4091,12 +4091,14 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-* <code>type</code> - тип рецепта (<code>minecraft:crafting_shaped</code> значит форменный)
-* <code>pattern</code> - это сам рецепт. Каждая новая строка является следующим рядом в верстаке. На одном ряде может быть до трех символов
-* <code>key</code> - это предметы. Как мы видим в примере, <code>#</code> означает <code>minecraft:stick</code>, а <code>X</code> означает <code>minecraft:slime_ball</code>
-* <code>result</code> - это то, что мы получим в итоге (<code>fabrictut:slime_sword</code>)</p>
+<ul>
+<li><code>type</code> - тип рецепта (<code>minecraft:crafting_shaped</code> значит форменный)</li>
+<li><code>pattern</code> - это сам рецепт. Каждая новая строка является следующим рядом в верстаке. На одном ряде может быть до трех символов</li>
+<li><code>key</code> - это предметы. Как мы видим в примере, <code>#</code> означает <code>minecraft:stick</code>, а <code>X</code> означает <code>minecraft:slime_ball</code></li>
+<li><code>result</code> - это то, что мы получим в итоге (<code>fabrictut:slime_sword</code>)</li>
+</ul>
 <h3 id="бесформенный-рецепт">Бесформенный рецепт<a class="headerlink" href="#бесформенный-рецепт" title="Permanent link">#</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:crafting_shapeless&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;ingredients&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
@@ -4112,11 +4114,13 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-* <code>type</code> - тип рецепта (<code>minecraft:crafting_shapeless</code> - бесформенный)
-* <code>ingredients</code> - предметы, необходимые для крафта. Мы можем добавить до 9 предметов сюда
-* <code>result</code> - результат. <code>item</code> означает предмет, а <code>count</code> - количество</p>
+<ul>
+<li><code>type</code> - тип рецепта (<code>minecraft:crafting_shapeless</code> - бесформенный)</li>
+<li><code>ingredients</code> - предметы, необходимые для крафта. Мы можем добавить до 9 предметов сюда</li>
+<li><code>result</code> - результат. <code>item</code> означает предмет, а <code>count</code> - количество</li>
+</ul>
 <h3 id="переплавка">Переплавка<a class="headerlink" href="#переплавка" title="Permanent link">#</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:smelting&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;ingredient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;item&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:stone&quot;</span><span class="w"></span>
@@ -4126,11 +4130,13 @@
 <span class="w">  </span><span class="nt">&quot;cookingtime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-* <code>type</code> - тип рецепта (<code>mineraft:smelting</code> - переплавка в печи)
-* <code>ingredient</code> - предмет, который мы будем переплавлять
-* <code>result</code> - предмет, который мы получим в итоге
-* <code>experience</code> - количество опыта за переплавку
-* <code>cookingtime</code> - время переплавки в тиках (20 тиков = 1 секунда)</p>
+<ul>
+<li><code>type</code> - тип рецепта (<code>mineraft:smelting</code> - переплавка в печи)</li>
+<li><code>ingredient</code> - предмет, который мы будем переплавлять</li>
+<li><code>result</code> - предмет, который мы получим в итоге</li>
+<li><code>experience</code> - количество опыта за переплавку</li>
+<li><code>cookingtime</code> - время переплавки в тиках (20 тиков = 1 секунда)</li>
+</ul>
 <p>Также Вы можете использовать <code>minecraft:campfire_cooking</code> для создания рецепта на костре и <code>minecraft:smoking</code> для создания рецепта в коптильне вместо <code>minecrat:smelting</code>.</p>
 
 

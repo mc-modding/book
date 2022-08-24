@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3989,7 +3989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4119,7 +4119,7 @@
 <h3 id="ручная-установка">Ручная установка<a class="headerlink" href="#ручная-установка" title="Permanent link">#</a></h3>
 <p>Нам нужно загрузить <a href="https://github.com/FabricMC/fabric-example-mod/">fabric-example-mod</a> (или <a href="https://github.com/natanfudge/fabric-example-mod-kotlin">fabric-example-mod-kotlin</a> для Kotlin) с GitHub.</p>
 <p>Распакуем архив в любое место. Вы можете удалить файлы <code>README.md</code> и <code>LICENSE</code>, поскольку они не являются обязательными. </p>
-<p>Откроем <code>gradle.properties</code> и заменим его вот этими строками:
+<p>Откроем <code>gradle.properties</code> и заменим его вот этими строками:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Done to increase the memory available to gradle.</span><span class="w"></span>
 <span class="na">org.gradle.jvmargs</span><span class="o">=</span><span class="s">-Xmx1G</span><span class="w"></span>
 
@@ -4137,9 +4137,9 @@
 <span class="c"># Dependencies</span><span class="w"></span>
 <span class="c"># currently not on the main fabric site, check on the maven: https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api</span><span class="w"></span>
 <span class="na">fabric_version</span><span class="o">=</span><span class="s">0.26.0+1.16</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>В <code>maven_group</code> укажите Ваш домен и никнейм, а в <code>archives_base_name</code> укажите ID мода.</p>
-<p>Теперь откройте <code>build.gradle</code> и найдите блок кода, начинающийся с "dependencies". Замените его этим:
+<p>Теперь откройте <code>build.gradle</code> и найдите блок кода, начинающийся с "dependencies". Замените его этим:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">minecraft</span><span class="w"> </span><span class="s2">&quot;com.mojang:minecraft:1.16.3&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="n">mappings</span><span class="w"> </span><span class="s2">&quot;net.fabricmc:yarn:1.16.3+build.47:v2&quot;</span><span class="w"></span>
@@ -4148,7 +4148,7 @@
 <span class="w">    </span><span class="c1">//Fabric api</span><span class="w"></span>
 <span class="w">    </span><span class="n">modImplementation</span><span class="w"> </span><span class="s2">&quot;net.fabricmc.fabric-api:fabric-api:0.26.0+1.16&quot;</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Сохраните и импортируйте <code>build.gradle</code> в Вашу IDE. Этот шаг может отличаться в зависимости от IDE.</p>
 <p>Для генерации исходников используйте <code>gradlew genSources</code> или <code>./gradlew genSources</code> на MacOS и Linux.</p>
 <h3 id="intellij-idea">IntelliJ IDEA<a class="headerlink" href="#intellij-idea" title="Permanent link">#</a></h3>

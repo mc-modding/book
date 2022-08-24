@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3962,7 +3962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4059,7 +4059,7 @@
 <h1 id="инструменты-и-меч">Инструменты и меч<a class="headerlink" href="#инструменты-и-меч" title="Permanent link">#</a></h1>
 <h2 id="подготовка">Подготовка<a class="headerlink" href="#подготовка" title="Permanent link">#</a></h2>
 <p>У инструментов существуют свои классы, конструктор которых, к сожалению, помечен как <code>protected</code>. Поэтому нам придется создать наследников с публичными конструкторами:</p>
-<p><strong>Кирка</strong>
+<p><strong>Кирка</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.PickaxeItem</span><span class="p">;</span><span class="w"></span>
@@ -4071,7 +4071,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<strong>Топор</strong>
+<p><strong>Топор</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.AxeItem</span><span class="p">;</span><span class="w"></span>
@@ -4083,7 +4083,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<strong>Лопата</strong>
+<p><strong>Лопата</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ShovelItem</span><span class="p">;</span><span class="w"></span>
@@ -4095,7 +4095,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<strong>Мотыга</strong>
+<p><strong>Мотыга</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.HoeItem</span><span class="p">;</span><span class="w"></span>
@@ -4106,9 +4106,9 @@
 <span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">material</span><span class="p">,</span><span class="w"> </span><span class="n">attackDamage</span><span class="p">,</span><span class="w"> </span><span class="n">attackSpeed</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="создание-материала">Создание материала<a class="headerlink" href="#создание-материала" title="Permanent link">#</a></h2>
-<p>Вместо обычных материалов создадим перечисление. Это удобно, поскольку мы сможем добавлять новые материалы в дальнейшем быстро и просто:
+<p>Вместо обычных материалов создадим перечисление. Это удобно, поскольку мы сможем добавлять новые материалы в дальнейшем быстро и просто:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.item</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
@@ -4171,7 +4171,7 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">repairIngredient</span><span class="p">.</span><span class="na">get</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <ul>
 <li><code>2</code> - это уровень инструмента для уничтожения того или иного блока.</li>
 <li><code>256</code> - это максимальное число использований(дерево = 59, камень = 131, железо = 250, алмаз = 1561, золото = 32).</li>
@@ -4180,27 +4180,29 @@
 <li><code>15</code> - это уровень, который требуется для получения более высокого уровня чар.</li>
 </ul>
 <h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
-<p>В классе с предметами регистрируем наши инструменты:
+<p>В классе с предметами регистрируем наши инструменты:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">SLIME_SWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;slime_sword&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SwordItem</span><span class="p">(</span><span class="n">FTutToolMaterials</span><span class="p">.</span><span class="na">SLIME</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">SLIME_AXE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;slime_axe&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomAxeItem</span><span class="p">(</span><span class="n">FTutToolMaterials</span><span class="p">.</span><span class="na">SLIME</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5F</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">SLIME_PICKAXE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;slime_pickaxe&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomPickaxeItem</span><span class="p">(</span><span class="n">FTutToolMaterials</span><span class="p">.</span><span class="na">SLIME</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">SLIME_SHOVEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;slime_shovel&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomShovelItem</span><span class="p">(</span><span class="n">FTutToolMaterials</span><span class="p">.</span><span class="na">SLIME</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">SLIME_HOE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;slime_hoe&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomHoeItem</span><span class="p">(</span><span class="n">FTutToolMaterials</span><span class="p">.</span><span class="na">SLIME</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8F</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 </code></pre></div>
-На примере меча: <code>FTutToolMaterials.SLIME, 3, 2.5F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)</code>
-* FTutToolMaterials.SLIME - наш материал
-* 3 - урон
-* 2.5F - скорость атаки
-* FabricItemSettings - настройки предмета</p>
+<p>На примере меча: <code>FTutToolMaterials.SLIME, 3, 2.5F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)</code></p>
+<ul>
+<li>FTutToolMaterials.SLIME - наш материал</li>
+<li>3 - урон</li>
+<li>2.5F - скорость атаки</li>
+<li>FabricItemSettings - настройки предмета</li>
+</ul>
 <h2 id="модель">Модель<a class="headerlink" href="#модель" title="Permanent link">#</a></h2>
-<p>От модели обычного предмета модель инструментов отличается тем, что <code>parent</code> у неё не <code>item/generated</code>, а <code>item/handheld</code>
+<p>От модели обычного предмета модель инструментов отличается тем, что <code>parent</code> у неё не <code>item/generated</code>, а <code>item/handheld</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:item/handheld&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;layer0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fabrictut:item/slime_sword&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 
 
   

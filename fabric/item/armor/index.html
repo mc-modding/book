@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3955,7 +3955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4129,7 +4129,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="регистрация-брони">Регистрация брони<a class="headerlink" href="#регистрация-брони" title="Permanent link">#</a></h2>
-<p>Создаем ArmorMaterial и регистрируем предметы:
+<p>Создаем ArmorMaterial и регистрируем предметы:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ArmorMaterial</span><span class="w"> </span><span class="n">RED_MAGE_ARMOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MageArmorMaterial</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">RED_MAGE_HELMET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;red_mage_helmet&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmorItem</span><span class="p">(</span><span class="n">RED_MAGE_ARMOR</span><span class="p">,</span><span class="w"> </span><span class="n">EquipmentSlot</span><span class="p">.</span><span class="na">HEAD</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
@@ -4137,13 +4137,15 @@
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">RED_MAGE_LEGGINGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;red_mage_leggings&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmorItem</span><span class="p">(</span><span class="n">RED_MAGE_ARMOR</span><span class="p">,</span><span class="w"> </span><span class="n">EquipmentSlot</span><span class="p">.</span><span class="na">LEGS</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">RED_MAGE_BOOTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;red_mage_boots&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmorItem</span><span class="p">(</span><span class="n">RED_MAGE_ARMOR</span><span class="p">,</span><span class="w"> </span><span class="n">EquipmentSlot</span><span class="p">.</span><span class="na">FEET</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">().</span><span class="na">group</span><span class="p">(</span><span class="n">FabricTutorial</span><span class="p">.</span><span class="na">TUTORIAL_GROUP</span><span class="p">)));</span><span class="w"></span>
 </code></pre></div>
-* <code>RED_MAGE_ARMOR</code> - наш ArmorMaterial
-* <code>EquipmentSlot</code> - слот, в который можно надеть броню</p>
+<ul>
+<li><code>RED_MAGE_ARMOR</code> - наш ArmorMaterial</li>
+<li><code>EquipmentSlot</code> - слот, в который можно надеть броню</li>
+</ul>
 <h2 id="текстура">Текстура<a class="headerlink" href="#текстура" title="Permanent link">#</a></h2>
 <p>Нам нужны текстуры предметов брони и текстуры самой брони.
 Текстуры и модели предметов создаем, как обычно, текстуры брони должны быть две, и они будут находиться по пути <code>assets/minecraft/textures/models/armor</code>. Название текстуры должно соответствовать <em>имя_armor_material</em>_layer_2.png (штаны) и <em>имя_armor_material</em>_layer_1.png (всё остальное).</p>
-<p>Заходим в игру и смотрим на нашу броню:
-<img alt="броня" src="images/armor.png" /></p>
+<p>Заходим в игру и смотрим на нашу броню:</p>
+<p><img alt="броня" src="images/armor.png" /></p>
 
 
   

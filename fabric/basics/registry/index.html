@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3941,7 +3941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4020,7 +4020,7 @@
 <p>Класс <code>Registry</code> содержит множество реестров для самых разных игровых объектов. 
 Создадим свой класс-утилиту для упрощения работы с реестром.</p>
 <p>Для начала, я рекомендую создать в нашем главном классе (FabricTutorial) финальную публичную статичную переменную (проще говоря константу) типа <code>String</code>. 
-Назовем её <code>MOD_ID</code> и присваиваем ей наш ID мода (в моём случае это "fabrictut"):
+Назовем её <code>MOD_ID</code> и присваиваем ей наш ID мода (в моём случае это "fabrictut"):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.fabricmc.api.ModInitializer</span><span class="p">;</span><span class="w"></span>
@@ -4033,7 +4033,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Затем создаём где-нибудь класс с названием FabricTutorialRegistry и сразу импортируем нашу статичную переменную:
+<p>Затем создаём где-нибудь класс с названием FabricTutorialRegistry и сразу импортируем нашу статичную переменную:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.util</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import static</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.FabricTutorial.MOD_ID</span><span class="p">;</span><span class="w"></span>
@@ -4042,20 +4042,26 @@
 
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Я создал для класса отдельный пакет <code>util</code>, в котором у меня будут все классы-утилиты.</p>
-<p>Добавим в тело нашего класса несколько основных статичных методов, с помощью которых мы будем регистрировать наши блоки и предметы:
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">registerItem</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="p">((</span><span class="n">BlockItem</span><span class="p">)</span><span class="n">item</span><span class="p">).</span><span class="na">appendBlocks</span><span class="p">(</span><span class="n">Item</span><span class="p">.</span><span class="na">BLOCK_ITEMS</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="p">}</span><span class="w"></span>
-<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">Registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">Registry</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="n">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>Я создал для класса отдельный пакет <code>util</code>, в котором у меня будут все классы-утилиты.</p>
+<p>Добавим в тело нашего класса несколько основных статичных методов, с помощью которых мы будем регистрировать наши блоки и предметы:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.util</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="nf">registerBlock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">Registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">Registry</span><span class="p">.</span><span class="na">BLOCK</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="n">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">block</span><span class="p">);</span><span class="w"></span>
+<span class="kn">import static</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.FabricTutorial.MOD_ID</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FabricTutRegistry</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">registerItem</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">((</span><span class="n">BlockItem</span><span class="p">)</span><span class="n">item</span><span class="p">).</span><span class="na">appendBlocks</span><span class="p">(</span><span class="n">Item</span><span class="p">.</span><span class="na">BLOCK_ITEMS</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">Registry</span><span class="p">.</span><span class="na">ITEM</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="n">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">item</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="nf">registerBlock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="n">block</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">Registry</span><span class="p">.</span><span class="na">BLOCK</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Identifier</span><span class="p">(</span><span class="n">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">block</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Эти методы используются самой игрой, но мы переделали их, передавая в аргумент строку, а не <code>Identifier</code> т.к. это не очень удобно и короче,
+<p>Эти методы используются самой игрой, но мы переделали их, передавая в аргумент строку, а не <code>Identifier</code> т.к. это не очень удобно и короче,
 а еще позволяет сразу использовать наш MOD_ID, не указывая его каждый раз.</p>
 <p>Наиболее часто использующиеся реестры:</p>
 <table>

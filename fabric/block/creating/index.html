@@ -2619,20 +2619,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.15/basics/proxy/index.md'" class="md-nav__link">
-        Замена прокси, что и как теперь
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
@@ -3239,6 +3225,20 @@
     <li class="md-nav__item">
       <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
+        Access Transformers
       </a>
     </li>
   
@@ -3955,7 +3955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/accesswideners/index.md" class="md-nav__link">
+      <a href="../../other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -4044,7 +4044,7 @@
 
 <h1 id="создание-блока">Создание блока<a class="headerlink" href="#создание-блока" title="Permanent link">#</a></h1>
 <h2 id="основа">Основа<a class="headerlink" href="#основа" title="Permanent link">#</a></h2>
-<p>Создаём класс для нашего блока в пакете <code>ru.mcmodding.fabrictut.block</code> и наследуем <code>Block</code>:
+<p>Создаём класс для нашего блока в пакете <code>ru.mcmodding.fabrictut.block</code> и наследуем <code>Block</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.block</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.block.Block</span><span class="p">;</span><span class="w"></span>
@@ -4059,9 +4059,9 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">4.0F</span><span class="p">;</span><span class="w">            </span><span class="c1">// взрывоустойчивость</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
-<p>Создадим класс для блоков и импортируем туда статичный метод из класса для работы с реестром, а так же зарегистрируем сам блок:
+<p>Создадим класс для блоков и импортируем туда статичный метод из класса для работы с реестром, а так же зарегистрируем сам блок:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.fabrictut.block</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings</span><span class="p">;</span><span class="w"></span>
@@ -4076,15 +4076,15 @@
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<code>Material.STONE</code> означает материал блока.
-Теперь нам необходимо зарегистрировать предмет для блока. Вернемся в класс наших предметов и добавим эту строку:
+<p><code>Material.STONE</code> означает материал блока.</p>
+<p>Теперь нам необходимо зарегистрировать предмет для блока. Вернемся в класс наших предметов и добавим эту строку:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">WHITE_STONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerItem</span><span class="p">(</span><span class="s">&quot;white_stone&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">(</span><span class="n">FTutBlocks</span><span class="p">.</span><span class="na">WHITE_STONE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FabricItemSettings</span><span class="p">()));</span><span class="w"></span>
 </code></pre></div>
-Где <code>FTutBlocks.WHITE_STONE</code> - наш блок.</p>
+<p>Где <code>FTutBlocks.WHITE_STONE</code> - наш блок.</p>
 <p>Не забываем про <code>FTutBlocks.init();</code> в главном классе мода.</p>
 <h2 id="отображение-в-игре">Отображение в игре<a class="headerlink" href="#отображение-в-игре" title="Permanent link">#</a></h2>
 <p>Если мы сейчас зайдем в игру, наш блок не будет иметь модели и текстуры. Поэтому нам необходимо создать блокстейт (<code>blockstate</code>), модель и текстуру.</p>
-<p>По пути <code>assets/&lt;mod_id&gt;/blockstates</code> создаем <code>white_stone.json</code> с таким содержимым:
+<p>По пути <code>assets/&lt;mod_id&gt;/blockstates</code> создаем <code>white_stone.json</code> с таким содержимым:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;variants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4093,7 +4093,7 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Затем создаем <code>white_stone.json</code> по пути <code>assets/&lt;mod_id&gt;/models/block</code>:
+<p>Затем создаем <code>white_stone.json</code> по пути <code>assets/&lt;mod_id&gt;/models/block</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minecraft:block/cube_all&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -4101,14 +4101,14 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-Текстуру надо положить в <code>assets/&lt;mod_id&gt;/textures/block</code>.</p>
-<p>К слову, для блоков в руках нужно создавать модель отдельно, иначе отображаться блок будет нормально только когда он поставлен. Для этого нужно просто создать там же где и остальные модели предметов файл с ID нашего блока (<code>white_stone.json</code>) и заполнить вот так:
+<p>Текстуру надо положить в <code>assets/&lt;mod_id&gt;/textures/block</code>.</p>
+<p>К слову, для блоков в руках нужно создавать модель отдельно, иначе отображаться блок будет нормально только когда он поставлен. Для этого нужно просто создать там же где и остальные модели предметов файл с ID нашего блока (<code>white_stone.json</code>) и заполнить вот так:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fabrictut:block/white_stone&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-<p>Теперь игру можно запустить.
-<img alt="блок в игре" src="images/block.png" /></p>
+</code></pre></div>
+<p>Теперь игру можно запустить.</p>
+<p><img alt="блок в игре" src="images/block.png" /></p>
 
 
   
