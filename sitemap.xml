@@ -451,6 +451,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/basics/network/</loc>
+         <lastmod>2022-08-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/basics/proxy/</loc>
          <lastmod>2022-08-24</lastmod>
          <changefreq>daily</changefreq>
@@ -517,11 +522,6 @@
     </url>
     <url>
          <loc>https://mcmodding.ru/1.7.10/item/tools/</loc>
-         <lastmod>2022-08-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://mcmodding.ru/1.7.10/network/packetsystem/</loc>
          <lastmod>2022-08-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
