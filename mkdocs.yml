@@ -1,7 +1,7 @@
 nav:
     - Задать вопрос: https://forum.mcmodding.ru/forums/23/
     - Форум: https://forum.mcmodding.ru
-    - Как внести вклад?: editing-book/
+    - Как внести вклад?: editing-book/index.md
     - Примеры: https://github.com/orgs/mc-modding/repositories?q=example&type=all&language=&sort=
 
     - "1.7.10":
