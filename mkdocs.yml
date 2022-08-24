@@ -135,7 +135,7 @@ nav:
                 - Решение проблем: "1.15/preparation/problems/index.md"
           - Основы Forge:
                 - Структура мода, @Mod, mods.toml: "1.15/basics/mod-structure/index.md"
-                - Замена прокси, что и как теперь: 1.15/basics/proxy/index.md'
+                #- Замена прокси, что и как теперь: "1.15/basics/proxy/index.md"
                 - Сборка мода: "1.15/basics/building-mod/index.md"
           - Предмет:
                 - Создание предмета: "1.15/item/basics/index.md"
@@ -172,6 +172,7 @@ nav:
           - Дополнительно:
                 - Работа с иходниками: "1.15/other/src/index.md"
                 - Интеграция с JEI: "1.15/other/jei-integration/index.md"
+                - Access Transformers: "1.15/other/access-transformers/index.md"
 
     - "1.16":
           - Подготовка:
