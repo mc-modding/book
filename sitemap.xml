@@ -476,6 +476,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/events/table/</loc>
+         <lastmod>2022-08-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mcmodding.ru/1.7.10/events/usage/</loc>
+         <lastmod>2022-08-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/item/armor/</loc>
          <lastmod>2022-08-24</lastmod>
          <changefreq>daily</changefreq>
@@ -507,6 +517,11 @@
     </url>
     <url>
          <loc>https://mcmodding.ru/1.7.10/item/tools/</loc>
+         <lastmod>2022-08-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://mcmodding.ru/1.7.10/network/packetsystem/</loc>
          <lastmod>2022-08-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

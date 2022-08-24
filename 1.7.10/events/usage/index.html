@@ -6,36 +6,36 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Подробный и понятный учебник по созданию своего мода для Minecraft. Научитесь создавать все: от блока до целого измерения!">
+        <meta name="description" content="Использование событий Forge API.">
       
       
       
-        <link rel="canonical" href="https://mcmodding.ru/">
+        <link rel="canonical" href="https://mcmodding.ru/1.7.10/events/usage/">
       
-      <link rel="icon" href="assets/favicon.svg">
+      <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
     
     
       
-        <title>Создание модов для Minecraft - Создание Minecraft модов</title>
+        <title>Использование событий - Создание Minecraft модов</title>
       
     
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
     
 
-    <link rel="stylesheet" href="styles/colors.css">
-    <link rel="stylesheet" href="styles/logo.css">
-    <link rel="stylesheet" href="styles/copyright.css">
-    <link rel="stylesheet" href="styles/article.css">
-    <link rel="stylesheet" href="styles/contributors.css">
+    <link rel="stylesheet" href="../../../styles/colors.css">
+    <link rel="stylesheet" href="../../../styles/logo.css">
+    <link rel="stylesheet" href="../../../styles/copyright.css">
+    <link rel="stylesheet" href="../../../styles/article.css">
+    <link rel="stylesheet" href="../../../styles/contributors.css">
 
 
     
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#minecraft-modding" class="md-skip">
+        <a href="#использование-событий" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -103,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Создание Minecraft модов" class="md-header__button md-logo" aria-label="Создание Minecraft модов" data-md-component="logo">
+    <a href="../../.." title="Создание Minecraft модов" class="md-header__button md-logo" aria-label="Создание Minecraft модов" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Создание модов для Minecraft
+              Использование событий
             
           </span>
         </div>
@@ -224,9 +224,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Создание Minecraft модов" class="md-nav__button md-logo" aria-label="Создание Minecraft модов" data-md-component="logo">
+    <a href="../../.." title="Создание Minecraft модов" class="md-nav__button md-logo" aria-label="Создание Minecraft модов" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Создание Minecraft модов
@@ -284,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="editing-book/" class="md-nav__link">
+      <a href="../../../editing-book/" class="md-nav__link">
         Как внести вклад?
       </a>
     </li>
@@ -312,12 +312,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -366,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/preparation/install/" class="md-nav__link">
+      <a href="../../preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -380,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/preparation/setup-idea/" class="md-nav__link">
+      <a href="../../preparation/setup-idea/" class="md-nav__link">
         Использование Idea
       </a>
     </li>
@@ -394,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/preparation/auth/" class="md-nav__link">
+      <a href="../../preparation/auth/" class="md-nav__link">
         Авторизация(Скин и никнейм)
       </a>
     </li>
@@ -441,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/mod-structure/" class="md-nav__link">
+      <a href="../../basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -455,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/mod-annotation/" class="md-nav__link">
+      <a href="../../basics/mod-annotation/" class="md-nav__link">
         Аннотация @Mod
       </a>
     </li>
@@ -469,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/loading-stages/" class="md-nav__link">
+      <a href="../../basics/loading-stages/" class="md-nav__link">
         Стадии загрузки мода
       </a>
     </li>
@@ -483,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/proxy/" class="md-nav__link">
+      <a href="../../basics/proxy/" class="md-nav__link">
         Прокси
       </a>
     </li>
@@ -497,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/building-mod/" class="md-nav__link">
+      <a href="../../basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -544,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/basics/" class="md-nav__link">
+      <a href="../../item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -558,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/food/" class="md-nav__link">
+      <a href="../../item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -572,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/tools/" class="md-nav__link">
+      <a href="../../item/tools/" class="md-nav__link">
         Инструменты
       </a>
     </li>
@@ -586,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/armor/" class="md-nav__link">
+      <a href="../../item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -600,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/repair/" class="md-nav__link">
+      <a href="../../item/repair/" class="md-nav__link">
         Починка
       </a>
     </li>
@@ -614,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/subtypes/" class="md-nav__link">
+      <a href="../../item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -628,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/item/rarity/" class="md-nav__link">
+      <a href="../../item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -675,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/block/basics/" class="md-nav__link">
+      <a href="../../block/basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -689,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/block/metadata/" class="md-nav__link">
+      <a href="../../block/metadata/" class="md-nav__link">
         Метаданные
       </a>
     </li>
@@ -703,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/block/tile-entity/" class="md-nav__link">
+      <a href="../../block/tile-entity/" class="md-nav__link">
         Хранение данных(TileEntity)
       </a>
     </li>
@@ -717,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/block/fluid/" class="md-nav__link">
+      <a href="../../block/fluid/" class="md-nav__link">
         Жидкость
       </a>
     </li>
@@ -731,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/block/fluid-tank.md" class="md-nav__link">
+      <a href="../../block/fluid-tank.md" class="md-nav__link">
         Хранение жидкости
       </a>
     </li>
@@ -752,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/creative-tab/" class="md-nav__link">
+      <a href="../../basics/creative-tab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -766,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/basics/lang/" class="md-nav__link">
+      <a href="../../basics/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -778,12 +780,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" checked>
       
       
       
@@ -804,11 +808,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="1.7.10/events/usage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Использование событий
       </a>
+      
     </li>
   
 
@@ -820,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственные события
       </a>
     </li>
@@ -834,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/events/table/" class="md-nav__link">
+      <a href="../table/" class="md-nav__link">
         Таблица событий
       </a>
     </li>
@@ -881,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Добавление рецепта
       </a>
     </li>
@@ -895,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный рецепт
       </a>
     </li>
@@ -909,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Зельеварение
       </a>
     </li>
@@ -923,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/recipe/fuel/" class="md-nav__link">
+      <a href="../../recipe/fuel/" class="md-nav__link">
         Топливо для печи
       </a>
     </li>
@@ -970,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственная сущность
       </a>
     </li>
@@ -984,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Спавн в мире
       </a>
     </li>
@@ -998,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Искусственный интеллект
       </a>
     </li>
@@ -1045,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Создание окна
       </a>
     </li>
@@ -1059,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Контейнер
       </a>
     </li>
@@ -1080,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/network/packetsystem/" class="md-nav__link">
+      <a href="../../network/packetsystem/" class="md-nav__link">
         Пакетная система
       </a>
     </li>
@@ -1120,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственное измерение
       </a>
     </li>
@@ -1134,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Биом
       </a>
     </li>
@@ -1148,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Генерация руды
       </a>
     </li>
@@ -1162,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Структура
       </a>
     </li>
@@ -1176,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Портал
       </a>
     </li>
@@ -1216,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Рыбалка
       </a>
     </li>
@@ -1230,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В сундуках
       </a>
     </li>
@@ -1244,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В вагонетках с сундуком
       </a>
     </li>
@@ -1265,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный житель
       </a>
     </li>
@@ -1312,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В сущностях
       </a>
     </li>
@@ -1326,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В мире
       </a>
     </li>
@@ -1340,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Конфиг
       </a>
     </li>
@@ -1387,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Звуки
       </a>
     </li>
@@ -1401,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Частицы
       </a>
     </li>
@@ -1448,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Достижения
       </a>
     </li>
@@ -1462,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Команды
       </a>
     </li>
@@ -1476,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственные чары
       </a>
     </li>
@@ -1490,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Словарь руд
       </a>
     </li>
@@ -1504,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный эффект зелья
       </a>
     </li>
@@ -1518,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Привязка клавиш
       </a>
     </li>
@@ -1532,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.7.10/advanced/access_transformers/" class="md-nav__link">
+      <a href="../../advanced/access_transformers/" class="md-nav__link">
         Access Transformers
       </a>
     </li>
@@ -1613,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/install/" class="md-nav__link">
+      <a href="../../../1.12/preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -1627,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/setup-idea/" class="md-nav__link">
+      <a href="../../../1.12/preparation/setup-idea/" class="md-nav__link">
         Использование Idea
       </a>
     </li>
@@ -1641,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/setup-eclipse/" class="md-nav__link">
+      <a href="../../../1.12/preparation/setup-eclipse/" class="md-nav__link">
         Использование Eclipse
       </a>
     </li>
@@ -1655,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/custom-skin/" class="md-nav__link">
+      <a href="../../../1.12/preparation/custom-skin/" class="md-nav__link">
         Собственный скин
       </a>
     </li>
@@ -1669,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/problems/" class="md-nav__link">
+      <a href="../../../1.12/preparation/problems/" class="md-nav__link">
         Решение проблем
       </a>
     </li>
@@ -1716,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/basics/mod-structure/" class="md-nav__link">
+      <a href="../../../1.12/basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -1730,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/basics/mod-annotation/" class="md-nav__link">
+      <a href="../../../1.12/basics/mod-annotation/" class="md-nav__link">
         Аннотация @Mod
       </a>
     </li>
@@ -1744,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/basics/loading-stages/" class="md-nav__link">
+      <a href="../../../1.12/basics/loading-stages/" class="md-nav__link">
         Стадии загрузки мода
       </a>
     </li>
@@ -1758,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/basics/proxy/" class="md-nav__link">
+      <a href="../../../1.12/basics/proxy/" class="md-nav__link">
         Прокси
       </a>
     </li>
@@ -1772,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/basics/building-mod/" class="md-nav__link">
+      <a href="../../../1.12/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -1819,7 +1833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/basics/" class="md-nav__link">
+      <a href="../../../1.12/item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -1833,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/food/" class="md-nav__link">
+      <a href="../../../1.12/item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -1847,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/tools/" class="md-nav__link">
+      <a href="../../../1.12/item/tools/" class="md-nav__link">
         Инструменты и меч
       </a>
     </li>
@@ -1861,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/repair/" class="md-nav__link">
+      <a href="../../../1.12/item/repair/" class="md-nav__link">
         Починка инструментов
       </a>
     </li>
@@ -1875,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/armor/" class="md-nav__link">
+      <a href="../../../1.12/item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -1889,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/subtypes/" class="md-nav__link">
+      <a href="../../../1.12/item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -1903,7 +1917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/loot/" class="md-nav__link">
+      <a href="../../../1.12/item/loot/" class="md-nav__link">
         Лут
       </a>
     </li>
@@ -1917,7 +1931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/rarity/" class="md-nav__link">
+      <a href="../../../1.12/item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -1931,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/item/burn/" class="md-nav__link">
+      <a href="../../../1.12/item/burn/" class="md-nav__link">
         Горение
       </a>
     </li>
@@ -1978,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/block/basics/" class="md-nav__link">
+      <a href="../../../1.12/block/basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -1992,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/block/blockstates/" class="md-nav__link">
+      <a href="../../../1.12/block/blockstates/" class="md-nav__link">
         Состояния блока
       </a>
     </li>
@@ -2013,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/tileentity/" class="md-nav__link">
+      <a href="../../../1.12/tileentity/" class="md-nav__link">
         Tile Entity
       </a>
     </li>
@@ -2027,7 +2041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/creativetab/" class="md-nav__link">
+      <a href="../../../1.12/creativetab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -2041,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/lang/" class="md-nav__link">
+      <a href="../../../1.12/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -2081,7 +2095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/events/usage/" class="md-nav__link">
+      <a href="../../../1.12/events/usage/" class="md-nav__link">
         Использование событий
       </a>
     </li>
@@ -2095,7 +2109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/events/table/" class="md-nav__link">
+      <a href="../../../1.12/events/table/" class="md-nav__link">
         Таблица событий
       </a>
     </li>
@@ -2116,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/craft/" class="md-nav__link">
+      <a href="../../../1.12/craft/" class="md-nav__link">
         Крафт
       </a>
     </li>
@@ -2156,7 +2170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/achievements/basics/" class="md-nav__link">
+      <a href="../../../1.12/achievements/basics/" class="md-nav__link">
         Основы
       </a>
     </li>
@@ -2170,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/achievements/create/" class="md-nav__link">
+      <a href="../../../1.12/achievements/create/" class="md-nav__link">
         Создание достижения
       </a>
     </li>
@@ -2184,7 +2198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/achievements/recipes/" class="md-nav__link">
+      <a href="../../../1.12/achievements/recipes/" class="md-nav__link">
         Получение рецептов
       </a>
     </li>
@@ -2231,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/plant/basics/" class="md-nav__link">
+      <a href="../../../1.12/plant/basics/" class="md-nav__link">
         Создание растения
       </a>
     </li>
@@ -2245,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/plant/mod-cave-plants/" class="md-nav__link">
+      <a href="../../../1.12/plant/mod-cave-plants/" class="md-nav__link">
         [Мод] Пещерные растения
       </a>
     </li>
@@ -2292,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/advanced/layers/" class="md-nav__link">
+      <a href="../../../1.12/advanced/layers/" class="md-nav__link">
         Слои
       </a>
     </li>
@@ -2306,7 +2320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/advanced/keybinds/" class="md-nav__link">
+      <a href="../../../1.12/advanced/keybinds/" class="md-nav__link">
         Привязка клавиш
       </a>
     </li>
@@ -2320,7 +2334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/advanced/buffs/" class="md-nav__link">
+      <a href="../../../1.12/advanced/buffs/" class="md-nav__link">
         Временные эффекты
       </a>
     </li>
@@ -2334,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/advanced/sounds/" class="md-nav__link">
+      <a href="../../../1.12/advanced/sounds/" class="md-nav__link">
         Звуки
       </a>
     </li>
@@ -2381,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/other/src/" class="md-nav__link">
+      <a href="../../../1.12/other/src/" class="md-nav__link">
         Работа с иходниками
       </a>
     </li>
@@ -2395,7 +2409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/other/jei-integration/" class="md-nav__link">
+      <a href="../../../1.12/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
       </a>
     </li>
@@ -2409,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/other/access-transformers/" class="md-nav__link">
+      <a href="../../../1.12/other/access-transformers/" class="md-nav__link">
         Access Transformers
       </a>
     </li>
@@ -2423,7 +2437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/other/gen-lags/" class="md-nav__link">
+      <a href="../../../1.12/other/gen-lags/" class="md-nav__link">
         Каскадная генерация
       </a>
     </li>
@@ -2504,7 +2518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/preparation/install/" class="md-nav__link">
+      <a href="../../../1.15/preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -2518,7 +2532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/preparation/setup-idea/" class="md-nav__link">
+      <a href="../../../1.15/preparation/setup-idea/" class="md-nav__link">
         Использование Idea
       </a>
     </li>
@@ -2532,7 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/preparation/setup-eclipse/" class="md-nav__link">
+      <a href="../../../1.15/preparation/setup-eclipse/" class="md-nav__link">
         Использование Eclipse
       </a>
     </li>
@@ -2546,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/preparation/custom-skin/" class="md-nav__link">
+      <a href="../../../1.15/preparation/custom-skin/" class="md-nav__link">
         Собственный скин
       </a>
     </li>
@@ -2560,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/preparation/problems/" class="md-nav__link">
+      <a href="../../../1.15/preparation/problems/" class="md-nav__link">
         Решение проблем
       </a>
     </li>
@@ -2607,7 +2621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/basics/mod-structure/" class="md-nav__link">
+      <a href="../../../1.15/basics/mod-structure/" class="md-nav__link">
         Структура мода, @Mod, mods.toml
       </a>
     </li>
@@ -2621,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/basics/building-mod/" class="md-nav__link">
+      <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -2668,7 +2682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/basics/" class="md-nav__link">
+      <a href="../../../1.15/item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -2682,7 +2696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/food/" class="md-nav__link">
+      <a href="../../../1.15/item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -2696,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/tools/" class="md-nav__link">
+      <a href="../../../1.15/item/tools/" class="md-nav__link">
         Инструменты и меч
       </a>
     </li>
@@ -2710,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/repair/" class="md-nav__link">
+      <a href="../../../1.15/item/repair/" class="md-nav__link">
         Уровни инструментов
       </a>
     </li>
@@ -2724,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/armor/" class="md-nav__link">
+      <a href="../../../1.15/item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -2738,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/subtypes/" class="md-nav__link">
+      <a href="../../../1.15/item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -2752,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/loot/" class="md-nav__link">
+      <a href="../../../1.15/item/loot/" class="md-nav__link">
         Лут
       </a>
     </li>
@@ -2766,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/rarity/" class="md-nav__link">
+      <a href="../../../1.15/item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -2780,7 +2794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/item/burn/" class="md-nav__link">
+      <a href="../../../1.15/item/burn/" class="md-nav__link">
         Горение
       </a>
     </li>
@@ -2827,7 +2841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/basics/" class="md-nav__link">
+      <a href="../../../1.15/block/basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -2841,7 +2855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/blockstates/" class="md-nav__link">
+      <a href="../../../1.15/block/blockstates/" class="md-nav__link">
         Состояния блока
       </a>
     </li>
@@ -2855,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/fluid/" class="md-nav__link">
+      <a href="../../../1.15/block/fluid/" class="md-nav__link">
         Создание жидкости
       </a>
     </li>
@@ -2869,7 +2883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/ore/" class="md-nav__link">
+      <a href="../../../1.15/block/ore/" class="md-nav__link">
         Создание руды
       </a>
     </li>
@@ -2883,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/plant/" class="md-nav__link">
+      <a href="../../../1.15/block/plant/" class="md-nav__link">
         Создание растения
       </a>
     </li>
@@ -2897,7 +2911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/block/tileentity/" class="md-nav__link">
+      <a href="../../../1.15/block/tileentity/" class="md-nav__link">
         Блок с тайлом
       </a>
     </li>
@@ -2918,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/itemgroup/" class="md-nav__link">
+      <a href="../../../1.15/itemgroup/" class="md-nav__link">
         Создание группы предметов в креативе
       </a>
     </li>
@@ -2932,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/lang/" class="md-nav__link">
+      <a href="../../../1.15/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -2972,7 +2986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/events/usage/" class="md-nav__link">
+      <a href="../../../1.15/events/usage/" class="md-nav__link">
         Использование событий
       </a>
     </li>
@@ -2986,7 +3000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/events/table/" class="md-nav__link">
+      <a href="../../../1.15/events/table/" class="md-nav__link">
         Таблица событий
       </a>
     </li>
@@ -3007,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/craft/" class="md-nav__link">
+      <a href="../../../1.15/craft/" class="md-nav__link">
         Крафт
       </a>
     </li>
@@ -3047,7 +3061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/achievements/basics/" class="md-nav__link">
+      <a href="../../../1.15/achievements/basics/" class="md-nav__link">
         Основы
       </a>
     </li>
@@ -3061,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/achievements/create/" class="md-nav__link">
+      <a href="../../../1.15/achievements/create/" class="md-nav__link">
         Создание достижения
       </a>
     </li>
@@ -3075,7 +3089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/achievements/recipes/" class="md-nav__link">
+      <a href="../../../1.15/achievements/recipes/" class="md-nav__link">
         Получение рецептов
       </a>
     </li>
@@ -3122,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/advanced/layers/" class="md-nav__link">
+      <a href="../../../1.15/advanced/layers/" class="md-nav__link">
         Слои
       </a>
     </li>
@@ -3136,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/advanced/keybinds/" class="md-nav__link">
+      <a href="../../../1.15/advanced/keybinds/" class="md-nav__link">
         Привязка клавиш
       </a>
     </li>
@@ -3150,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/advanced/sounds/" class="md-nav__link">
+      <a href="../../../1.15/advanced/sounds/" class="md-nav__link">
         Звуки
       </a>
     </li>
@@ -3164,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/advanced/packet-system/" class="md-nav__link">
+      <a href="../../../1.15/advanced/packet-system/" class="md-nav__link">
         Пакетная система
       </a>
     </li>
@@ -3211,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/other/src/" class="md-nav__link">
+      <a href="../../../1.15/other/src/" class="md-nav__link">
         Работа с иходниками
       </a>
     </li>
@@ -3225,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/other/jei-integration/" class="md-nav__link">
+      <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
       </a>
     </li>
@@ -3239,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.15/other/access-transformers/" class="md-nav__link">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
         Access Transformers
       </a>
     </li>
@@ -3320,7 +3334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.16/preparation/install-program/" class="md-nav__link">
+      <a href="../../../1.16/preparation/install-program/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -3334,7 +3348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/custom-skin/" class="md-nav__link">
+      <a href="../../../1.12/preparation/custom-skin/" class="md-nav__link">
         Собственный скин
       </a>
     </li>
@@ -3348,7 +3362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/problems/" class="md-nav__link">
+      <a href="../../../1.12/preparation/problems/" class="md-nav__link">
         Решение проблем
       </a>
     </li>
@@ -3395,7 +3409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.16/basics/mod-structure/" class="md-nav__link">
+      <a href="../../../1.16/basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -3409,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.16/basics/organizing-folders/" class="md-nav__link">
+      <a href="../../../1.16/basics/organizing-folders/" class="md-nav__link">
         Организация папок
       </a>
     </li>
@@ -3456,7 +3470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.16/other/semantic-versioning/" class="md-nav__link">
+      <a href="../../../1.16/other/semantic-versioning/" class="md-nav__link">
         Семантическое управление версиями
       </a>
     </li>
@@ -3537,7 +3551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/preparation/install/" class="md-nav__link">
+      <a href="../../../fabric/preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -3551,7 +3565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1.12/preparation/custom-skin/" class="md-nav__link">
+      <a href="../../../1.12/preparation/custom-skin/" class="md-nav__link">
         Собственный скин
       </a>
     </li>
@@ -3598,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/basics/mod-structure/" class="md-nav__link">
+      <a href="../../../fabric/basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -3612,7 +3626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/basics/sides/" class="md-nav__link">
+      <a href="../../../fabric/basics/sides/" class="md-nav__link">
         Клиент-серверная архитектура
       </a>
     </li>
@@ -3626,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/basics/registry/" class="md-nav__link">
+      <a href="../../../fabric/basics/registry/" class="md-nav__link">
         Реестры
       </a>
     </li>
@@ -3673,7 +3687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/item/creating/" class="md-nav__link">
+      <a href="../../../fabric/item/creating/" class="md-nav__link">
         Созданиие предмета
       </a>
     </li>
@@ -3687,7 +3701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/item/food/" class="md-nav__link">
+      <a href="../../../fabric/item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -3701,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/item/armor/" class="md-nav__link">
+      <a href="../../../fabric/item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -3715,7 +3729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/item/tools/" class="md-nav__link">
+      <a href="../../../fabric/item/tools/" class="md-nav__link">
         Инструменты и меч
       </a>
     </li>
@@ -3762,7 +3776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/block/creating/" class="md-nav__link">
+      <a href="../../../fabric/block/creating/" class="md-nav__link">
         Созданиие блока
       </a>
     </li>
@@ -3783,7 +3797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/creative_tab/" class="md-nav__link">
+      <a href="../../../fabric/creative_tab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -3797,7 +3811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/locale/" class="md-nav__link">
+      <a href="../../../fabric/locale/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -3811,7 +3825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/recipe/" class="md-nav__link">
+      <a href="../../../fabric/recipe/" class="md-nav__link">
         Рецепты
       </a>
     </li>
@@ -3851,7 +3865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/event/introduction/" class="md-nav__link">
+      <a href="../../../fabric/event/introduction/" class="md-nav__link">
         Введение
       </a>
     </li>
@@ -3898,7 +3912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fabric/other/accesswideners/" class="md-nav__link">
+      <a href="../../../fabric/other/accesswideners/" class="md-nav__link">
         Access Wideners
       </a>
     </li>
@@ -3939,76 +3953,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#с-чего-начать" class="md-nav__link">
-    С чего начать?
-  </a>
-  
-    <nav class="md-nav" aria-label="С чего начать?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#писать-моды-с-помощью-api" class="md-nav__link">
-    Писать моды с помощью API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#писать-моды-без-помощи-api" class="md-nav__link">
-    Писать моды без помощи API
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#что-выбрать" class="md-nav__link">
-    Что выбрать?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#у-меня-вопроспроблема" class="md-nav__link">
-    У меня вопрос/проблема!
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#как-поделиться-с-другом" class="md-nav__link">
-    Как поделиться с другом?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#вклад-в-учебник" class="md-nav__link">
-    Вклад в учебник
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#о-сайте" class="md-nav__link">
-    О сайте
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4020,69 +3964,44 @@
               
     
                 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/index.md" title="Редактировать страницу" class="md-content__button md-icon">
+  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/events/usage/index.md" title="Редактировать страницу" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="minecraft-modding">Minecraft Modding<a class="headerlink" href="#minecraft-modding" title="Permanent link">#</a></h1>
-<p>Хотите создать мод для Minecraft? Добавить в игру что-то свое: блок, сущность или целое измерение?</p>
-<p>На этом сайте вы найдете интересный, понятный и подробный учебник по созданию собственных модов для Minecraft.</p>
-<p>Вы думаете это сложно? На самом деле нет (с помощью этого учебника)</p>
-<p>Начнем!</p>
-<h2 id="с-чего-начать">С чего начать?<a class="headerlink" href="#с-чего-начать" title="Permanent link">#</a></h2>
-<p>Первый и абсолютно необходимый навык для создания модов — <strong>знание основ программирование и Java</strong>.</p>
-<p>Переменная, объект, класс, метод — все эти слова должны быть вам достаточно хорошо знакомы. Если вы не знаете, что это, то вам необходимо пройти самые основы языка Java.</p>
-<p>Теперь поговорим об API.</p>
-<p><strong>API</strong> — набор инструментов для упрощения работы с программой (в нашем случае, с Minecraft).</p>
-<p>К сожалению, никакого встроенного API для создания модов у Minecraft нет.</p>
-<p><strong>Minecraft не поддерживает моды!</strong></p>
-<p>Однако, исходный код игры можно получить, и многие разработчики стали разрабатывать свои <strong>неофициальные</strong> API: Forge, Sponge и так далее. О Forge вы наверняка не раз слышали. Это самое популярное на сегодня API для создания модов.</p>
-<p>Поэтому у вас есть выбор.</p>
-<h3 id="писать-моды-с-помощью-api">Писать моды с помощью API<a class="headerlink" href="#писать-моды-с-помощью-api" title="Permanent link">#</a></h3>
-<p>Это будет проще. Но запускаться ваши моды смогут только на клиенте с заранее установленным API. Моды, написанные с помощью Forge пойдут только на Minecraft, где предварительно установлен Forge.</p>
-<p><strong>Большинство</strong> всех Minecraft модов написаны при помощи Forge API.</p>
-<p><strong>Плюсы</strong></p>
-<ul>
-<li>Простое создание модов</li>
-<li>Удобный перенос на другие Minecraft версии</li>
-<li>Совместимость (и даже взаимодействие) с другими модами</li>
-</ul>
-<p><strong>Минусы</strong></p>
-<ul>
-<li>Необходимость иметь установленное API на клиенте</li>
-</ul>
-<h3 id="писать-моды-без-помощи-api">Писать моды без помощи API<a class="headerlink" href="#писать-моды-без-помощи-api" title="Permanent link">#</a></h3>
-<p>Это несколько сложнее, так как потребует от вас глубокого понимания внутреннего устройства работы Minecraft. При написании модов без использования API вы напрямую редактируете исходный код игры. Получается, что вы словно пишете свой собственный Minecraft (или новую его версию), и никакие другие моды работать вместе с вашим скорее всего не будут.</p>
-<p><strong>Плюсы</strong></p>
-<ul>
-<li>Не нужно ничего предварительно устанавливать</li>
-<li>Полный контроль над происходящим в игре</li>
-<li>Возможность менять исходные файлы игры</li>
-</ul>
-<p><strong>Минусы</strong></p>
-<ul>
-<li>Почти абсолютная несовместимость с другими модами</li>
-<li>Относительная сложность написания</li>
-<li>Сложный перевод мода под другие Minecraft версии</li>
-</ul>
-<h2 id="что-выбрать">Что выбрать?<a class="headerlink" href="#что-выбрать" title="Permanent link">#</a></h2>
-<p>В большинстве случаев рекомендуется писать моды при помощи Forge API. Он сейчас наиболее популярен и является практически стандартом.</p>
-<p>Большинство модов и уроков по их созданию написано с помощью этого API. Forge настолько распространен, что частенько под созданием модов для Minecraft понимается именно их создание с помощью Forge API.</p>
-<h2 id="у-меня-вопроспроблема">У меня вопрос/проблема!<a class="headerlink" href="#у-меня-вопроспроблема" title="Permanent link">#</a></h2>
-<p>Если что-то не работает, но должно, или (что еще хуже), что-то работает, но не должно, смело обращайтесь на <a href="https://forum.mcmodding.ru/">форум</a> за помощью.</p>
-<p>Кстати, там можно не только просить о помощи, но еще и общаться с другими создателями модов, обмениваться опытом и рекламировать свои моды!</p>
-<h2 id="как-поделиться-с-другом">Как поделиться с другом?<a class="headerlink" href="#как-поделиться-с-другом" title="Permanent link">#</a></h2>
-<p>Вы можете просто скинуть ссылку на статью. Однако, статьи на данном сайте порой достигают внушительных размеров. В таком случае, можно поделиться ссылкой на конкретный раздел статьи.</p>
-<p>Разделы статьи разделяются заголовками. Наведите на заголовок курсор мышки. Справа от него появится значок ссылки. Нажмите на него правой кнопкой и выберите пункт "Копировать адрес ссылки".</p>
-<p><a href="index/header-link.png"><img alt="" class="w9 border" src="index/header-link.png" /></a></p>
-<h2 id="вклад-в-учебник">Вклад в учебник<a class="headerlink" href="#вклад-в-учебник" title="Permanent link">#</a></h2>
-<p>Вы можете <strong>вносить правки</strong> в существующие статьи, <strong>добавлять свои</strong> собственные, а также <strong>предлагать</strong> идеи для новых статей. Сделать это очень просто. Весь процесс полностью автоматизирован. Подробные инструкции вы можете найти на вики по работе с сайтом.</p>
-<h2 id="о-сайте">О сайте<a class="headerlink" href="#о-сайте" title="Permanent link">#</a></h2>
-<p>На просторах интернета достаточно много штучных учебников под какие-то конкретные Minecraft версии. Получается, что нет единого источника информации, который поддерживается <strong>сообществом</strong>, а не <strong>единственным</strong> автором.</p>
-<p>Здесь мы реализуем другой подход.</p>
-<p>Сайт работает на статическом генераторе <a href="https://www.mkdocs.org/">MkDocs</a> с темой <a href="https://squidfunk.github.io/mkdocs-material/">Material</a>. Такой подход позволяет не возиться с исходниками сайта, а писать статьи в удобной markdown разметке, которая автоматически собирается в готовый и красивый сайт.</p>
+<h1 id="использование-событий">Использование событий<a class="headerlink" href="#использование-событий" title="Permanent link">#</a></h1>
+<p>События в Minecraft это то же, что и у нас. К примеру "Пошёл дождь", только в Minecraft событий не так много, как существует у нас в жизни. В данной статье вы научитесь использовать события.</p>
+<p>Создадим класс EventsHandler.
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EventsHandler</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onJoin</span><span class="p">(</span><span class="n">EntityJoinWorldEvent</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">entity</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">EntityPlayer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EntityPlayer</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">entity</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Hello, %p!&quot;</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot;%p&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">getCommandSenderName</span><span class="p">())));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDeath</span><span class="p">(</span><span class="n">LivingDeathEvent</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">entity</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">EntityPlayer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">EntityPlayer</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">EntityPlayer</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">entity</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">player</span><span class="p">.</span><span class="na">getCommandSenderName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;FoxySister&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="na">dropItem</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">golden_apple</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>В первом методе, при заходе сущности(Игрока) в мир, ему будет высвечиваться приветствие. А во втором методе, если игрок <code>FoxySister</code> погибает, то на его месте выбрасывается золотое яблоко. Вы так же можете отменить событие используя метод <code>e.setCanceled(true)</code>, но не все события можно отменять. Подробнее смотрите в статье <code>Таблица событий</code></p>
+<p>Приступим к регистрации, перейдём в CommonProxy и в метод preInit добавим шину регистрации. Подбронее какую шину именно использовать смотрите в статье <code>Таблица событий</code> 
+<div class="highlight"><pre><span></span><code><span class="n">MinecraftForge</span><span class="p">.</span><span class="na">EVENT_BUS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventsHandler</span><span class="p">());</span><span class="w"></span>
+
+<span class="c1">//или</span><span class="w"></span>
+
+<span class="n">FMLCommonHandler</span><span class="p">.</span><span class="na">instance</span><span class="p">().</span><span class="na">bus</span><span class="p">().</span><span class="na">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EventsHandler</span><span class="p">());</span><span class="w"></span>
+</code></pre></div></p>
+<p>Переходим в игру и смотрим на получившийся результат!</p>
 
 
   
@@ -4092,8 +4011,8 @@
               
 
     
-        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/index.md"></div>
-        <script src="scripts/contributors.js"></script>
+        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/events/usage/index.md"></div>
+        <script src="../../../scripts/contributors.js"></script>
     
 
 
@@ -4110,6 +4029,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+      
+        
+        <a href="../../basics/lang/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Локализация" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Локализация
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../prepare/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Собственные события" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Собственные события
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4133,7 +4088,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest"], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
 
     <!-- Yandex.Metrika counter -->
@@ -4153,7 +4108,7 @@
 
 
     
-      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
   </body>
