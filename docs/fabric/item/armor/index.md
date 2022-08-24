@@ -1,7 +1,9 @@
 # Создание брони
+
 Для создания брони нам потребуется свой `ArmorMaterial`, а затем простая регистрация предметов брони.
 
 ## Материал брони
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -87,8 +89,11 @@ public class MageArmorMaterial implements ArmorMaterial {
 }
 
 ```
+
 ## Регистрация брони
+
 Создаем ArmorMaterial и регистрируем предметы:
+
 ```java
     private static final ArmorMaterial RED_MAGE_ARMOR = new MageArmorMaterial();
 
@@ -97,12 +102,15 @@ public class MageArmorMaterial implements ArmorMaterial {
     public static final Item RED_MAGE_LEGGINGS = registerItem("red_mage_leggings", new ArmorItem(RED_MAGE_ARMOR, EquipmentSlot.LEGS, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
     public static final Item RED_MAGE_BOOTS = registerItem("red_mage_boots", new ArmorItem(RED_MAGE_ARMOR, EquipmentSlot.FEET, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
 ```
+
 * `RED_MAGE_ARMOR` - наш ArmorMaterial
 * `EquipmentSlot` - слот, в который можно надеть броню
 
 ## Текстура
+
 Нам нужны текстуры предметов брони и текстуры самой брони.
 Текстуры и модели предметов создаем, как обычно, текстуры брони должны быть две, и они будут находиться по пути `assets/minecraft/textures/models/armor`. Название текстуры должно соответствовать *имя_armor_material*_layer_2.png (штаны) и *имя_armor_material*_layer_1.png (всё остальное).
 
 Заходим в игру и смотрим на нашу броню:
+
 ![броня](images/armor.png)

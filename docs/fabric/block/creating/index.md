@@ -1,7 +1,9 @@
 # Создание блока
+
 ## Основа
 
 Создаём класс для нашего блока в пакете `ru.mcmodding.fabrictut.block` и наследуем `Block`:
+
 ```java
 package ru.mcmodding.fabrictut.block;
 
@@ -18,8 +20,11 @@ public class WhiteStoneBlock extends Block {
     }
 }
 ```
+
 ## Регистрация
+
 Создадим класс для блоков и импортируем туда статичный метод из класса для работы с реестром, а так же зарегистрируем сам блок:
+
 ```java
 package ru.mcmodding.fabrictut.block;
 
@@ -35,18 +40,25 @@ public class FTutBlocks {
     public static void init() {}
 }
 ```
+
 `Material.STONE` означает материал блока.
+
 Теперь нам необходимо зарегистрировать предмет для блока. Вернемся в класс наших предметов и добавим эту строку:
+
 ```java
 public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem(FTutBlocks.WHITE_STONE, new FabricItemSettings()));
 ```
+
 Где `FTutBlocks.WHITE_STONE` - наш блок.
 
 Не забываем про `FTutBlocks.init();` в главном классе мода.
+
 ## Отображение в игре
+
 Если мы сейчас зайдем в игру, наш блок не будет иметь модели и текстуры. Поэтому нам необходимо создать блокстейт (`blockstate`), модель и текстуру.
 
 По пути `assets/<mod_id>/blockstates` создаем `white_stone.json` с таким содержимым:
+
 ```json
 {
   "variants": {
@@ -56,7 +68,9 @@ public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem
   }
 }
 ```
+
 Затем создаем `white_stone.json` по пути `assets/<mod_id>/models/block`:
+
 ```json
 {
   "parent": "minecraft:block/cube_all",
@@ -65,9 +79,11 @@ public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem
   }
 }
 ```
+
 Текстуру надо положить в `assets/<mod_id>/textures/block`.
 
 К слову, для блоков в руках нужно создавать модель отдельно, иначе отображаться блок будет нормально только когда он поставлен. Для этого нужно просто создать там же где и остальные модели предметов файл с ID нашего блока (`white_stone.json`) и заполнить вот так:
+
 ```json
 {
   "parent": "fabrictut:block/white_stone"
@@ -75,4 +91,5 @@ public static final Item WHITE_STONE = registerItem("white_stone", new BlockItem
 ```
 
 Теперь игру можно запустить.
+
 ![блок в игре](images/block.png)

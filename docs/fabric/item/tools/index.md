@@ -1,8 +1,11 @@
 # Инструменты и меч
+
 ## Подготовка
+
 У инструментов существуют свои классы, конструктор которых, к сожалению, помечен как `protected`. Поэтому нам придется создать наследников с публичными конструкторами:
 
 **Кирка**
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -14,9 +17,10 @@ public class CustomPickaxeItem extends PickaxeItem {
         super(material, attackDamage, attackSpeed, settings);
     }
 }
-
 ```
+
 **Топор**
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -29,7 +33,9 @@ public class CustomAxeItem extends AxeItem {
     }
 }
 ```
+
 **Лопата**
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -41,9 +47,10 @@ public class CustomShovelItem extends ShovelItem {
         super(material, attackDamage, attackSpeed, settings);
     }
 }
-
 ```
+
 **Мотыга**
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -55,10 +62,12 @@ public class CustomHoeItem extends HoeItem {
         super(material, attackDamage, attackSpeed, settings);
     }
 }
-
 ```
+
 ## Создание материала
+
 Вместо обычных материалов создадим перечисление. Это удобно, поскольку мы сможем добавлять новые материалы в дальнейшем быстро и просто:
+
 ```java
 package ru.mcmodding.fabrictut.item;
 
@@ -131,7 +140,9 @@ public enum FTutToolMaterials implements ToolMaterial {
 * `15` - это уровень, который требуется для получения более высокого уровня чар.
 
 ## Регистрация
+
 В классе с предметами регистрируем наши инструменты:
+
 ```java
     public static final Item SLIME_SWORD = registerItem("slime_sword", new SwordItem(FTutToolMaterials.SLIME, 3, 2.5F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
     public static final Item SLIME_AXE = registerItem("slime_axe", new CustomAxeItem(FTutToolMaterials.SLIME, 6.5F, 0.5F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
@@ -139,14 +150,18 @@ public enum FTutToolMaterials implements ToolMaterial {
     public static final Item SLIME_SHOVEL = registerItem("slime_shovel", new CustomShovelItem(FTutToolMaterials.SLIME, 2, 0.8F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
     public static final Item SLIME_HOE = registerItem("slime_hoe", new CustomHoeItem(FTutToolMaterials.SLIME, 2, 0.8F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)));
 ```
+
 На примере меча: `FTutToolMaterials.SLIME, 3, 2.5F, new FabricItemSettings().group(FabricTutorial.TUTORIAL_GROUP)`
+
 * FTutToolMaterials.SLIME - наш материал
 * 3 - урон
 * 2.5F - скорость атаки
 * FabricItemSettings - настройки предмета
 
 ## Модель
+
 От модели обычного предмета модель инструментов отличается тем, что `parent` у неё не `item/generated`, а `item/handheld`
+
 ```json
 {
   "parent": "minecraft:item/handheld",
