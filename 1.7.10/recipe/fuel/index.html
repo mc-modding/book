@@ -4127,7 +4127,7 @@
 тем, что в случае <code>IFuelHandler</code> нельзя заменить Minecraft топливо. Во всех остальных случаях MinecraftForge рекомендует
 использовать <code>IFuelHandler</code>.</p>
 <p>Зададим новое значение для угля, вместо 1600 тиков, уголь будет иметь 2600 тиков времени горения.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ForgeEventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onFuelBurnTime</span><span class="p">(</span><span class="n">FuelBurnTimeEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">fuel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
