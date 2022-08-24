@@ -90,7 +90,7 @@ public class CommonProxy {
 Зададим новое значение для угля, вместо 1600 тиков, уголь будет иметь 2600 тиков времени горения.
 
 ```java
-public class EventListener {
+public class ForgeEventListener {
     @SubscribeEvent
     public void onFuelBurnTime(FuelBurnTimeEvent event) {
         if (event.fuel == null) return;
