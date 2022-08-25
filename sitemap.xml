@@ -486,6 +486,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/event/custom-event/</loc>
+         <lastmod>2022-08-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/event/events-table/</loc>
          <lastmod>2022-08-25</lastmod>
          <changefreq>daily</changefreq>

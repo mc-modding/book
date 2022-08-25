@@ -6,18 +6,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Создание собственного блока.">
+        <meta name="description" content="Создание собственного события.">
       
       
       
-        <link rel="canonical" href="https://mcmodding.ru/1.15/block/basics/">
+        <link rel="canonical" href="https://mcmodding.ru/1.7.10/event/custom-event/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
     
     
       
-        <title>Создание блока - Создание Minecraft модов</title>
+        <title>Собственное событие - Создание Minecraft модов</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#создание-блока" class="md-skip">
+        <a href="#собственное-событие" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Создание блока
+              Собственное событие
             
           </span>
         </div>
@@ -312,12 +312,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -366,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/preparation/install/" class="md-nav__link">
+      <a href="../../preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -380,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/preparation/setup-idea/" class="md-nav__link">
+      <a href="../../preparation/setup-idea/" class="md-nav__link">
         Использование Idea
       </a>
     </li>
@@ -394,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/preparation/auth/" class="md-nav__link">
+      <a href="../../preparation/auth/" class="md-nav__link">
         Авторизация(Скин и никнейм)
       </a>
     </li>
@@ -441,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/mod-structure/" class="md-nav__link">
+      <a href="../../basics/mod-structure/" class="md-nav__link">
         Структура мода
       </a>
     </li>
@@ -455,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/mod-annotation/" class="md-nav__link">
+      <a href="../../basics/mod-annotation/" class="md-nav__link">
         Аннотация @Mod
       </a>
     </li>
@@ -469,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/loading-stages/" class="md-nav__link">
+      <a href="../../basics/loading-stages/" class="md-nav__link">
         Стадии загрузки мода
       </a>
     </li>
@@ -483,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/proxy/" class="md-nav__link">
+      <a href="../../basics/proxy/" class="md-nav__link">
         Прокси
       </a>
     </li>
@@ -497,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/building-mod/" class="md-nav__link">
+      <a href="../../basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -544,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/basics/" class="md-nav__link">
+      <a href="../../item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -558,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/food/" class="md-nav__link">
+      <a href="../../item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -572,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/tools/" class="md-nav__link">
+      <a href="../../item/tools/" class="md-nav__link">
         Инструменты
       </a>
     </li>
@@ -586,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/armor/" class="md-nav__link">
+      <a href="../../item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -600,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/repair/" class="md-nav__link">
+      <a href="../../item/repair/" class="md-nav__link">
         Починка
       </a>
     </li>
@@ -614,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/subtypes/" class="md-nav__link">
+      <a href="../../item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -628,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/item/rarity/" class="md-nav__link">
+      <a href="../../item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -675,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/block/basics/" class="md-nav__link">
+      <a href="../../block/basics/" class="md-nav__link">
         Создание блока
       </a>
     </li>
@@ -689,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/block/metadata/" class="md-nav__link">
+      <a href="../../block/metadata/" class="md-nav__link">
         Метаданные
       </a>
     </li>
@@ -703,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/block/tile-entity/" class="md-nav__link">
+      <a href="../../block/tile-entity/" class="md-nav__link">
         Хранение данных(TileEntity)
       </a>
     </li>
@@ -717,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/block/fluid/" class="md-nav__link">
+      <a href="../../block/fluid/" class="md-nav__link">
         Жидкость
       </a>
     </li>
@@ -731,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/block/fluid-tank.md" class="md-nav__link">
+      <a href="../../block/fluid-tank.md" class="md-nav__link">
         Хранение жидкости
       </a>
     </li>
@@ -752,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/creative-tab/" class="md-nav__link">
+      <a href="../../basics/creative-tab/" class="md-nav__link">
         Вкладка в креативе
       </a>
     </li>
@@ -766,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/lang/" class="md-nav__link">
+      <a href="../../basics/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -778,12 +780,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" checked>
       
       
       
@@ -806,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/event/basics/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         Использование событий
       </a>
     </li>
@@ -818,11 +822,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../1.7.10/event/custom-event/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Собственное событие
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Собственное событие
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#основная-часть" class="md-nav__link">
+    Основная часть
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#своя-шина-событий" class="md-nav__link">
+    Своя шина событий
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -834,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/event/events-table/" class="md-nav__link">
+      <a href="../events-table/" class="md-nav__link">
         Таблица событий
       </a>
     </li>
@@ -881,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Добавление рецепта
       </a>
     </li>
@@ -895,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный рецепт
       </a>
     </li>
@@ -909,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Зельеварение
       </a>
     </li>
@@ -923,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/recipe/fuel/" class="md-nav__link">
+      <a href="../../recipe/fuel/" class="md-nav__link">
         Топливо для печи
       </a>
     </li>
@@ -970,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственная сущность
       </a>
     </li>
@@ -984,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Спавн в мире
       </a>
     </li>
@@ -998,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Искусственный интеллект
       </a>
     </li>
@@ -1045,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Создание окна
       </a>
     </li>
@@ -1059,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Контейнер
       </a>
     </li>
@@ -1080,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/basics/network/" class="md-nav__link">
+      <a href="../../basics/network/" class="md-nav__link">
         Пакетная система
       </a>
     </li>
@@ -1120,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственное измерение
       </a>
     </li>
@@ -1134,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Биом
       </a>
     </li>
@@ -1148,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Генерация руды
       </a>
     </li>
@@ -1162,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Структура
       </a>
     </li>
@@ -1176,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Портал
       </a>
     </li>
@@ -1216,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Рыбалка
       </a>
     </li>
@@ -1230,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В сундуках
       </a>
     </li>
@@ -1244,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В вагонетках с сундуком
       </a>
     </li>
@@ -1265,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный житель
       </a>
     </li>
@@ -1312,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В сущностях
       </a>
     </li>
@@ -1326,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         В мире
       </a>
     </li>
@@ -1340,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Конфиг
       </a>
     </li>
@@ -1387,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Звуки
       </a>
     </li>
@@ -1401,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Частицы
       </a>
     </li>
@@ -1448,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Достижения
       </a>
     </li>
@@ -1462,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Команды
       </a>
     </li>
@@ -1476,7 +1528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственные чары
       </a>
     </li>
@@ -1490,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Словарь руд
       </a>
     </li>
@@ -1504,7 +1556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Собственный эффект зелья
       </a>
     </li>
@@ -1518,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/prepare/" class="md-nav__link">
+      <a href="../../prepare/" class="md-nav__link">
         Привязка клавиш
       </a>
     </li>
@@ -1532,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1.7.10/advanced/access_transformers/" class="md-nav__link">
+      <a href="../../advanced/access_transformers/" class="md-nav__link">
         Access Transformers
       </a>
     </li>
@@ -2450,14 +2502,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
@@ -2506,7 +2556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preparation/install/" class="md-nav__link">
+      <a href="../../../1.15/preparation/install/" class="md-nav__link">
         Установка программ
       </a>
     </li>
@@ -2520,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preparation/setup-idea/" class="md-nav__link">
+      <a href="../../../1.15/preparation/setup-idea/" class="md-nav__link">
         Использование Idea
       </a>
     </li>
@@ -2534,7 +2584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preparation/setup-eclipse/" class="md-nav__link">
+      <a href="../../../1.15/preparation/setup-eclipse/" class="md-nav__link">
         Использование Eclipse
       </a>
     </li>
@@ -2548,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preparation/custom-skin/" class="md-nav__link">
+      <a href="../../../1.15/preparation/custom-skin/" class="md-nav__link">
         Собственный скин
       </a>
     </li>
@@ -2562,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preparation/problems/" class="md-nav__link">
+      <a href="../../../1.15/preparation/problems/" class="md-nav__link">
         Решение проблем
       </a>
     </li>
@@ -2609,7 +2659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/mod-structure/" class="md-nav__link">
+      <a href="../../../1.15/basics/mod-structure/" class="md-nav__link">
         Структура мода, @Mod, mods.toml
       </a>
     </li>
@@ -2623,7 +2673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basics/building-mod/" class="md-nav__link">
+      <a href="../../../1.15/basics/building-mod/" class="md-nav__link">
         Сборка мода
       </a>
     </li>
@@ -2670,7 +2720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/basics/" class="md-nav__link">
+      <a href="../../../1.15/item/basics/" class="md-nav__link">
         Создание предмета
       </a>
     </li>
@@ -2684,7 +2734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/food/" class="md-nav__link">
+      <a href="../../../1.15/item/food/" class="md-nav__link">
         Еда
       </a>
     </li>
@@ -2698,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/tools/" class="md-nav__link">
+      <a href="../../../1.15/item/tools/" class="md-nav__link">
         Инструменты и меч
       </a>
     </li>
@@ -2712,7 +2762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/repair/" class="md-nav__link">
+      <a href="../../../1.15/item/repair/" class="md-nav__link">
         Уровни инструментов
       </a>
     </li>
@@ -2726,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/armor/" class="md-nav__link">
+      <a href="../../../1.15/item/armor/" class="md-nav__link">
         Броня
       </a>
     </li>
@@ -2740,7 +2790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/subtypes/" class="md-nav__link">
+      <a href="../../../1.15/item/subtypes/" class="md-nav__link">
         Подтипы
       </a>
     </li>
@@ -2754,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/loot/" class="md-nav__link">
+      <a href="../../../1.15/item/loot/" class="md-nav__link">
         Лут
       </a>
     </li>
@@ -2768,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/rarity/" class="md-nav__link">
+      <a href="../../../1.15/item/rarity/" class="md-nav__link">
         Редкость
       </a>
     </li>
@@ -2782,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../item/burn/" class="md-nav__link">
+      <a href="../../../1.15/item/burn/" class="md-nav__link">
         Горение
       </a>
     </li>
@@ -2801,14 +2851,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
       
       
@@ -2829,73 +2877,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Создание блока
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../1.15/block/basics/" class="md-nav__link">
         Создание блока
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание раздела
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#основа" class="md-nav__link">
-    Основа
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#регистрация" class="md-nav__link">
-    Регистрация
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#модель" class="md-nav__link">
-    Модель
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#дроп-через-json" class="md-nav__link">
-    Дроп через json
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2907,7 +2893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blockstates/" class="md-nav__link">
+      <a href="../../../1.15/block/blockstates/" class="md-nav__link">
         Состояния блока
       </a>
     </li>
@@ -2921,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fluid/" class="md-nav__link">
+      <a href="../../../1.15/block/fluid/" class="md-nav__link">
         Создание жидкости
       </a>
     </li>
@@ -2935,7 +2921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ore/" class="md-nav__link">
+      <a href="../../../1.15/block/ore/" class="md-nav__link">
         Создание руды
       </a>
     </li>
@@ -2949,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plant/" class="md-nav__link">
+      <a href="../../../1.15/block/plant/" class="md-nav__link">
         Создание растения
       </a>
     </li>
@@ -2963,7 +2949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tileentity/" class="md-nav__link">
+      <a href="../../../1.15/block/tileentity/" class="md-nav__link">
         Блок с тайлом
       </a>
     </li>
@@ -2984,7 +2970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../itemgroup/" class="md-nav__link">
+      <a href="../../../1.15/itemgroup/" class="md-nav__link">
         Создание группы предметов в креативе
       </a>
     </li>
@@ -2998,7 +2984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lang/" class="md-nav__link">
+      <a href="../../../1.15/lang/" class="md-nav__link">
         Локализация
       </a>
     </li>
@@ -3038,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../events/usage/" class="md-nav__link">
+      <a href="../../../1.15/events/usage/" class="md-nav__link">
         Использование событий
       </a>
     </li>
@@ -3052,7 +3038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../events/table/" class="md-nav__link">
+      <a href="../../../1.15/events/table/" class="md-nav__link">
         Таблица событий
       </a>
     </li>
@@ -3073,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../craft/" class="md-nav__link">
+      <a href="../../../1.15/craft/" class="md-nav__link">
         Крафт
       </a>
     </li>
@@ -3113,7 +3099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../achievements/basics/" class="md-nav__link">
+      <a href="../../../1.15/achievements/basics/" class="md-nav__link">
         Основы
       </a>
     </li>
@@ -3127,7 +3113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../achievements/create/" class="md-nav__link">
+      <a href="../../../1.15/achievements/create/" class="md-nav__link">
         Создание достижения
       </a>
     </li>
@@ -3141,7 +3127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../achievements/recipes/" class="md-nav__link">
+      <a href="../../../1.15/achievements/recipes/" class="md-nav__link">
         Получение рецептов
       </a>
     </li>
@@ -3188,7 +3174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/layers/" class="md-nav__link">
+      <a href="../../../1.15/advanced/layers/" class="md-nav__link">
         Слои
       </a>
     </li>
@@ -3202,7 +3188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/keybinds/" class="md-nav__link">
+      <a href="../../../1.15/advanced/keybinds/" class="md-nav__link">
         Привязка клавиш
       </a>
     </li>
@@ -3216,7 +3202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/sounds/" class="md-nav__link">
+      <a href="../../../1.15/advanced/sounds/" class="md-nav__link">
         Звуки
       </a>
     </li>
@@ -3230,7 +3216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/packet-system/" class="md-nav__link">
+      <a href="../../../1.15/advanced/packet-system/" class="md-nav__link">
         Пакетная система
       </a>
     </li>
@@ -3277,7 +3263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/src/" class="md-nav__link">
+      <a href="../../../1.15/other/src/" class="md-nav__link">
         Работа с иходниками
       </a>
     </li>
@@ -3291,7 +3277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/jei-integration/" class="md-nav__link">
+      <a href="../../../1.15/other/jei-integration/" class="md-nav__link">
         Интеграция с JEI
       </a>
     </li>
@@ -3305,7 +3291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other/access-transformers/" class="md-nav__link">
+      <a href="../../../1.15/other/access-transformers/" class="md-nav__link">
         Access Transformers
       </a>
     </li>
@@ -4012,29 +3998,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#основа" class="md-nav__link">
-    Основа
+  <a href="#основная-часть" class="md-nav__link">
+    Основная часть
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#регистрация" class="md-nav__link">
-    Регистрация
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#модель" class="md-nav__link">
-    Модель
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#дроп-через-json" class="md-nav__link">
-    Дроп через json
+  <a href="#своя-шина-событий" class="md-nav__link">
+    Своя шина событий
   </a>
   
 </li>
@@ -4052,230 +4024,125 @@
               
     
                 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/1.15/block/basics/index.md" title="Редактировать страницу" class="md-content__button md-icon">
+  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/event/custom-event.md" title="Редактировать страницу" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="создание-блока">Создание блока<a class="headerlink" href="#создание-блока" title="Permanent link">#</a></h1>
-<h2 id="основа">Основа<a class="headerlink" href="#основа" title="Permanent link">#</a></h2>
-<p>Создадим класс для нашего блока.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IdealBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">IdealBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">Properties</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">Material</span><span class="p">.</span><span class="na">ROCK</span><span class="p">).</span><span class="na">harvestTool</span><span class="p">(</span><span class="n">ToolType</span><span class="p">.</span><span class="na">PICKAXE</span><span class="p">));</span><span class="w"></span>
+<h1 id="собственное-событие">Собственное событие<a class="headerlink" href="#собственное-событие" title="Permanent link">#</a></h1>
+<h2 id="основная-часть">Основная часть<a class="headerlink" href="#основная-часть" title="Permanent link">#</a></h2>
+<p>Создавать своё событие также просто, как создать предмет или блок, всего лишь необходимо наследовать от <code>Event</code>.</p>
+<p>Создадим событие для нашей плавильни, чтобы можно было другим модам добавлять обработку других предметов, а не только
+угольной и железной руды.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.event</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Cancelable</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Event</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+
+<span class="nd">@Cancelable</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Event</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">ingredient</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">output</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">SmelterEvent</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">ingredient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ingredient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ingredient</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="nf">getIngredient</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ingredient</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="nf">getOutput</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">output</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutput</span><span class="p">(</span><span class="n">ItemStack</span><span class="w"> </span><span class="n">output</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">output</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>События можно сделать отменяемыми и/или с результатом. </p>
+<p>Для отменяемого события необходимо повесить на класс аннотацию <code>@Cancelable</code>. Затем использовать методы <code>Event#isCanceled</code>
+(если событие было отменено, то вернёт <code>true</code>), а также <code>Event#setCanceled(Boolean)</code>(при <code>true</code> отменяет событие)</p>
+<p>Для события с результатом используется аннотация <code>@Event$HasResult</code>. Получить результат можно с помощью метода <code>Event#getResult</code>,
+а задать <code>Event#setResult(Result)</code>.</p>
+<p>MinecraftForge рекомендует использовать шину <code>MinecraftForge.EVENT_BUS</code> для регистрации своих событий, вместо устаревшей
+<code>FMLCommonHandler.instance().bus().register</code>.</p>
+<p>Чтобы наше событие можно было прослушивать, необходимо вызвать <code>EventBus#post(Event)</code>. Данный метод возвращает логическое 
+условие работающее по такой схеме:</p>
+<p><img alt="Схема условия" src="../images/event_post.png" /></p>
+<p>Добавим вызов слушателей при обновлении плавильни.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.item.EntityItem</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.tileentity.TileEntity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.common.MinecraftForge</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.event.SmelterEvent</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SmelterTile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TileEntity</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">stack</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ItemStack</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDrops</span><span class="p">(</span><span class="n">BlockState</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">LootContext</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ImmutableList</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">CAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">TORCH</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<ul>
-<li><code>create</code> - Создает Properties с материалом Material.ROCK.</li>
-<li><code>harvestTool</code> - задает тип эффективного инструмента.</li>
-<li><code>getDrops</code> - возвращает список предметов, которые должны выпасть с блока. 8 тортиков и 1 факел.</li>
-</ul>
-<p>Также можно вынести Properties в конструктор.
-Все параметры Properties:
-* <code>create</code> - Создает Properties с заданным материалом.
-* <code>harvestTool</code> - Задает тип эффективного инструмента.
-* <code>notSolid</code> - Для блоков с моделями чтоб не создавать эффект X-rey.
-* <code>lightValue</code> - Задает силу свечения.
-* <code>lootFrom</code> - Копирует дроп с другого блока.
-* <code>speedFactor</code> - Задает множитель скорости(как у льда).
-* <code>sound</code> - Звук для хождения.
-* <code>doesNotBlockMovement</code> - Делаем не двигаемым для поршня.
-* <code>hardnessAndResistance</code> - Задает прочность и устойчивость к взрывам
-* <code>jumpFactor</code> - Задает множитель прыжка(как блок меда)
-* <code>noDrops</code> - Отменяет какой - либо дроп.
-* <code>slipperiness</code> - Скользкость(как у льда)
-* <code>tickRandomly</code> - Делает блок "случайным" дял обновления(любые растения)
-* <code>variableOpacity</code> - отбрасывает ли тень(для блоков с моделькой)</p>
-<h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
-<p>Создадим класс TutBlocks, пустой интерфейс INonItem.</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Mod.EventBusSubscriber</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mod</span><span class="p">.</span><span class="na">EventBusSubscriber</span><span class="p">.</span><span class="na">Bus</span><span class="p">.</span><span class="na">MOD</span><span class="p">)</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TutBlocks</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">ForgeRegistries</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">,</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryObject</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">IDEAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="s">&quot;ideal&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">IdealBlock</span><span class="p">::</span><span class="k">new</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">FMLJavaModLoadingContext</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getModEventBus</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRegisterItems</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryEvent</span><span class="p">.</span><span class="na">Register</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">IForgeRegistry</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getRegistry</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">TutBlocks</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">.</span><span class="na">getEntries</span><span class="p">().</span><span class="na">stream</span><span class="p">()</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">RegistryObject</span><span class="p">::</span><span class="n">get</span><span class="p">)</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">INonItem</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="p">();</span><span class="w"></span>
-<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">BlockItem</span><span class="w"> </span><span class="n">blockItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">(</span><span class="n">block</span><span class="p">,</span><span class="w"> </span><span class="n">prop</span><span class="p">);</span><span class="w"></span>
-<span class="w">                    </span><span class="n">blockItem</span><span class="p">.</span><span class="na">setRegistryName</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">());</span><span class="w"></span>
-<span class="w">                    </span><span class="n">registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">blockItem</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<ul>
-<li><code>register(block)</code> - регистрирует блоки.</li>
-<li><code>IDEAL</code> - объект регистрации нашего блока. Чтоб получить сам блок нужно вызвать метод get().</li>
-<li><code>onRegisterItems</code> - регистрирует предметы для блоков которые не наследуют INonItem.</li>
-<li><code>INonItem</code> - пустой интерфейс для отмены регистрации предмета.</li>
-</ul>
-<p>Нам нужно добавить в конструктор основного класса TutBlocks.register() для регистрации блоков.
-Теперь можете запустить Minecraft нажав на кнопку <code>run</code> и посмотреть свой блок в живую. Для получения блока напишите <code>/give @p tut:ideal</code>.
-Вместо <code>tut</code> у Вас должен быть <code>modid</code> мода! Вместо <code>ideal</code> у Вас должно быть регистрируемое имя вашего блока.</p>
-<p><a href="images/face_first.png"><img alt="Блок от первого лица" src="images/face_first.png" /></a></p>
-<p><a href="images/face_three.png"><img alt="Блок от третьего лица" src="images/face_three.png" /></a></p>
-<h2 id="модель">Модель<a class="headerlink" href="#модель" title="Permanent link">#</a></h2>
-<p>Создадим файл <code>ideal.json</code>. По пути:
-<div class="highlight"><pre><span></span><code>└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── blockstates
-</code></pre></div>
-С содержанием:
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;variants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-В этом файле будет храниться информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
-Теперь вы должны создать модель блока, вы можете создать как наследника стандартного блока, примером может послужить камень, так и свою собственную. Вот пример стандартной модели:</p>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block/cube_all&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/ideal&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-Если ваша текстура к модели берётся из самого Minecraft, то <code>tut:</code>(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру камня из Minecraft.
-Название файла должно быть таким же как и в <code>blockstates</code> -&gt; <code>ideal</code>, в переменной <code>model</code>!</p>
-<p>Пример сложной модели(Позаимствован из Туманного мира с разрешением Liahim):
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;particle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;pot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot D&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot N&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot E&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot S&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot W&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle E&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle W&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateEntity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">worldObj</span><span class="p">.</span><span class="na">isRemote</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hasStack</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">worldObj</span><span class="p">.</span><span class="na">getTotalWorldTime</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Передаём нашему событию стек который хранится в плавильне.</span><span class="w"></span>
+<span class="w">            </span><span class="n">SmelterEvent</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SmelterEvent</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">getItem</span><span class="p">());</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Вызываем слушателей, чтобы они могли обработать данные из объекта события.</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MinecraftForge</span><span class="p">.</span><span class="na">EVENT_BUS</span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">worldObj</span><span class="p">.</span><span class="na">spawnEntityInWorld</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">EntityItem</span><span class="p">(</span><span class="n">worldObj</span><span class="p">,</span><span class="w"> </span><span class="n">xCoord</span><span class="p">,</span><span class="w"> </span><span class="n">yCoord</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">zCoord</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getOutput</span><span class="p">()));</span><span class="w"></span>
+<span class="w">                </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">markDirty</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(...)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// Остальная логика механизма из предыдущих статей...</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-<p>Теперь Вам надо создать <code>ideal.json</code>. По пути:
-<div class="highlight"><pre><span></span><code>└── src    
-    └── main
-        └── resources
-            └── assets
-                └── tut
-                    └── models
-                        └── item
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-С простой моделью:
-<a href="images/model_on_ground.png"><img alt="Блок с простой моделью" src="images/model_on_ground.png" /></a>
-Со сложной моделью:
-<a href="images/model_face_three.png"><img alt="Блок с сложной моделью" src="images/model_face_three.png" /></a></p>
-<h2 id="дроп-через-json">Дроп через json<a class="headerlink" href="#дроп-через-json" title="Permanent link">#</a></h2>
-<p>-- В разработке</p>
+<p>Попробуем добавить в плавильню такую логику, чтобы за одно яблоко, плавильня создавала 5 золотых яблок и сделаем мы это
+с помощью события!</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Items</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.Item</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.event.SmelterEvent</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ForgeEventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onSmelter</span><span class="p">(</span><span class="n">SmelterEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Если ингредиент яблоко, то выходящим стеком будет 5 золотых яблок</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getIngredient</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">apple</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">event</span><span class="p">.</span><span class="na">setOutput</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">golden_apple</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Отменяем событие, чтобы EventBus#post вернул true и выполнилось подмена логики</span><span class="w"></span>
+<span class="w">            </span><span class="n">event</span><span class="p">.</span><span class="na">setCanceled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Зайдём в игру и положим яблоко в плавильню и о чудо! Плавильня выдала 5 золотых яблок.</p>
+<h2 id="своя-шина-событий">Своя шина событий<a class="headerlink" href="#своя-шина-событий" title="Permanent link">#</a></h2>
+<p>В теории, своя шина событий пригодится для разгрузки FML и Forge шин, но на практике мало кто создаёт свою шину.
+По большей части своя шина событий будет полезна тем, кто создаёт свою библиотеку с кучей событий и т.п.</p>
+<p>Чтобы создать свою шину, необходимо создать новый объект класса <code>EventBus</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.EventBus</span><span class="p">;</span><span class="w"></span>
+
+<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">EventBus</span><span class="w"> </span><span class="n">MODDING_BUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventBus</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Весь остальной принцип работы <code>EventBus</code>, ни чем не отличается от работы <code>MinecraftForge.EVENT_BUS</code> и 
+<code>FMLCommonHandler.instance().bus().register</code>.</p>
 
 
   
@@ -4285,7 +4152,7 @@
               
 
     
-        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.15/block/basics/index.md"></div>
+        <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/event/custom-event.md"></div>
         <script src="../../../scripts/contributors.js"></script>
     
 
@@ -4308,7 +4175,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
       
         
-        <a href="../../item/burn/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Горение" rel="prev">
+        <a href="../basics/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Использование событий" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -4317,20 +4184,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Горение
+              Использование событий
             </div>
           </div>
         </a>
       
       
         
-        <a href="../blockstates/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Состояния блока" rel="next">
+        <a href="../events-table/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Таблица событий" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Состояния блока
+              Таблица событий
             </div>
           </div>
           <div class="md-footer__button md-icon">
