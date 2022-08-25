@@ -30,7 +30,7 @@ public class RubyBlock extends Block {
 
 Далее идут сеттеры:
 
-* `setBlockName(String)` - задаёт нелокализованное название блоку(см. статью [Локализация](https://mcmodding.ru/1.7.10/basics/lang/))
+* `setBlockName(String)` - задаёт нелокализованное название блоку (см. статью [Локализация](../basics/lang.md))
 * `setBlockTextureName(String)` - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а из ресурсов нашего мода. Пример: `modId:textureName`, можно также указывать путь: 'modId:folder/textureName'
 
 Остальные сеттеры вы можете самостоятельно просмотреть в классе Block, ко многим из них прилагаются комментарии от MCP и MinecraftForge.

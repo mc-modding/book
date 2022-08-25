@@ -22,7 +22,7 @@ public class RingItem extends Item {
 
 Вот так просто пишется собственный предмет. Давайте разберёмся, что у нас в конструкторе написано.
 
-* `setUnlocalizedName(String)` - задаёт нелокализованное название предмета(см. статью [Локализация](https://mcmodding.ru/1.7.10/basics/lang/))
+* `setUnlocalizedName(String)` - задаёт нелокализованное название предмета(см. статью [Локализация](../basics/lang.md))
 * `setTextureName(String)` - задаёт текстуру. Необходимо указывать ModId, чтобы текстура бралась не из ресурсов Minecraft, а из ресурсов нашего мода. Пример: `modId:textureName`, можно также указывать путь: 'modId:folder/textureName'
 * `setMaxStackSize(Integer)` - задаёт максимальное количество предметов
 
