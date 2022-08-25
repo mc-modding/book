@@ -90,6 +90,13 @@ public class CommonProxy {
 Зададим новое значение для угля, вместо 1600 тиков, уголь будет иметь 2600 тиков времени горения.
 
 ```java
+package ru.mcmodding.tutorial.common.handler;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraftforge.event.FuelBurnTimeEvent;
+
 public class ForgeEventListener {
     @SubscribeEvent
     public void onFuelBurnTime(FuelBurnTimeEvent event) {
