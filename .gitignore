@@ -1,5 +1,6 @@
 # IDE
 /.idea
+/.vscode
 
 # mkdocs
 /site
