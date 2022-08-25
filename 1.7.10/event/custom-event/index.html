@@ -4032,10 +4032,10 @@
 
 <h1 id="собственное-событие">Собственное событие<a class="headerlink" href="#собственное-событие" title="Permanent link">#</a></h1>
 <h2 id="основная-часть">Основная часть<a class="headerlink" href="#основная-часть" title="Permanent link">#</a></h2>
-<p>Создавать своё событие также просто, как создать предмет или блок, всего лишь необходимо наследовать от <code>Event</code>.</p>
+<p>Создавать своё событие также просто, как создать предмет или блок, всего лишь необходимо наследовать класс <code>Event</code>.</p>
 <p>Создадим событие для нашей плавильни, чтобы можно было другим модам добавлять обработку других предметов, а не только
 угольной и железной руды.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.event</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">SmelterEvent.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.event</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Cancelable</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.Event</span><span class="p">;</span><span class="w"></span>
@@ -4065,15 +4065,18 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>События можно сделать отменяемыми и/или с результатом. </p>
-<p>Для отменяемого события необходимо повесить на класс аннотацию <code>@Cancelable</code>. Затем использовать методы <code>Event#isCanceled</code>
-(если событие было отменено, то вернёт <code>true</code>), а также <code>Event#setCanceled(Boolean)</code>(при <code>true</code> отменяет событие)</p>
-<p>Для события с результатом используется аннотация <code>@Event$HasResult</code>. Получить результат можно с помощью метода <code>Event#getResult</code>,
+<p>Для отменяемого события необходимо пометить класс аннотацией <code>@Cancelable</code>. Это позволит использовать методы <code>Event#isCanceled</code> и <code>Event#setCanceled(boolean)</code> для проверки отмены события и установки статуса отмены.</p>
+<p>Для события с результатом используется аннотация <code>@Event.HasResult</code>. Получить результат можно с помощью метода <code>Event#getResult</code>,
 а задать <code>Event#setResult(Result)</code>.</p>
-<p>MinecraftForge рекомендует использовать шину <code>MinecraftForge.EVENT_BUS</code> для регистрации своих событий, вместо устаревшей
-<code>FMLCommonHandler.instance().bus().register</code>.</p>
-<p>Чтобы наше событие можно было прослушивать, необходимо вызвать <code>EventBus#post(Event)</code>. Данный метод возвращает логическое 
-условие работающее по такой схеме:</p>
-<p><img alt="Схема условия" src="../images/event_post.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Minecraft Forge рекомендует использовать шину <code>MinecraftForge.EVENT_BUS</code> для регистрации своих событий, вместо устаревшей
+<code>FMLCommonHandler.instance().bus()</code></p>
+</div>
+<p>Чтобы наше событие можно было прослушивать, необходимо вызвать <code>EventBus#post(Event)</code>. Данный метод отправляет событие всем слушателям и возвращает логическое 
+значение по такой схеме:</p>
+<p><img alt="Схема условия" src="../images/event_post.svg" /></p>
+<p>Таким образом, метод возвращает <strong>true</strong> только когда событие было отменено и <strong>false</strong> когда событие ничем не было заблокировано.</p>
 <p>Добавим вызов слушателей при обновлении плавильни.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.tile</span><span class="p">;</span><span class="w"></span>
 
@@ -4130,7 +4133,7 @@
 <h2 id="своя-шина-событий">Своя шина событий<a class="headerlink" href="#своя-шина-событий" title="Permanent link">#</a></h2>
 <p>В теории, своя шина событий пригодится для разгрузки FML и Forge шин, но на практике мало кто создаёт свою шину.
 По большей части своя шина событий будет полезна тем, кто создаёт свою библиотеку с кучей событий и т.п.</p>
-<p>Чтобы создать свою шину, необходимо создать новый объект класса <code>EventBus</code>.</p>
+<p>Чтобы создать свою шину, необходимо создать новый экземпляр класса <code>EventBus</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
@@ -4142,7 +4145,7 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Весь остальной принцип работы <code>EventBus</code>, ни чем не отличается от работы <code>MinecraftForge.EVENT_BUS</code> и 
-<code>FMLCommonHandler.instance().bus().register</code>.</p>
+<code>FMLCommonHandler.instance().bus()</code></p>
 
 
   
