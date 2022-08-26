@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Удобный способ для получения доступа к приватным полям и методам без рефлексии.">
-      
       
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/advanced/access_transformers/">
@@ -1556,8 +1554,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#послесловие" class="md-nav__link">
-    Послесловие
+  <a href="#описание-файла-конфигурации-at" class="md-nav__link">
+    Описание файла конфигурации AT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#практика" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#дополнительно" class="md-nav__link">
+    Дополнительно
   </a>
   
 </li>
@@ -3977,8 +3989,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#послесловие" class="md-nav__link">
-    Послесловие
+  <a href="#описание-файла-конфигурации-at" class="md-nav__link">
+    Описание файла конфигурации AT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#практика" class="md-nav__link">
+    Практика
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#дополнительно" class="md-nav__link">
+    Дополнительно
   </a>
   
 </li>
@@ -4003,56 +4029,116 @@
 
 
 <h1 id="access-transformers">Access Transformers<a class="headerlink" href="#access-transformers" title="Permanent link">#</a></h1>
-<p>Автор статьи — <a href="https://forum.mcmodding.ru/members/dahaka.4288/">Dahaka</a>.</p>
-<p>Файлы, использующиеся в этой статье можно скачать <a href="../root.zip">здесь</a>.</p>
-<p>Во время написания мода иногда возникают ситуации, когда хочется использовать приватные методы и поля данных, но, к сожалению, IDE нам не позволяет это сделать. Первое, что приходит в голову, это использовать возможности рефлексии (преимущественно <code>ReflectionHelper</code>). И, естественно, это плохое решение проблемы, начиная с того, что падает производительность, заканчивая уродованием кода.</p>
-<p>Но решение есть - трансформеры доступа (Access Transformers - AT). Смысл в том, что они позволяют изменить модификаторы доступа к полям и методам в исходниках Minecraft сразу при сборке рабочего пространства (проекта), т.е. при выполнении <code>setupDecompWorkspace</code>. И это будет работать в отдельном клиенте из-за того, что forge в runtime (во время выполнения) меняет модификаторы доступа на <code>public</code>.</p>
-<p>Перейдем к практике.
-Необходимо создать файл <code>example_at.cfg</code> в каталоге <code>/src/main/resources/META-INF/</code>. Если <code>META-INF</code> нет, нужно создать вручную. Имя <code>example</code> значения не имеет, можно выбрать любое. Например, <code>&lt;modid&gt;</code>. Но важно, чтобы файл заканчивался на <code>_at.cfg</code>. Сам файл описывает, какие методы и поля должны быть преобразованы.</p>
-<div class="highlight"><pre><span></span><code># Это комментарий.
-
-# Все поля в классе Item станут публичными.
-public net.minecraft.item.Item *
-
-# Суффикс -f позволяет снять модификатор final.
-# Все поля в классе ItemStack станут публичными, изменяемыми.
-public-f net.minecraft.item.ItemStack *
-
-# Все методы в классе ItemStack станут публичными.
-# Так делать нельзя, если класс кем-то наследуется. Возможно может не собраться рабочая среда.
-# Это происходит из-за того, что в целевом классе модификаторы доступа методов изменятся, а в производных - нет.
-# Т.е. будет ошибка компиляции.
-public net.minecraft.item.ItemStack *()
-
-# Для обращения к внутренним классам используется &#39;$&#39;.
-# Все поля в классе ToolMaterial станут публичными.
-public net.minecraft.item.Item$ToolMaterial *
-
-# Поле unlocalizedName в классе Item станет публичным.
-public net.minecraft.item.Item field_77774_bZ
-
-# Метод Item#registerItem(int, String, Item) станет публичным.
-public net.minecraft.item.Item func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V
-
-# Конструктор класса называется &lt;init&gt;.
+<p>Иногда во время написания мода возникают ситуации, когда требуется обращение к приватным полям и методам классов игры, но сделать это просто так не получается. 
+Первое, что приходит в голову, это использовать возможности рефлексии (преимущественно <code>ReflectionHelper</code>). 
+Это неплохое решение проблемы, но оно немного снижает производительность игры и портит внешний вид кода, если использовать рефлексию слишком часто.</p>
+<p>И тут на помощь нам приходят трансформеры доступа (Access Transformers - AT). Смысл в том, что они изменяют атрибуты классов, 
+полей и методов «на лету» – это позволяет нам обращаться к ним напрямую, без использования рефлексии.</p>
+<div class="admonition question">
+<p class="admonition-title">Reflection или AT?</p>
+<ul>
+<li><strong>Рефлексия</strong> куда проще в использовании - достаточно написать небольшой фрагмент кода (использование <code>ReflectionHelper</code> делает это ещё проще); 
+не требуется ничего настраивать. Этот вариант хорошо подходит когда случаев обращения к приватным атрибутам в вашем коде не так много и обращение 
+к ним происходит не слишком часто.</li>
+<li><strong>Access Transformers</strong> идеально подходит когда нужно наследовать класс с приватными методами, получить возможность переопределения 
+final-методов; когда обращение к атрибутам происходит слишком часто (в рендере/тике), где низкая производительность рефлексии становится ощутима.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p>Если вы решились использовать <strong>Access Transformers</strong>, то используйте его повсюду в проекте для улучшения читаемости кода. 
+Совмещать оба подхода в рамках одного проекта не стоит.</p>
+</div>
+<h2 id="описание-файла-конфигурации-at">Описание файла конфигурации AT<a class="headerlink" href="#описание-файла-конфигурации-at" title="Permanent link">#</a></h2>
+<p>Правила записываются в специальном <strong>*_at.cfg</strong> файле. Данный файл конфигурации описывает, какие классы, методы и поля должны быть преобразованы. 
+Каждое правило записывается отдельной стройкой в следующем формате:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Изменение модификатора доступа КЛАССА</span><span class="w"></span>
+<span class="nt">&lt;AccessModifier&gt;</span><span class="w"> </span><span class="nt">&lt;ClassName&gt;</span><span class="w"></span>
+<span class="c"># Изменение модификатора доступа ПОЛЯ</span><span class="w"></span>
+<span class="nt">&lt;AccessModifier&gt;</span><span class="w"> </span><span class="nt">&lt;ClassName&gt;</span><span class="w"> </span><span class="nt">&lt;FieldName&gt;</span><span class="w"></span>
+<span class="c"># Изменение модификатора доступа МЕТОДА</span><span class="w"></span>
+<span class="nt">&lt;AccessModifier&gt;</span><span class="w"> </span><span class="nt">&lt;ClassName&gt;</span><span class="w"> </span><span class="nt">&lt;MethodName&gt;&lt;MethodSignature&gt;</span><span class="w"></span>
 </code></pre></div>
-<p>Магическая строка <code>func_179217_a(ILjava/lang/String;Lnet/minecraft/item/Item;)V</code> это srg имя с дескриптором. Узнать их можно, например, при помощи программки <a href="http://bspk.rs/MC/MCPMappingViewer/index.html">MCP Mapping Viewer</a>. В ней интуитивно понятный интерфейс, так что проблем возникнуть не должно. Выбираем маппинги под нужную версию и через поиск ищем метод или поле.</p>
-<p>После того как создали и заполнили файл <code>example_at.cfg</code>, необходимо добавить в файл <code>build.gradle</code> следующие строки:</p>
+<ul>
+<li><code>&lt;AccessModifier&gt;</code> – Модификатор доступа который требуется установить: <strong>public</strong>, <strong>protected</strong> или <strong>private</strong>. В большинстве случаев это будет <strong>public</strong>.
+  В дополнение к модификатору доступа можно добавить суффикс <strong>+f</strong> или <strong>-f</strong> чтобы установить или снять флаг <strong>final</strong>.</li>
+<li><code>&lt;ClassName&gt;</code> – Полное имя класса.</li>
+<li><code>&lt;FieldName&gt;</code> – Имя поля.</li>
+<li><code>&lt;MethodName&gt;</code> – Имя метода.</li>
+<li><code>&lt;MethodSignature&gt;</code> – Сигнатура метода во <a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-4.html#jvms-4.3.2">внутреннем формате JVM</a> (типы аргументов + возвращаемый тип).</li>
+</ul>
+<div class="admonition note">
+<p>См. <a href="https://github.com/MinecraftForge/AccessTransformers/blob/master/FMLAT.md">спецификация формата файла</a> FML Access Transformer.</p>
+</div>
+<h2 id="практика">Практика<a class="headerlink" href="#практика" title="Permanent link">#</a></h2>
+<p>Создайте файл <strong>example_at.cfg</strong> в каталоге <code>src/main/resources/META-INF</code>. Имя <strong>example</strong> значения не имеет, можно выбрать любое, обычно это <code>&lt;modid&gt;</code>. 
+Но важно, чтобы имя файла заканчивалось суффиксом <strong>_at.cfg</strong></p>
+<div class="highlight"><span class="filename">example_at.cfg</span><pre><span></span><code><span class="c"># Снимает модификатор final чтобы метод dropBlockAsItem(World, int, int, int, int, int)</span><span class="w"></span>
+<span class="c"># можно было переопределять.</span><span class="w"></span>
+<span class="nb">public</span>-f<span class="w"> </span>net.minecraft.block.Block<span class="w"> </span>func_149697_b(Lnet/minecraft/world/World;IIIII)V<span class="w"></span>
+
+<span class="c"># Для обращения к внутренним классам используется разделитель &#39;$&#39;.</span><span class="w"></span>
+<span class="c"># Делает вложенный класс LongHashMap.Entry публичным.</span><span class="w"></span>
+<span class="nb">public</span><span class="w"> </span>net.minecraft.util.LongHashMap$Entry<span class="w"></span>
+
+<span class="c"># Делает поле isBadEffect публичным (полезно для сервера, где геттер недоступен)</span><span class="w"></span>
+<span class="nb">public</span><span class="w"> </span>net.minecraft.potion.Potion<span class="w"> </span>field_76418_K<span class="w"></span>
+
+<span class="c"># Делаем конструктор класса публичным (конструктор - это метод с названием &lt;init&gt;)</span><span class="w"></span>
+<span class="nb">public</span><span class="w"> </span>net.minecraft.potion.Potion#Potion<span class="w"> </span>&lt;init&gt;(IZI)V<span class="w"></span>
+
+<span class="c"># Делает поля в классе ItemStack станут публичными и изменяемыми</span><span class="w"></span>
+<span class="nb">public</span>-f<span class="w"> </span>net.minecraft.item.ItemStack<span class="w"> </span>*<span class="w"></span>
+
+<span class="c"># Делает все методы в классе ItemStack станут публичными.</span><span class="w"></span>
+<span class="nb">public</span><span class="w"> </span>net.minecraft.item.ItemStack<span class="w"> </span>*()<span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p>Обратите внимание что здесь используются SRG-имена полей и методов. В поиске таких имён и сигнатур вам поможет сервис <a href="https://mcp.thiakil.com/">Minecraft Names</a>. 
+В некоторых случаях может потребоваться продублировать MCP-имена.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Не злоупотребляйте!</p>
+<p>В последних двух примерах показана возможность использования символа <code>*</code> вместо названий полей/методов. <strong>Так лучше никогда не делать</strong>, 
+всегда указывая имена нужных элементов класса. Это нарушает весь смысл инкапсуляции. В некоторых случаях это может приводить к ошибкам.</p>
+</div>
+<p>Финальным штрихом будет указание имени конфигурационного в манифесте JAR файла, чтобы Forge мог найти в релизной версии мода. 
+Добавьте в файл <strong>build.gradle</strong> следующие строки (не забудьте изменить имя файла, если меняли):</p>
 <div class="highlight"><pre><span></span><code><span class="n">jar</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">   </span><span class="n">manifest</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">       </span><span class="n">attributes</span><span class="w"> </span><span class="s1">&#39;FMLAT&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;example_at.cfg&#39;</span><span class="w"></span>
 <span class="w">   </span><span class="o">}</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
-<p>Теперь остается лишь все пересобрать: <code>gradlew clean setupDecompWorkspace --refresh-dependencies</code>. В результате вы увидите, что указанные поля и методы имеют <code>public</code> модификатор.</p>
-<h2 id="послесловие">Послесловие<a class="headerlink" href="#послесловие" title="Permanent link">#</a></h2>
-<ol>
-<li>Указывать можно не только <code>public</code> модификатор, но и <code>protected</code>. Правда я не знаю, для чего это может пригодиться. И работать это будет только в сторону снятия инкапсуляции, но не наоборот.</li>
-<li>Иногда трансформер может не примениться, т.е. поле/метод так и останется инкапсулировано. Но это редкость. Зачастую это вставки forge.</li>
-<li>Указанные в примере трансформеры относятся к версии 1.12.</li>
-<li>В прикрепленном архиве лежит исходный <code>build.gradle</code> файл, в который добавлены указанные выше строки, а также файл <code>example_at.cfg</code> в нужной папке. Достаточно лишь скопировать к себе в проект, пересобрать, и все должно работать.</li>
-<li>Если вдруг ваша версия Minecraft более ранняя, то об использовании AT можно почитать <a href="https://web.archive.org/web/20160906133747/http://www.minecraftforge.net/wiki/Using_Access_Transformers">здесь</a>.</li>
-</ol>
+<p>Теперь запустите сборку проекта (<code>gradlew build</code>). ForgeGradle должен увидеть файл конфигурации (вы увидите сообщение в логе) и 
+сгенерировать специальный <strong>minecraft.jar</strong> с применёнными трансформерами. Затем переимпортируйте проект в IDE, чтобы та переключилась на новый файл. 
+При внесении изменений в файл AT нужно будет запускать сборку проекта снова. Сообщение в логе «<em>Applying SpecialSource...</em>» сигнализирует о том что был применён файл AT.</p>
+<div class="admonition fail">
+<p class="admonition-title">Если ForgeGradle игнорирует ваши изменения...</p>
+<p>Иногда случается так что FG не хочет перегенерировать <strong>minecraft.jar</strong> ни в какую. Завершите работу Gradle Daemon командой <code>gradlew --stop</code> 
+и удалите папку <strong>build</strong> в директории вашего проекта. Затем запустите сборку проекта снова.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">На заметку</p>
+<p>Хоть трансформеры доступа рассчитаны в основном для кода Minecraft, ничто не запрещает их применять в том числе к другим модификациям. 
+Это может быть полезно, например, при разработке дополнения к моду. Однако среда ForgeGradle не сможет сгенерировать вам специальный JAR файл мода с применением трансформера. 
+Возможно потребуется добавить в проект изменённые файлы исходного кода исключительно для возможности сборки и запуска проекта в dev-среде.</p>
+</div>
+<p>Теперь вы можете приступать к написанию кода!</p>
+<h2 id="дополнительно">Дополнительно<a class="headerlink" href="#дополнительно" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://web.archive.org/web/20160906133747/http://www.minecraftforge.net/wiki/Using_Access_Transformers">Документация Minecraft Forge по написанию трансформеров для старых версий Minecraft (Веб-архив)</a></li>
+</ul>
+<div class="admonition bug">
+<p class="admonition-title">Баги ForgeGradle</p>
+<p>К большому сожалению, как только вы начинаете использовать в своём проекте трансформеры доступа появляются следующие баги:</p>
+<ul>
+<li>Сгенерированный <strong>minecraft.jar</strong> (forgeBin.jar) подключается к среде без исходного кода. Становится недоступен просмотр исходного кода игры и JavaDoc. 
+Потребуется вручную подключить архив с исходным кодом в настройках проекта IDE.</li>
+<li>ForgeGradle забывает закрыть сгенерированный <strong>minecraft.jar</strong> как ресурс из-за чего 
+становится невозможным выполнять чистую сборку (clean) проекта. Задание будет завершаться ошибкой про заблокированный файл.</li>
+</ul>
+<p>По этим причинам повсеместное использование трансформеров доступа в каждом проекте может оказаться неуместным.</p>
+</div>
 
 
   
