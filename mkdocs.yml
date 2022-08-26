@@ -241,14 +241,14 @@ theme:
           primary: mcmodding
           accent: mcmodding
           toggle:
-              icon: material/toggle-switch
+              icon: material/brightness-7
               name: Темная тема
         - media: "(prefers-color-scheme: dark)"
           scheme: slate
           primary: mcmodding
           accent: mcmodding
           toggle:
-              icon: material/toggle-switch-off-outline
+              icon: material/brightness-4
               name: Светлая тема
 
 plugins:
