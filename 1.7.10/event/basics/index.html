@@ -4023,11 +4023,7 @@
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Мы можем зарегистрировать наш обработчик сразу в обеих шинах </span><span class="w"></span>
-<span class="w">        </span><span class="c1">// чтобы иметь возможность ловить все события</span><span class="w"></span>
-<span class="w">        </span><span class="n">FMLEventListener</span><span class="w"> </span><span class="n">listener</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FMLEventListener</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">MinecraftForge</span><span class="p">.</span><span class="na">EVENT_BUS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">listener</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">FMLCommonHandler</span><span class="p">.</span><span class="na">instance</span><span class="p">().</span><span class="na">bus</span><span class="p">().</span><span class="na">register</span><span class="p">(</span><span class="n">listener</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">FMLCommonHandler</span><span class="p">.</span><span class="na">instance</span><span class="p">().</span><span class="na">bus</span><span class="p">().</span><span class="na">register</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FMLEventListener</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
