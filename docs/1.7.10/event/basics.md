@@ -60,11 +60,7 @@ import ru.mcmodding.tutorial.common.handler.*;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
-        // Мы можем зарегистрировать наш обработчик сразу в обеих шинах 
-        // чтобы иметь возможность ловить все события
-        FMLEventListener listener = new FMLEventListener();
-        MinecraftForge.EVENT_BUS.register(listener);
-        FMLCommonHandler.instance().bus().register(listener);
+        FMLCommonHandler.instance().bus().register(new FMLEventListener());
     }
 }
 ```
