@@ -38,8 +38,8 @@ nav:
           - Рецепты:
                 - Добавление рецепта: "1.7.10/prepare.md"
                 - Собственный рецепт: "1.7.10/prepare.md"
-                - Зельеварение: "1.7.10/prepare.md"
                 - Топливо для печи: "1.7.10/recipe/fuel.md"
+                - Словарь руд: "1.7.10/prepare.md"
           - Сущность(Entity):
                 - Собственная сущность: "1.7.10/prepare.md"
                 - Спавн в мире: "1.7.10/prepare.md"
@@ -70,7 +70,6 @@ nav:
                 - Достижения: "1.7.10/prepare.md"
                 - Команды: "1.7.10/prepare.md"
                 - Собственные чары: "1.7.10/prepare.md"
-                - Словарь руд: "1.7.10/prepare.md"
                 - Собственный эффект зелья: "1.7.10/prepare.md"
                 - Привязка клавиш: "1.7.10/prepare.md"
                 - Access Transformers: "1.7.10/advanced/access_transformers.md"
