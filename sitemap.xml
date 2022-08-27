@@ -466,6 +466,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://mcmodding.ru/1.7.10/block/fluid-tank/</loc>
+         <lastmod>2022-08-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://mcmodding.ru/1.7.10/block/fluid/</loc>
          <lastmod>2022-08-27</lastmod>
          <changefreq>daily</changefreq>

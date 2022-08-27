@@ -776,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fluid-tank.md" class="md-nav__link">
+      <a href="../fluid-tank/" class="md-nav__link">
         Хранение жидкости
       </a>
     </li>
@@ -4200,10 +4200,10 @@
 <span class="cm">     */</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BucketItem</span><span class="w"> </span><span class="nf">registryBucket</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">Fluid</span><span class="w"> </span><span class="n">fluid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">BucketItem</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BucketItem</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">fluid</span><span class="p">.</span><span class="na">getBlock</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Регистрируем экземпляр ведра</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Регистрируем экземпляр ведра.</span><span class="w"></span>
 <span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerItem</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;_bucket&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Регистрируем контейнер с жидкостью, т.е. ведро.</span><span class="w"></span>
-<span class="w">        </span><span class="n">FluidContainerRegistry</span><span class="p">.</span><span class="na">registerFluidContainer</span><span class="p">(</span><span class="n">fluid</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">bucket</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Регистрируем контейнер с жидкостью, т.е. ведро. Последним параметром является стек пустого ведра.</span><span class="w"></span>
+<span class="w">        </span><span class="n">FluidContainerRegistry</span><span class="p">.</span><span class="na">registerFluidContainer</span><span class="p">(</span><span class="n">fluid</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">bucket</span><span class="p">),</span><span class="w"> </span><span class="n">FluidContainerRegistry</span><span class="p">.</span><span class="na">EMPTY_BUCKET</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// Добавляем к нашему блоку жидкости ведро, которое будет даваться при сборе жидкости.</span><span class="w"></span>
 <span class="w">        </span><span class="n">buckets</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">fluid</span><span class="p">.</span><span class="na">getBlock</span><span class="p">(),</span><span class="w"> </span><span class="n">bucket</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bucket</span><span class="p">;</span><span class="w"></span>
@@ -4272,14 +4272,14 @@
 <span class="w">            </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerBlock</span><span class="p">(</span><span class="n">JUICE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;juice&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">            </span><span class="c1">// Регистрировать ведро необходимо после регистрации блока жидкости и самой жидкости.</span><span class="w"></span>
-<span class="w">            </span><span class="n">BucketHandler</span><span class="p">.</span><span class="na">registryBucket</span><span class="p">(</span><span class="s">&quot;juice&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">JUICE_FLUID</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">ModItems</span><span class="p">.</span><span class="na">JUICE_BUCKET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BucketHandler</span><span class="p">.</span><span class="na">registryBucket</span><span class="p">(</span><span class="s">&quot;juice&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">JUICE_FLUID</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FluidRegistry</span><span class="p">.</span><span class="na">registerFluid</span><span class="p">(</span><span class="n">STEAM_FLUID</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="n">STEAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SteamFluidBlock</span><span class="p">(</span><span class="n">STEAM_FLUID</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">registerBlock</span><span class="p">(</span><span class="n">STEAM</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;steam&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">            </span><span class="n">BucketHandler</span><span class="p">.</span><span class="na">registryBucket</span><span class="p">(</span><span class="s">&quot;steam&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">STEAM_FLUID</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">ModItems</span><span class="p">.</span><span class="na">STEAM_BUCKET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BucketHandler</span><span class="p">.</span><span class="na">registryBucket</span><span class="p">(</span><span class="s">&quot;steam&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">STEAM_FLUID</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -4289,6 +4289,16 @@
 <p>Вы можете регистрировать жидкость через <code>FluidContainerRegistry#registerFluidContainer</code>, но данное решение будет подходить
 если у вас используется своя реализация ведра, а не наследник от <code>ItemBucket</code>.</p>
 </div>
+<p>Не забываем добавить в <code>ModItems</code> две переменные(регистрировать предметы вёдер не нужно!):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.item.tool.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModItems</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BucketItem</span><span class="w"> </span><span class="n">JUICE_BUCKET</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BucketItem</span><span class="w"> </span><span class="n">STEAM_BUCKET</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>Текстуры вёдер:</p>
 <p><img alt="Ведро сока" src="../images/juice_bucket.png" /></p>
 <p><img alt="Ведро пара" src="../images/steam_bucket.png" /></p>
@@ -4345,13 +4355,13 @@
       
       
         
-        <a href="../../basics/creative-tab/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Вкладка в креативе" rel="next">
+        <a href="../fluid-tank/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Хранение жидкости" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Вкладка в креативе
+              Хранение жидкости
             </div>
           </div>
           <div class="md-footer__button md-icon">
