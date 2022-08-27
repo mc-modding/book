@@ -223,10 +223,10 @@ public class BucketHandler {
      */
     public static BucketItem registryBucket(String name, Fluid fluid) {
         BucketItem bucket = new BucketItem(name, fluid.getBlock());
-        // Регистрируем экземпляр ведра
+        // Регистрируем экземпляр ведра.
         GameRegistry.registerItem(bucket, name + "_bucket");
-        // Регистрируем контейнер с жидкостью, т.е. ведро.
-        FluidContainerRegistry.registerFluidContainer(fluid, new ItemStack(bucket));
+        // Регистрируем контейнер с жидкостью, т.е. ведро. Последним параметром является стек пустого ведра.
+        FluidContainerRegistry.registerFluidContainer(fluid, new ItemStack(bucket), FluidContainerRegistry.EMPTY_BUCKET);
         // Добавляем к нашему блоку жидкости ведро, которое будет даваться при сборе жидкости.
         buckets.put(fluid.getBlock(), bucket);
         return bucket;
@@ -302,14 +302,14 @@ public class ModBlocks {
             GameRegistry.registerBlock(JUICE, "juice");
 
             // Регистрировать ведро необходимо после регистрации блока жидкости и самой жидкости.
-            BucketHandler.registryBucket("juice", JUICE_FLUID);
+            ModItems.JUICE_BUCKET = BucketHandler.registryBucket("juice", JUICE_FLUID);
         }
 
         if (FluidRegistry.registerFluid(STEAM_FLUID)) {
             STEAM = new SteamFluidBlock(STEAM_FLUID);
             GameRegistry.registerBlock(STEAM, "steam");
 
-            BucketHandler.registryBucket("steam", STEAM_FLUID);
+            ModItems.STEAM_BUCKET = BucketHandler.registryBucket("steam", STEAM_FLUID);
         }
     }
 }
@@ -318,6 +318,19 @@ public class ModBlocks {
 !!! info "Пояснение к регистрации"
     Вы можете регистрировать жидкость через `FluidContainerRegistry#registerFluidContainer`, но данное решение будет подходить
     если у вас используется своя реализация ведра, а не наследник от `ItemBucket`.
+
+Не забываем добавить в `ModItems` две переменные(регистрировать предметы вёдер не нужно!):
+
+```java
+package ru.mcmodding.tutorial.common.handler;
+
+import ru.mcmodding.tutorial.common.item.tool.*;
+
+public class ModItems {
+    public static BucketItem JUICE_BUCKET;
+    public static BucketItem STEAM_BUCKET;
+}
+```
 
 Текстуры вёдер:
 
