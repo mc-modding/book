@@ -36,10 +36,10 @@ nav:
                 - Собственное событие: "1.7.10/event/custom-event.md"
                 - Таблица событий: "1.7.10/event/events-table.md"
           - Рецепты:
-                - Добавление рецепта: "1.7.10/prepare.md"
-                - Собственный рецепт: "1.7.10/prepare.md"
+                - Добавление рецепта: "1.7.10/recipe/basics.md"
+                - Собственный рецепт: "1.7.10/recipe/custom-recipe.md"
                 - Топливо для печи: "1.7.10/recipe/fuel.md"
-                - Словарь руд: "1.7.10/prepare.md"
+                - Словарь руд: "1.7.10/recipe/ore-dictionary.md"
           - Сущность(Entity):
                 - Собственная сущность: "1.7.10/prepare.md"
                 - Спавн в мире: "1.7.10/prepare.md"
