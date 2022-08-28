@@ -2,13 +2,13 @@ nav:
   - Задать вопрос: https://forum.mcmodding.ru/forums/23/
   - Форум: https://forum.mcmodding.ru
   - Как внести вклад?: editing-book/index.md
-  - Примеры: https://github.com/orgs/mc-modding/repositories?q=example&type=all&language=&sort=
+  - Примеры: https://github.com/orgs/mc-modding/repositories?q=example&type=all
 
   - "1.7.10":
       - Подготовка:
           - Установка программ: "1.7.10/preparation/install.md"
-          - Использование Idea: "1.7.10/preparation/setup-idea.md"
-          - Авторизация(Скин и никнейм): "1.7.10/preparation/auth.md"
+          - Использование IDEA: "1.7.10/preparation/setup-idea.md"
+          - Авторизация (Скин и никнейм): "1.7.10/preparation/auth.md"
       - Основы Forge:
           - Структура мода: "1.7.10/basics/mod-structure.md"
           - Аннотация @Mod: "1.7.10/basics/mod-annotation.md"
@@ -26,7 +26,7 @@ nav:
       - Блок:
           - Создание блока: "1.7.10/block/basics.md"
           - Метаданные: "1.7.10/block/metadata.md"
-          - Хранение данных(TileEntity): "1.7.10/block/tile-entity.md"
+          - TileEntity: "1.7.10/block/tileentity.md"
           - Жидкость: "1.7.10/block/fluid.md"
           - Хранение жидкости: "1.7.10/block/fluid-tank.md"
       - Вкладка в креативе: "1.7.10/basics/creative-tab.md"
@@ -40,15 +40,15 @@ nav:
           - Собственный рецепт: "1.7.10/recipe/custom-recipe.md"
           - Топливо для печи: "1.7.10/recipe/fuel.md"
           - Словарь руд: "1.7.10/recipe/ore-dictionary.md"
-      - Сущность(Entity):
+      - Сущность (Entity):
           - Собственная сущность: "1.7.10/prepare.md"
           - Спавн в мире: "1.7.10/prepare.md"
           - Искусственный интеллект: "1.7.10/prepare.md"
-      - Пользовательский интерфейс(Gui):
+      - Пользовательский интерфейс (Gui):
           - Создание окна: "1.7.10/prepare.md"
           - Контейнер: "1.7.10/prepare.md"
       - Пакетная система: "1.7.10/basics/network.md"
-      - Измерение(Dimension):
+      - Измерение (Dimension):
           - Собственное измерение: "1.7.10/prepare.md"
           - Биом: "1.7.10/prepare.md"
           - Генерация руды: "1.7.10/prepare.md"
@@ -57,12 +57,11 @@ nav:
           - Генерация лута:
               - Рыбалка: "1.7.10/prepare.md"
               - В сундуках: "1.7.10/prepare.md"
-              - В вагонетках с сундуком: "1.7.10/prepare.md"
           - Собственный житель: "1.7.10/prepare.md"
       - Хранение данных:
           - В сущностях: "1.7.10/prepare.md"
           - В мире: "1.7.10/prepare.md"
-          - Конфиг: "1.7.10/prepare.md"
+          - Файл конфигурации: "1.7.10/prepare.md"
       - Эффекты:
           - Звуки: "1.7.10/prepare.md"
           - Частицы: "1.7.10/prepare.md"
@@ -77,7 +76,7 @@ nav:
   - "1.12":
       - Подготовка:
           - Установка программ: "1.12/preparation/install/index.md"
-          - Использование Idea: "1.12/preparation/setup-idea/index.md"
+          - Использование IDEA: "1.12/preparation/setup-idea/index.md"
           - Использование Eclipse: "1.12/preparation/setup-eclipse/index.md"
           - Собственный скин: "1.12/preparation/custom-skin/index.md"
           - Решение проблем: "1.12/preparation/problems/index.md"
@@ -120,7 +119,7 @@ nav:
           - Временные эффекты: "1.12/advanced/buffs/index.md"
           - Звуки: "1.12/advanced/sounds/index.md"
       - Дополнительно:
-          - Работа с иходниками: "1.12/other/src/index.md"
+          - Работа с исходниками: "1.12/other/src/index.md"
           - Интеграция с JEI: "1.12/other/jei-integration/index.md"
           - Access Transformers: "1.12/other/access-transformers/index.md"
           - Каскадная генерация: "1.12/other/gen-lags/index.md"
@@ -128,7 +127,7 @@ nav:
   - "1.15":
       - Подготовка:
           - Установка программ: "1.15/preparation/install/index.md"
-          - Использование Idea: "1.15/preparation/setup-idea/index.md"
+          - Использование IDEA: "1.15/preparation/setup-idea/index.md"
           - Использование Eclipse: "1.15/preparation/setup-eclipse/index.md"
           - Собственный скин: "1.15/preparation/custom-skin/index.md"
           - Решение проблем: "1.15/preparation/problems/index.md"
@@ -169,7 +168,7 @@ nav:
           - Звуки: "1.15/advanced/sounds/index.md"
           - Пакетная система: "1.15/advanced/packet-system/index.md"
       - Дополнительно:
-          - Работа с иходниками: "1.15/other/src/index.md"
+          - Работа с исходниками: "1.15/other/src/index.md"
           - Интеграция с JEI: "1.15/other/jei-integration/index.md"
           - Access Transformers: "1.15/other/access-transformers/index.md"
 
@@ -193,12 +192,12 @@ nav:
           - Клиент-серверная архитектура: "fabric/basics/sides/index.md"
           - Реестры: "fabric/basics/registry/index.md"
       - Предмет:
-          - Созданиие предмета: "fabric/item/creating/index.md"
+          - Создание предмета: "fabric/item/creating/index.md"
           - Еда: "fabric/item/food/index.md"
           - Броня: "fabric/item/armor/index.md"
           - Инструменты и меч: "fabric/item/tools/index.md"
       - Блок:
-          - Созданиие блока: "fabric/block/creating/index.md"
+          - Создание блока: "fabric/block/creating/index.md"
       - Вкладка в креативе: "fabric/creative_tab/index.md"
       - Локализация: "fabric/locale/index.md"
       - Рецепты: "fabric/recipe/index.md"
