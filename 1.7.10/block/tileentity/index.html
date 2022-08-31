@@ -741,13 +741,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#таблица-nbt-идентификаторов" class="md-nav__link">
-    Таблица NBT идентификаторов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#механизм" class="md-nav__link">
     Механизм
   </a>
@@ -1364,7 +1357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/nbt.md" class="md-nav__link">
+      <a href="../../storage/nbt/" class="md-nav__link">
         NBT
       </a>
     </li>
@@ -3998,13 +3991,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#таблица-nbt-идентификаторов" class="md-nav__link">
-    Таблица NBT идентификаторов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#механизм" class="md-nav__link">
     Механизм
   </a>
@@ -4275,79 +4261,7 @@
 <p>Разберём немного принцип работы NBT. NBTTagCompound своего рода <code>Map</code>, т.е. вместо метода <code>Map#put</code> вы будете использовать
 геттеры и сеттеры для большего удобства. На данный момент NBT поддерживает запись все типов данных. Настоятельно
 рекомендуется при проверке ключа NBT передавать вторым параметром идентификатор NBT, чтобы убедиться, что данные
-при чтении будут верными.</p>
-<h3 id="таблица-nbt-идентификаторов">Таблица NBT идентификаторов<a class="headerlink" href="#таблица-nbt-идентификаторов" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Идентификатор</th>
-<th>NBT</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>END</td>
-<td>Обозначение пустого тега</td>
-</tr>
-<tr>
-<td>1</td>
-<td>BYTE</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>SHORT</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>INT</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>LONG</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>FLOAT</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>DOUBLE</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>BYTE_ARRAY</td>
-<td>Массив <code>byte</code></td>
-</tr>
-<tr>
-<td>8</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>LIST</td>
-<td>Различные типы NBT данных (<code>List&lt;NBTBase&gt;</code>)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>COMPOUND</td>
-<td>Различные типы NBT данных (<code>Map&lt;String, NBTBase&gt;</code>)</td>
-</tr>
-<tr>
-<td>11</td>
-<td>INT_ARRAY</td>
-<td>Массив <code>int</code></td>
-</tr>
-</tbody>
-</table>
+при чтении будут верными. Подробнее почитать про NBT можно в <a href="../../storage/nbt/">этой статье</a>.</p>
 <h2 id="механизм">Механизм<a class="headerlink" href="#механизм" title="Permanent link">#</a></h2>
 <p>В предыдущей части статьи мы рассмотрели базовый принцип создания Tile Entity, в этой части мы рассмотрим создание
 механизма способного обработать входящий предмет и выдать результат. Создадим <code>SmelterBlock</code> и <code>SmelterTile</code>, по
