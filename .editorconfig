@@ -11,3 +11,7 @@ trim_trailing_whitespace = true
 
 [{*.yaml,*.yml}]
 indent_size = 2
+
+[*.md]
+# В Markdown пробелы на конце используются для перевода строки.
+trim_trailing_whitespace = false
