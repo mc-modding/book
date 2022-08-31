@@ -43,7 +43,7 @@ public class WhetstoneItem extends Item {
      * @param stack стек предмета для зачаривания.
      * @param book книга с чарами.
      *
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
@@ -54,7 +54,7 @@ public class WhetstoneItem extends Item {
      * Возвращает true, если предмет содержит предмет-контейнер.
      *
      * @param stack текущий стек предмета.
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean hasContainerItem(ItemStack stack) {
@@ -81,7 +81,7 @@ public class WhetstoneItem extends Item {
      *
      * @param stack стек предмета.
      *
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack) {
@@ -159,7 +159,7 @@ public class WhetstoneRecipe implements IRecipe {
      * @param inventory инвентарь для крафта.
      * @param world текущий мир.
      *
-     * @return Возвращает логическое условие соответствия рецепта.
+     * @return Возвращает логическое значение соответствия рецепта.
      */
     @Override
     public boolean matches(InventoryCrafting inventory, World world) {
@@ -285,6 +285,6 @@ public class WhetstoneRecipe implements IRecipe {
 
 !!! danger "Важно!"
     В предметах существует такой метод как `Item#doesContainerItemLeaveCraftingGrid(ItemStack)`, который возвращает
-    логическое условие. Обычно метод возвращает `true`, что говори о том, что предмет будет удалён после получения
+    логическое значение. Обычно метод возвращает `true`, что говори о том, что предмет будет удалён после получения
     результата крафта, но авторы некоторых модов используют данный метод для создания пере используемых предметов.
     Это необходимо учитывать, чтобы избежать возможных дюпов или иных багов!

@@ -35,7 +35,7 @@ public class StorageBlock extends BlockContainer {
 
     /**
      * Данный метод отвечает за создание Tile Entity.
-     * 
+     *
      * @param world     мир в котором расположен блок.
      * @param metadata  метаданные блока
      * @return Возвращает новый экземпляр Tile Entity
@@ -198,7 +198,7 @@ public class StorageTile extends TileEntity {
      * Будет ли Tile Entity обновляться. В нашем случае Tile Entity не имеет метода {@link TileEntity#updateEntity}, а значит обновлять
      * Tile Entity не нужно.
      *
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean canUpdate() {
@@ -207,7 +207,7 @@ public class StorageTile extends TileEntity {
 
     /**
      * Вспомогательный метод, проверяющий наличие стека в Tile Entity.
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     public boolean hasStack() {
         return stack != null;
@@ -366,7 +366,7 @@ public class SmelterBlock extends BlockContainer {
     /**
      * Указывает Minecraft, что блок является нормальным блоком для отрисовки(обычным кубом).
      *
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean renderAsNormalBlock() {
@@ -377,7 +377,7 @@ public class SmelterBlock extends BlockContainer {
      * Указывает Minecraft, что блок является непрозрачным. Если указать true, то пространство внутри блока будет создавать
      * x-ray эффект.
      *
-     * @return Возвращает логическое условие.
+     * @return Возвращает логическое значение.
      */
     @Override
     public boolean isOpaqueCube() {
@@ -532,7 +532,7 @@ public class SmelterTile extends TileEntity {
             ((SmelterTile) tile).readExtendedData(packet.func_148857_g());
         }
     }
-    
+
     private void writeExtendedData(NBTTagCompound nbt) {
         if (stack != null) {
             NBTTagCompound inventoryTag = new NBTTagCompound();
