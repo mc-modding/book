@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Добавление собственного эффекта зелья.">
-      
       
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/advanced/key-bindings/">
@@ -17,7 +15,7 @@
     
     
       
-        <title>Привязка клавиш - Создание Minecraft модов</title>
+        <title>Привязка клавиш в Minecraft 1.7.10 - Создание Minecraft модов</title>
       
     
     
@@ -89,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#собственный-эффект-зелья" class="md-skip">
+        <a href="#привязка-клавиш" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -121,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Привязка клавиш
+              Привязка клавиш в Minecraft 1.7.10
             
           </span>
         </div>
@@ -1517,9 +1515,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Привязка клавиш
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Привязка клавиш
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#простой-обработчик-клавиш" class="md-nav__link">
+    Простой обработчик клавиш
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#продвинутый-уровень" class="md-nav__link">
+    Продвинутый уровень
+  </a>
+  
+    <nav class="md-nav" aria-label="Продвинутый уровень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#возможности-keybinding" class="md-nav__link">
+    Возможности KeyBinding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#отслеживание-нажатия-клавиш" class="md-nav__link">
+    Отслеживание нажатия клавиш
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3939,6 +3995,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#простой-обработчик-клавиш" class="md-nav__link">
+    Простой обработчик клавиш
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#продвинутый-уровень" class="md-nav__link">
+    Продвинутый уровень
+  </a>
+  
+    <nav class="md-nav" aria-label="Продвинутый уровень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#возможности-keybinding" class="md-nav__link">
+    Возможности KeyBinding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#отслеживание-нажатия-клавиш" class="md-nav__link">
+    Отслеживание нажатия клавиш
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3957,7 +4055,127 @@
   </a>
 
 
-<h1 id="собственный-эффект-зелья">Собственный эффект зелья<a class="headerlink" href="#собственный-эффект-зелья" title="Permanent link">#</a></h1>
+<h1 id="привязка-клавиш">Привязка клавиш<a class="headerlink" href="#привязка-клавиш" title="Permanent link">#</a></h1>
+<p>Иногда в процессе разработки возникает необходимость добавления новых клавиш управления.
+Иногда – потому что клавиши должны использоваться только для часто используемых действий игроком, дабы не перегружать экран настроек управления.
+Все остальные действия лучше реализовывать с помощью <a href="../../gui/basics/">GUI</a> и <a href="../commands/">команд</a>.</p>
+<p>Работа с клавишами управления состоит из двух частей: регистрация клавиш в настройках игры и создание обработчика, отслеживающего нажатия.
+Первая часть является необязательной, поскольку нужна только для возможности переназначения клавиши пользователем.</p>
+<h2 id="простой-обработчик-клавиш">Простой обработчик клавиш<a class="headerlink" href="#простой-обработчик-клавиш" title="Permanent link">#</a></h2>
+<p>Создаём новый класс <code>KeyHandler</code> в котором у нас будет храниться список всех клавиш и обработчик события.</p>
+<div class="highlight"><span class="filename">KeyHandler.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.client.registry.ClientRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.FMLCommonHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.gameevent.InputEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.ByteBufUtils</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.internal.FMLProxyPacket</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.client.settings.KeyBinding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.lwjgl.input.Keyboard</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.CommonProxy</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.PacketHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet.ServerMessagePacket</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KeyHandler</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Клавиши мода</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">KeyBinding</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyBinding</span><span class="p">(</span><span class="s">&quot;mcmodding.key.test&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Keyboard</span><span class="p">.</span><span class="na">KEY_N</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mcmodding.key.category&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Регистрируем клавиши в игре</span><span class="w"></span>
+<span class="w">        </span><span class="n">ClientRegistry</span><span class="p">.</span><span class="na">registerKeyBinding</span><span class="p">(</span><span class="n">binding</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Регистрируем обработчик события</span><span class="w"></span>
+<span class="w">        </span><span class="n">FMLCommonHandler</span><span class="p">.</span><span class="na">instance</span><span class="p">().</span><span class="na">bus</span><span class="p">().</span><span class="na">register</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Обработчик события нажатия клавиши в игре</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKeyInput</span><span class="p">(</span><span class="n">InputEvent</span><span class="p">.</span><span class="na">KeyInputEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">binding</span><span class="p">.</span><span class="na">isPressed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Выводит сообщение в чат с названием нажатой клавиши</span><span class="w"></span>
+<span class="w">            </span><span class="n">EntityClientPlayerMP</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Minecraft</span><span class="p">.</span><span class="na">getMinecraft</span><span class="p">().</span><span class="na">thePlayer</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Была нажата клавиша &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Keyboard</span><span class="p">.</span><span class="na">getKeyName</span><span class="p">(</span><span class="n">binding</span><span class="p">.</span><span class="na">getKeyCode</span><span class="p">())));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>И регистрируем его в <code>ClientProxy</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLInitializationEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client.handler.KeyHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.CommonProxy</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClientProxy</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">FMLInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="hll"><span class="w">        </span><span class="n">KeyHandler</span><span class="w"> </span><span class="n">keyHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyHandler</span><span class="p">();</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">keyHandler</span><span class="p">.</span><span class="na">register</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Разберём, как это всё работает:</p>
+<ol>
+<li>Создаётся экземпляр <code>KeyBinding</code> с нужными параметрами (имя, клавиша, категория).<ul>
+<li>Имя и категория являются ключами <a href="../../basics/lang/">локализации</a>.</li>
+<li>Имя клавиши также используется в качестве ключ для хранения параметра в <strong>options.txt</strong>, поэтому его не рекомендуется менять в дальнейшем.</li>
+<li>Параметр «клавиша» представляет собой числовой код клавиши, это значение по-умолчанию. Для удобства используются константы класса <code>org.lwjgl.input.Keyboard</code>.</li>
+<li>Категорию можно назвать как угодно или использовать существующие, указав соответствующий ключ.</li>
+</ul>
+</li>
+<li>Регистрация бинда клавиши в игре осуществляется с помощью <code>ClientRegistry.registerKeyBinding(KeyBinding)</code> чтобы она появилась на экране настроек управления.</li>
+<li>Регистрируем обработчик события <code>InputEvent.KeyInputEvent</code> (нажатие клавиши в игре).</li>
+<li>С помощью метода <code>KeyBinding#isPressed()</code> проверяется, нажата ли нужная клавиша в момент получения события.</li>
+</ol>
+<h2 id="продвинутый-уровень">Продвинутый уровень<a class="headerlink" href="#продвинутый-уровень" title="Permanent link">#</a></h2>
+<p>В приведённом ранее примере был рассмотрен самый простой способ отслеживания клавиши.
+Нам необязательно отслеживать событие <code>InputEvent.KeyInputEvent</code>, с клавишами можно работать как угодно и где угодно,
+но с пониманием дела. Обработчик, срабатывающий на любые действия игрока, ничего не вызовет, кроме раздражения.</p>
+<h3 id="возможности-keybinding">Возможности KeyBinding<a class="headerlink" href="#возможности-keybinding" title="Permanent link">#</a></h3>
+<p>Использование класса <code>KeyBinding</code> нужно только для предоставления пользователю возможности переопределить клавишу по-умолчанию.
+Рассмотрим методы данного класса:</p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getIsKeyPressed()</code></td>
+<td>Нажата ли клавиша в данный момент.</td>
+</tr>
+<tr>
+<td><code>getKeyCode()</code></td>
+<td>Возвращает числовой код клавиши (это значение может быть переопределено пользователем).<br /> <strong>0</strong> – если никакая клавиша не задана.</td>
+</tr>
+<tr>
+<td><code>getKeyCodeDefault()</code></td>
+<td>Возвращает код клавиши по-умолчанию (тот, что был передан в конструктор).</td>
+</tr>
+<tr>
+<td><code>isPressed()</code></td>
+<td>Нажата ли клавиша в данный момент. Имеет таймер нажатия, поэтому не подходит для проверки удержания клавиши нажатой.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="отслеживание-нажатия-клавиш">Отслеживание нажатия клавиш<a class="headerlink" href="#отслеживание-нажатия-клавиш" title="Permanent link">#</a></h3>
+<p>Без использования класса <code>KeyBinding</code>, проверка удержания клавиши осуществляется «сырым» методом с помощью <code>org.lwjgl.input.Keyboard#isKeyDown(int)</code>, принимающего код клавиши в качестве аргумента.</p>
+<div class="admonition warning">
+<p>Код клавиши должен быть больше нуля, иначе метод всегда будет возвращать положительное значение. Это следует учитывать, особенно при работе с <code>KeyBinding</code>. </p>
+</div>
+<p>Проверка должна осуществляться в момент события «Client Tick».
+Например, логику обработки клавиш можно реализовать в <a href="../../gui/basics/">GUI</a>, переопределив метод <code>GuiScreen#keyTyped(char, int)</code>.
+Такой обработчик будет активен только пока GUI активен.</p>
 
 
   
