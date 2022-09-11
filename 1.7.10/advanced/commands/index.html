@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Добавление собственных команд.">
-      
       
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/advanced/commands/">
@@ -17,7 +15,7 @@
     
     
       
-        <title>Команды - Создание Minecraft модов</title>
+        <title>Создание собственной команды в Minecraft 1.7.10 - Создание Minecraft модов</title>
       
     
     
@@ -121,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Команды
+              Создание собственной команды в Minecraft 1.7.10
             
           </span>
         </div>
@@ -1475,9 +1473,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Команды
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Команды
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#создание-команды" class="md-nav__link">
+    Создание команды
+  </a>
+  
+    <nav class="md-nav" aria-label="Создание команды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#интерфейс-icommand" class="md-nav__link">
+    Интерфейс ICommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#регистрация-команды" class="md-nav__link">
+    Регистрация команды
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#клиентский-обработчик-команд" class="md-nav__link">
+    Клиентский обработчик команд
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3939,6 +3995,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#создание-команды" class="md-nav__link">
+    Создание команды
+  </a>
+  
+    <nav class="md-nav" aria-label="Создание команды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#интерфейс-icommand" class="md-nav__link">
+    Интерфейс ICommand
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#регистрация-команды" class="md-nav__link">
+    Регистрация команды
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#клиентский-обработчик-команд" class="md-nav__link">
+    Клиентский обработчик команд
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3958,6 +4056,150 @@
 
 
 <h1 id="команды">Команды<a class="headerlink" href="#команды" title="Permanent link">#</a></h1>
+<p>Помимо всего прочего, имеется возможность добавлять новые консольные команды.
+Команды являются одним из способов взаимодействия с игрой.
+Чаще всего команды используются для реализации чит-возможностей (например, мгновенное получение прогресса, ресурсов и др. что полезно при тестировании мода).
+Также команды используются администраторами серверов.</p>
+<p>Работать с командами предельно просто: необходимо всего-лишь создать класс, описывающий логику работы команды и зарегистрировать его в обработчике.
+Класс команды должен реализовывать интерфейс <code>ICommand</code>.
+В примере мы будем наследоваться от каркаса команды <code>CommandBase</code>, уже содержащего реализацию большинства методов интерфейса, что потребует меньшего написания кода.</p>
+<h2 id="создание-команды">Создание команды<a class="headerlink" href="#создание-команды" title="Permanent link">#</a></h2>
+<p>Для примеры мы создадим команду ping, которая будет отвечать сообщением «Pong!» в ответ.</p>
+<div class="highlight"><span class="filename">CommandPing.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.command</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javax.annotation.Nullable</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.command.CommandBase</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.command.ICommandSender</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ChatComponentText</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.EnumChatFormatting</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommandPing</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CommandBase</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCommandName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Имя команды</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canCommandSenderUseCommand</span><span class="p">(</span><span class="n">ICommandSender</span><span class="w"> </span><span class="n">sender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Разрешаем использовать абсолютно всем. Команда безобидная :)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Nullable</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCommandUsage</span><span class="p">(</span><span class="n">ICommandSender</span><span class="w"> </span><span class="n">sender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">processCommand</span><span class="p">(</span><span class="n">ICommandSender</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ChatComponentText</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Pong!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">message</span><span class="p">.</span><span class="na">getChatStyle</span><span class="p">().</span><span class="na">setColor</span><span class="p">(</span><span class="n">EnumChatFormatting</span><span class="p">.</span><span class="na">GREEN</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">sender</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p>Постарайтесь придумать для команды достаточно уникальное имя, в противном случае существует риск заменить одну из
+<a href="https://minecraft.fandom.com/ru/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8">команд игры</a> или других модов.</p>
+</div>
+<h3 id="интерфейс-icommand">Интерфейс ICommand<a class="headerlink" href="#интерфейс-icommand" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getCommandName()</code></td>
+<td>Возвращает имя команды, которое будет вводиться в чате/консоли.</td>
+</tr>
+<tr>
+<td><code>getCommandUsage(ICommandSender)</code></td>
+<td>Возвращает ключ <a href="../../basics/lang/">локализации</a>, представляющий собой шаблон использования команды (строка вида: <code>/command [args...]</code>).<br /> Используется командой <strong>help</strong>.</td>
+</tr>
+<tr>
+<td><code>getCommandAliases()</code></td>
+<td>Возвращает список <code>List&lt;String&gt;</code> дополнительных имён команды (синонимов).</td>
+</tr>
+<tr>
+<td><code>processCommand(ICommandSender, String[])</code></td>
+<td>Основной метод, срабатывающий при вызове команды.</td>
+</tr>
+<tr>
+<td><code>canCommandSenderUseCommand(ICommandSender)</code></td>
+<td>Отвечает за возможность использования команды указанным отправителем. В основном, это проверка прав доступа.</td>
+</tr>
+<tr>
+<td><code>addTabCompletionOptions(ICommandSender, String[])</code></td>
+<td>Возвращает список <code>List&lt;String&gt;</code> вариантов подстановки слов при нажатии клавиши <span class="keys"><kbd class="key-tab">Tab</kbd></span><br /> Рекомендуем использовать <code>CommandBase#getListOfStringsMatchingLastWord</code> для реализации автоматической фильтрации предлагаемых вариантов.</td>
+</tr>
+<tr>
+<td><code>isUsernameIndex(String[], int)</code></td>
+<td>Проверяет, является ли аргумент команды (по индексу) никнеймом игрока. Используется для автоматического исправления регистра и подстановки полного ника игрока при вызове команды.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Аргументы – это массив строк, разделённых пробелом, введённых после имени команды.</li>
+<li><code>ICommandSender</code> – отправитель команды. Это может быть игрок, консоль, командный блок, RCON и любые другие объекты, реализующие данный интерфейс.</li>
+</ul>
+<h3 id="регистрация-команды">Регистрация команды<a class="headerlink" href="#регистрация-команды" title="Permanent link">#</a></h3>
+<p>Теперь нужно зарегистрировать команду.
+Делается это во время специального события <code>FMLServerStartingEvent</code>, можно сказать, являющегося одним иэ <a href="../../basics/loading-stages/">этапов инициализации</a> мода.
+Данное событие вызывается только на стороне сервера, потому использование <a href="../../basics/proxy/">Sided Proxy</a> здесь не требуется.</p>
+<p>Добавим в главный класс мода новый метод:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLServerStartingEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.command.CommandPing</span><span class="p">;</span><span class="w"></span>
+
+<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Mod.EventHandler</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">serverStarting</span><span class="p">(</span><span class="n">FMLServerStartingEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">event</span><span class="p">.</span><span class="na">registerServerCommand</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CommandPing</span><span class="p">());</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="клиентский-обработчик-команд">Клиентский обработчик команд<a class="headerlink" href="#клиентский-обработчик-команд" title="Permanent link">#</a></h2>
+<p>Помимо стандартной обработки команд сервером Minecraft, Forge представляет возможность обработки команд на стороне клиента.
+Работает это методом перехвата сообщений, вводимых в чат: при обнаружении ввода имени команды, зарегистрированной на клиентской стороне, сообщение 
+будет передано в клиентский обработчик команд, вместо отправки на сервер.
+Потому важно уделить внимание придумыванию уникальных названий команд, так чтобы они не перекрывали серверные.</p>
+<details class="note">
+<summary>Ограничения обработки команд на клиентской стороне</summary>
+<ul>
+<li>Такие команды можно вызвать исключительно из GUI игрового чата, потому отправителем команды всегда будет являться игрок.
+  Или программно вызовом метода <code>ClientCommandHandler#executeCommand</code></li>
+<li>Следует понимать, что возможности взаимодействия с миром на стороне клиента сильно ограничены, поскольку мир управляется сервером.
+  Не рекомендуется пробовать что-либо изменять, так как это будет приводить к багам рассинхронизации.</li>
+</ul>
+</details>
+<p>Сам процесс создания класса команды для клиента ничем не отличается от, рассмотренного выше, способа создания команды сервера,
+отличие заключается только в способе регистрации: вместо <code>FMLServerStartingEvent</code>, надо использовать в <code>ClientCommandHandler#instance</code>.</p>
+<p>Добавьте следующий код в <code>ClientProxy</code> чтобы зарегистрировать команду:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.client</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLInitializationEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.client.ClientCommandHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.CommonProxy</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.command.CommandPing</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClientProxy</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">FMLInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">ClientCommandHandler</span><span class="p">.</span><span class="na">instance</span><span class="p">.</span><span class="na">registerCommand</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CommandPing</span><span class="p">());</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
   
