@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/preparation/install/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -22,13 +22,14 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
 
     <link rel="stylesheet" href="../../../styles/colors.css">
@@ -65,6 +66,7 @@
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
   
 
+    
     
     
   </head>
@@ -166,7 +168,7 @@
       </label>
       <nav class="md-search__options" aria-label="Поиск">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -4087,11 +4089,12 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-    
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+    
+                  
 
   <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/install.md" title="Редактировать страницу" class="md-content__button md-icon">
     
@@ -4100,7 +4103,7 @@
 
 
 <h1 id="установка-программ">Установка программ<a class="headerlink" href="#установка-программ" title="Permanent link">#</a></h1>
-<p>Minecraft написана на языке <a href="https://ru.wikipedia.org/wiki/Java">Java</a>. Программы на этом языке могут выполняться только если у вас установлена виртуальная машина Java.</p>
+<p>Minecraft написан на языке <a href="https://ru.wikipedia.org/wiki/Java">Java</a>. Программы на этом языке могут выполняться только если у вас установлена виртуальная машина Java.</p>
 <h2 id="java-development-kit">Java Development Kit<a class="headerlink" href="#java-development-kit" title="Permanent link">#</a></h2>
 <p>Для запуска Minecraft необходима лишь среда выполнения Java (JRE).</p>
 <p>Но для разработки собственных модов нам потребуется писать программный код и пользоваться разными инструментами. Это не входит в стандартный Java пакет,
@@ -4133,7 +4136,7 @@
 <div class="admonition note">
 <p>Forge использует систему сборки проектов <a href="https://docs.gradle.org/current/userguide/what_is_gradle.html">Gradle</a>.
 Задачей систем сборки является автоматизация процессов, чтобы избавить вас от необходимости вводить множество консольных команд вручную.
-Проще говоря, Gradle делает за вас всю «грязную работу». В случае Minecraft разработки это компиляция, тестирование, обфуксация кода; упаковка всего в JAR-файл. </p>
+Проще говоря, Gradle делает за вас всю «грязную работу». В случае Minecraft разработки это: компиляция, тестирование, обфускация кода и упаковка всего в JAR-файл. </p>
 </div>
 <h3 id="скачивание">Скачивание<a class="headerlink" href="#скачивание" title="Permanent link">#</a></h3>
 <p>Скачайте набор инструментов для разработки модификаций (SRC, для новых версий MDK) с <a href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.7.10.html">официального сайта Forge</a>:</p>
@@ -4155,7 +4158,7 @@
    <div class="highlight"><pre><span></span><code><span class="na">distributionUrl</span><span class="o">=</span><span class="s">https\://services.gradle.org/distributions/gradle-2.0-bin.zip</span><span class="w"></span>
 </code></pre></div></li>
 <li><strong>Изменился URL репозитория Forge.</strong> <br />
-   Откройте файл <strong>build.gradle</strong> и самом начале замените строку <code>http://files.minecraftforge.net/maven</code> на <code>https://maven.minecraftforge.net/</code></li>
+   Откройте файл <strong>build.gradle</strong> и в самом начале замените строку <code>http://files.minecraftforge.net/maven</code> на <code>https://maven.minecraftforge.net/</code></li>
 <li><strong>Активируем поддержку Java 8 (опционально)</strong> <br />
    В файле <strong>build.gradle</strong> добавьте после <code>archivesBaseName = "modid"</code> строку:
    <div class="highlight"><pre><span></span><code><span class="n">targetCompatibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sourceCompatibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span><span class="w"></span>
@@ -4169,7 +4172,7 @@
 </ol>
 <h2 id="инициализация-forgegradle">Инициализация ForgeGradle<a class="headerlink" href="#инициализация-forgegradle" title="Permanent link">#</a></h2>
 <p>Теперь мы можем инициализировать среду разработки, чтобы ForgeGradle подготовил необходимые файлы для нас.
-Для этого выполните следующую команду в командной строке (терминале). Вариант отличается в зависимости от ОС и используемой оболочки.</p>
+Для этого выполните приведённую ниже команду в командной строке (терминале). Вариант написания отличается в зависимости от ОС и используемой оболочки.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Windows (CMD)</span>
 gradlew setupDecompWorkspace
 <span class="c1"># Windows (PowerShell)</span>
@@ -4178,7 +4181,7 @@ gradlew setupDecompWorkspace
 ./gradlew setupDecompWorkspace
 </code></pre></div>
 <p>Подготовка займёт несколько минут в зависимости от производительности вашего компьютера и скорости интернета.
-По завершении вы должны увидеть сообщение «BUILD SUCCESSFUL».</p>
+По завершении выполнения вы должны увидеть сообщение «BUILD SUCCESSFUL».</p>
 <div class="admonition warning">
 <p class="admonition-title">Важно</p>
 <p>Команду надо выполнять находясь в каталоге проекта, иначе получите ошибку «Неизвестная команда/файл». <br />
@@ -4187,15 +4190,15 @@ gradlew setupDecompWorkspace
 <details class="question">
 <summary>Как задать переменную JAVA_HOME?</summary>
 <p>При работе с Gradle из командной строки (терминала) требуется указание пути к JDK с помощью переменной окружения <strong>JAVA_HOME</strong>.
-Временно задать путь для текущего сеанса можно следующей командой в зависимости от ОС и оболочки.</p>
+Временно задать путь для текущего сеанса можно одной из следующих команд в зависимости от ОС и оболочки:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Windows (CMD)</span>
 SET <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&quot;C:\Program Files\Java\jdk1.8.0_341&quot;</span>
 <span class="c1"># Windows (PowerShell)</span>
 <span class="nv">$env</span>:JAVA_HOME <span class="o">=</span> <span class="s2">&quot;C:\Program Files\Java\jdk1.8.0_341&quot;</span>
 <span class="c1"># Linux / MacOS</span>
-<span class="nb">export</span> <span class="nv">JAVA_HOME</span> <span class="o">=</span> <span class="s1">&#39;/usr/lib/jvm/jdk1.8.0_341&#39;</span>
+<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s1">&#39;/usr/lib/jvm/jdk1.8.0_341&#39;</span>
 </code></pre></div>
-<p>Не забудьте изменить путь к JDK на актуальный. И не закрывайте окно терминала - все остальные команды Gradle нужно вводить в этом же окне.</p>
+<p>Не забудьте изменить путь к JDK на актуальный. И не закрывайте окно терминала — все остальные команды Gradle нужно вводить в этом же окне.</p>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Информация</p>
@@ -4214,7 +4217,8 @@ SET <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&q
 
 
 
-              
+
+                
 
     
         <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/install.md"></div>
@@ -4222,9 +4226,10 @@ SET <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&q
     
 
 
-            </article>
-            
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -4314,7 +4319,7 @@ SET <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&q
 
 
     
-      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
     
   </body>

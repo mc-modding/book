@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Настройка рабочего пространства для разработки модов с помощью Intellij Idea.">
+        <meta name="description" content="Настройка рабочего пространства для разработки модов с помощью IntelliJ Idea.">
       
       
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/preparation/setup-idea/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -22,13 +22,14 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
 
     <link rel="stylesheet" href="../../../styles/colors.css">
@@ -65,6 +66,7 @@
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
   
 
+    
     
     
   </head>
@@ -166,7 +168,7 @@
       </label>
       <nav class="md-search__options" aria-label="Поиск">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -4017,11 +4019,12 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-    
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+    
+                  
 
   <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/setup-idea.md" title="Редактировать страницу" class="md-content__button md-icon">
     
@@ -4033,14 +4036,14 @@
 <p>Итак, у нас есть папка со следующими файлами внутри:</p>
 <ul>
 <li>build.gradle</li>
-<li>gradlew (.bat и .sh)</li>
+<li>gradlew (в том числе gradlew.bat)</li>
 <li>папка gradle</li>
 </ul>
-<p>Запустите Idea и в стартовом окне кликните по кнопке "Projects", затем "Open" и найди место расположения вашего проекта, как показано ниже. Нажимайте "ОК", чтобы открыть проект.</p>
+<p>Запустите Idea и в стартовом окне кликните по кнопке «Projects», затем «Open» и найдите место расположения вашего проекта, как показано ниже. Нажимайте «ОК», чтобы открыть проект.</p>
 <p><a href="../images/open_project.png"><img alt="Демонстрация открытия проекта" class="border" src="../images/open_project.png" /></a></p>
 <p>Потребуется подождать около минуты, пока среда разработки полностью загрузит необходимые библиотеки Gradle и подготовит проект к работе.
 За процессом открытия проекта можно следить в правом нижнем углу среды разработки.</p>
-<p>Теперь откройте меню "View" в верхней части экрана и выберите пункты "Tools Windows &gt; Gradle".</p>
+<p>Теперь откройте меню «View» в верхней части экрана и выберите пункты «Tools Windows &gt; Gradle».</p>
 <p>У вас откроется окно с Gradle задачами. Gradle — популярная система автоматической сборки, которая из исходников
 собирает готовые программы и делает еще много других необходимых, но <strong>рутинных</strong> дел. Эти самые дела называются
 задачами/заданиями/тасками — <strong>tasks</strong>.</p>
@@ -4049,30 +4052,31 @@
 <p>Выполните задачу <code>setupDecompWorkspace</code> из группы <code>forgegradle</code>. Тем самым мы произведём загрузку необходимых библиотек
 для написания мода и работы с исходным кодом Minecraft и Minecraft Forge.</p>
 <h2 id="решение-проблем">Решение проблем<a class="headerlink" href="#решение-проблем" title="Permanent link">#</a></h2>
-<p>К сожалению, на старых версиях Forge Gradle профили запуска проекта для Intellij Idea не создаются автоматически и приходится производить 
+<p>К сожалению, на старых версиях Forge Gradle профили запуска проекта для IntelliJ Idea не создаются автоматически и приходится производить 
 дополнительные манипуляции для исправления этого. Либо вы можете открыть папку с проектом через консоль и выполнить установку так
 <code>.\gradlew setupDecompWorkspace idea</code>.</p>
-<p>Чтобы не выходя из Idea произвести установку профилей, в том же самом окне с задачами найдите "other" и запустите задачу "genIntellijRuns".
-Если по какой-то причине вам выдаёт ошибку вида "NullPointerException", то найдите "build setup" и запустите задачу "init".</p>
+<p>Чтобы не выходя из Idea произвести установку профилей, в том же самом окне с задачами найдите «other» и запустите задачу «genIntellijRuns».
+Если по какой-то причине вам выдаёт ошибку вида «NullPointerException», то найдите «build setup» и запустите задачу «init».</p>
 <p>В новых версиях Intellij Idea вы можете столкнуться с красным крестиком на кнопке запуска вашего проекта</p>
 <p><a href="../images/run_error_idea.png"><img alt="Ошибка запуска" class="border" src="../images/run_error_idea.png" /></a></p>
-<p>Откройте список и выберите "Edit Configurations..."</p>
+<p>Откройте список и выберите «Edit Configurations...»</p>
 <p><a href="../images/edit_config_idea.png"><img alt="Настройка" class="border" src="../images/edit_config_idea.png" /></a></p>
-<p>В открывшемся окне выберите "Minecraft Client", затем в выпадающем меню classPath выберите "McModding.main"</p>
+<p>В открывшемся окне выберите «Minecraft Client», затем в выпадающем меню classPath выберите «McModding.main»</p>
 <p><a href="../images/fix_config_idea.png"><img alt="Настройка конфига проекта" class="border" src="../images/fix_config_idea.png" /></a></p>
-<p>Повторите аналогичную процедуру для "Minecraft Server", нажмите "Apply" и "OK".</p>
+<p>Повторите аналогичную процедуру для «Minecraft Server», нажмите «Apply» и «OK».</p>
 <h3 id="в-игре-нет-текстурпереводовзвуков-из-мода">В игре нет текстур/переводов/звуков из мода<a class="headerlink" href="#в-игре-нет-текстурпереводовзвуков-из-мода" title="Permanent link">#</a></h3>
-<p>Возможно вы столкнётесь с проблемой, что не загружаются ресурсы мода, чтобы это исправить, необходимо открыть настройки Intellij Idea
+<p>Возможно вы столкнётесь с проблемой, что не загружаются ресурсы мода, чтобы это исправить, необходимо открыть настройки IntelliJ Idea
 и проделать такие манипуляции:</p>
 <p><a href="../images/build_run_using_idea.png"><img alt="Настройка загрузки ресурсов" class="border" src="../images/build_run_using_idea.png" /></a></p>
-<p>Нажмите "OK" и ваш проект полностью готов к разработке мода в Intellij Idea!</p>
+<p>Нажмите «OK» и ваш проект полностью готов к разработке мода в IntelliJ Idea!</p>
 
 
   
 
 
 
-              
+
+                
 
     
         <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/setup-idea.md"></div>
@@ -4080,9 +4084,10 @@
     
 
 
-            </article>
-            
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -4172,7 +4177,7 @@
 
 
     
-      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
     
   </body>

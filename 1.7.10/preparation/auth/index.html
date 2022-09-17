@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/preparation/auth/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -22,13 +22,14 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
 
     <link rel="stylesheet" href="../../../styles/colors.css">
@@ -65,6 +66,7 @@
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
   
 
+    
     
     
   </head>
@@ -166,7 +168,7 @@
       </label>
       <nav class="md-search__options" aria-label="Поиск">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -4005,11 +4007,12 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-    
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+    
+                  
 
   <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/auth.md" title="Редактировать страницу" class="md-content__button md-icon">
     
@@ -4020,21 +4023,20 @@
 <h1 id="авторизация-официального-аккаунта">Авторизация официального аккаунта<a class="headerlink" href="#авторизация-официального-аккаунта" title="Permanent link">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Внимание!</p>
-<p>После миграции аккаунта с Mojang на Microsoft, авторизации данным способом из статьи не будет работать!</p>
+<p>После миграции аккаунта с Mojang на Microsoft, авторизация данным из статьи способом работать не будет!</p>
 </div>
-<p>Если у вас есть купленная лицензия Minecraft, то вы можете указать в параметрах
-запуска свою почту и пароль, чтобы авторизоваться. В этом случае ваш никнейм + скин автоматически загрузятся
-при запуске.</p>
+<p>Если у вас есть приобретённая лицензия Minecraft, то вы можете указать в параметрах
+запуска свою почту и пароль для авторизации. В этом случае при запуске игры ваш никнейм и скин автоматически загрузятся.</p>
 <h2 id="настройка-в-idea">Настройка в Idea<a class="headerlink" href="#настройка-в-idea" title="Permanent link">#</a></h2>
-<p>Откройте меню "Run" и выберите пункт "Edit Configurations...".</p>
-<p>В левой части открывшегося окна выберите пункт "Minecraft Client" и введите в поле "Program arguments" следующую строку:</p>
+<p>Откройте меню «Run» и выберите пункт «Edit Configurations...».</p>
+<p>В левой части открывшегося окна выберите пункт «Minecraft Client» и введите в поле «Program arguments» следующую строку:</p>
 <p><code>--username=test@mail.ru --password=***</code></p>
 <p>В строке выше укажите почту на которую была куплена копия Minecraft и пароль вместо звездочек.</p>
 <p><a href="../images/auth_idea.png"><img alt="Настройка авторизации в Idea" class="border" src="../images/auth_idea.png" /></a></p>
 <h2 id="настройка-в-eclipse">Настройка в Eclipse<a class="headerlink" href="#настройка-в-eclipse" title="Permanent link">#</a></h2>
-<p>Отройте меню "Run" и выберите пункт "Run Configurations...". В левой части появившегося окна откройте вкладку
-"Java Application". Выберите пункт "[название папки с файлами]_Client". В правой части окна откройте вкладку "Arguments" и
-в поле "Program arguments" вставьте строку:</p>
+<p>Отройте меню «Run» и выберите пункт «Run Configurations...». В левой части появившегося окна откройте вкладку
+«Java Application». Выберите пункт «[название папки с файлами]_Client». В правой части окна откройте вкладку «Arguments» и
+в поле «Program arguments» вставьте строку:</p>
 <p><code>--username=test@mail.ru --password=***</code></p>
 <p>В строке выше укажите почту на которую была куплена копия Minecraft и пароль вместо звездочек.</p>
 <p><a href="../images/auth_eclipse.png"><img alt="Настройка авторизации в Eclipse" class="border" src="../images/auth_eclipse.png" /></a></p>
@@ -4043,9 +4045,9 @@
 если у вас нет официального аккаунта Minecraft.</p>
 <p>Вам также доступны такие аргументы:</p>
 <ul>
-<li>--uuid - указывает UUID игрока. Пример: <code>--uuid=c1ec513b-2535-447b-bef1-f0fec4b27193</code></li>
-<li>--accessToken - указывает токен авторизации. Пример: <code>--accessToken=2rfj7d12fjausj21d12asda</code></li>
-<li>--nogui - чтобы отключить отображения графического меню при запуске сервера. Пример: <code>--nogui=true</code> или <code>nogui</code></li>
+<li><code>--uuid</code> — указывает UUID игрока. Пример: <code>--uuid=c1ec513b-2535-447b-bef1-f0fec4b27193</code></li>
+<li><code>--accessToken</code> — указывает токен авторизации. Пример: <code>--accessToken=2rfj7d12fjausj21d12asda</code></li>
+<li><code>nogui</code> — чтобы отключить отображения графического меню при запуске сервера.</li>
 </ul>
 
 
@@ -4053,7 +4055,8 @@
 
 
 
-              
+
+                
 
     
         <div class="contributors" style="display: none;" data-url="https://github.com/mc-modding/book/edit/main/docs/1.7.10/preparation/auth.md"></div>
@@ -4061,9 +4064,10 @@
     
 
 
-            </article>
-            
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -4153,7 +4157,7 @@
 
 
     
-      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
     
   </body>
