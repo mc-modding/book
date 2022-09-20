@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/advanced/enchantment/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
@@ -22,7 +22,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2e8b5541.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -1491,9 +1491,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Собственные чары
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Собственные чары
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#создание-чар" class="md-nav__link">
+    Создание чар
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#чары-плавления-блоков" class="md-nav__link">
+    Чары плавления блоков
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#таблица-чар" class="md-nav__link">
+    Таблица чар
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3941,6 +3986,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#создание-чар" class="md-nav__link">
+    Создание чар
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#чары-плавления-блоков" class="md-nav__link">
+    Чары плавления блоков
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#таблица-чар" class="md-nav__link">
+    Таблица чар
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3961,6 +4035,409 @@
 
 
 <h1 id="собственные-чары">Собственные чары<a class="headerlink" href="#собственные-чары" title="Permanent link">#</a></h1>
+<p>В игре имеется большое кол-во разнообразных чар, которые позволяют улучшить инструменты и броню. В данной статье мы
+поговорим о создании собственных чар.</p>
+<h2 id="создание-чар">Создание чар<a class="headerlink" href="#создание-чар" title="Permanent link">#</a></h2>
+<p>Создадим чары, которые будут накладывать отравление на сущность, если её ударить.</p>
+<div class="highlight"><span class="filename">PoisonBladeEnchantment.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.enchantment</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.Enchantment</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.EnumEnchantmentType</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.Entity</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.EntityLivingBase</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.potion.Potion</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.potion.PotionEffect</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PoisonBladeEnchantment</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Enchantment</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PoisonBladeEnchantment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">EnumEnchantmentType</span><span class="p">.</span><span class="na">weapon</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;poison_blade&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">addToBookList</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Дополнительная обработка при атаке сущности.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param attacker атакующий.</span>
+<span class="cm">     * @param victim цель атакующего или его жертва.</span>
+<span class="cm">     * @param level уровень чар</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">func_151368_a</span><span class="p">(</span><span class="n">EntityLivingBase</span><span class="w"> </span><span class="n">attacker</span><span class="p">,</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="n">victim</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">victim</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">EntityLivingBase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="p">((</span><span class="n">EntityLivingBase</span><span class="p">)</span><span class="w"> </span><span class="n">victim</span><span class="p">).</span><span class="na">addPotionEffect</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PotionEffect</span><span class="p">(</span><span class="n">Potion</span><span class="p">.</span><span class="na">poison</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">level</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Максимальный уровень чар.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return Возвращает максимальный уровень для зачаривания.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMaxLevel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Конструктор класса <code>Enchantment</code> принимает три параметра:</p>
+<ol>
+<li><code>enchantId</code> - уникальный идентификатор чар. Должен быть уникальным, чтобы избежать конфликта с ванильными или модовыми чарами.</li>
+<li><code>weight</code> - "вес" чар, влияет на стоимость зачаривания в наковальне, а также вероятность появления в генерации лута и у жителей в торговле.</li>
+<li><code>type</code> - применимость чар к предметам.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Обратите внимание!</p>
+<p>Всего в игре может быть 256 чар(таблицу имеющихся чар и их идентификаторы можно посмотреть в таблице, в конце статьи),
+не забывайте про существование модов и хорошим тоном будет считаться вынос идентификатора чар в конфиг, чтобы избежать
+пересечения с другими модами и возможностью изменить идентификатор. Вы можете расширить самостоятельно массив чар с 
+помощью рефлексии или использовать моды, которые уже это делают.</p>
+</div>
+<p>Применимость чар определяется с помощью перечисления <code>EnumEnchantmentType</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td>Все предметы</td>
+</tr>
+<tr>
+<td>armor</td>
+<td>Броня</td>
+</tr>
+<tr>
+<td>armor_feet</td>
+<td>Ботинки</td>
+</tr>
+<tr>
+<td>armor_legs</td>
+<td>Штаны</td>
+</tr>
+<tr>
+<td>armor_torso</td>
+<td>Нагрудник</td>
+</tr>
+<tr>
+<td>armor_head</td>
+<td>Шлем</td>
+</tr>
+<tr>
+<td>weapon</td>
+<td>Оружие</td>
+</tr>
+<tr>
+<td>digger</td>
+<td>Инструмент</td>
+</tr>
+<tr>
+<td>fishing_rod</td>
+<td>Удочка</td>
+</tr>
+<tr>
+<td>breakable</td>
+<td>Предмет имеющий прочность</td>
+</tr>
+<tr>
+<td>bow</td>
+<td>Лук</td>
+</tr>
+</tbody>
+</table>
+<p>Также вы могли заметить вызов метода <code>Enchantment#addToBookList(Enchantment)</code>, данный метод добавляет в список книг с чарами
+наши новосозданные чары. Если вы не хотите, чтобы была книга с вашими чарами, то просто удалите вызов.</p>
+<p>Вы также можете переопределить в своей реализации чар такие методы:</p>
+<ol>
+<li><code>Enchantment#getMinLevel</code> - возвращает минимальный уровень чар.</li>
+<li><code>Enchantment#getMaxLevel</code> - возвращает максимальный уровень чар.</li>
+<li><code>Enchantment#getMinEnchantability(Integer)</code> - минимальный уровень зачаровываемости, рассчитывается по формуле: <code>1 + level * 10</code>.</li>
+<li><code>Enchantment#getMaxEnchantability(Integer)</code> - максимальный уровень зачаровываемости, рассчитывается по формуле: <code>Enchantment#getMinEnchantability(Integer) + 5</code>.</li>
+<li><code>Enchantment#calcModifierDamage(Integer, DamageSource)</code> - расчёт модификатора урона по уровню и <code>DamageSource</code>.</li>
+<li><code>Enchantment#func_152376_a(Integer, EnumCreatureAttribute)</code> - расчёт дополнительного урона по уровню и <code>EnumCreatureAttribute</code>.</li>
+<li><code>Enchantment#canApplyTogether(Enchantment)</code> - возможность совмещать текущие чары с другими.</li>
+<li><code>Enchantment#setName(String)</code> - задаёт имя чар с шаблоном <code>enchantment.*name*</code>.</li>
+<li><code>Enchantment#canApply(ItemStack)</code> - возможность накладывать чары на предмет.</li>
+<li><code>Enchantment#func_151368_a(EntityLivingBase, Entity, int)</code> - дополнительная обработка при атаке сущности. Метод принимает аргументы: <code>атакующий</code>, <code>его цель</code> и <code>уровень чар</code>.</li>
+<li><code>Enchantment#func_151367_b(EntityLivingBase, Entity, int)</code> - дополнительная обработка для защиты при нападении. Метод принимает аргументы: <code>атакующий</code>, <code>его цель</code> и <code>уровень чар</code>.</li>
+<li><code>Enchantment#canApplyAtEnchantingTable(ItemStack)</code> - возможность получения чар через стол зачарования.</li>
+<li><code>Enchantment#isAllowedOnBooks</code> - возможность накладывать текущие чары на книгу через стол зачарования.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Подсказка</p>
+<p>Если положить обычную книгу в стол зачарования, то можно получить книгу с чарами.</p>
+</div>
+<p>Приступим к регистрации.</p>
+<div class="highlight"><span class="filename">ModEnchantments.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.Enchantment</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.enchantment.PoisonBladeEnchantment</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModEnchantments</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Enchantment</span><span class="w"> </span><span class="n">poisonBlade</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">poisonBlade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PoisonBladeEnchantment</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>И вызовем метод <code>ModEnchantments#register</code> в <code>CommonProxy#preInit</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPreInitializationEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="hll"><span class="w">        </span><span class="n">ModEnchantments</span><span class="p">.</span><span class="na">register</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Зайдём в игру и проверим то, что у нас получилось.</p>
+<p><img alt="Книга с чарами" src="../images/enchant/poison_blade_book.png" /></p>
+<p><img alt="Зачаривание в наковальне" src="../images/enchant/poison_blade_in_anvil.png" /></p>
+<p><img alt="Зачаривание предмета в столе зачарований" src="../images/enchant/poison_blade_in_ench_table.png" /></p>
+<h2 id="чары-плавления-блоков">Чары плавления блоков<a class="headerlink" href="#чары-плавления-блоков" title="Permanent link">#</a></h2>
+<p>Создадим по предыдущей части чары для плавления, но теперь нам понадобится событие <code>BlockEvent.HarvestDropsEvent</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.enchantment</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.Enchantment</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.EnumEnchantmentType</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MeltingEnchantment</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Enchantment</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MeltingEnchantment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">71</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">EnumEnchantmentType</span><span class="p">.</span><span class="na">digger</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;melting&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">addToBookList</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Перейдём в класс с Forge событиями и добавим обработку события <code>BlockEvent.HarvestDropsEvent</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.enchantment.EnchantmentHelper</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.crafting.FurnaceRecipes</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.event.world.BlockEvent</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ForgeEventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onHarvest</span><span class="p">(</span><span class="n">BlockEvent</span><span class="p">.</span><span class="na">HarvestDropsEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">inHand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">harvester</span><span class="p">.</span><span class="na">getHeldItem</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">inHand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">EnchantmentHelper</span><span class="p">.</span><span class="na">getEnchantmentLevel</span><span class="p">(</span><span class="n">ModEnchantments</span><span class="p">.</span><span class="na">melting</span><span class="p">.</span><span class="na">effectId</span><span class="p">,</span><span class="w"> </span><span class="n">inHand</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ItemStack</span><span class="o">&gt;</span><span class="w"> </span><span class="n">smeltedDrop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">event</span><span class="p">.</span><span class="na">drops</span><span class="p">.</span><span class="na">removeIf</span><span class="p">(</span><span class="n">drop</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Получаем результат плавления дропа</span><span class="w"></span>
+<span class="w">            </span><span class="n">ItemStack</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FurnaceRecipes</span><span class="p">.</span><span class="na">smelting</span><span class="p">().</span><span class="na">getSmeltingResult</span><span class="p">(</span><span class="n">drop</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">smeltedDrop</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">copy</span><span class="p">());</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="n">event</span><span class="p">.</span><span class="na">drops</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">smeltedDrop</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Вы могли заметить, что в примере используется класс-хелпер <code>EnchantmentHelper</code>.</p>
+<p>Доступные методы:</p>
+<ol>
+<li><code>EnchantmentHelper#getEnchantmentLevel(Integer, ItemStack)</code> - возвращает уровень чар наложенных на предмет. Параметры метода: <code>идентификатор чар</code>, <code>стек предмета</code>.</li>
+<li><code>EnchantmentHelper#getEnchantments(ItemStack)</code> - возвращает карту всех чар наложенных на предмет. Возвращаемая карта: <code>Map&lt;Integer, Integer&gt;</code>, первым идёт идентификатор чар, вторым уровень чар.</li>
+<li><code>EnchantmentHelper#setEnchantments(Map&lt;Integer, Integer&gt;, ItemStack)</code> - задаёт новую карту чар для предмета(или удаляет чары, если предмет был зачарован).</li>
+<li><code>EnchantmentHelper#getMaxEnchantmentLevel(Integer, ItemStack[])</code> - возвращает самый большой уровень заклинания в переданном массиве стеков предметов. Параметры метода: <code>идентификатор чар</code>, <code>массив стеков предметов</code>.</li>
+<li><code>EnchantmentHelper#getEnchantmentModifierDamage(ItemStack[], DamageSource)</code> - возвращает модификатор защитных чар на доспехах, установленных на игроке. Параметры метода: <code>массив стеков брони</code>, <code>источник урона</code>.</li>
+<li><code>EnchantmentHelper#getEnchantmentModifierLiving(EntityLivingBase, EntityLivingBase)</code> - возвращает модификатор урона по сущности. Параметры метода: <code>атакующий</code>, <code>цель атакующего</code>.</li>
+<li><code>EnchantmentHelper#func_152377_a(ItemStack, EnumCreatureAttribute)</code> - аналогично <code>EnchantmentHelper#getEnchantmentModifierLiving</code>.</li>
+<li><code>EnchantmentHelper#func_151384_a(EntityLivingBase, Entity)</code> - дополнительная обработка для защиты при нападении.</li>
+<li><code>EnchantmentHelper#func_151385_b(EntityLivingBase, Entity)</code> - дополнительная обработка при атаке сущности.</li>
+<li><code>EnchantmentHelper#getKnockbackModifier(EntityLivingBase, EntityLivingBase)</code> - возвращает уровень чар "Отдача" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getFireAspectModifier(EntityLivingBase)</code> - возвращает уровень чар "Заговор огня" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getRespiration(EntityLivingBase)</code> - возвращает уровень чар "Подводное дыхание" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getEfficiencyModifier(EntityLivingBase)</code> - возвращает уровень чар "Эффективность" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getSilkTouchModifier(EntityLivingBase)</code> - содержит ли предмет в руке чары "Шёлковое касание".</li>
+<li><code>EnchantmentHelper#getFortuneModifier(EntityLivingBase)</code> - возвращает уровень чар "Удача" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#func_151386_g(EntityLivingBase)</code> - возвращает уровень чар "Морская удача" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#func_151387_h(EntityLivingBase)</code> - возвращает уровень чар "Приманка" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getLootingModifier(EntityLivingBase)</code> - возвращает уровень чар "Добыча" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#getAquaAffinityModifier(EntityLivingBase)</code> - возвращает уровень чар "Подводник (Родство с водой)" для текущего предмета в руке.</li>
+<li><code>EnchantmentHelper#func_92099_a(Enchantment, EntityLivingBase)</code> - возвращает стек предмета, который содержит передаваемые чары в параметре метода.</li>
+<li><code>EnchantmentHelper#calcItemStackEnchantability(Random, Integer, Integer, ItemStack)</code> - возвращает расчёт зачаровываемости предмета. Параметры метода: <code>рандом</code>, <code>формула обработки(0, 1 или 2 принимается)</code>, <code>сила зачаривания(максимум 15)</code>, <code>стек предмета</code>.</li>
+<li><code>EnchantmentHelper#addRandomEnchantment(Random, ItemStack, Integer)</code> - добавляет случайные чары на предмет. Параметры метода: <code>рандом</code>, <code>стек предмета</code>, <code>уровень зачароваемости</code>.</li>
+<li><code>EnchantmentHelper#buildEnchantmentList(Random, ItemStack, Integer)</code> - создаёт список случайных данных о зачаровании, которые могут быть добавлены вместе в ItemStack, 3-й параметр - это общий уровень зачаровываемости.</li>
+<li><code>EnchantmentHelper#mapEnchantmentData(Integer, ItemStack)</code> - создает карту данных о зачаровании по пройденным уровням зачаровываемости, которую можно добавить в ItemStack.</li>
+</ol>
+<h2 id="таблица-чар">Таблица чар<a class="headerlink" href="#таблица-чар" title="Permanent link">#</a></h2>
+<p>Идентификаторы указанные в таблице уже являются занятыми, поэтому вам необходимо их избегать при создании собственных чар.</p>
+<table>
+<thead>
+<tr>
+<th>Идентификатор</th>
+<th>Название</th>
+<th>Описание</th>
+<th>Макс. уровень</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>protection</td>
+<td>Защита</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>fireProtection</td>
+<td>Защита от огня</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>featherFalling</td>
+<td>Защита от падения</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>blastProtection</td>
+<td>Защита от взрывов</td>
+<td>4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>projectileProtection</td>
+<td>Защита от снарядов</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>respiration</td>
+<td>Подводное дыхание</td>
+<td>3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>aquaAffinity</td>
+<td>Подводник (Родство с водой)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>thorns</td>
+<td>Шипы</td>
+<td>3</td>
+</tr>
+<tr>
+<td>16</td>
+<td>sharpness</td>
+<td>Острота</td>
+<td>5</td>
+</tr>
+<tr>
+<td>17</td>
+<td>smite</td>
+<td>Небесная кара</td>
+<td>5</td>
+</tr>
+<tr>
+<td>18</td>
+<td>baneOfArthropods</td>
+<td>Бич членистоногих (Гибель насекомых)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>19</td>
+<td>knockback</td>
+<td>Отдача (Отбрасывание)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>fireAspect</td>
+<td>Заговор огня</td>
+<td>2</td>
+</tr>
+<tr>
+<td>21</td>
+<td>looting</td>
+<td>Добыча</td>
+<td>3</td>
+</tr>
+<tr>
+<td>32</td>
+<td>efficiency</td>
+<td>Эффективность</td>
+<td>5</td>
+</tr>
+<tr>
+<td>33</td>
+<td>silkTouch</td>
+<td>Шёлковое касание</td>
+<td>1</td>
+</tr>
+<tr>
+<td>34</td>
+<td>unbreaking</td>
+<td>Прочность</td>
+<td>3</td>
+</tr>
+<tr>
+<td>35</td>
+<td>fortune</td>
+<td>Удача</td>
+<td>3</td>
+</tr>
+<tr>
+<td>48</td>
+<td>power</td>
+<td>Сила</td>
+<td>5</td>
+</tr>
+<tr>
+<td>49</td>
+<td>punch</td>
+<td>Отбрасывание стрелами</td>
+<td>2</td>
+</tr>
+<tr>
+<td>50</td>
+<td>flame</td>
+<td>Горящая стрела</td>
+<td>1</td>
+</tr>
+<tr>
+<td>51</td>
+<td>infinity</td>
+<td>Бесконечность</td>
+<td>1</td>
+</tr>
+<tr>
+<td>61</td>
+<td>field_151370_z</td>
+<td>Морская удача (Увеличенный бонус при рыбалке)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>62</td>
+<td>field_151369_A</td>
+<td>Приманка</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
 
 
   
@@ -4049,7 +4526,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
 
     <!-- Yandex.Metrika counter -->
@@ -4069,7 +4546,7 @@
 
 
     
-      <script src="../../../assets/javascripts/bundle.d691e9de.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
     
   </body>
