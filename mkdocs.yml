@@ -40,7 +40,7 @@ nav:
           - Собственный рецепт: "1.7.10/recipe/custom-recipe.md"
           - Топливо для печи: "1.7.10/recipe/fuel.md"
           - Словарь руд: "1.7.10/recipe/ore-dictionary.md"
-          - Таблица имён словаря руд: "1.7.10/recipe/oredict-table.md"
+          - Имена словаря руд: "1.7.10/recipe/oredict-table.md"
       - Сущность (Entity):
           - Собственная сущность: "1.7.10/entity/basics.md"
           - Спавн в мире: "1.7.10/entity/natural-spawn.md"
