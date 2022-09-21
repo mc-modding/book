@@ -18,17 +18,18 @@ description: Добавление рецепта для предмета/бло�
 `GameRegistry#addShapedRecipe(ItemStack, Object[])`.
 
 ```java title="Пример форменного рецепта"
-package ru.mcmodding.tutorial.common;
+package ru.mcmodding.tutorial.common.handler;
 
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import ru.mcmodding.tutorial.common.handler.*;
 
-public class CommonProxy {
-    public void postInit(FMLPostInitializationEvent event) {
-        GameRegistry.addShapedRecipe(new ItemStack(ModItems.RUBY_SWORD), " R ", " R ", " S ", 'R', ModItems.RUBY, 'S', Items.stick);
+public class ModRecipes {
+    public static void registerRecipes() {
+        GameRegistry.addShapedRecipe(new ItemStack(ModItems.RUBY_SWORD),
+                " R ", " R ", " S ",
+                'R', ModItems.RUBY,
+                'S', Items.stick);
     }
 }
 ```
@@ -46,6 +47,24 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 следующим(пятым параметром) символ 'R', а потом шестым параметром указывает сам предмет, в нашем случае мы говорим,
 что символ 'R' это `ModItems.RUBY`, аналогично с другими символами.
 
+Зарегистрируем наш рецепт.
+
+```java hl_lines="11"
+package ru.mcmodding.tutorial.common;
+
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import ru.mcmodding.tutorial.common.handler.*;
+
+public class CommonProxy {
+    
+    public void postInit(FMLPostInitializationEvent event) {
+        // ...
+        
+        ModRecipes.registerRecipes();
+    }
+}
+```
+
 Теперь можете зайти в игру и проверить добавленный рецепт.
 
 ![Форменный рецепт рубинового меча](images/shaped_recipe.png)
@@ -58,18 +77,20 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 добавим добавление рецепта через цикл с указанием `itemDamage`.
 
 ```java title="Пример бесформенного рецепта"
-package ru.mcmodding.tutorial.common;
+package ru.mcmodding.tutorial.common.handler;
 
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import ru.mcmodding.tutorial.common.handler.*;
 
-public class CommonProxy {
-    for (int damage = 0; damage < 15; damage++) {
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.BALLOON, 1, damage), new ItemStack(Blocks.wool, 1, ~damage & 15), Items.string);
+public class ModRecipes {
+    public static void registerRecipes() {
+        // ...
+
+        for (int damage = 0; damage < 15; damage++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModItems.BALLOON, 1, damage), new ItemStack(Blocks.wool, 1, ~damage & 15), Items.string);
+        }
     }
 }
 ```
@@ -96,15 +117,16 @@ public class CommonProxy {
 плавлении предмета/блок. Добавим возможность плавить рубиновую руду в рубины.
 
 ```java title="Пример рецепта плавления"
-package ru.mcmodding.tutorial.common;
+package ru.mcmodding.tutorial.common.handler;
 
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import ru.mcmodding.tutorial.common.handler.*;
 
-public class CommonProxy {
-    public void postInit(FMLPostInitializationEvent event) {
+public class ModRecipes {
+    public static void registerRecipes() {
+        // ...
+
         GameRegistry.addSmelting(ModBlocks.RUBY_ORE, new ItemStack(ModItems.RUBY), 5F);
     }
 }
@@ -113,3 +135,34 @@ public class CommonProxy {
 ![Плавление рубиновой руды](images/smelting_ruby_ore.png)
 
 ![Результат плавления рубиновой руды](images/smelting_ruby.png)
+
+## Использованием предметов из словаря руд в рецептах
+
+Ранее мы создавали рецепты форменные и бесформенные, но стандартная реализация не позволяет использовать словарь руд.
+Для решения этой проблемы были написаны такие классы как `ShapedOreRecipe` и `ShapelessOreRecipe`. Регистрируются они
+с помощью метода `GameRegistry#addRecipe(IRecipe)`.
+
+!!! warning "Важно"
+    Регистрация рецептов использующих предметы из словаря руд, необходимо производить после регистрации предмета
+    в словаре руд.
+
+```java title="Пример рецепта с предметами из словаря руд"
+package ru.mcmodding.tutorial.common.handler;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+public class ModRecipes {
+    public static void registerRecipes() {
+        // ...
+
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.RUBY_SWORD),
+                " R ", " R ", " S ",
+                'R', "gemRuby",
+                'S', "stickWood"));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.RING), "gemRuby", "ingotGold"));
+    }
+}
+```
