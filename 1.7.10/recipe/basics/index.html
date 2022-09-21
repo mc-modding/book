@@ -941,6 +941,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#использованием-предметов-из-словаря-руд-в-рецептах" class="md-nav__link">
+    Использованием предметов из словаря руд в рецептах
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4027,6 +4034,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#использованием-предметов-из-словаря-руд-в-рецептах" class="md-nav__link">
+    Использованием предметов из словаря руд в рецептах
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4062,17 +4076,18 @@
 <p>Форменный рецепт - это рецепт в котором учитывается положение предметов в слотах крафта. Такими рецептами являются:
 стол зачарований, кирка, меч и т.п. Для добавления такого рецепта воспользуемся методом
 <code>GameRegistry#addShapedRecipe(ItemStack, Object[])</code>.</p>
-<div class="highlight"><span class="filename">Пример форменного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">Пример форменного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Items</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postInit</span><span class="p">(</span><span class="n">FMLPostInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addShapedRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_SWORD</span><span class="p">),</span><span class="w"> </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; S &quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;S&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">stick</span><span class="p">);</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addShapedRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_SWORD</span><span class="p">),</span><span class="w"></span>
+<span class="w">                </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; S &quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="sc">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="sc">&#39;S&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">stick</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -4086,6 +4101,21 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 <p>Затем переходим к символам шаблонов. Чтобы менеджер крафтов мог распознать символы в шаблоне, как предметы, мы добавляем
 следующим(пятым параметром) символ 'R', а потом шестым параметром указывает сам предмет, в нашем случае мы говорим,
 что символ 'R' это <code>ModItems.RUBY</code>, аналогично с другими символами.</p>
+<p>Зарегистрируем наш рецепт.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postInit</span><span class="p">(</span><span class="n">FMLPostInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="hll"><span class="w">        </span><span class="n">ModRecipes</span><span class="p">.</span><span class="na">registerRecipes</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 <p>Теперь можете зайти в игру и проверить добавленный рецепт.</p>
 <p><img alt="Форменный рецепт рубинового меча" src="../images/shaped_recipe.png" /></p>
 <h2 id="бесформенный-рецепт">Бесформенный рецепт<a class="headerlink" href="#бесформенный-рецепт" title="Permanent link">#</a></h2>
@@ -4093,18 +4123,20 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 огниво, око эндера, книга и т.п. Для добавления такого рецепта воспользуемся методом
 <code>GameRegistry#addShapelessRecipe(ItemStack, Object[])</code> и добавим рецепт к воздушным шарикам, а их у нас 16 шт, поэтому
 добавим добавление рецепта через цикл с указанием <code>itemDamage</code>.</p>
-<div class="highlight"><span class="filename">Пример бесформенного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">Пример бесформенного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Items</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addShapelessRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">BALLOON</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">wool</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="n">damage</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">15</span><span class="p">),</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">string</span><span class="p">);</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"> </span><span class="n">damage</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addShapelessRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">BALLOON</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">damage</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Blocks</span><span class="p">.</span><span class="na">wool</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">~</span><span class="n">damage</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">15</span><span class="p">),</span><span class="w"> </span><span class="n">Items</span><span class="p">.</span><span class="na">string</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -4126,21 +4158,50 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 </ol>
 <p>Где первым параметром является предмет/блок для плавки, вторым результат плавки, а третьим кол-во опыта получаемого при
 плавлении предмета/блок. Добавим возможность плавить рубиновую руду в рубины.</p>
-<div class="highlight"><span class="filename">Пример рецепта плавления</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">Пример рецепта плавления</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postInit</span><span class="p">(</span><span class="n">FMLPostInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
 <span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addSmelting</span><span class="p">(</span><span class="n">ModBlocks</span><span class="p">.</span><span class="na">RUBY_ORE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY</span><span class="p">),</span><span class="w"> </span><span class="mf">5F</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="Плавление рубиновой руды" src="../images/smelting_ruby_ore.png" /></p>
 <p><img alt="Результат плавления рубиновой руды" src="../images/smelting_ruby.png" /></p>
+<h2 id="использованием-предметов-из-словаря-руд-в-рецептах">Использованием предметов из словаря руд в рецептах<a class="headerlink" href="#использованием-предметов-из-словаря-руд-в-рецептах" title="Permanent link">#</a></h2>
+<p>Ранее мы создавали рецепты форменные и бесформенные, но стандартная реализация не позволяет использовать словарь руд.
+Для решения этой проблемы были написаны такие классы как <code>ShapedOreRecipe</code> и <code>ShapelessOreRecipe</code>. Регистрируются они
+с помощью метода <code>GameRegistry#addRecipe(IRecipe)</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Регистрация рецептов использующих предметы из словаря руд, необходимо производить после регистрации предмета
+в словаре руд.</p>
+</div>
+<div class="highlight"><span class="filename">Пример рецепта с предметами из словаря руд</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.ShapedOreRecipe</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.ShapelessOreRecipe</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ShapedOreRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY_SWORD</span><span class="p">),</span><span class="w"></span>
+<span class="w">                </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; R &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; S &quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="sc">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gemRuby&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="sc">&#39;S&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;stickWood&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ShapelessOreRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">RING</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;gemRuby&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ingotGold&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
   

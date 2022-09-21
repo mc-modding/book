@@ -4078,21 +4078,34 @@
 <p><code>WILDCARD_VALUE</code> значение используется для указания на то, что <code>itemDamage</code> ItemStack`a не важен.</p>
 </div>
 <p>Зарегистрируем рубин, рубиновый блок и воздушные шарики в словаре руд.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.OreDictionary</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postInit</span><span class="p">(</span><span class="n">FMLPostInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerOres</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">OreDictionary</span><span class="p">.</span><span class="na">registerOre</span><span class="p">(</span><span class="s">&quot;blockRuby&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModBlocks</span><span class="p">.</span><span class="na">RUBY</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">OreDictionary</span><span class="p">.</span><span class="na">registerOre</span><span class="p">(</span><span class="s">&quot;gemRuby&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ModItems</span><span class="p">.</span><span class="na">RUBY</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">OreDictionary</span><span class="p">.</span><span class="na">registerOre</span><span class="p">(</span><span class="s">&quot;balloon&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">ModItems</span><span class="p">.</span><span class="na">BALLOON</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">OreDictionary</span><span class="p">.</span><span class="na">WILDCARD_VALUE</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Затем необходимо вызвать метод <code>ModRecipes#registerOres</code> в <code>CommonProxy#postInit</code>, до регистрации основных рецептов.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPostInitializationEvent</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.*</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IGuiHandler</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postInit</span><span class="p">(</span><span class="n">FMLPostInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">ModRecipes</span><span class="p">.</span><span class="na">registerOres</span><span class="p">();</span><span class="w"></span>
+</span><span class="w">        </span><span class="n">ModRecipes</span><span class="p">.</span><span class="na">registerRecipes</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>

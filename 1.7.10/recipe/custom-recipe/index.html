@@ -4251,6 +4251,26 @@
 результата крафта, но авторы некоторых модов используют данный метод для создания пере используемых предметов.
 Это необходимо учитывать, чтобы избежать возможных дюпов или иных багов!</p>
 </div>
+<p>Регистрация осуществляется за счёт вызова метода <code>GameRegistry#addRecipe(IRecipe)</code>.</p>
+<div class="highlight"><span class="filename">Регистрация рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Blocks</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.init.Items</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.item.ItemStack</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.OreDictionary</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.ShapedOreRecipe</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraftforge.oredict.ShapelessOreRecipe</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.recipe.WhetstoneRecipe</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModRecipes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerRecipes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ...</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addRecipe</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">WhetstoneRecipe</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
   
