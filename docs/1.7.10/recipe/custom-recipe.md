@@ -288,3 +288,26 @@ public class WhetstoneRecipe implements IRecipe {
     логическое значение. Обычно метод возвращает `true`, что говори о том, что предмет будет удалён после получения
     результата крафта, но авторы некоторых модов используют данный метод для создания пере используемых предметов.
     Это необходимо учитывать, чтобы избежать возможных дюпов или иных багов!
+
+Регистрация осуществляется за счёт вызова метода `GameRegistry#addRecipe(IRecipe)`.
+
+```java title="Регистрация рецепта"
+package ru.mcmodding.tutorial.common.handler;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
+import ru.mcmodding.tutorial.common.handler.recipe.WhetstoneRecipe;
+
+public class ModRecipes {
+    public static void registerRecipes() {
+        // ...
+        
+        GameRegistry.addRecipe(new WhetstoneRecipe());
+    }
+}
+```

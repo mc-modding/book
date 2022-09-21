@@ -41,21 +41,37 @@ Forge не требует, чтобы имена были в каком-либо
 Зарегистрируем рубин, рубиновый блок и воздушные шарики в словаре руд.
 
 ```java
-package ru.mcmodding.tutorial.common;
+package ru.mcmodding.tutorial.common.handler;
 
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import ru.mcmodding.tutorial.common.handler.*;
 
-public class CommonProxy {
-    
-    public void postInit(FMLPostInitializationEvent event) {
+public class ModRecipes {
+    public static void registerRecipes() {
         // ...
+    }
 
+    public static void registerOres() {
         OreDictionary.registerOre("blockRuby", ModBlocks.RUBY);
         OreDictionary.registerOre("gemRuby", ModItems.RUBY);
         OreDictionary.registerOre("balloon", new ItemStack(ModItems.BALLOON, 1, OreDictionary.WILDCARD_VALUE));
+    }
+}
+```
+
+Затем необходимо вызвать метод `ModRecipes#registerOres` в `CommonProxy#postInit`, до регистрации основных рецептов.
+
+```java hl_lines="9"
+package ru.mcmodding.tutorial.common;
+
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import ru.mcmodding.tutorial.common.handler.*;
+
+public class CommonProxy implements IGuiHandler {
+
+    public void postInit(FMLPostInitializationEvent event) {
+        ModRecipes.registerOres();
+        ModRecipes.registerRecipes();
     }
 }
 ```
