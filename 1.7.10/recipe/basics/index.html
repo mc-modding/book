@@ -6,8 +6,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Добавление рецепта для предмета/блока.">
-      
       
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/recipe/basics/">
@@ -17,7 +15,7 @@
     
     
       
-        <title>Добавление рецепта - Создание Minecraft модов</title>
+        <title>Добавление рецепта крафта предмета/блока в Minecraft 1.7.10 - Создание Minecraft модов</title>
       
     
     
@@ -123,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Добавление рецепта
+              Добавление рецепта крафта предмета/блока в Minecraft 1.7.10
             
           </span>
         </div>
@@ -942,8 +940,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#использованием-предметов-из-словаря-руд-в-рецептах" class="md-nav__link">
-    Использованием предметов из словаря руд в рецептах
+  <a href="#рецепты-с-использованием-словаря-руд" class="md-nav__link">
+    Рецепты с использованием словаря руд
   </a>
   
 </li>
@@ -4035,8 +4033,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#использованием-предметов-из-словаря-руд-в-рецептах" class="md-nav__link">
-    Использованием предметов из словаря руд в рецептах
+  <a href="#рецепты-с-использованием-словаря-руд" class="md-nav__link">
+    Рецепты с использованием словаря руд
   </a>
   
 </li>
@@ -4063,19 +4061,23 @@
 
 
 <h1 id="добавление-рецепта">Добавление рецепта<a class="headerlink" href="#добавление-рецепта" title="Permanent link">#</a></h1>
-<p>Существует три вида рецептов, доступные для регистрации. Форменный, бесформенный и рецепт плавки. В данной статье вы
+<p>Существует три основных вида рецептов: форменный, бесформенный и рецепт плавки. В данной статье вы
 научитесь добавлять все три типа рецептов. Если вас интересует рецепт для варочной стойки, то мы рекомендуем вам
 использовать событие <code>PotionBrewEvent</code>.</p>
-<div class="admonition danger">
-<p class="admonition-title">Важно!</p>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
 <p>Добавлять рецепты необходимо после регистрации предметов/блоков, а если вы хотите добавить рецепт с предметами
 из других модов, то необходимо указывать зависимость на мод в аннотации <code>@Mod</code> и проводить регистрацию рецепта в
 методе с <code>FMLPostInitializationEvent</code> или <code>FMLLoadCompleteEvent</code> параметром.</p>
 </div>
 <h2 id="форменный-рецепт">Форменный рецепт<a class="headerlink" href="#форменный-рецепт" title="Permanent link">#</a></h2>
-<p>Форменный рецепт - это рецепт в котором учитывается положение предметов в слотах крафта. Такими рецептами являются:
+<p>Форменный рецепт – это рецепт в котором учитывается положение предметов в сетке крафта. Такими рецептами являются:
 стол зачарований, кирка, меч и т.п. Для добавления такого рецепта воспользуемся методом
-<code>GameRegistry#addShapedRecipe(ItemStack, Object[])</code>.</p>
+<code>GameRegistry#addShapedRecipe()</code>.</p>
+<p>Схема аргументов данного метода выглядит следующим образом:</p>
+<div class="highlight"><pre><span></span><code><span class="n">GameRegistry</span><span class="p">.</span><span class="na">addShapedRecipe</span><span class="p">(</span><span class="o">&lt;</span><span class="n">R</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ABC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DEF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;GHI&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ingredients</span><span class="p">...</span><span class="o">&gt;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Схема форменного рецепта" src="../images/shaped_recipe_scheme.png" /></p>
 <div class="highlight"><span class="filename">Пример форменного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
@@ -4091,16 +4093,29 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Рассмотрим <code>GameRegistry#addShapedRecipe(ItemStack, Object[])</code> из примера более подробно.</p>
-<p>Первым параметром идёт результат крафта, в нашем случае это стек предмета "Рубиновый меч", далее вторым идёт массив
-объектов, где первый объект это три слота сверху, вторым объектом идут три слота посередине, третьим объектом идут 
-три нижних слота сетки крафта(общее название - шаблон крафта). Принцип по которому строится шаблон довольно простой. 
-Пустой символ(пробел) эквивалентен пустому слоту, буквы в теории, должны обозначать предмет. В нашем случае
-R обозначает Ruby(рубин), а S - stick(палка). Вы можете указывать в <code>Object[]</code> блоки(<code>Block</code>), предметы(<code>Item</code>) и 
-стек предмета(<code>ItemStack</code>).</p>
-<p>Затем переходим к символам шаблонов. Чтобы менеджер крафтов мог распознать символы в шаблоне, как предметы, мы добавляем
-следующим(пятым параметром) символ 'R', а потом шестым параметром указывает сам предмет, в нашем случае мы говорим,
-что символ 'R' это <code>ModItems.RUBY</code>, аналогично с другими символами.</p>
+<ol>
+<li>Первым параметром идёт результат крафта, в нашем случае это <code>ItemStack</code> предмета «Рубиновый меч»,</li>
+<li>Далее идёт массив объектов, где три первых строковых элемента описывают схему расположения предметов в сетке крафта.
+   Вы можете использовать какие-угодно символы, например, первую букву названия предмета.
+   Универсальным вариантом будет использование букв латинского алфавита. Пустые слоты обозначаются пробелом.  </li>
+<li>Самыми последними параметрами следует описание буквенных обозначений: буква, затем предмет, ассоциируемый с ней.</li>
+</ol>
+<p>В качестве ингредиентов для рецепта крафта можно передавать <code>Block</code>, <code>Item</code> и <code>ItemStack</code>.
+Первые два варианта удобны, если нужно разрешить использовать в крафте предметы с любым значением meta/damage,
+а <code>ItemStack</code> когда нужно задать определённое значение <strong>damage</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Магия wildcard damage</p>
+<p>Аргументы <code>Block</code> и <code>Item</code> переданные в рецепт автоматически конвертируются в <code>ItemStack</code> с указанием магического значения damage – <strong>32767</strong> (или <code>Short.MAX_VALUE</code>).
+Потому что в сетке крафта ничего другого как <code>ItemStack</code> быть не может.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Ограничение верстака</p>
+<p>При крафте ресурсы в сетке расходуются <strong>строго по одной единице за раз</strong> и это поведение никак не изменить.
+Поэтому задавание количества <code>ItemStack</code>, являющегося ингредиентом, не даст результата.
+Количество и различные атрибуты можно задать только результату крафта. <br />
+По этой причине, для создания ресурсозатратных рецептов, разработчики модификаций прибегают с созданию «бесполезных предметов», 
+используемых исключительно в рецептах крафта.</p>
+</div>
 <p>Зарегистрируем наш рецепт.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
 
@@ -4119,10 +4134,11 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 <p>Теперь можете зайти в игру и проверить добавленный рецепт.</p>
 <p><img alt="Форменный рецепт рубинового меча" src="../images/shaped_recipe.png" /></p>
 <h2 id="бесформенный-рецепт">Бесформенный рецепт<a class="headerlink" href="#бесформенный-рецепт" title="Permanent link">#</a></h2>
-<p>Бесформенный рецепт - это рецепт в котором не учитывается расположение предметов в слотах крафта. Такими рецептами являются:
-огниво, око эндера, книга и т.п. Для добавления такого рецепта воспользуемся методом
-<code>GameRegistry#addShapelessRecipe(ItemStack, Object[])</code> и добавим рецепт к воздушным шарикам, а их у нас 16 шт, поэтому
-добавим добавление рецепта через цикл с указанием <code>itemDamage</code>.</p>
+<p>Бесформенный рецепт – это рецепт в котором не учитывается расположение предметов в сетке крафта. Проще говоря, это рецепт смешивания предметов.
+Такими рецептами являются: огниво, око эндера, книга и т.п. Для добавления такого рецепта воспользуемся методом <code>GameRegistry#addShapelessRecipe()</code>.
+Этот метод намного проще в использовании, чем форменный рецепт – здесь указывается только результат и перечисление ингредиентов.
+Здесь всё также можно передавать <code>Block</code>, <code>Item</code> и <code>ItemStack</code> в качестве них.
+Добавим рецепт воздушным шарикам, а их у нас 16 видов, поэтому добавление рецепта осуществляем внутри цикла с указанием <code>itemDamage</code>.</p>
 <div class="highlight"><span class="filename">Пример бесформенного рецепта</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
@@ -4143,21 +4159,19 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 <div class="admonition tip">
 <p class="admonition-title">Подсказка</p>
 <p>Чтобы правильно получить блок шерсти по <code>itemDamage</code> от 0 до 15, 
-необходимо <code>itemDamage</code>(в нашем случае <code>damage</code>) инвертировать, как показано в примере.</p>
+необходимо <code>itemDamage</code> (в нашем случае <strong>damage</strong>) инвертировать, как показано в примере.</p>
 </div>
-<p>Первым параметром идёт результат крафта, в нашем случае это стек предмета "Воздушный шарик". Вторым параметром мы указываем
-массив объектов, где вы можете задать блоки(<code>Block</code>), предметы(<code>Item</code>) и стек предмета(<code>ItemStack</code>) в произвольном порядке,
-без чёткой привязки к позиции в сетке крафта.</p>
 <p><img alt="Бесформенный рецепт воздушных шариков" src="../images/shapless_recipe.png" /></p>
 <h2 id="плавление-в-печи">Плавление в печи<a class="headerlink" href="#плавление-в-печи" title="Permanent link">#</a></h2>
 <p>Для добавления рецепта в печь используется три метода:</p>
 <ol>
-<li><code>GameRegistry#addSmelting(Block, ItemStack, Float)</code></li>
-<li><code>GameRegistry#addSmelting(Item, ItemStack, Float)</code></li>
-<li><code>GameRegistry#addSmelting(ItemStack, ItemStack, Float)</code></li>
+<li><code>GameRegistry#addSmelting(Block, ItemStack, float)</code></li>
+<li><code>GameRegistry#addSmelting(Item, ItemStack, float)</code></li>
+<li><code>GameRegistry#addSmelting(ItemStack, ItemStack, float)</code></li>
 </ol>
-<p>Где первым параметром является предмет/блок для плавки, вторым результат плавки, а третьим кол-во опыта получаемого при
-плавлении предмета/блок. Добавим возможность плавить рубиновую руду в рубины.</p>
+<p>Первым параметром является исходный предмет/блок для плавки, вторым результат плавки, а третьим кол-во опыта получаемого при
+плавлении предмета/блок. Первые два метода предназначены для упрощённого добавления рецепта <code>ItemStack</code> с указанием <strong>wildcard damage</strong>. </p>
+<p>Добавим возможность плавить рубиновую руду в рубины:</p>
 <div class="highlight"><span class="filename">Пример рецепта плавления</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
@@ -4173,16 +4187,18 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p><img alt="Плавление рубиновой руды" src="../images/smelting_ruby_ore.png" /></p>
-<p><img alt="Результат плавления рубиновой руды" src="../images/smelting_ruby.png" /></p>
-<h2 id="использованием-предметов-из-словаря-руд-в-рецептах">Использованием предметов из словаря руд в рецептах<a class="headerlink" href="#использованием-предметов-из-словаря-руд-в-рецептах" title="Permanent link">#</a></h2>
-<p>Ранее мы создавали рецепты форменные и бесформенные, но стандартная реализация не позволяет использовать словарь руд.
-Для решения этой проблемы были написаны такие классы как <code>ShapedOreRecipe</code> и <code>ShapelessOreRecipe</code>. Регистрируются они
-с помощью метода <code>GameRegistry#addRecipe(IRecipe)</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Важно</p>
-<p>Регистрация рецептов использующих предметы из словаря руд, необходимо производить после регистрации предмета
-в словаре руд.</p>
-</div>
+<h2 id="рецепты-с-использованием-словаря-руд">Рецепты с использованием словаря руд<a class="headerlink" href="#рецепты-с-использованием-словаря-руд" title="Permanent link">#</a></h2>
+<p>Ранее мы создавали форменные и бесформенные рецепты стандартным методом с жёсткой привязкой к используемым ингредиентам.
+Это может доставлять неудобства игроку, когда в сборке присутствует несколько видов руды, красителей, древесины и прочего,
+требуя от игрока строго определённый вид той же древесины (пример).</p>
+<p><a href="../ore-dictionary/">Словарь руд</a> решает эту проблему, позволяя игроку использовать игроку взаимозаменяемые ингредиенты в крафте.
+Например, использовать краситель из мода вместо «ванильного». <strong>Мы настоятельно рекомендуем использовать данный метод добавления рецептов.</strong></p>
+<p>Для добавления рецепта с поддержкой словаря руд существуют обёртки: <code>ShapedOreRecipe</code> и <code>ShapelessOreRecipe</code>.
+Регистрируются они с помощью метода <code>GameRegistry#addRecipe(IRecipe)</code>.
+В целом, все их параметры полностью аналогичны стандартным методам добавления рецептов и единственным улучшением помимо указания <code>Block</code>, <code>Item</code>, <code>ItemStack</code> в ингредиентах,
+появилась возможность указывать стоковое значение, являющееся <a href="../oredict-table/">именем группы предметов</a> словаря руд.
+Это значит, что любой в качестве ингредиента в рецепте можно будет использовать любой предмет входящий в группу.</p>
+<p>О том как работать с группами, описано в статье «<a href="../ore-dictionary/">Словарь руд</a>». </p>
 <div class="highlight"><span class="filename">Пример рецепта с предметами из словаря руд</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.registry.GameRegistry</span><span class="p">;</span><span class="w"></span>
@@ -4202,6 +4218,11 @@ R обозначает Ruby(рубин), а S - stick(палка). Вы може
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Регистрацию рецептов, использующих словарь руд, необходимо производить после регистрации предметов
+в словаре руд.</p>
+</div>
 
 
   
