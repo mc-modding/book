@@ -184,7 +184,7 @@ public class PaintCanItem extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamageForRenderPass(int meta, int renderPass) {
-        return pass == 1 ? colorMask : super.getIconFromDamageForRenderPass(meta, renderPass);
+        return renderPass == 1 ? colorMask : super.getIconFromDamageForRenderPass(meta, renderPass);
     }
 
     @Override
