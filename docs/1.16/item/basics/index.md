@@ -1,5 +1,17 @@
 # Создание предмета
 
+## Создание класса предмета
+
+Создадим класс для предмета
+
+```java
+public class IronRodItem extends Item {
+    public IronRodItem(Properties properties) {
+        super(properties)
+    }
+}
+```
+
 ## Подготовка класса предметов
 
 Создадим класс ModItems в папке item.
@@ -7,8 +19,9 @@
 ```java
 public class ModItems {
     public static DeferredRegister<Item> ITEMS =
-        DeferredRegister.create(ForgeRegistries>ITEMS, mod_id);
+        DeferredRegister.create(ForgeRegistries.ITEMS, mod_id);
     
+    //Метод нужен для регистрации класса в главном классе мода
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus)
     }
@@ -25,20 +38,25 @@ ModItems.register(eventBus);
 
 * `register(eventBus)` - регистрирует предметы в главном классе
 
-## Добавление предмета
+## Регистрация
 
 Перед `public static void register(IEventBus eventBus) { ITEMS.register(eventBus) }` пишем: 
 
 ```java
-public static final RegistryObject<Item> ITEM_ID = ITEMS.register("item_id", () -> new Item(new Item.Properties()));
+//Регистрация предмета
+public static final RegistryObject<Item> IRON_ROD = ITEMS.register("iron_rod", () -> new IronRodItem(new Item.Properties().tab(Tab).maxStackSize(int).setNoRepair().rarity(Rarity.rariry).maxDamage(int)));
 ```
 
-* `item_id` - идентификатор вашего предмета
-* `() -> new Item` - класс предмета (можно класс `Item` заменить на свой класс предмета)
+* `iron_rod` - идентификатор вашего предмета
+* `.maxStackSize(int) - устанавливает максимальное количество предметов в 1 стаке (необязательно)
+* `.maxDamage` - задаёт прочность предмета (необязательно)
+* `.setNoRepair()` - теперь ваш предмет нельзя будет починить (необязательно)
+* `.rarity(Rarity.rarity)` - редкость предмета (COMMON - обычный, UNCOMMON - необычный) (необязательно)
+* `.tab(Tab)` - Устанавливает вкладку в творческом режиме (необязательно)
+* `() -> new IronRodItem` - класс предмета (можно класс `IronRodItem` заменить на класс `Item` (стандартный класс предмета))
 
-Теперь можно запустить Minecraft и прописать команду `/give @s mod_id:item_id`
-
-Фото нет (не доступна загрузка файлов)
+Теперь можно запустить Minecraft и прописать команду `/give @s tut:iron_rod`
+Не забываем заменить `tut` и `iron_rod`
 
 ## Текстура и модель
 
@@ -48,15 +66,13 @@ public static final RegistryObject<Item> ITEM_ID = ITEMS.register("item_id", () 
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "mod_id:item/item_id"
+        "layer0": "tutorial:item/iron_rod"
     }
 }
 ```
-Меняем `mod_id` и `item_id` на ваши значения
+`tut` - modId мода, `iron_rod` - регистрируемое имя предмета
 
 Теперь надо добавить текстуру с названием item_id в формате `.png` по пути `src/resources/assets/mod_id/textures/item`
-Вместо 
-`item_id` вводим идентификатор вашего предмета.
 
 ## Объёмная модель
 
