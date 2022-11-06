@@ -9,7 +9,7 @@ public class IronRodItem extends Item {
     public IronRodItem(Properties properties) {
         //Устанавливает основные функции предмета (имя, идентификатор)
         super(properties);
-        //Задаёт вкладку в творческом режиме
+        //Задаёт вкладку в креативе
         this.tab(Tab);
         //устанавливает максимальное количество предметов в 1 стаке
         this.maxStackSize(int);
@@ -75,7 +75,7 @@ public static final RegistryObject<Item> IRON_ROD = ITEMS.register("iron_rod", (
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "tutorial:item/iron_rod"
+        "layer0": "tut:item/iron_rod"
     }
 }
 ```
