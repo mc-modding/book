@@ -7,19 +7,32 @@
 ```java
 public class IronRodItem extends Item {
     public IronRodItem(Properties properties) {
-        super(properties)
+        //Устанавливает основные функции предмета (имя, идентификатор)
+        super(properties);
+        //Задаёт вкладку в творческом режиме
+        this.tab(Tab);
+        //устанавливает максимальное количество предметов в 1 стаке
+        this.maxStackSize(int);
+        //Теперь предмет нельзя будет починить
+        this.setNoRepair();
+        this.rarity(Rarity.rarity);
+        //Задаёт прочность
+        this.maxDamage(int);
     }
 }
 ```
+* `.rarity(Rarity.)` - редкость предмета (COMMON - обычный, UNCOMMON - необычный, RARE - редкий, EPIC - эпический)
+* Также все данные параметры (кроме `super(properties)`) можно не писать, или написать в классе ModItems в формате:
+ `(new Item.Properties().tab(Tab).maxStackSize(int))` и так далее..
 
 ## Подготовка класса предметов
 
-Создадим класс ModItems в папке item.
+Создадим класс ModItems.
 
 ```java
 public class ModItems {
     public static DeferredRegister<Item> ITEMS =
-        DeferredRegister.create(ForgeRegistries.ITEMS, mod_id);
+        DeferredRegister.create(ForgeRegistries.ITEMS, "tut");
     
     //Метод нужен для регистрации класса в главном классе мода
     public static void register(IEventBus eventBus) {
@@ -28,7 +41,7 @@ public class ModItems {
 }
 ```
 
-* `mod_id` - идентификатор вашего мода
+* `tut` - modId мода
 
 Также добавим в главный класс в главный метод такой код:
 
@@ -36,7 +49,7 @@ public class ModItems {
 ModItems.register(eventBus);
 ```
 
-* `register(eventBus)` - регистрирует предметы в главном классе
+* `register(eventBus)` - регистрирует предметы
 
 ## Регистрация
 
@@ -44,15 +57,11 @@ ModItems.register(eventBus);
 
 ```java
 //Регистрация предмета
-public static final RegistryObject<Item> IRON_ROD = ITEMS.register("iron_rod", () -> new IronRodItem(new Item.Properties().tab(Tab).maxStackSize(int).setNoRepair().rarity(Rarity.rariry).maxDamage(int)));
+public static final RegistryObject<Item> IRON_ROD = ITEMS.register("iron_rod", () -> new IronRodItem(new Item.Properties()));
 ```
 
 * `iron_rod` - идентификатор вашего предмета
-* `.maxStackSize(int) - устанавливает максимальное количество предметов в 1 стаке (необязательно)
-* `.maxDamage` - задаёт прочность предмета (необязательно)
-* `.setNoRepair()` - теперь ваш предмет нельзя будет починить (необязательно)
-* `.rarity(Rarity.rarity)` - редкость предмета (COMMON - обычный, UNCOMMON - необычный) (необязательно)
-* `.tab(Tab)` - Устанавливает вкладку в творческом режиме (необязательно)
+* `.rarity(Rarity.rarity)` - редкость предмета (COMMON - обычный, UNCOMMON - необычный)
 * `() -> new IronRodItem` - класс предмета (можно класс `IronRodItem` заменить на класс `Item` (стандартный класс предмета))
 
 Теперь можно запустить Minecraft и прописать команду `/give @s tut:iron_rod`
