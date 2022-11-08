@@ -12,7 +12,7 @@ public class IronRodItem extends Item {
         //Задаёт вкладку в креативе
         this.tab(Tab);
         //устанавливает максимальное количество предметов в 1 стаке
-        this.maxStackSize(int);
+        this.stacksTo(int);
         //Теперь предмет нельзя будет починить
         this.setNoRepair();
         this.rarity(Rarity.rarity);
@@ -23,7 +23,7 @@ public class IronRodItem extends Item {
 ```
 * `.rarity(Rarity.)` - редкость предмета (COMMON - обычный, UNCOMMON - необычный, RARE - редкий, EPIC - эпический)
 * Также все данные параметры (кроме `super(properties)`) можно не писать, или написать в классе ModItems в формате:
- `(new Item.Properties().tab(Tab).maxStackSize(int))` и так далее..
+ `(new Item.Properties().tab(Tab).stacksTo(int))` и так далее..
 
 ## Подготовка класса предметов
 
