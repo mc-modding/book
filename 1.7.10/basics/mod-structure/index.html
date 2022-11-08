@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/basics/mod-structure/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
     
     
       
@@ -25,7 +25,7 @@
       <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -134,6 +134,7 @@
         
           
           
+          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Темная тема" for="__palette_2" hidden>
@@ -141,6 +142,7 @@
             </label>
           
         
+          
           
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_2">
@@ -481,30 +483,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#для-eclipse" class="md-nav__link">
-    Для Eclipse
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#смысл-папок" class="md-nav__link">
-    Смысл папок
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcmodinfo" class="md-nav__link">
-    mcmod.info
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#главный-файл-мода" class="md-nav__link">
     Главный файл мода
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#файл-mcmodinfo" class="md-nav__link">
+    Файл mcmod.info
+  </a>
+  
+    <nav class="md-nav" aria-label="Файл mcmod.info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#доступные-параметры" class="md-nav__link">
+    Доступные параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4021,30 +4022,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#для-eclipse" class="md-nav__link">
-    Для Eclipse
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#смысл-папок" class="md-nav__link">
-    Смысл папок
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mcmodinfo" class="md-nav__link">
-    mcmod.info
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#главный-файл-мода" class="md-nav__link">
     Главный файл мода
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#файл-mcmodinfo" class="md-nav__link">
+    Файл mcmod.info
+  </a>
+  
+    <nav class="md-nav" aria-label="Файл mcmod.info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#доступные-параметры" class="md-nav__link">
+    Доступные параметры
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4077,44 +4077,78 @@
 
 
 <h1 id="структура-мода">Структура мода<a class="headerlink" href="#структура-мода" title="Permanent link">#</a></h1>
-<p>Так как используемое нами Minecraft Forge использует автоматический сборщик Gradle, то мы должны придерживаться определенной
-структуры папок.</p>
-<div class="highlight"><pre><span></span><code>└── src    
-    └── main
-        ├── java
-        └── resources
+<p>API Minecraft Forge предлагает нам использовать следующую структуру проекта мода:</p>
+<div class="highlight"><pre><span></span><code>src
+└── main
+    ├── java
+    └── resources
 </code></pre></div>
-<p>Создайте папку "src" и остальные в нашей рабочей директории, где мы ранее распаковывали архив MDK. Idea автоматически
-узнает названия папок и присвоит им нужное значение.</p>
-<h4 id="для-eclipse">Для Eclipse<a class="headerlink" href="#для-eclipse" title="Permanent link">#</a></h4>
-<p>Если вы используете Eclipse, то вам нужно пометить "src/main/java" и "src/main/resources" как "Source Folder" (папка исходников).</p>
-<p>Это можно сделать двумя разными способами:</p>
-<ol>
-<li>Создать эти папки через ПКМ &gt; New &gt; Source Folder</li>
-<li>Выделить уже созданные папки "java" и "resources" и ПКМ &gt; Build Path &gt; Use as Source Folder</li>
-</ol>
-<h4 id="смысл-папок">Смысл папок<a class="headerlink" href="#смысл-папок" title="Permanent link">#</a></h4>
-<p>"src" в полном варианте пишется source и переводится как "Источники/Исходники".</p>
-<p>Весь наш мод будет находиться внутри этой папки.</p>
-<p>Далее идет "main", внутри которого находятся две папки: "java" и "resources".</p>
 <ul>
-<li>В "java" хранится исходный код нашего мода</li>
-<li>В "resources" хранятся ресурсы мода: картинки, звуки, модели и так далее</li>
+<li>«src» содержит «наборы» для исходного кода и ресурсов. Это может пригодиться, чтобы, например, не смешивать код 
+программы и код для её тестирования. Основой код размещается в модуле «main».</li>
+<li>«java» содержит исходный код соответствующий своему названию языка программирования. Помимо Java, Minecraft Forge
+предоставляет из коробки возможностью написания модов на Scala (исходный код размещается в каталоге <code>src/main/scala</code>).</li>
+<li>«resources» содержит ресурсы, а ими в свою очередь являются: текстуры, файлы локализации, звуки и так далее.</li>
 </ul>
-<h2 id="mcmodinfo">mcmod.info<a class="headerlink" href="#mcmodinfo" title="Permanent link">#</a></h2>
-<p>Создадим в папке "resources" файл <code>mcmod.info</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Обратите внимание!</p>
+<p>Приведённые выше папки поставляются сразу с MDK и содержат официальный мод-пример, но мы их удалили на этапе подготовки,
+поэтому пересоздайте их. С данным учебником поставляемый мод-пример не нужен.</p>
+<p>IDEA автоматически распределит значения источников кода и ресурсов папкам «src» и «resources» соответственно.</p>
+<p>В случае Eclipse, выдайте им эти значения вручную: ПКМ по папке → Build Path → Use as Source Folder</p>
+</div>
+<details class="info">
+<summary>Про наборы исходного кода</summary>
+<p>По умолчанию Gradle предоставляет наборы: «main» для кода программы и «test» для кода её тестирования (например, для
+unit-тестов). Minecraft Forge также предоставляет набор «api», файлы которого не будут добавляться в итоговый файл мода,
+но могут быть использованы во время сборки.</p>
+<p>Подробно про наборы исходного кода вы можете прочесть на
+<a href="https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceSet.html">странице документации Gradle</a>.</p>
+</details>
+<h2 id="главный-файл-мода">Главный файл мода<a class="headerlink" href="#главный-файл-мода" title="Permanent link">#</a></h2>
+<p>В папке «java» создайте базовый пакет вашего мода. Если у вас уже есть домен для мода, то отличным названием для
+пакета будет что-то вроде <code>ru.mcmodding.tutorial</code>. Если домена у вас нет, вполне подойдет использование вашего никнейма, как
+название пакета верхнего уровня: <code>mcmodding.tutorial</code>.</p>
+<p>Для данного урока мы будем использовать пакет: <code>ru.mcmodding.tutorial</code>.</p>
+<p>Теперь создадим в нем класс с названием вашего мода, для урока: <code>McModding</code>. Это и будет главным классом нашего мода.</p>
+<p>Для того чтобы Minecraft Forge понял, что данный класс действительно является модом, мы должны пометить данный класс аннотацией <code>@Mod</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
+
+<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mcmodding&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1">// ...</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Аннотация имеет один единственный параметр <code>modid</code> – уникальный идентификатор мода.
+В ModID рекомендуется использовать только латиницу в нижнем регистре, никаких пробелов, подчеркиваний и прочего.
+Крайне не рекомендуется изменять ModID в дальнейшем, так как это приведёт к потере игровых данных, созданных модом.</p>
+<div class="admonition note">
+<p>Minecraft Forge допускает возможность наличия в проекте нескольких классов с аннотацией <code>@Mod</code>, каждый из которых должен иметь свой <code>modid</code> и будет считаться отдельным модом.
+Автор учебника не знает, зачем это может пригодиться, кроме как для накрутки счётчика загруженных модов.</p>
+</div>
+<p>Разбору полей аннотации <code>@Mod</code> посвящена <a href="../mod-annotation/">отдельная статья</a>.
+Если Вы не собираетесь использовать файл <strong>mcmod.info</strong> рекомендуется также заполнить такие поля аннотации как <code>name</code> и <code>version</code>. </p>
+<h2 id="файл-mcmodinfo">Файл mcmod.info<a class="headerlink" href="#файл-mcmodinfo" title="Permanent link">#</a></h2>
 <p>Этот файл определяет метаданные нашего мода: идентификатор, название, авторов, зависимости и так далее.
 Это обычный JSON файл, хотя он и имеет расширение <code>.info</code>.</p>
-<p>Минимально правильный mcmod.info файл должен содержать следующее:</p>
+<div class="admonition note">
+<p>Файл <strong>mcmod.info</strong> является необязательным и в основном служит для оформления странички мода на экране «Mod List».</p>
+</div>
+<p>Создадим в папке «resources» файл <code>mcmod.info</code>.</p>
+<p>Минимально правильный <code>mcmod.info</code> файл должен содержать следующее:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;modid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcmodding&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;McModding Mod&quot;</span><span class="w"></span>
 <span class="p">}]</span><span class="w"></span>
 </code></pre></div>
-<p>Где <code>modid</code> — идентификатор мода. Не используйте заглавные буквы, пробелы, подчеркивания и т.д. Только английские буквы
-в нижнем регистре.</p>
-<p>Параметр <code>name</code> отвечает за красивое название вашего мода. Тут можно использовать все что угодно. Работать будут и <a href="http://minecraft.gamepedia.com/Formatting_codes">коды
-форматирования текста</a>.</p>
+<p>Где параметр <code>modid</code> — идентификатор мода, а <code>name</code> отвечает за красивое название вашего мода, которое видит пользователь.</p>
+<p>Естественно, что поле <code>modid</code> в аннотации должно соответствовать <code>modid</code> в <code>@Mod</code>. В противном случае мод будет распознан,
+но выведется сообщение о том, что <code>mcmod.info</code> не найден. Впрочем, на работу мода это никак не повлияет.</p>
+<p>Следует обратить внимание, что корневой элемент структуры файла является массивом.
+Это сделано для возможности описать все моды в одном файле, если проект содержит несколько классов, аннотированных <code>@Mod</code>.</p>
+<h3 id="доступные-параметры">Доступные параметры<a class="headerlink" href="#доступные-параметры" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -4137,11 +4171,11 @@
 </tr>
 <tr>
 <td>version</td>
-<td>Версия мода</td>
+<td>Версия мода, рекомендуем придерживаться <a href="https://semver.org/">семантического версионирования</a></td>
 </tr>
 <tr>
 <td>url</td>
-<td>Ссылка на сайт мода</td>
+<td>Ссылка на сайт мода, например CurseForge или GitHub</td>
 </tr>
 <tr>
 <td>updateUrl</td>
@@ -4153,7 +4187,7 @@
 </tr>
 <tr>
 <td>credits</td>
-<td>Строка с выражением благодарности кому-то</td>
+<td>Строка для выражения благодарностей, например тем, кто помогал с модом</td>
 </tr>
 <tr>
 <td>logoFile</td>
@@ -4165,7 +4199,7 @@
 </tr>
 <tr>
 <td>parent</td>
-<td>modId родительского мода</td>
+<td>Уникальный идентификатор родительского мода, в списке модов ваш будет отображён как дочерний у родительского</td>
 </tr>
 <tr>
 <td>useDependencyInformation</td>
@@ -4173,60 +4207,38 @@
 </tr>
 <tr>
 <td>requiredMods</td>
-<td>Массив modId модов, которые требуются для работы данного мода. Если данные моды не установлены, то будет краш игры. Данный параметр не указывает <strong>порядок</strong> загрузки модов. Используйте для этой цели параметр dependencies</td>
+<td>Массив уникальных идентификаторов модов, которые требуются для работы вашего мода. Если данные моды не установлены, то произойдёт краш игры. Данный параметр не указывает <strong>порядок</strong> загрузки модов. Используйте для этой цели параметр dependencies и dependants</td>
 </tr>
 <tr>
 <td>dependencies</td>
-<td>Массив modId модов, которые должны быть загружены <strong>до</strong> загрузки данного мода</td>
+<td>Массив уникальных идентификаторов модов, которые должны быть загружены <strong>до</strong> загрузки данного мода</td>
 </tr>
 <tr>
 <td>dependants</td>
-<td>Массив modId модов, которые должны быть загружены <strong>после</strong> загрузки данного мода</td>
+<td>Массив уникальных идентификаторов модов, которые должны быть загружены <strong>после</strong> загрузки данного мода</td>
 </tr>
 </tbody>
 </table>
-<p>Вот пример заполненного файла:</p>
+<p>Пример заполненного файла:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;modid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcmodding&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;McModding Mod&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Это мой первый, крутой мод!&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Это мой первый и крутой мод!&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcmodding.ru&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;authorList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Icosider&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CMTV&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;credits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Спасибо что читаете наш учебник.&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;authorList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Icosider&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CMTV&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;TheAndrey&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;credits&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Спасибо, что читаете наш учебник.&quot;</span><span class="w"></span>
 <span class="p">}]</span><span class="w"></span>
 </code></pre></div>
-<p>Более подробно о настройке этого файла вы можете прочитать в отдельной статье. Рекомендую обязательно выделить время для этого,
-так как там есть несколько полезных хитростей.</p>
-<h2 id="главный-файл-мода">Главный файл мода<a class="headerlink" href="#главный-файл-мода" title="Permanent link">#</a></h2>
-<p>В предыдущем разделе мы создали файл <code>mcmod.info</code>, но игра все еще не распознает мод, в чем можно убедиться, запустив
-клиент. Вы не найдете свой мод в списке установленных модов. Для того чтобы все заработало, нам нужно создать главный файл мода.</p>
-<p>В папке "java" создайте базовый пакет вашего мода. Если у вас уже есть домен для вашего мода, то отличным названием для
-пакета будет что-то вроде <code>ru.mcmodding.tutorial</code>. Если домена у вас нет, вполне подойдет использование вашего никнейма, как
-название пакета верхнего уровня: <code>mcmodding.tutorial</code>.</p>
-<p>Для данного урока мы будем использовать такой вид: <code>ru.mcmodding.tutorial</code>.</p>
-<p>Теперь создадим в нем файл <code>McModding.java</code>. Это и будет главным файлом нашего мода.</p>
-<p>Для того чтобы Minecraft Forge понял, что данный файл действительно является главным, мы должны добавить к определению класса
-аннотацию <code>@Mod</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
-
-<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mcmodding&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-</code></pre></div>
-<p>Естественно, что поле <code>modid</code> в аннотации должно быть равно <code>modid</code> в <code>mcmod.info</code>. В противном случае мод будет распознан,
-но выведет сообщение о том, что <code>mcmod.info</code> не найден. Впрочем, на работу мода это никак не повлияет.</p>
-<p>Разбору полей аннотации <code>@Mod</code> посвящена отдельная статья.</p>
 <h2 id="итог">Итог<a class="headerlink" href="#итог" title="Permanent link">#</a></h2>
 <p>Мы создали базовую структуру любого мода для Minecraft. Выглядит она следующим образом:</p>
-<div class="highlight"><pre><span></span><code>└── src    
-    └── main
-        ├── java
-        │   └── ru.mcmodding.tutorial
-        │       └── McModding.java
-        └── resources
-            └── mcmod.info
+<div class="highlight"><pre><span></span><code>src    
+└── main
+    ├── java
+    │   └── ru.mcmodding.tutorial
+    │       └── McModding.java
+    └── resources
+        └── mcmod.info
 </code></pre></div>
 
 
@@ -4316,7 +4328,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
 
     <!-- Yandex.Metrika counter -->
@@ -4336,7 +4348,7 @@
 
 
     
-      <script src="../../../assets/javascripts/bundle.078830c0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
     
   </body>
