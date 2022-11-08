@@ -43,7 +43,7 @@ public class ModItems {
 
 * `tut` - modId мода
 
-Также добавим в главный класс в главный метод такой код:
+Также добавим в главный класс в конструктор такой код:
 
 ```java
 ModItems.register(eventBus);
