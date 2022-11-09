@@ -296,7 +296,7 @@ public class RubyBlockRenderer implements ISimpleBlockRenderingHandler {
     Важно знать, что нет необходимости вызывать методы `Tessellator#startDrawing`, `Tessellator#startDrawingQuads` и `Tessellator#draw` в методе `ISimpleBlockRenderingHandler#renderWorldBlock`,
     так как это может привести к падению(крашу) и снижению производительности клиента игры!
 
-Таблица ванильных, уникальных идентификаторов отрисовок блоков:
+Таблица ванильных, уникальных идентификаторов рендеров блоков:
 
 | Идентификатор | Описание                                    |
 |---------------|---------------------------------------------|

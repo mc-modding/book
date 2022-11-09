@@ -23,7 +23,7 @@ description: Настройка рабочего пространства для
 
 Выглядит оно примерно так:
 
-[![Демнострация Gradle задач](images/gradle_tasks_idea.png){: .border }](images/gradle_tasks_idea.png)
+[![Демонстрация Gradle задач](images/gradle_tasks_idea.png){: .border }](images/gradle_tasks_idea.png)
 
 Выполните задачу `setupDecompWorkspace` из группы `forgegradle`. Тем самым мы произведём загрузку необходимых библиотек
 для написания мода и работы с исходным кодом Minecraft и Minecraft Forge.

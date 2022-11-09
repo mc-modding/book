@@ -55,7 +55,7 @@ public class PoisonBladeEnchantment extends Enchantment {
 Конструктор класса `Enchantment` принимает три параметра:
 
 1. `enchantId` - уникальный идентификатор чар. Должен быть уникальным, чтобы избежать конфликта с ванильными или модовыми чарами.
-2. `weight` - "вес" чар, влияет на стоимость зачаривания в наковальне, а также вероятность появления в генерации лута и у жителей в торговле.
+2. `weight` - "вес" чар, влияет на стоимость наложения чар в наковальне, а также вероятность появления в генерации лута и у жителей в торговле.
 3. `type` - применимость чар к предметам.
 
 !!! warning "Обратите внимание!"
@@ -141,9 +141,9 @@ public class CommonProxy {
 
 ![Книга с чарами](images/enchant/poison_blade_book.png)
 
-![Зачаривание в наковальне](images/enchant/poison_blade_in_anvil.png)
+![Наложение чар в наковальне](images/enchant/poison_blade_in_anvil.png)
 
-![Зачаривание предмета в столе зачарований](images/enchant/poison_blade_in_ench_table.png)
+![Наложение чар в столе зачарований](images/enchant/poison_blade_in_ench_table.png)
 
 ## Чары плавления блоков
 
