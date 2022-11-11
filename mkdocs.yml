@@ -182,6 +182,8 @@ nav:
       - Основы Forge:
           - Структура мода: "1.16/basics/mod-structure/index.md"
           - Организация папок: "1.16/basics/organizing-folders/index.md"
+      - Предмет:
+          - Создание предмета: "1.16/item/basics.md"
       - Дополнительно:
           - Семантическое управление версиями: "1.16/other/semantic-versioning/index.md"
 
