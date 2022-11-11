@@ -5,6 +5,7 @@ description: Создание собственного предмета
 ## Основа
 
 Создадим класс для предмета.
+
 ```java
 package ru.mcmodding.tutorial.item;
 
@@ -16,19 +17,20 @@ public class MinecoinItem extends Item {
     }
 }
 ```
+
 Параметры предмета (вводить в формате this.названиеПараметра(описаниеПараметра));
 
-| Параметр      | Описание                                                               |
-|---------------|------------------------------------------------------------------------|
- | tab           | Группа предметов в креативе.                                           | 
- | rarity        | Редкость предмета.                                                     |
- | stacksTo      | Максимальный размер в стаке.                                           |
- | durability    | Устанавливает максимальную прочность.                                  |
- | setNoRepair   | Запрещает чинить предмет, если он сломан.                              |
- | food          | Делает предмет едой (Подробнее см. [Создание еды](https://mcmodding.ru/1.16/item/food.md)). |
- | addToolType   | Делает инструмент какого-то типа.                                      |
- | fireResistant | Делает инструмент какого-то типа.                                      |
- | setISTER      | Задаёт кастомный рендер предмету.                                      |
+| Параметр      | Описание                                     |
+|---------------|----------------------------------------------|
+| tab           | Группа предметов в креативе.                 | 
+| rarity        | Редкость предмета.                           |
+| stacksTo      | Задаёт максимальный размер стопки предметов. |
+| durability    | Устанавливает максимальную прочность.        |
+| setNoRepair   | Запрещает чинить сломанный предмет.          |
+| food          | Делает предмет едой.                         |
+| addToolType   | Делает инструмент какого-то типа.            |
+| fireResistant | Делает инструмент какого-то типа.            |
+| setISTER      | Задаёт кастомный рендер предмету.            |
 
 Все эти параметры можно прописать в классе ModItems (см. следующий раздел)
 в формате `(new Item.Properties().названиеПараметра())`
@@ -39,18 +41,18 @@ public class MinecoinItem extends Item {
 
 ```java
 public class ModItems {
- public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TutorialMod.MOD_ID);
- 
- //Предмет
- public static final RegistryObject<Item> MINECOIN = ITEMS.register("minecoin",
-         () -> new MinecoinItem(new Item.Properties()));
- 
- //Метод для регистрации класса в моде
- public static void register(IEventBus eventBus) {
-     ITEMS.register(eventBus);
- }
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TutorialMod.MOD_ID);
+    
+    // Предмет
+    public static final RegistryObject<Item> MINECOIN = ITEMS.register("minecoin", () -> new MinecoinItem(new Item.Properties()));
+    
+    // Метод для регистрации класса в моде
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
+    }
 }
 ```
+
 `MinecoinItem` можно заменить на `Item`, если вы хотите создать классический предмет.
 Всё! Наш предмет создан. Чтобы использовать предмет в моде нужно написать `ModItems.MINECOIN.get()`.
 Теперь добавим `ModItems.register(eventBus)` в конструктор главного класса мода.
@@ -67,20 +69,17 @@ public class ModItems {
 Для плоской модели напишем в нём:
 ```json
 {
- "parent": "item/generated",
- "textures": {
-  "layer0": "tut:item/minecoin"
- }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tut:item/minecoin"
+  }
 }
 ```
 
 `tut` - modId мода.
 `minecoin` - регистрируемое имя предмета.
 
-Текстуру добавим по пути:
-```md
-src/main/resources/assets/tut/textures/item
-```
+Текстуру добавим по пути: `src/main/resources/assets/tut/textures/item`
 
 При запуске игры мы увидим это:
 [![Предмет с текстурой](images/simple_model.png)](images/simple_model.png)
