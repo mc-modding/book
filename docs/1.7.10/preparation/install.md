@@ -62,29 +62,73 @@ Minecraft написан на языке [Java](https://ru.wikipedia.org/wiki/Ja
 
 ### Предварительная настройка
 
+??? warning "Прекращена поддержка Amazon S3"
+    В ноябре 2022 г. корпорация Microsoft удалила файлы игры с сервиса Amazon S3
+    из-за чего старые официальные версии ForgeGradle перестали работать выдавая ошибку:
+    `Unexpected reponse 403 from http://s3.amazonaws.com/Minecraft.Download/versions/1.7.10/1.7.10.json`   
+    Для разработки будет использоваться неофициальная версия ForgeGradle, где эта проблема была исправлена (_файлы игры теперь скачиваются с серверов Microsoft_).
+
 Команда MinecraftForge давно прекратила поддержку версии **Minecraft 1.7.10**.
 Нам потребуется внести несколько небольших изменений в конфигурационные файлы скачанного проекта, исправляющие проблемы совместимости с актуальными версиями ПО.
 
-1. **Используется слишком старая версия Gradle.**   
-   Отредактируйте файл **gradle/wrapper/gradle-wrapper.properties**.
-   Найдите следующую строку URL и замените `2.0` на `4.4.1`
-   ```properties
-   distributionUrl=https\://services.gradle.org/distributions/gradle-2.0-bin.zip
-   ```
-2. **Изменился URL репозитория Forge.**   
-   Откройте файл **build.gradle** и в самом начале замените строку `http://files.minecraftforge.net/maven` на `https://maven.minecraftforge.net/`
-3. **Активируем поддержку Java 8 (опционально)**   
-   В файле **build.gradle** добавьте после `archivesBaseName = "modid"` строку:
-   ```groovy
-   targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
-   ```
-4. **Активируем поддержку Unicode (опционально)**   
-   Чтобы кириллица в исходных файлах не превращалась в «кракозябры» после сборки, в файле **build.gradle**  после блока `minecraft { ... }` добавьте ниже:
-   ```groovy
-   tasks.withType(JavaCompile) {
-       options.encoding = 'UTF-8'
-   }
-   ```
+!!! note ""
+    Для удобства, список изменений представлен в формате **diff**. Строки, выделенные красным, следует удалить, а зелёные – добавить. Символы «-» и «+» в начале строк копировать не нужно!
+
+Измените следующие файлы:
+
+```diff title="gradle/wrapper/gradle-wrapper.properties"
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+- distributionUrl=https\://services.gradle.org/distributions/gradle-2.0-bin.zip
++ distributionUrl=https\://services.gradle.org/distributions/gradle-4.4.1-bin.zip
+```
+
+```diff title="build.gradle"
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+-           url = "http://files.minecraftforge.net/maven"
++           url = "https://maven.minecraftforge.net/"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+-       classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
++       classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
++           changing = true
++       }
+    }
+}
+
+apply plugin: 'forge'
+
+version = "1.0"
+group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "modid"
+
++ // Активация поддержки Java 8 (без этой строчки будет использоваться Java 6)
++ targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
+
+minecraft {
+    version = "1.7.10-10.13.4.1614-1.7.10"
+    runDir = "eclipse"
+}
+
++ // Активация поддержки юникода, чтобы не было кракозябр
++ tasks.withType(JavaCompile) {
++     options.encoding = 'UTF-8'
++ }
+
+// ...
+```
+
 
 ## Инициализация ForgeGradle
 
