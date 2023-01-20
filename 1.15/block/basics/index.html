@@ -12,8 +12,14 @@
       
         <link rel="canonical" href="https://mcmodding.ru/1.15/block/basics/">
       
+      
+        <link rel="prev" href="../../item/burn/">
+      
+      
+        <link rel="next" href="../blockstates/">
+      
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
@@ -22,11 +28,10 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -133,8 +138,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Темная тема" for="__palette_2" hidden>
@@ -142,8 +145,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_2">
           
@@ -184,7 +185,7 @@
           <div class="md-search-result__meta">
             Инициализация поиска
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -196,7 +197,7 @@
         <a href="https://github.com/mc-modding/book" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     mc-modding/book
@@ -240,7 +241,7 @@
       <a href="https://github.com/mc-modding/book" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     mc-modding/book
@@ -321,12 +322,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
           1.7.10
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -347,12 +349,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_1">
+        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -422,12 +425,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_2">
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -525,12 +529,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_3">
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -656,12 +661,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_4">
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -787,12 +793,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_7">
+        <label class="md-nav__link" for="__nav_5_7" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -862,12 +869,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_8" tabindex="0" aria-expanded="false">
           Рецепты
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -965,12 +973,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_9">
+        <label class="md-nav__link" for="__nav_5_9" tabindex="0" aria-expanded="false">
           Сущность (Entity)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1040,12 +1049,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_10">
+        <label class="md-nav__link" for="__nav_5_10" tabindex="0" aria-expanded="false">
           Пользовательский интерфейс (Gui)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1115,12 +1125,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_12">
+        <label class="md-nav__link" for="__nav_5_12" tabindex="0" aria-expanded="false">
           Измерение (Dimension)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1211,12 +1222,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12_6" type="checkbox" id="__nav_5_12_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_12_6" type="checkbox" id="__nav_5_12_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_12_6">
+        <label class="md-nav__link" for="__nav_5_12_6" tabindex="0" aria-expanded="false">
           Генерация лута
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1293,12 +1305,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_13" type="checkbox" id="__nav_5_13" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_13" type="checkbox" id="__nav_5_13" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_13">
+        <label class="md-nav__link" for="__nav_5_13" tabindex="0" aria-expanded="false">
           Хранение данных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1382,12 +1395,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_14" type="checkbox" id="__nav_5_14" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_14" type="checkbox" id="__nav_5_14" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_14">
+        <label class="md-nav__link" for="__nav_5_14" tabindex="0" aria-expanded="false">
           Эффекты
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1443,12 +1457,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_15" type="checkbox" id="__nav_5_15" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_15" type="checkbox" id="__nav_5_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_15">
+        <label class="md-nav__link" for="__nav_5_15" tabindex="0" aria-expanded="false">
           Остальное
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1568,12 +1583,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
           1.12
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1594,12 +1610,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_1">
+        <label class="md-nav__link" for="__nav_6_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1697,12 +1714,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_2">
+        <label class="md-nav__link" for="__nav_6_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1800,12 +1818,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_3">
+        <label class="md-nav__link" for="__nav_6_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1959,12 +1978,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_4">
+        <label class="md-nav__link" for="__nav_6_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2062,12 +2082,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_8">
+        <label class="md-nav__link" for="__nav_6_8" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2137,12 +2158,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_10">
+        <label class="md-nav__link" for="__nav_6_10" tabindex="0" aria-expanded="false">
           Достижения
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2212,12 +2234,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_11">
+        <label class="md-nav__link" for="__nav_6_11" tabindex="0" aria-expanded="false">
           Растение
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2273,12 +2296,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_12">
+        <label class="md-nav__link" for="__nav_6_12" tabindex="0" aria-expanded="false">
           Для опытных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2362,12 +2386,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_13">
+        <label class="md-nav__link" for="__nav_6_13" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2461,12 +2486,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="true">
           1.15
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2487,12 +2513,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_1">
+        <label class="md-nav__link" for="__nav_7_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2590,12 +2617,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_2">
+        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2651,12 +2679,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_3">
+        <label class="md-nav__link" for="__nav_7_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2812,12 +2841,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_4">
+        <label class="md-nav__link" for="__nav_7_4" tabindex="0" aria-expanded="true">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3019,12 +3049,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_7">
+        <label class="md-nav__link" for="__nav_7_7" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3094,12 +3125,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_9">
+        <label class="md-nav__link" for="__nav_7_9" tabindex="0" aria-expanded="false">
           Достижения
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3169,12 +3201,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_10">
+        <label class="md-nav__link" for="__nav_7_10" tabindex="0" aria-expanded="false">
           Для опытных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3258,12 +3291,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_11">
+        <label class="md-nav__link" for="__nav_7_11" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3341,12 +3375,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
           1.16
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3367,12 +3402,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_1">
+        <label class="md-nav__link" for="__nav_8_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3442,12 +3478,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_2">
+        <label class="md-nav__link" for="__nav_8_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3503,12 +3540,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_3">
+        <label class="md-nav__link" for="__nav_8_3" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3558,12 +3596,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
           Fabric 1.16
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3584,12 +3623,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_1">
+        <label class="md-nav__link" for="__nav_9_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3645,12 +3685,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_2">
+        <label class="md-nav__link" for="__nav_9_2" tabindex="0" aria-expanded="false">
           Основы Fabric
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3720,12 +3761,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_3">
+        <label class="md-nav__link" for="__nav_9_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3809,12 +3851,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_4">
+        <label class="md-nav__link" for="__nav_9_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3898,12 +3941,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_8">
+        <label class="md-nav__link" for="__nav_9_8" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3945,12 +3989,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" type="checkbox" id="__nav_9_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_9" type="checkbox" id="__nav_9_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_9">
+        <label class="md-nav__link" for="__nav_9_9" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -4058,25 +4103,24 @@
     
                   
 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/1.15/block/basics/index.md" title="Редактировать страницу" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="создание-блока">Создание блока<a class="headerlink" href="#создание-блока" title="Permanent link">#</a></h1>
 <h2 id="основа">Основа<a class="headerlink" href="#основа" title="Permanent link">#</a></h2>
 <p>Создадим класс для нашего блока.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IdealBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">IdealBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">Properties</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">Material</span><span class="p">.</span><span class="na">ROCK</span><span class="p">).</span><span class="na">harvestTool</span><span class="p">(</span><span class="n">ToolType</span><span class="p">.</span><span class="na">PICKAXE</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IdealBlock</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Block</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">IdealBlock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">Properties</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">Material</span><span class="p">.</span><span class="na">ROCK</span><span class="p">).</span><span class="na">harvestTool</span><span class="p">(</span><span class="n">ToolType</span><span class="p">.</span><span class="na">PICKAXE</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ItemStack</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDrops</span><span class="p">(</span><span class="n">BlockState</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">LootContext</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ImmutableList</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">CAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">TORCH</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">ItemStack</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDrops</span><span class="p">(</span><span class="n">BlockState</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">LootContext</span><span class="p">.</span><span class="na">Builder</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ImmutableList</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">CAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ItemStack</span><span class="p">(</span><span class="n">Items</span><span class="p">.</span><span class="na">TORCH</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>create</code> - Создает Properties с материалом Material.ROCK.</li>
@@ -4101,30 +4145,30 @@
 * <code>variableOpacity</code> - отбрасывает ли тень(для блоков с моделькой)</p>
 <h2 id="регистрация">Регистрация<a class="headerlink" href="#регистрация" title="Permanent link">#</a></h2>
 <p>Создадим класс TutBlocks, пустой интерфейс INonItem.</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Mod.EventBusSubscriber</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mod</span><span class="p">.</span><span class="na">EventBusSubscriber</span><span class="p">.</span><span class="na">Bus</span><span class="p">.</span><span class="na">MOD</span><span class="p">)</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TutBlocks</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">ForgeRegistries</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">,</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Mod.EventBusSubscriber</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">,</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mod</span><span class="p">.</span><span class="na">EventBusSubscriber</span><span class="p">.</span><span class="na">Bus</span><span class="p">.</span><span class="na">MOD</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TutBlocks</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BLOCKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DeferredRegister</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">ForgeRegistries</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">,</span><span class="w"> </span><span class="n">TestMod</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryObject</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">IDEAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="s">&quot;ideal&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">IdealBlock</span><span class="p">::</span><span class="k">new</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryObject</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span><span class="w"> </span><span class="n">IDEAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="s">&quot;ideal&quot;</span><span class="p">,</span><span class="w">  </span><span class="n">IdealBlock</span><span class="p">::</span><span class="k">new</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">FMLJavaModLoadingContext</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getModEventBus</span><span class="p">());</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">register</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">BLOCKS</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">FMLJavaModLoadingContext</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getModEventBus</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRegisterItems</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryEvent</span><span class="p">.</span><span class="na">Register</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">IForgeRegistry</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getRegistry</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">TutBlocks</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">.</span><span class="na">getEntries</span><span class="p">().</span><span class="na">stream</span><span class="p">()</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">RegistryObject</span><span class="p">::</span><span class="n">get</span><span class="p">)</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">INonItem</span><span class="p">))</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="p">();</span><span class="w"></span>
-<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">BlockItem</span><span class="w"> </span><span class="n">blockItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">(</span><span class="n">block</span><span class="p">,</span><span class="w"> </span><span class="n">prop</span><span class="p">);</span><span class="w"></span>
-<span class="w">                    </span><span class="n">blockItem</span><span class="p">.</span><span class="na">setRegistryName</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">());</span><span class="w"></span>
-<span class="w">                    </span><span class="n">registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">blockItem</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onRegisterItems</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryEvent</span><span class="p">.</span><span class="na">Register</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">IForgeRegistry</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span><span class="w"> </span><span class="n">registry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getRegistry</span><span class="p">();</span>
+<span class="w">        </span><span class="n">TutBlocks</span><span class="p">.</span><span class="na">BLOCKS</span><span class="p">.</span><span class="na">getEntries</span><span class="p">().</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">RegistryObject</span><span class="p">::</span><span class="n">get</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">INonItem</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">block</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Item</span><span class="p">.</span><span class="na">Properties</span><span class="p">();</span>
+<span class="w">                    </span><span class="kd">final</span><span class="w"> </span><span class="n">BlockItem</span><span class="w"> </span><span class="n">blockItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">(</span><span class="n">block</span><span class="p">,</span><span class="w"> </span><span class="n">prop</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">blockItem</span><span class="p">.</span><span class="na">setRegistryName</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="na">getRegistryName</span><span class="p">());</span>
+<span class="w">                    </span><span class="n">registry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">blockItem</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>register(block)</code> - регистрирует блоки.</li>
@@ -4147,121 +4191,121 @@
                     └── blockstates
 </code></pre></div>
 С содержанием:
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;variants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;variants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 В этом файле будет храниться информация о состояниях блоков. (Подробнее про состояние блоков, вы сможете прочитать в следующей статье)
 Теперь вы должны создать модель блока, вы можете создать как наследника стандартного блока, примером может послужить камень, так и свою собственную. Вот пример стандартной модели:</p>
-<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block/cube_all&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/ideal&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;block/cube_all&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/ideal&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 Если ваша текстура к модели берётся из самого Minecraft, то <code>tut:</code>(modid) прописывать не надо! В примере с объёмной моделью я решил использовать текстуру камня из Minecraft.
 Название файла должно быть таким же как и в <code>blockstates</code> -&gt; <code>ideal</code>, в переменной <code>model</code>!</p>
 <p>Пример сложной модели(Позаимствован из Туманного мира с разрешением Liahim):
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;particle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;pot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot D&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot N&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot E&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot S&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot W&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle E&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle W&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;textures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;particle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;pot&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:blocks/campfire_pot&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;elements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot D&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot N&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot E&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot S&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">11.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pot W&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">11.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w">  </span><span class="mf">6.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle E&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;east&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Handle W&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.5</span><span class="w"> </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;faces&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;north&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;west&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;south&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0</span><span class="p">,</span><span class="w">  </span><span class="mf">5.0</span><span class="p">,</span><span class="w">  </span><span class="mf">1.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;up&quot;</span><span class="p">:</span><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w">  </span><span class="mf">9.0</span><span class="p">,</span><span class="w">  </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">12.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;down&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;texture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#pot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;uv&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div></p>
 <p>Теперь Вам надо создать <code>ideal.json</code>. По пути:
 <div class="highlight"><pre><span></span><code>└── src    
@@ -4272,9 +4316,9 @@
                     └── models
                         └── item
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tut:block/ideal&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 С простой моделью:
 <a href="images/model_on_ground.png"><img alt="Блок с простой моделью" src="images/model_on_ground.png" /></a>
@@ -4312,42 +4356,6 @@
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
-      
-        
-        <a href="../../item/burn/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Горение" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              Горение
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../blockstates/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Состояния блока" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              Состояния блока
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -4370,7 +4378,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
 
     <!-- Yandex.Metrika counter -->
@@ -4390,7 +4398,7 @@
 
 
     
-      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
     
   </body>

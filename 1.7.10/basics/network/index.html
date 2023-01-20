@@ -12,8 +12,14 @@
       
         <link rel="canonical" href="https://mcmodding.ru/1.7.10/basics/network/">
       
+      
+        <link rel="prev" href="../../gui/container/">
+      
+      
+        <link rel="next" href="../../dim/basics/">
+      
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
@@ -22,11 +28,10 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.08040f6c.min.css">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -133,8 +138,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Темная тема" for="__palette_2" hidden>
@@ -142,8 +145,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="mcmodding" data-md-color-accent="mcmodding"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_2">
           
@@ -184,7 +185,7 @@
           <div class="md-search-result__meta">
             Инициализация поиска
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -196,7 +197,7 @@
         <a href="https://github.com/mc-modding/book" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     mc-modding/book
@@ -240,7 +241,7 @@
       <a href="https://github.com/mc-modding/book" title="Перейти к репозиторию" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     mc-modding/book
@@ -323,12 +324,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
           1.7.10
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -349,12 +351,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_1">
+        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -424,12 +427,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_2">
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -527,12 +531,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_3">
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -658,12 +663,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_4">
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -789,12 +795,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_7">
+        <label class="md-nav__link" for="__nav_5_7" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -864,12 +871,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_8" tabindex="0" aria-expanded="false">
           Рецепты
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -967,12 +975,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_9">
+        <label class="md-nav__link" for="__nav_5_9" tabindex="0" aria-expanded="false">
           Сущность (Entity)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1042,12 +1051,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_10">
+        <label class="md-nav__link" for="__nav_5_10" tabindex="0" aria-expanded="false">
           Пользовательский интерфейс (Gui)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1233,12 +1243,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_12">
+        <label class="md-nav__link" for="__nav_5_12" tabindex="0" aria-expanded="false">
           Измерение (Dimension)
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1329,12 +1340,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12_6" type="checkbox" id="__nav_5_12_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_12_6" type="checkbox" id="__nav_5_12_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_12_6">
+        <label class="md-nav__link" for="__nav_5_12_6" tabindex="0" aria-expanded="false">
           Генерация лута
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1411,12 +1423,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_13" type="checkbox" id="__nav_5_13" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_13" type="checkbox" id="__nav_5_13" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_13">
+        <label class="md-nav__link" for="__nav_5_13" tabindex="0" aria-expanded="false">
           Хранение данных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1500,12 +1513,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_14" type="checkbox" id="__nav_5_14" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_14" type="checkbox" id="__nav_5_14" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_14">
+        <label class="md-nav__link" for="__nav_5_14" tabindex="0" aria-expanded="false">
           Эффекты
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1561,12 +1575,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_15" type="checkbox" id="__nav_5_15" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_15" type="checkbox" id="__nav_5_15" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_15">
+        <label class="md-nav__link" for="__nav_5_15" tabindex="0" aria-expanded="false">
           Остальное
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1686,12 +1701,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
           1.12
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1712,12 +1728,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_1">
+        <label class="md-nav__link" for="__nav_6_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1815,12 +1832,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_2">
+        <label class="md-nav__link" for="__nav_6_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1918,12 +1936,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_3">
+        <label class="md-nav__link" for="__nav_6_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2077,12 +2096,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_4">
+        <label class="md-nav__link" for="__nav_6_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2180,12 +2200,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_8" type="checkbox" id="__nav_6_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_8">
+        <label class="md-nav__link" for="__nav_6_8" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2255,12 +2276,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_10" type="checkbox" id="__nav_6_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_10">
+        <label class="md-nav__link" for="__nav_6_10" tabindex="0" aria-expanded="false">
           Достижения
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2330,12 +2352,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_11" type="checkbox" id="__nav_6_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_11">
+        <label class="md-nav__link" for="__nav_6_11" tabindex="0" aria-expanded="false">
           Растение
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2391,12 +2414,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_12" type="checkbox" id="__nav_6_12" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_12">
+        <label class="md-nav__link" for="__nav_6_12" tabindex="0" aria-expanded="false">
           Для опытных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2480,12 +2504,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_13" type="checkbox" id="__nav_6_13" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_13">
+        <label class="md-nav__link" for="__nav_6_13" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2577,12 +2602,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
           1.15
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2603,12 +2629,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_1">
+        <label class="md-nav__link" for="__nav_7_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2706,12 +2733,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_2">
+        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2767,12 +2795,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_3">
+        <label class="md-nav__link" for="__nav_7_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2926,12 +2955,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_4">
+        <label class="md-nav__link" for="__nav_7_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3071,12 +3101,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_7" type="checkbox" id="__nav_7_7" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_7">
+        <label class="md-nav__link" for="__nav_7_7" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3146,12 +3177,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_9" type="checkbox" id="__nav_7_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_9">
+        <label class="md-nav__link" for="__nav_7_9" tabindex="0" aria-expanded="false">
           Достижения
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3221,12 +3253,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_10" type="checkbox" id="__nav_7_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_10">
+        <label class="md-nav__link" for="__nav_7_10" tabindex="0" aria-expanded="false">
           Для опытных
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3310,12 +3343,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_11" type="checkbox" id="__nav_7_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_7_11">
+        <label class="md-nav__link" for="__nav_7_11" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3393,12 +3427,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
           1.16
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3419,12 +3454,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_1">
+        <label class="md-nav__link" for="__nav_8_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3494,12 +3530,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_2">
+        <label class="md-nav__link" for="__nav_8_2" tabindex="0" aria-expanded="false">
           Основы Forge
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3555,12 +3592,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8_3">
+        <label class="md-nav__link" for="__nav_8_3" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3610,12 +3648,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" tabindex="0" aria-expanded="false">
           Fabric 1.16
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3636,12 +3675,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_1">
+        <label class="md-nav__link" for="__nav_9_1" tabindex="0" aria-expanded="false">
           Подготовка
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3697,12 +3737,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_2">
+        <label class="md-nav__link" for="__nav_9_2" tabindex="0" aria-expanded="false">
           Основы Fabric
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3772,12 +3813,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_3" type="checkbox" id="__nav_9_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_3">
+        <label class="md-nav__link" for="__nav_9_3" tabindex="0" aria-expanded="false">
           Предмет
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3861,12 +3903,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_4">
+        <label class="md-nav__link" for="__nav_9_4" tabindex="0" aria-expanded="false">
           Блок
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3950,12 +3993,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_8">
+        <label class="md-nav__link" for="__nav_9_8" tabindex="0" aria-expanded="false">
           События
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3997,12 +4041,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_9" type="checkbox" id="__nav_9_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_9_9" type="checkbox" id="__nav_9_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9_9">
+        <label class="md-nav__link" for="__nav_9_9" tabindex="0" aria-expanded="false">
           Дополнительно
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -4164,10 +4209,9 @@
     
                   
 
-  <a href="https://github.com/mc-modding/book/edit/main/docs/1.7.10/basics/network.md" title="Редактировать страницу" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="пакетная-система">Пакетная система<a class="headerlink" href="#пакетная-система" title="Permanent link">#</a></h1>
@@ -4197,16 +4241,16 @@ Minecraft уже решает большинство таких задач за 
 <p>Начало работы с пакетами начинается с создания нового экземпляр класса <code>SimpleNetworkWrapper</code>.
 Вокруг него будет строиться вся работа пакетной системы нашего мода.
 Для большего удобства, добавим поле в главный класс мода, а регистрацию самих пакетов будем производить в <code>CommonProxy#preInit</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper</span><span class="p">;</span>
 
-<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">SimpleNetworkWrapper</span><span class="w"> </span><span class="n">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SimpleNetworkWrapper</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">SimpleNetworkWrapper</span><span class="w"> </span><span class="n">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SimpleNetworkWrapper</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <p><strong>Пакеты</strong> создаются с помощью реализации интерфейса <code>IMessage</code>, который содержит два метода, такие как: <code>IMessage#toBytes(ByteBuf)</code> и <code>IMessage#fromBytes(ByteBuf)</code> для записи/чтения данных.
 Данные содержащиеся в <code>ByteBuf</code> передаются по сети.</p>
@@ -4242,69 +4286,69 @@ Minecraft уже решает большинство таких задач за 
 </ul>
 <p>Даже Mojang придерживается определённой схемы именования. Посмотрите на названия классов в пакете <code>net.minecraft.network</code></p>
 </details>
-<div class="highlight"><span class="filename">ServerMessagePacket.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">ServerMessagePacket.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.ByteBufUtils</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.simpleimpl.*</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">io.netty.buffer.ByteBuf</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayerMP</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ChatComponentText</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.ByteBufUtils</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.simpleimpl.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.netty.buffer.ByteBuf</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayerMP</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ChatComponentText</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ServerMessagePacket</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ServerMessagePacket</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// Набор полей данных пакета</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Набор полей данных пакета</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ServerMessagePacket</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ServerMessagePacket</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * @param message Сообщения, которое будет выводиться на серверной стороне.</span>
 <span class="cm">     * @param number Число, которое будет выводиться на серверной стороне.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ServerMessagePacket</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ServerMessagePacket</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Читает данные пакета из ByteBuf при получении.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fromBytes</span><span class="p">(</span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">readUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readInt</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">fromBytes</span><span class="p">(</span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">readUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+<span class="w">        </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readInt</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Записывает данные пакета в ByteBuf перед отправкой.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">toBytes</span><span class="p">(</span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">writeUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">buf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">toBytes</span><span class="p">(</span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">writeUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">        </span><span class="n">buf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Handler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessageHandler</span><span class="o">&lt;</span><span class="n">ServerMessagePacket</span><span class="p">,</span><span class="w"> </span><span class="n">IMessage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Handler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessageHandler</span><span class="o">&lt;</span><span class="n">ServerMessagePacket</span><span class="p">,</span><span class="w"> </span><span class="n">IMessage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">        </span><span class="cm">/**</span>
 <span class="cm">         * Данный метод вызывается для обработки входящих данных из пакета.</span>
-<span class="cm">         */</span><span class="w"></span>
-<span class="w">        </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">ServerMessagePacket</span><span class="w"> </span><span class="n">packet</span><span class="p">,</span><span class="w"> </span><span class="n">MessageContext</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">message</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Получаем игрока, который прислал нам пакет.</span><span class="w"></span>
-<span class="w">            </span><span class="n">EntityPlayerMP</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">getServerHandler</span><span class="p">().</span><span class="na">playerEntity</span><span class="p">;</span><span class="w"></span>
+<span class="cm">         */</span>
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">ServerMessagePacket</span><span class="w"> </span><span class="n">packet</span><span class="p">,</span><span class="w"> </span><span class="n">MessageContext</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">message</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">number</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Получаем игрока, который прислал нам пакет.</span>
+<span class="w">            </span><span class="n">EntityPlayerMP</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">getServerHandler</span><span class="p">().</span><span class="na">playerEntity</span><span class="p">;</span>
 
-<span class="w">            </span><span class="c1">// Отправляем сообщение игроку</span><span class="w"></span>
-<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Вывожу текст \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot; с числом \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot;&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Отправляем сообщение игроку</span>
+<span class="w">            </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Вывожу текст \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot; с числом \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot;&quot;</span><span class="p">));</span>
 
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// В ответ ничего не отправляем</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// В ответ ничего не отправляем</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Подсказка</p>
@@ -4320,19 +4364,19 @@ Minecraft уже решает большинство таких задач за 
 </div>
 <h3 id="регистрация-пакета--обработчика">Регистрация пакета &amp; обработчика<a class="headerlink" href="#регистрация-пакета--обработчика" title="Permanent link">#</a></h3>
 <p>Осталось только зарегистрировать пакет, чтобы это сделать, обратимся к методу <code>SimpleNetworkWrapper#registerMessage</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPreInitializationEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet.ServerMessagePacket</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLPreInitializationEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet.ServerMessagePacket</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">registerMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">.</span><span class="na">Handler</span><span class="p">(),</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Side</span><span class="p">.</span><span class="na">SERVER</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">registerMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">.</span><span class="na">Handler</span><span class="p">(),</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Side</span><span class="p">.</span><span class="na">SERVER</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Рассмотрим метод <code>SimpleNetworkWrapper#registerMessage(IMessageHandler messageHandler, Class requestMessageType, int discriminator, Side side)</code> более подробно! Данный метод принимает четыре параметра, такие как:</p>
 <ul>
@@ -4375,23 +4419,23 @@ Minecraft уже решает большинство таких задач за 
 </table>
 <p>В нашем случае пакет будет отсылаться на сервер по нажатии <span class="keys"><kbd class="key-b">B</kbd></span> , а значит нам походит метод <code>SimpleNetworkWrapper#sendToServer</code>. Вот
 такой пример отправки пакета на сервер у нас получился.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.gameevent.InputEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.lwjgl.input.Keyboard</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet.ServerMessagePacket</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.gameevent.InputEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.lwjgl.input.Keyboard</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.packet.ServerMessagePacket</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FMLEventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FMLEventListener</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKeyInput</span><span class="p">(</span><span class="n">InputEvent</span><span class="p">.</span><span class="na">KeyInputEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">isKeyDown</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">KEY_B</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">sendToServer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">(</span><span class="s">&quot;Привет мир!&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1337</span><span class="p">));</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKeyInput</span><span class="p">(</span><span class="n">InputEvent</span><span class="p">.</span><span class="na">KeyInputEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">isKeyDown</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">KEY_B</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">sendToServer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ServerMessagePacket</span><span class="p">(</span><span class="s">&quot;Привет мир!&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1337</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Регистрируем слушателя событий и заходим в игру для проверки!</p>
 <p><img alt="Обработка данных пакета" src="../images/packet_handle.png" /></p>
@@ -4404,78 +4448,78 @@ Minecraft уже решает большинство таких задач за 
 <p>В приведённом ниже примере используется событийная модель работы с пакетами.
 Часть кода вам уже должна быть знакома, если вы уже читали про <a href="../../event/basics/">работу с событиями</a>, только здесь обработчик событий регистрируется в специальной шине.</p>
 <p>Создаём новый класс <code>PacketHandler</code> нашего обработчика пакетов:</p>
-<div class="highlight"><span class="filename">PacketHandler.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><span class="filename">PacketHandler.java</span><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Consumer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.*</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.internal.FMLProxyPacket</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.SideOnly</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">io.netty.buffer.*</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayerMP</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.network.NetHandlerPlayServer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ChatComponentText</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Consumer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.internal.FMLProxyPacket</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.Side</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.relauncher.SideOnly</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io.netty.buffer.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.entity.player.EntityPlayerMP</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.network.NetHandlerPlayServer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">net.minecraft.util.ChatComponentText</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PacketHandler</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PacketHandler</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FMLEventChannel</span><span class="w"> </span><span class="n">channel</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FMLEventChannel</span><span class="w"> </span><span class="n">channel</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PacketHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetworkRegistry</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">.</span><span class="na">newEventDrivenChannel</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"> </span><span class="c1">// Имя канала</span><span class="w"></span>
-<span class="w">        </span><span class="n">channel</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"> </span><span class="c1">// Регистрируемся в шине событий</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PacketHandler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NetworkRegistry</span><span class="p">.</span><span class="na">INSTANCE</span><span class="p">.</span><span class="na">newEventDrivenChannel</span><span class="p">(</span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"> </span><span class="c1">// Имя канала</span>
+<span class="w">        </span><span class="n">channel</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"> </span><span class="c1">// Регистрируемся в шине событий</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">FMLEventChannel</span><span class="w"> </span><span class="nf">getChannel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">channel</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">FMLEventChannel</span><span class="w"> </span><span class="nf">getChannel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">channel</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Обработчик пакетов, полученных клиентом.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleClient</span><span class="p">(</span><span class="n">FMLNetworkEvent</span><span class="p">.</span><span class="na">ClientCustomPacketEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">packet</span><span class="p">.</span><span class="na">payload</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readByte</span><span class="p">();</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span>
+<span class="w">    </span><span class="nd">@SideOnly</span><span class="p">(</span><span class="n">Side</span><span class="p">.</span><span class="na">CLIENT</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleClient</span><span class="p">(</span><span class="n">FMLNetworkEvent</span><span class="p">.</span><span class="na">ClientCustomPacketEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">packet</span><span class="p">.</span><span class="na">payload</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readByte</span><span class="p">();</span>
 
-<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// У нас пока ничего не обрабатывается на клиенте.</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// У нас пока ничего не обрабатывается на клиенте.</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Обработчик пакетов, полученных сервером.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleServer</span><span class="p">(</span><span class="n">FMLNetworkEvent</span><span class="p">.</span><span class="na">ServerCustomPacketEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">packet</span><span class="p">.</span><span class="na">payload</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">EntityPlayerMP</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">NetHandlerPlayServer</span><span class="p">)</span><span class="n">event</span><span class="p">.</span><span class="na">handler</span><span class="p">).</span><span class="na">playerEntity</span><span class="p">;</span><span class="w"> </span><span class="c1">// Определяем отправителя</span><span class="w"></span>
-<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readByte</span><span class="p">();</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handleServer</span><span class="p">(</span><span class="n">FMLNetworkEvent</span><span class="p">.</span><span class="na">ServerCustomPacketEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">packet</span><span class="p">.</span><span class="na">payload</span><span class="p">();</span>
+<span class="w">        </span><span class="n">EntityPlayerMP</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">NetHandlerPlayServer</span><span class="p">)</span><span class="n">event</span><span class="p">.</span><span class="na">handler</span><span class="p">).</span><span class="na">playerEntity</span><span class="p">;</span><span class="w"> </span><span class="c1">// Определяем отправителя</span>
+<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readByte</span><span class="p">();</span>
 
-<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// Читаем данные в том же порядке</span><span class="w"></span>
-<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">readUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readInt</span><span class="p">();</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// Отправляем сообщение игроку</span><span class="w"></span>
-<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Вывожу текст \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot; с числом \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot;&quot;</span><span class="p">));</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Читаем данные в том же порядке</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">readUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">.</span><span class="na">readInt</span><span class="p">();</span>
+<span class="w">                </span><span class="c1">// Отправляем сообщение игроку</span>
+<span class="w">                </span><span class="n">player</span><span class="p">.</span><span class="na">addChatMessage</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChatComponentText</span><span class="p">(</span><span class="s">&quot;Вывожу текст \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot; с числом \&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\&quot;&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Вспомогательный метод для быстрого создания пакета</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">FMLProxyPacket</span><span class="w"> </span><span class="nf">makePacket</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">ByteBuf</span><span class="o">&gt;</span><span class="w"> </span><span class="n">consumer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Unpooled</span><span class="p">.</span><span class="na">buffer</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">buf</span><span class="p">.</span><span class="na">writeByte</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">consumer</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FMLProxyPacket</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"> </span><span class="c1">// Второй параметр - имя канала</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">FMLProxyPacket</span><span class="w"> </span><span class="nf">makePacket</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">ByteBuf</span><span class="o">&gt;</span><span class="w"> </span><span class="n">consumer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ByteBuf</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Unpooled</span><span class="p">.</span><span class="na">buffer</span><span class="p">();</span>
+<span class="w">        </span><span class="n">buf</span><span class="p">.</span><span class="na">writeByte</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="n">consumer</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FMLProxyPacket</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">);</span><span class="w"> </span><span class="c1">// Второй параметр - имя канала</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Теперь разберём написанный код:</p>
 <ol>
@@ -4490,31 +4534,31 @@ Minecraft уже решает большинство таких задач за 
    Принимает в качестве аргументов ID пакета и Callback-функцию записывающую данные в пакет (пример кода будет ниже).</li>
 </ol>
 <p>Перейдём к регистрации обработчика пакетов. Добавляем поле <strong>NETWORK</strong> в главный класс нашего мода чтобы иметь к нему удобный доступ:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.PacketHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.Mod</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.PacketHandler</span><span class="p">;</span>
 
-<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nd">@Mod</span><span class="p">(</span><span class="n">modid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">McModding</span><span class="p">.</span><span class="na">MOD_ID</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">McModding</span><span class="w"> </span><span class="p">{</span>
 
-<span class="hll"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">PacketHandler</span><span class="w"> </span><span class="n">NETWORK</span><span class="p">;</span><span class="w"> </span><span class="c1">// Значение присвоено будет позже</span><span class="w"></span>
-</span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">PacketHandler</span><span class="w"> </span><span class="n">NETWORK</span><span class="p">;</span><span class="w"> </span><span class="c1">// Значение присвоено будет позже</span>
+</span><span class="p">}</span>
 </code></pre></div>
 <p>Инициализацию осуществляем в <code>CommonProxy#preInit</code> чтобы избежать создания обработчика до этапа инициализации мода.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLInitializationEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.PacketHandler</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.event.FMLInitializationEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler.PacketHandler</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CommonProxy</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="hll"><span class="w">        </span><span class="c1">// Создание объекта зарегистрирует обработчик в Forge</span><span class="w"></span>
-</span><span class="hll"><span class="w">        </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PacketHandler</span><span class="p">();</span><span class="w"></span>
-</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preInit</span><span class="p">(</span><span class="n">FMLPreInitializationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">        </span><span class="c1">// Создание объекта зарегистрирует обработчик в Forge</span>
+</span><span class="hll"><span class="w">        </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PacketHandler</span><span class="p">();</span>
+</span><span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="отправка-пакетов_1">Отправка пакетов<a class="headerlink" href="#отправка-пакетов_1" title="Permanent link">#</a></h3>
 <p>Для того чтобы отправлять пакеты, понадобится получить доступ к ранее созданному экземпляру <code>FMLEventChannel</code>, получим его через getter <code>McModding.NETWORK.getChannel()</code>.
@@ -4551,31 +4595,31 @@ Minecraft уже решает большинство таких задач за 
 </table>
 <p>В нашем примере мы будем отправлять сообщение на сервер по нажатии <span class="keys"><kbd class="key-b">B</kbd></span> .
 Сервер в ответ будет выводить сообщение в чат (см. код <code>PacketHandler#handleServer</code> приведённый ранее).</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.common.handler</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.gameevent.InputEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.ByteBufUtils</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.internal.FMLProxyPacket</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.lwjgl.input.Keyboard</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.eventhandler.SubscribeEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.gameevent.InputEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.ByteBufUtils</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cpw.mods.fml.common.network.internal.FMLProxyPacket</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.lwjgl.input.Keyboard</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ru.mcmodding.tutorial.McModding</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FMLEventListener</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FMLEventListener</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@SubscribeEvent</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKeyInput</span><span class="p">(</span><span class="n">InputEvent</span><span class="p">.</span><span class="na">KeyInputEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">isKeyDown</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">KEY_B</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Формируем пакет</span><span class="w"></span>
-<span class="w">            </span><span class="n">FMLProxyPacket</span><span class="w"> </span><span class="n">packet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PacketHandler</span><span class="p">.</span><span class="na">makePacket</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">writeUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Привет мир!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="n">buf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@SubscribeEvent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKeyInput</span><span class="p">(</span><span class="n">InputEvent</span><span class="p">.</span><span class="na">KeyInputEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">isKeyDown</span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="na">KEY_B</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Формируем пакет</span>
+<span class="w">            </span><span class="n">FMLProxyPacket</span><span class="w"> </span><span class="n">packet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PacketHandler</span><span class="p">.</span><span class="na">makePacket</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">ByteBufUtils</span><span class="p">.</span><span class="na">writeUTF8String</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Привет мир!&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">buf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+<span class="w">            </span><span class="p">});</span>
 
-<span class="w">            </span><span class="c1">// Отправляем на сервер</span><span class="w"></span>
-<span class="w">            </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">getChannel</span><span class="p">().</span><span class="na">sendToServer</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Отправляем на сервер</span>
+<span class="w">            </span><span class="n">McModding</span><span class="p">.</span><span class="na">NETWORK</span><span class="p">.</span><span class="na">getChannel</span><span class="p">().</span><span class="na">sendToServer</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="elegantnetworking">ElegantNetworking<a class="headerlink" href="#elegantnetworking" title="Permanent link">#</a></h2>
 <p>Ещё одним из вариантов работы с пакетами является использование сторонней библиотеки <a href="https://forum.mcmodding.ru/resources/elegantnetworking-maksimalno-izjaschnaja-paketnaja-sistema.225/">ElegantNetworking</a>.
@@ -4586,18 +4630,18 @@ Minecraft уже решает большинство таких задач за 
 делать не надо в случае получения пакет с клиентской стороны. Многие, кто писал хоть раз пакетную систему,
 сталкивались с такой проблемой, как синхронизация данных для <a href="../../block/tileentity/">TileEntity</a> (серверная сторона).
 На своей практике мы замечали такого вида код:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.author.bestmod</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">com.author.bestmod</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyPacketHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessageHandler</span><span class="o">&lt;</span><span class="n">MyPacket</span><span class="p">,</span><span class="w"> </span><span class="n">IMessage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">MyPacket</span><span class="w"> </span><span class="n">packet</span><span class="p">,</span><span class="w"> </span><span class="n">MessageContext</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">TileEntity</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">getServerHandler</span><span class="p">().</span><span class="na">playerEntity</span><span class="p">.</span><span class="na">worldObj</span><span class="p">.</span><span class="na">getTileEntity</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">x</span><span class="p">,</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">y</span><span class="p">,</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">z</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">MyBestTile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">tile</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">nbtData</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyPacketHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IMessageHandler</span><span class="o">&lt;</span><span class="n">MyPacket</span><span class="p">,</span><span class="w"> </span><span class="n">IMessage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IMessage</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">MyPacket</span><span class="w"> </span><span class="n">packet</span><span class="p">,</span><span class="w"> </span><span class="n">MessageContext</span><span class="w"> </span><span class="n">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TileEntity</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">getServerHandler</span><span class="p">().</span><span class="na">playerEntity</span><span class="p">.</span><span class="na">worldObj</span><span class="p">.</span><span class="na">getTileEntity</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">x</span><span class="p">,</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">y</span><span class="p">,</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="na">z</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">MyBestTile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">tile</span><span class="p">.</span><span class="na">readFromNBT</span><span class="p">(</span><span class="n">packet</span><span class="p">.</span><span class="na">nbtData</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Минусом данного обработчика является то, что, во-первых, получение TileEntity происходит с принудительной загрузкой чанков.
 Во-вторых, получение TileEntity производится по данным из пакета, а это говорит о том, что практически любой желающий сможет изменить любые свой-ва TileEntity.
@@ -4655,42 +4699,6 @@ Minecraft уже решает большинство таких задач за 
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
-      
-        
-        <a href="../../gui/container/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Контейнер" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              Контейнер
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../dim/basics/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Собственное измерение" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              Собственное измерение
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -4713,7 +4721,7 @@ Minecraft уже решает большинство таких задач за 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
 
     <!-- Yandex.Metrika counter -->
@@ -4733,7 +4741,7 @@ Minecraft уже решает большинство таких задач за 
 
 
     
-      <script src="../../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
     
   </body>
