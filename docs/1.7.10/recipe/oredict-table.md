@@ -137,3 +137,26 @@ description: Таблица имён словаря руд.
 | `oreSilver`          | Серебряная руда         |
 | `oreTin`             | Оловянная руда          |
 | `oreUranium`         | Урановая руда           |
+| `oreNetherCoal`      | Адская угольная руда    |
+| `oreNetherGold`      | Адская золотая руда     |
+| `oreNetherIron`      | Адская железная руда    |
+| `oreNetherLapis`     | Адская лазуритовая руда |
+| `oreNetherRedstone`  | Адская редстоун руда    |
+| `oreNetherDiamond`   | Адская алмазная руда    |
+| `oreNetherCopper`    | Адская медная руда      |
+| `oreNetherTin`       | Адская оловянная руда   |
+| `oreNetherEmerald`   | Адская изумрудная руда  |
+| `oreNetherSilver`    | Адская серебряная руда  |
+| `oreNetherLead`      | Адская свинцовая руда   |
+| `oreNetherUranium`   | Адская урановая руда    |
+| `oreNetherRuby`      | Адская рубиновая руда   |
+| `oreNetherSapphire`  | Адская сапфировая руда  |
+| `oreNetherPlatinum`  | Адская платиновая руда  |
+| `oreNetherNickel`    | Адская никелевая руда   |
+| `oreNetherSteel`     | Адская стальная руда    |
+| `oreNetherOsmium`    | Адская осмиевая руда    |
+| `oreNetherSulfur`    | Адская серная руда      |
+| `oreNetherMithril`   | Адская мифриловая руда  |
+| `oreNetherAmber`     | Адская янтарная руда    |
+| `oreNetherSalt`      | Адская соляная руда     |
+| `oreNetherSaltpeter` | Адская селитровая руда  |
