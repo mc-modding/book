@@ -63,10 +63,10 @@ public class ExampleMod
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ExampleMod() {
-		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		//eventBus.addGenericListener(Item.class, ModItems::registerItems); На будущее для первого способа, т.к. сейчас у нас нет никакого registerItems в ModItems
-		//ModItems.registerItems(eventBus); На будущее для второго способа, т.к. сейчас у нас нет никакого registerItems в ModItems
+        //eventBus.addGenericListener(Item.class, ModItems::registerItems); На будущее для первого способа, т.к. сейчас у нас нет никакого registerItems в ModItems
+        //ModItems.registerItems(eventBus); На будущее для второго способа, т.к. сейчас у нас нет никакого registerItems в ModItems
 		
         // Register the setup method for modloading
         eventBus.addListener(this::setup);
@@ -195,13 +195,14 @@ public class ModItems {
     └── main
         ├── java
         └── resources
-			└── assets
-				└── examplemod
-					└── lang
-						└── en_us.json
-					└── models
-						└── item
-					└── textures
+            └── assets
+                └── examplemod
+                    └── lang
+                        └── en_us.json
+                    └── models
+                        └── item
+                    └── textures
+                        └── item
 
 Заполним его следующим образом, следующие предметы можно перечислять через запятую. Вторые кавычки и есть наш перевод, поэтому в ru_ru.json можно смело менять на "Монета"
 ```java
