@@ -57,7 +57,7 @@ import ...
 @Mod(ExampleMod.MOD_ID)
 public class ExampleMod
 {
-	public static final String MOD_ID = "examplemod";
+    public static final String MOD_ID = "examplemod";
 	
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
@@ -111,7 +111,7 @@ package com.example.examplemod.items;
 import net.minecraftforge.eventbus.api.Event;
 
 public class ModItems {
-	public static <V extends IForgeRegistryEntry<V>> void register(
+    public static <V extends IForgeRegistryEntry<V>> void register(
             IForgeRegistry<V> reg, ResourceLocation name, IForgeRegistryEntry<V> thing) {
         reg.register(thing.setRegistryName(name));
     }
@@ -123,7 +123,7 @@ public class ModItems {
 	// Ну или же на край вот так:
 	// public static final Item coin = new Coin();
 	 
-	public static void registerItems(RegistryEvent.Register<Item> evt) {
+    public static void registerItems(RegistryEvent.Register<Item> evt) {
         IForgeRegistry<Item> r = evt.getRegistry();
 		
         register(r, new ResourceLocation(ExampleMod.MOD_ID, "coin");, coin);
@@ -134,28 +134,28 @@ public class ModItems {
 Конечно же, все это безобразие можно разнести по сотням разных функций и даже разнести по разным папкам, следуя заветам чистого кода:
 ```java
 public class ModItems {
-	public static ResourceLocation prefix(String path) {
+    public static ResourceLocation prefix(String path) {
         return new ResourceLocation(Bifrost.MOD_ID, path);
     }
 	
-	public static <V extends IForgeRegistryEntry<V>> void register(
+    public static <V extends IForgeRegistryEntry<V>> void register(
             IForgeRegistry<V> reg, ResourceLocation name, IForgeRegistryEntry<V> thing) {
         reg.register(thing.setRegistryName(name));
     }
 	
-	public static <V extends IForgeRegistryEntry<V>> void register(
+    public static <V extends IForgeRegistryEntry<V>> void register(
             IForgeRegistry<V> reg, String name, IForgeRegistryEntry<V> thing) {
         register(reg, prefix(name), thing);
     }
 	
-	public static final Coin coin = new Coin();
-	// Или же просто вот так и через точку указать свойства:
-	// public static final Item coin = new Item(new Item.Properties());
+    public static final Coin coin = new Coin();
+    // Или же просто вот так и через точку указать свойства:
+    // public static final Item coin = new Item(new Item.Properties());
 	
-	// Ну или же на край вот так:
-	// public static final Item coin = new Coin();
+    // Ну или же на край вот так:
+    // public static final Item coin = new Coin();
 	
-	public static void registerItems(RegistryEvent.Register<Item> evt) {
+    public static void registerItems(RegistryEvent.Register<Item> evt) {
         IForgeRegistry<Item> r = evt.getRegistry();
 		
 		//Даже "coin" можно вынести в какой-нибудь LibItemNames или что-то в этом роде
