@@ -12,7 +12,7 @@ description: Основы создания предметов
 				└── example
 					└── exaplemod
 						├──items
-							└── ModItems
+└── ModItems
 						└── ExampleMod.java
         └── resources
 ```
