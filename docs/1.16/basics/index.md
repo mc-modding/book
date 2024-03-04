@@ -7,14 +7,14 @@ description: Основы создания предметов
 ```md
 └── src    
     └── main
-    ├── java
-    └── com
-    └── example
-    └── exaplemod
-    ├──items
-    └── ModItems
-    └── ExampleMod.java
-    └── resources
+        ├── java
+            └── com
+                └── example
+                    └── exaplemod
+                        ├──items
+                            └── ModItems
+                        └── ExampleMod.java
+        └── resources
 ```
 
 Для удобвства давайте немного изменим наш основной класс мода, он у вас выглядит сейчас примерно так:
