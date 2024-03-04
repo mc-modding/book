@@ -6,15 +6,15 @@ description: Основы создания предметов
 Мы имеем примерно такой формат нашего мода:
 ```md
 └── src    
-    └── main
-        ├── java
-			└── com
-				└── example
-					└── exaplemod
-						├──items
-                         └── ModItems
-						└── ExampleMod.java
-        └── resources
+└── main
+├── java
+└── com
+└── example
+└── exaplemod
+├──items
+└── ModItems
+└── ExampleMod.java
+└── resources
 ```
 
 Для удобвства давайте немного изменим наш основной класс мода, он у вас выглядит сейчас примерно так:
