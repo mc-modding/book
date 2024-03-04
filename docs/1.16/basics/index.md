@@ -17,7 +17,7 @@ description: Основы создания предметов
         └── resources
 ```
 
-Для удобвства давайте немного изменим наш основной класс мода, он у вас выглядит сейчас примерно так:
+Для удобвства давайте немного изменим наш основной класс мода, он у вас выглядит сейчас примерно так (могут быть отличия, файл взят с примера мода из forge 1.16.5 36.2.34-mdk):
 ```java
 package com.example.examplemod;
 
@@ -67,18 +67,6 @@ public class ExampleMod
 		
         //eventBus.addGenericListener(Item.class, ModItems::registerItems); На будущее для первого способа, т.к. сейчас у нас нет никакого registerItems в ModItems
         //ModItems.registerItems(eventBus); На будущее для второго способа, т.к. сейчас у нас нет никакого registerItems в ModItems
-		
-        // Register the setup method for modloading
-        eventBus.addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-        eventBus.addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-        eventBus.addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
-        eventBus.addListener(this::doClientStuff);
-
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
 	...
