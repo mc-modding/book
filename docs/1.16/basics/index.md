@@ -65,7 +65,8 @@ public class ExampleMod
     public ExampleMod() {
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		
-		//eventBus.addGenericListener(Item.class, ModItems::registerItems); На будущее, т.к. сейчас у нас нет никакого registerItems в ModItems
+		//eventBus.addGenericListener(Item.class, ModItems::registerItems); На будущее для первого способа, т.к. сейчас у нас нет никакого registerItems в ModItems
+		//ModItems.registerItems(eventBus); На будущее для второго способа, т.к. сейчас у нас нет никакого registerItems в ModItems
 		
         // Register the setup method for modloading
         eventBus.addListener(this::setup);
