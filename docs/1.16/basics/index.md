@@ -168,22 +168,21 @@ public class ModItems {
 
 В целом, мы можем просто делать то же самое, но другим способом, тогда наш класс ModItems будет выглядеть так:
 ```java
-	public class ModItems {
-		// Создадим отложенный регистр, в который будет помещаться предметы
-		public static final DeferredRegister<Item> ITEMS =
-				DeferredRegister.create(ForgeRegistries.ITEMS, ExampleMod.MOD_ID);
+public class ModItems {
+// Создадим отложенный регистр, в который будет помещаться предметы
+    public static final DeferredRegister<Item> ITEMS =
+        DeferredRegister.create(ForgeRegistries.ITEMS, ExampleMod.MOD_ID);
 
-
-		// Создаем предмет, опять же, new Item(new Item.Properies()) можно заменять на нечто другое
-		public static final RegistryObject<Item> coin = ITEMS.register("coin",
-				() -> new Item(new Item.Properties())
-		);
+    // Создаем предмет, опять же, new Item(new Item.Properies()) можно заменять на нечто другое
+    public static final RegistryObject<Item> coin = ITEMS.register("coin",
+        () -> new Item(new Item.Properties())
+    );
 		
-		// Добавялем обработчик событий в шину, это обязательная процедура
-		public static void registerItems(IEventBus eventBus) {
-			ITEMS.register(eventBus);
-		}
-	}
+    // Добавялем обработчик событий в шину, это обязательная процедура
+    public static void registerItems(IEventBus eventBus) {
+        ITEMS.register(eventBus);
+    }
+}
 ```
 
 По примеру выше мы также можем разбить это действие на разные функции, но ведь пользователи не увидят красоту вашего мода, так ведь?
