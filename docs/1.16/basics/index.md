@@ -133,6 +133,7 @@ public class ModItems {
 
 Конечно же, все это безобразие можно разнести по сотням разных функций и даже разнести по разным папкам, следуя заветам чистого кода:
 ```java
+public class ModItems {
 	public static ResourceLocation prefix(String path) {
         return new ResourceLocation(Bifrost.MOD_ID, path);
     }
@@ -160,6 +161,7 @@ public class ModItems {
 		//Даже "coin" можно вынести в какой-нибудь LibItemNames или что-то в этом роде
         register(r, "coin", coin);
     }
+}
 ```
 
 ## Основа. Способ второй.
@@ -208,7 +210,7 @@ public class ModItems {
 Заполним его следующим образом, следующие предметы можно перечислять через запятую. Вторые кавычки и есть наш перевод, поэтому в ru_ru.json можно смело менять на "Монета"
 ```java
 {
-	"item.examplemod.coin": "Coin"
+    "item.examplemod.coin": "Coin"
 }
 ```
 
@@ -217,8 +219,8 @@ public class ModItems {
 В папке item создадим файл coin.json:
 ```java
 {
-	"parent": "item/generated",
-  "textures": {
+    "parent": "item/generated",
+    "textures": {
     "layer0": "examplemod:item/coin"
   }
 }
@@ -228,13 +230,13 @@ public class ModItems {
 При желании добавить анимацию к текстуре мы просто делаем полоску из меняющейся текстуры и добавляем в textures.item файл coin.mcmeta:
 ```java
 {
-  "animation": {
-      "frametime": 4,
-      "frames": [
-        0,
-        1,
-        2
-    ]
-  }
+    "animation": {
+        "frametime": 4,
+        "frames": [
+            0,
+            1,
+            2
+        ]
+    }
 }
 ```
